@@ -1,0 +1,15 @@
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\bin\Debug\Colorama.Reglas.dll
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\bin\Debug\Colorama.Reglas.pdb
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\bin\Debug\Colorama.Reglas.xml
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\bin\Debug\Infoware.Datos.dll
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\bin\Debug\Infoware.Reglas.dll
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\bin\Debug\Infoware.Reglas.General.dll
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\bin\Debug\Infoware.Reportes.dll
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\bin\Debug\Infoware.Controles.Base.dll
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\obj\Debug\Colorama.Reglas.Resources.resources
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\obj\Debug\Colorama.Reglas.dll
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\obj\Debug\Colorama.Reglas.xml
+C:\Users\Victor\Desktop\Colorama\Colorama\Colorama\Reglas\obj\Debug\Colorama.Reglas.pdb

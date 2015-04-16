@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAnalisisCartera" targetNamespace="http://tempuri.org/dsAnalisisCartera.xsd" xmlns:mstns="http://tempuri.org/dsAnalisisCartera.xsd" xmlns="http://tempuri.org/dsAnalisisCartera.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="salesmanagerConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="salesmanagerConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Incautacion.Modulo.MySettings.GlobalReference.Default.salesmanagerConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAnalisisCartera" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsAnalisisCartera" msprop:Generator_UserDSName="dsAnalisisCartera">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vp_AnalisisCartera" msprop:Generator_UserTableName="vp_AnalisisCartera" msprop:Generator_RowEvArgName="vp_AnalisisCarteraRowChangeEvent" msprop:Generator_TableVarName="tablevp_AnalisisCartera" msprop:Generator_TablePropName="vp_AnalisisCartera" msprop:Generator_RowDeletingName="vp_AnalisisCarteraRowDeleting" msprop:Generator_RowChangingName="vp_AnalisisCarteraRowChanging" msprop:Generator_RowDeletedName="vp_AnalisisCarteraRowDeleted" msprop:Generator_TableClassName="vp_AnalisisCarteraDataTable" msprop:Generator_RowChangedName="vp_AnalisisCarteraRowChanged" msprop:Generator_RowEvHandlerName="vp_AnalisisCarteraRowChangeEventHandler" msprop:Generator_RowClassName="vp_AnalisisCarteraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Entida_Codigo" msprop:Generator_ColumnVarNameInTable="columnEntida_Codigo" msprop:Generator_ColumnPropNameInRow="Entida_Codigo" msprop:Generator_ColumnPropNameInTable="Entida_CodigoColumn" msprop:Generator_UserColumnName="Entida_Codigo" type="xs:int" minOccurs="0" />
+              <xs:element name="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_UserColumnName="NombreCompleto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pardet_Descripcion" msprop:Generator_ColumnVarNameInTable="columnPardet_Descripcion" msprop:Generator_ColumnPropNameInRow="Pardet_Descripcion" msprop:Generator_ColumnPropNameInTable="Pardet_DescripcionColumn" msprop:Generator_UserColumnName="Pardet_Descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Venta_Numero" msprop:Generator_ColumnVarNameInTable="columnVenta_Numero" msprop:Generator_ColumnPropNameInRow="Venta_Numero" msprop:Generator_ColumnPropNameInTable="Venta_NumeroColumn" msprop:Generator_UserColumnName="Venta_Numero" type="xs:string" minOccurs="0" />
+              <xs:element name="Movinv_Fecha" msprop:Generator_ColumnVarNameInTable="columnMovinv_Fecha" msprop:Generator_ColumnPropNameInRow="Movinv_Fecha" msprop:Generator_ColumnPropNameInTable="Movinv_FechaColumn" msprop:Generator_UserColumnName="Movinv_Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FormaPago" msprop:Generator_ColumnVarNameInTable="columnFormaPago" msprop:Generator_ColumnPropNameInRow="FormaPago" msprop:Generator_ColumnPropNameInTable="FormaPagoColumn" msprop:Generator_UserColumnName="FormaPago" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DiasCredito" msprop:Generator_ColumnVarNameInTable="columnDiasCredito" msprop:Generator_ColumnPropNameInRow="DiasCredito" msprop:Generator_ColumnPropNameInTable="DiasCreditoColumn" msprop:Generator_UserColumnName="DiasCredito" type="xs:int" minOccurs="0" />
+              <xs:element name="Saldo" msprop:Generator_ColumnVarNameInTable="columnSaldo" msprop:Generator_ColumnPropNameInRow="Saldo" msprop:Generator_ColumnPropNameInTable="SaldoColumn" msprop:Generator_UserColumnName="Saldo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FechaVencimiento" msprop:Generator_ColumnVarNameInTable="columnFechaVencimiento" msprop:Generator_ColumnPropNameInRow="FechaVencimiento" msprop:Generator_ColumnPropNameInTable="FechaVencimientoColumn" msprop:Generator_UserColumnName="FechaVencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PorVencer" msprop:Generator_ColumnVarNameInTable="columnPorVencer" msprop:Generator_ColumnPropNameInRow="PorVencer" msprop:Generator_ColumnPropNameInTable="PorVencerColumn" msprop:Generator_UserColumnName="PorVencer" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VencidoPeriodo1" msprop:Generator_ColumnVarNameInTable="columnVencidoPeriodo1" msprop:Generator_ColumnPropNameInRow="VencidoPeriodo1" msprop:Generator_ColumnPropNameInTable="VencidoPeriodo1Column" msprop:Generator_UserColumnName="VencidoPeriodo1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VencidoPeriodo2" msprop:Generator_ColumnVarNameInTable="columnVencidoPeriodo2" msprop:Generator_ColumnPropNameInRow="VencidoPeriodo2" msprop:Generator_ColumnPropNameInTable="VencidoPeriodo2Column" msprop:Generator_UserColumnName="VencidoPeriodo2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VencidoPeriodo3" msprop:Generator_ColumnVarNameInTable="columnVencidoPeriodo3" msprop:Generator_ColumnPropNameInRow="VencidoPeriodo3" msprop:Generator_ColumnPropNameInTable="VencidoPeriodo3Column" msprop:Generator_UserColumnName="VencidoPeriodo3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VencidoPeriodo4" msprop:Generator_ColumnVarNameInTable="columnVencidoPeriodo4" msprop:Generator_ColumnPropNameInRow="VencidoPeriodo4" msprop:Generator_ColumnPropNameInTable="VencidoPeriodo4Column" msprop:Generator_UserColumnName="VencidoPeriodo4" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

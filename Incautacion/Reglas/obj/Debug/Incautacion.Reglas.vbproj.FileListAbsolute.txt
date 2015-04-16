@@ -1,0 +1,14 @@
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Debug\Incautacion.Reglas.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Debug\Incautacion.Reglas.pdb
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Debug\Incautacion.Reglas.xml
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Debug\Infoware.Datos.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Debug\Infoware.Reglas.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Debug\Infoware.Reglas.General.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Debug\Infoware.Reportes.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Debug\Infoware.Controles.Base.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Debug\Incautacion.Reglas.vbprojResolveAssemblyReference.cache
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Debug\Incautacion.Reglas.Resources.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Debug\Incautacion.Reglas.vbproj.GenerateResource.Cache
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Debug\Incautacion.Reglas.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Debug\Incautacion.Reglas.xml
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Debug\Incautacion.Reglas.pdb

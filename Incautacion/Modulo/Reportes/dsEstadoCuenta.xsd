@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEstadoCuenta" targetNamespace="http://tempuri.org/dsEstadoCuenta.xsd" xmlns:mstns="http://tempuri.org/dsEstadoCuenta.xsd" xmlns="http://tempuri.org/dsEstadoCuenta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="salesmanagerConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="salesmanagerConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Incautacion.Modulo.MySettings.GlobalReference.Default.salesmanagerConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsEstadoCuenta" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsEstadoCuenta" msprop:Generator_UserDSName="dsEstadoCuenta">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vp_EstadoCuenta" msprop:Generator_UserTableName="vp_EstadoCuenta" msprop:Generator_RowEvArgName="vp_EstadoCuentaRowChangeEvent" msprop:Generator_TableVarName="tablevp_EstadoCuenta" msprop:Generator_TablePropName="vp_EstadoCuenta" msprop:Generator_RowDeletingName="vp_EstadoCuentaRowDeleting" msprop:Generator_RowChangingName="vp_EstadoCuentaRowChanging" msprop:Generator_RowDeletedName="vp_EstadoCuentaRowDeleted" msprop:Generator_TableClassName="vp_EstadoCuentaDataTable" msprop:Generator_RowChangedName="vp_EstadoCuentaRowChanged" msprop:Generator_RowEvHandlerName="vp_EstadoCuentaRowChangeEventHandler" msprop:Generator_RowClassName="vp_EstadoCuentaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Entida_Codigo" msprop:Generator_ColumnVarNameInTable="columnEntida_Codigo" msprop:Generator_ColumnPropNameInRow="Entida_Codigo" msprop:Generator_ColumnPropNameInTable="Entida_CodigoColumn" msprop:Generator_UserColumnName="Entida_Codigo" type="xs:int" />
+              <xs:element name="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_UserColumnName="NombreCompleto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Datos" msprop:Generator_ColumnVarNameInTable="columnDatos" msprop:Generator_ColumnPropNameInRow="Datos" msprop:Generator_ColumnPropNameInTable="DatosColumn" msprop:Generator_UserColumnName="Datos">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2016" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoDoc" msprop:Generator_ColumnVarNameInTable="columnTipoDoc" msprop:Generator_ColumnPropNameInRow="TipoDoc" msprop:Generator_ColumnPropNameInTable="TipoDocColumn" msprop:Generator_UserColumnName="TipoDoc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Venta_Numero" msprop:Generator_ColumnVarNameInTable="columnVenta_Numero" msprop:Generator_ColumnPropNameInRow="Venta_Numero" msprop:Generator_ColumnPropNameInTable="Venta_NumeroColumn" msprop:Generator_UserColumnName="Venta_Numero" type="xs:string" />
+              <xs:element name="Movinv_Fecha" msprop:Generator_ColumnVarNameInTable="columnMovinv_Fecha" msprop:Generator_ColumnPropNameInRow="Movinv_Fecha" msprop:Generator_ColumnPropNameInTable="Movinv_FechaColumn" msprop:Generator_UserColumnName="Movinv_Fecha" type="xs:dateTime" />
+              <xs:element name="Pagdet_FechaPago" msprop:Generator_ColumnVarNameInTable="columnPagdet_FechaPago" msprop:Generator_ColumnPropNameInRow="Pagdet_FechaPago" msprop:Generator_ColumnPropNameInTable="Pagdet_FechaPagoColumn" msprop:Generator_UserColumnName="Pagdet_FechaPago" type="xs:dateTime" />
+              <xs:element name="tipolinea" msprop:Generator_ColumnVarNameInTable="columntipolinea" msprop:Generator_ColumnPropNameInRow="tipolinea" msprop:Generator_ColumnPropNameInTable="tipolineaColumn" msprop:Generator_UserColumnName="tipolinea" type="xs:int" />
+              <xs:element name="TipoMovPago" msprop:Generator_ColumnVarNameInTable="columnTipoMovPago" msprop:Generator_ColumnPropNameInRow="TipoMovPago" msprop:Generator_ColumnPropNameInTable="TipoMovPagoColumn" msprop:Generator_UserColumnName="TipoMovPago">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pagdet_Valor" msprop:Generator_ColumnVarNameInTable="columnPagdet_Valor" msprop:Generator_ColumnPropNameInRow="Pagdet_Valor" msprop:Generator_ColumnPropNameInTable="Pagdet_ValorColumn" msprop:Generator_UserColumnName="Pagdet_Valor" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

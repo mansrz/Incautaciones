@@ -1,0 +1,184 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Ginecoart.Modulo
+</name>
+</assembly>
+<members>
+<member name="T:Ginecoart.Modulo.dsAnalisisCartera.vp_AnalisisCarteraDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsAnalisisCartera.vp_AnalisisCarteraRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsAnalisisCartera.vp_AnalisisCarteraRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsAnalisisCartera">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsAuditoria.vp_AuditoriaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsAuditoria.vp_AuditoriaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsAuditoria.vp_AuditoriaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsAuditoria">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsEstadoCuenta.vp_EstadoCuentaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsEstadoCuenta.vp_EstadoCuentaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsEstadoCuenta.vp_EstadoCuentaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Ginecoart.Modulo.dsEstadoCuenta">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.abrir">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.adjunto">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.ANULADA">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.arrowfirst">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.arrowlast">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.cancel16">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.card_file">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.configure">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.cuadrar">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.delete16">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.Elemento_emergente_bloqueado_de_Windows_XP">
+	<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.eliminar">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.find">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.Formato">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.insert16">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.lockoff">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.lockon">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.nuevo">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.ok">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.pagos">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.play">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.print">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.report">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.save16">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.sinfoto">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.start">
+	<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.summary">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Ginecoart.Modulo.My.Resources.Resources.undo">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="T:Ginecoart.Modulo.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,41 @@
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.pdb
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.xml
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Datos.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reglas.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reglas.General.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reportes.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Controles.Base.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.Resources.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbproj.GenerateResource.Cache
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.xml
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.pdb
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.pdb
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.xml
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Datos.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reglas.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reglas.General.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reportes.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Controles.Base.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.Resources.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbproj.GenerateResource.Cache
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.xml
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.pdb
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.pdb
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.xml
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Datos.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reglas.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reglas.General.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reportes.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Controles.Base.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.Resources.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbproj.GenerateResource.Cache
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.xml
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.pdb
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbprojResolveAssemblyReference.cache
+D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbprojResolveAssemblyReference.cache

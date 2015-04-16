@@ -1,0 +1,418 @@
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe.config
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe.manifest
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.application
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.pdb
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.xml
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Consola.Base.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Controles.Base.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Controles.General.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Datos.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Docking.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reglas.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reglas.General.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reporteador.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reportes.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.pdb
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.xml
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\bin\Release\es-EC\Infoware.Docking.resources.dll
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.vbprojResolveAssemblyReference.cache
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.BarraEmpresa.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.ComboBoxSucursal.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.ComboBoxUsuario.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBloqueo.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaCliente.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaEmpleado.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaEntidad2.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaItem.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaProveedor.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlCuentaBancaria.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEmpleado.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlGruposTouch.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlItemsTouch.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMantenimientoMovimientoInventarioDet.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMovimientoInventario.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMovimientoInventarioDet1.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlPersona.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmDesbloquear.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajo.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoEntrega.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoItemDetalle.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoFacturacion.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoImprenta.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoDisenador.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTrabajos.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlDireccion.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEmail.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadJuridica.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadLugar.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadNatural.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlIdentificacion.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlTelefono.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmBuscaMovimientoInventario.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaSucursales.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagoRapido.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoSucursal.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmPuntodeVenta.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmTrabajoHistorial.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmEnvioMailsenLotes.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmLista.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmAnalisisCartera.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmEstadoCuenta.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaBodegas.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaClientes.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaEmpleados.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaItems.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaMovimientosInventarios.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaParametroDets.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaPersonas.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaProveedores.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTipoMovimientoCompraVentas.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTipoMovimientoInventarios.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaUnidadMedidaConversiones.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaUsuarios.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoBodega.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoCliente.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoEmpleado.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoEmpresa.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoItem.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoMovimientoInventario.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoMovimientoInventarioDet.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagos.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagosDet.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPersona.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoProveedor.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTipoMovimientoCompraVenta.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTipoMovimientoInventario.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoUnidadMedidaConversion.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoUsuario.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.Resources.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoParametroDet.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDet.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDetFile.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDetImagen.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmAuditoria.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.vbproj.GenerateResource.Cache
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.exe.manifest
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.application
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.exe
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.xml
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.pdb
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe.config
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe.manifest
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.application
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.pdb
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.xml
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Consola.Base.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Controles.Base.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Controles.General.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Datos.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Docking.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reglas.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reglas.General.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reporteador.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reportes.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.pdb
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.xml
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\bin\Release\es-EC\Infoware.Docking.resources.dll
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.vbprojResolveAssemblyReference.cache
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.BarraEmpresa.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.ComboBoxSucursal.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.ComboBoxUsuario.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaContribuyente.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBloqueo.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaCliente.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaEmpleado.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaEntidad2.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaItem.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaProveedor.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlCuentaBancaria.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEmpleado.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlGruposTouch.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlItemsTouch.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMantenimientoMovimientoInventarioDet.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMovimientoInventario.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMovimientoInventarioDet1.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlPersona.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmDesbloquear.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoContribuyente.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaContribuyentes.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajo.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoEntrega.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoItemDetalle.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoFacturacion.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoImprenta.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoDisenador.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTrabajos.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlDireccion.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEmail.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadJuridica.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadLugar.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadNatural.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlIdentificacion.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlTelefono.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmBuscaMovimientoInventario.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaSucursales.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagoRapido.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoSucursal.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmPuntodeVenta.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmTrabajoHistorial.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmEnvioMailsenLotes.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmLista.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmAnalisisCartera.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmEstadoCuenta.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaBodegas.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaClientes.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaEmpleados.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaItems.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaMovimientosInventarios.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaParametroDets.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaPersonas.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaProveedores.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTipoMovimientoCompraVentas.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTipoMovimientoInventarios.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaUnidadMedidaConversiones.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaUsuarios.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoBodega.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoCliente.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoEmpleado.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoEmpresa.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoItem.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoMovimientoInventario.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoMovimientoInventarioDet.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagos.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagosDet.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPersona.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoProveedor.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTipoMovimientoCompraVenta.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTipoMovimientoInventario.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoUnidadMedidaConversion.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoUsuario.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.Resources.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoParametroDet.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDet.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDetFile.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDetImagen.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmAuditoria.resources
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.vbproj.GenerateResource.Cache
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.exe.manifest
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.application
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.exe
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.xml
+C:\Users\Public\Documents\Veronik_Inca\Incautacion\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.pdb
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe.config
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.exe
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.xml
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.pdb
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe.manifest
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.application
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.pdb
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.xml
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Consola.Base.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Controles.Base.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Controles.General.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Datos.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Docking.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reglas.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reglas.General.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reporteador.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reportes.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.pdb
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.xml
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\es-EC\Infoware.Docking.resources.dll
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.vbprojResolveAssemblyReference.cache
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.BarraEmpresa.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.ComboBoxSucursal.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.ComboBoxUsuario.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaContribuyente.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBloqueo.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaCliente.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaEmpleado.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaEntidad2.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaItem.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaProveedor.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlCuentaBancaria.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEmpleado.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlGruposTouch.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlItemsTouch.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMantenimientoMovimientoInventarioDet.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMovimientoInventario.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMovimientoInventarioDet1.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlPersona.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmDesbloquear.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoContribuyente.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaContribuyentes.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajo.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoEntrega.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoItemDetalle.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoFacturacion.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoImprenta.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoDisenador.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTrabajos.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlDireccion.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEmail.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadJuridica.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadLugar.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadNatural.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlIdentificacion.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlTelefono.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmBuscaMovimientoInventario.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaSucursales.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagoRapido.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoSucursal.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmPuntodeVenta.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmTrabajoHistorial.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmEnvioMailsenLotes.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmLista.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmAnalisisCartera.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmEstadoCuenta.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaBodegas.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaClientes.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaEmpleados.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaItems.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaMovimientosInventarios.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaParametroDets.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaPersonas.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaProveedores.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTipoMovimientoCompraVentas.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTipoMovimientoInventarios.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaUnidadMedidaConversiones.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaUsuarios.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoBodega.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoCliente.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoEmpleado.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoEmpresa.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoItem.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoMovimientoInventario.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoMovimientoInventarioDet.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagos.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagosDet.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPersona.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoProveedor.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTipoMovimientoCompraVenta.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTipoMovimientoInventario.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoUnidadMedidaConversion.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoUsuario.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.Resources.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoParametroDet.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDet.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDetFile.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDetImagen.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmAuditoria.resources
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.vbproj.GenerateResource.Cache
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.exe.manifest
+C:\Users\Manuel\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.application
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe.config
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe.manifest
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.application
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.exe
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.pdb
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Modulo.xml
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Consola.Base.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Controles.Base.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Controles.General.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Datos.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Docking.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reglas.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reglas.General.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reporteador.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Infoware.Reportes.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.pdb
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\Incautacion.Reglas.xml
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\bin\Release\es-EC\Infoware.Docking.resources.dll
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.BarraEmpresa.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.ComboBoxSucursal.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.ComboBoxUsuario.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaContribuyente.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBloqueo.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaCliente.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaEmpleado.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaEntidad2.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaItem.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaProveedor.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlCuentaBancaria.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEmpleado.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlGruposTouch.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlItemsTouch.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMantenimientoMovimientoInventarioDet.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMovimientoInventario.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlMovimientoInventarioDet1.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlPersona.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmDesbloquear.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoContribuyente.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaContribuyentes.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajo.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoEntrega.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoItemDetalle.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoFacturacion.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoImprenta.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTrabajoDisenador.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTrabajos.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlDireccion.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEmail.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadJuridica.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadLugar.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlEntidadNatural.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlIdentificacion.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlTelefono.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmBuscaMovimientoInventario.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaSucursales.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagoRapido.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoSucursal.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmPuntodeVenta.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmTrabajoHistorial.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmEnvioMailsenLotes.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmLista.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmAnalisisCartera.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmEstadoCuenta.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaBodegas.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaClientes.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaEmpleados.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaItems.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaMovimientosInventarios.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaParametroDets.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaPersonas.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaProveedores.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTipoMovimientoCompraVentas.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaTipoMovimientoInventarios.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaUnidadMedidaConversiones.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaUsuarios.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoBodega.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoCliente.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoEmpleado.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoEmpresa.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoItem.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoMovimientoInventario.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoMovimientoInventarioDet.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagos.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPagosDet.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoPersona.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoProveedor.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTipoMovimientoCompraVenta.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoTipoMovimientoInventario.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoUnidadMedidaConversion.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoUsuario.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.Resources.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoParametroDet.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDet.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDetFile.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmParametroDetImagen.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmAuditoria.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.vbproj.GenerateResource.Cache
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.exe.manifest
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.application
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.exe
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.xml
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.pdb
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.vbprojResolveAssemblyReference.cache
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaContribuyente.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoContribuyente.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaContribuyentes.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmIncautacionIngreso.resources
+D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmIncautacionIngreso.resources

@@ -1,0 +1,20 @@
+Cambiar nombre de Sucursal por Zonas   YAAS
+Quitar listado de empleado  YAAS 
+Quitar y agregar opciones de movimiento  YAS
+Agregar parametro de descripcion de en movimiento iventario det  YYAS
+Secuencial para los  items en el movimiemtno en la descipcion   NOO
+
+Agregr Modelo y Marca 
+Modificar Reporte 
+	Por item secuencia 
+	Datos en la cabecera 
+	Dato del movimiento inventario det con desccripcion
+	
+	
+Re-estructuración
+  Base de datos --> 1 día dedicado 
+  Pantallas --> 2 pantallas 
+  Modificacion del sistema --> 6 o 7 días 
+  Reportes --> 5 días 
+  
+  

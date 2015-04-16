@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIncautacion" targetNamespace="http://tempuri.org/dsIncautacion.xsd" xmlns:mstns="http://tempuri.org/dsIncautacion.xsd" xmlns="http://tempuri.org/dsIncautacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="IncautacionesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IncautacionesConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Incautacion.Modulo.My.MySettings.GlobalReference.Default.IncautacionesConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsIncautacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsIncautacion" msprop:Generator_UserDSName="dsIncautacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vp_Incautacion" msprop:Generator_TableClassName="vp_IncautacionDataTable" msprop:Generator_TableVarName="tablevp_Incautacion" msprop:Generator_TablePropName="vp_Incautacion" msprop:Generator_RowDeletingName="vp_IncautacionRowDeleting" msprop:Generator_RowChangingName="vp_IncautacionRowChanging" msprop:Generator_RowEvHandlerName="vp_IncautacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vp_IncautacionRowDeleted" msprop:Generator_UserTableName="vp_Incautacion" msprop:Generator_RowChangedName="vp_IncautacionRowChanged" msprop:Generator_RowEvArgName="vp_IncautacionRowChangeEvent" msprop:Generator_RowClassName="vp_IncautacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_UserColumnName="NombreCompleto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contribuyente" msprop:Generator_ColumnVarNameInTable="columnContribuyente" msprop:Generator_ColumnPropNameInRow="Contribuyente" msprop:Generator_ColumnPropNameInTable="ContribuyenteColumn" msprop:Generator_UserColumnName="Contribuyente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Series" msprop:Generator_ColumnVarNameInTable="columnSeries" msprop:Generator_ColumnPropNameInRow="Series" msprop:Generator_ColumnPropNameInTable="SeriesColumn" msprop:Generator_UserColumnName="Series">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Bodega_Codigo" msprop:Generator_ColumnVarNameInTable="columnBodega_Codigo" msprop:Generator_ColumnPropNameInRow="Bodega_Codigo" msprop:Generator_ColumnPropNameInTable="Bodega_CodigoColumn" msprop:Generator_UserColumnName="Bodega_Codigo" type="xs:int" />
+              <xs:element name="Movinv_Fecha" msprop:Generator_ColumnVarNameInTable="columnMovinv_Fecha" msprop:Generator_ColumnPropNameInRow="Movinv_Fecha" msprop:Generator_ColumnPropNameInTable="Movinv_FechaColumn" msprop:Generator_UserColumnName="Movinv_Fecha" type="xs:dateTime" />
+              <xs:element name="Movinv_Observaciones" msprop:Generator_ColumnVarNameInTable="columnMovinv_Observaciones" msprop:Generator_ColumnPropNameInRow="Movinv_Observaciones" msprop:Generator_ColumnPropNameInTable="Movinv_ObservacionesColumn" msprop:Generator_UserColumnName="Movinv_Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Moinde_Descripcion" msprop:Generator_ColumnVarNameInTable="columnMoinde_Descripcion" msprop:Generator_ColumnPropNameInRow="Moinde_Descripcion" msprop:Generator_ColumnPropNameInTable="Moinde_DescripcionColumn" msprop:Generator_UserColumnName="Moinde_Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Incaut_Fecha" msprop:Generator_ColumnVarNameInTable="columnIncaut_Fecha" msprop:Generator_ColumnPropNameInRow="Incaut_Fecha" msprop:Generator_ColumnPropNameInTable="Incaut_FechaColumn" msprop:Generator_UserColumnName="Incaut_Fecha" type="xs:dateTime" />
+              <xs:element name="Incaut_Responsable" msprop:Generator_ColumnVarNameInTable="columnIncaut_Responsable" msprop:Generator_ColumnPropNameInRow="Incaut_Responsable" msprop:Generator_ColumnPropNameInTable="Incaut_ResponsableColumn" msprop:Generator_UserColumnName="Incaut_Responsable">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Moinde_Valor" msprop:Generator_ColumnVarNameInTable="columnMoinde_Valor" msprop:Generator_ColumnPropNameInRow="Moinde_Valor" msprop:Generator_ColumnPropNameInTable="Moinde_ValorColumn" msprop:Generator_UserColumnName="Moinde_Valor" type="xs:decimal" />
+              <xs:element name="Moinde_Cantidad" msprop:Generator_ColumnVarNameInTable="columnMoinde_Cantidad" msprop:Generator_ColumnPropNameInRow="Moinde_Cantidad" msprop:Generator_ColumnPropNameInTable="Moinde_CantidadColumn" msprop:Generator_UserColumnName="Moinde_Cantidad" type="xs:decimal" />
+              <xs:element name="Item_Descripcion" msprop:Generator_ColumnVarNameInTable="columnItem_Descripcion" msprop:Generator_ColumnPropNameInRow="Item_Descripcion" msprop:Generator_ColumnPropNameInTable="Item_DescripcionColumn" msprop:Generator_UserColumnName="Item_Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Moinde_DescripcionLugar" msprop:Generator_ColumnVarNameInTable="columnMoinde_DescripcionLugar" msprop:Generator_ColumnPropNameInRow="Moinde_DescripcionLugar" msprop:Generator_ColumnPropNameInTable="Moinde_DescripcionLugarColumn" msprop:Generator_UserColumnName="Moinde_DescripcionLugar" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Moinde_Marca" msprop:Generator_ColumnVarNameInTable="columnMoinde_Marca" msprop:Generator_ColumnPropNameInRow="Moinde_Marca" msprop:Generator_ColumnPropNameInTable="Moinde_MarcaColumn" msprop:Generator_UserColumnName="Moinde_Marca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Moinde_Modelo" msprop:Generator_ColumnVarNameInTable="columnMoinde_Modelo" msprop:Generator_ColumnPropNameInRow="Moinde_Modelo" msprop:Generator_ColumnPropNameInTable="Moinde_ModeloColumn" msprop:Generator_UserColumnName="Moinde_Modelo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Identi_Numero" msprop:Generator_ColumnVarNameInTable="columnIdenti_Numero" msprop:Generator_ColumnPropNameInRow="Identi_Numero" msprop:Generator_ColumnPropNameInTable="Identi_NumeroColumn" msprop:Generator_UserColumnName="Identi_Numero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

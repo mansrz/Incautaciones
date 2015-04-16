@@ -1,0 +1,14 @@
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\bin\Release\Ginecoart.Reglas.dll
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\bin\Release\Ginecoart.Reglas.pdb
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\bin\Release\Ginecoart.Reglas.xml
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\bin\Release\Infoware.Datos.dll
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\bin\Release\Infoware.Reglas.dll
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\bin\Release\Infoware.Reglas.General.dll
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\bin\Release\Infoware.Reportes.dll
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\bin\Release\Infoware.Controles.Base.dll
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\obj\Release\Ginecoart.Reglas.Resources.resources
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\obj\Release\Ginecoart.Reglas.vbproj.GenerateResource.Cache
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\obj\Release\Ginecoart.Reglas.dll
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\obj\Release\Ginecoart.Reglas.xml
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\obj\Release\Ginecoart.Reglas.pdb
+D:\Dropbox\GitHub\Ginecoart\Ginecoart\Reglas\obj\Release\Ginecoart.Reglas.vbprojResolveAssemblyReference.cache
