@@ -24,6 +24,7 @@ Partial Class GridComboBox
     Private Sub InitializeComponent()
     Me.DataGridView1 = New System.Windows.Forms.DataGridView()
     Me.Item = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.Salida = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.Medida = New System.Windows.Forms.DataGridViewComboBoxColumn()
     Me.Descripcion = New System.Windows.Forms.DataGridViewComboBoxColumn()
@@ -41,7 +42,7 @@ Partial Class GridComboBox
     'DataGridView1
     '
     Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-    Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Item, Me.Cantidad, Me.Medida, Me.Descripcion, Me.Marca, Me.Modelo, Me.Serie, Me.Estado, Me.ValorUnit, Me.ValorTot, Me.Caract, Me.Ubica})
+    Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Item, Me.Salida, Me.Cantidad, Me.Medida, Me.Descripcion, Me.Marca, Me.Modelo, Me.Serie, Me.Estado, Me.ValorUnit, Me.ValorTot, Me.Caract, Me.Ubica})
     Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
     Me.DataGridView1.Name = "DataGridView1"
     Me.DataGridView1.Size = New System.Drawing.Size(813, 212)
@@ -53,6 +54,12 @@ Partial Class GridComboBox
     Me.Item.MinimumWidth = 2
     Me.Item.Name = "Item"
     Me.Item.Width = 40
+    '
+    'Salida
+    '
+    Me.Salida.HeaderText = "Egreso"
+    Me.Salida.Name = "Salida"
+    Me.Salida.Width = 50
     '
     'Cantidad
     '
@@ -136,6 +143,7 @@ Partial Class GridComboBox
   End Sub
   Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
   Friend WithEvents Item As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents Salida As System.Windows.Forms.DataGridViewTextBoxColumn
   Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
   Friend WithEvents Medida As System.Windows.Forms.DataGridViewComboBoxColumn
   Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewComboBoxColumn
