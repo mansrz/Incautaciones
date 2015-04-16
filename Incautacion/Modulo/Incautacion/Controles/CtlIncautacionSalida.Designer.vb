@@ -26,23 +26,23 @@ Partial Class CtlIncautacionSalida
     Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
     Me.lbl_tipomov = New System.Windows.Forms.Label()
     Me.Panel1 = New System.Windows.Forms.Panel()
+    Me.TextBoxStd2 = New Infoware.Controles.Base.TextBoxStd()
+    Me.TextBoxStd1 = New Infoware.Controles.Base.TextBoxStd()
+    Me.txt_codigo = New Infoware.Controles.Base.TextBoxStd()
+    Me.DateTimePickerStd1 = New Infoware.Controles.Base.DateTimePickerStd()
+    Me.dtpFecdesde = New Infoware.Controles.Base.DateTimePickerStd()
+    Me.Label3 = New System.Windows.Forms.Label()
+    Me.Label5 = New System.Windows.Forms.Label()
+    Me.Label4 = New System.Windows.Forms.Label()
+    Me.Label2 = New System.Windows.Forms.Label()
+    Me.Label1 = New System.Windows.Forms.Label()
+    Me.lbl_cod = New System.Windows.Forms.Label()
+    Me.ComboBoxParametroDet1 = New Incautacion.Modulo.ComboBoxParametroDet()
     Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
     Me.CtlBuscaContribuyente2 = New Incautacion.Modulo.CtlBuscaContribuyente()
     Me.CtlBuscaEmpleado1 = New Incautacion.Modulo.CtlBuscaEmpleado()
     Me.CtlBuscaEmpleado2 = New Incautacion.Modulo.CtlBuscaEmpleado()
-    Me.CtlIncautacionDet1 = New Incautacion.Modulo.CtlIncautacionDet()
-    Me.ComboBoxParametroDet1 = New Incautacion.Modulo.ComboBoxParametroDet()
-    Me.lbl_cod = New System.Windows.Forms.Label()
-    Me.Label1 = New System.Windows.Forms.Label()
-    Me.Label2 = New System.Windows.Forms.Label()
-    Me.Label3 = New System.Windows.Forms.Label()
-    Me.dtpFecdesde = New Infoware.Controles.Base.DateTimePickerStd()
-    Me.DateTimePickerStd1 = New Infoware.Controles.Base.DateTimePickerStd()
-    Me.txt_codigo = New Infoware.Controles.Base.TextBoxStd()
-    Me.Label4 = New System.Windows.Forms.Label()
-    Me.TextBoxStd1 = New Infoware.Controles.Base.TextBoxStd()
-    Me.Label5 = New System.Windows.Forms.Label()
-    Me.TextBoxStd2 = New Infoware.Controles.Base.TextBoxStd()
+    Me.CtlIncautacioSalidaDet1 = New Incautacion.Modulo.CtlIncautacioSalidaDet()
     Me.FlowLayoutPanel1.SuspendLayout()
     Me.Panel1.SuspendLayout()
     Me.FlowLayoutPanel2.SuspendLayout()
@@ -70,6 +70,7 @@ Partial Class CtlIncautacionSalida
     '
     'Panel1
     '
+    Me.Panel1.Controls.Add(Me.CtlIncautacioSalidaDet1)
     Me.Panel1.Controls.Add(Me.TextBoxStd2)
     Me.Panel1.Controls.Add(Me.TextBoxStd1)
     Me.Panel1.Controls.Add(Me.txt_codigo)
@@ -83,11 +84,135 @@ Partial Class CtlIncautacionSalida
     Me.Panel1.Controls.Add(Me.lbl_cod)
     Me.Panel1.Controls.Add(Me.ComboBoxParametroDet1)
     Me.Panel1.Controls.Add(Me.FlowLayoutPanel2)
-    Me.Panel1.Controls.Add(Me.CtlIncautacionDet1)
     Me.Panel1.Location = New System.Drawing.Point(3, 28)
     Me.Panel1.Name = "Panel1"
     Me.Panel1.Size = New System.Drawing.Size(830, 356)
     Me.Panel1.TabIndex = 19
+    '
+    'TextBoxStd2
+    '
+    Me.TextBoxStd2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+    Me.TextBoxStd2.Location = New System.Drawing.Point(659, 72)
+    Me.TextBoxStd2.Mensaje = ""
+    Me.TextBoxStd2.Name = "TextBoxStd2"
+    Me.TextBoxStd2.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    Me.TextBoxStd2.PromptForeColor = System.Drawing.SystemColors.GrayText
+    Me.TextBoxStd2.PromptText = ""
+    Me.TextBoxStd2.Size = New System.Drawing.Size(121, 20)
+    Me.TextBoxStd2.TabIndex = 62
+    '
+    'TextBoxStd1
+    '
+    Me.TextBoxStd1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+    Me.TextBoxStd1.Location = New System.Drawing.Point(395, 72)
+    Me.TextBoxStd1.Mensaje = ""
+    Me.TextBoxStd1.Name = "TextBoxStd1"
+    Me.TextBoxStd1.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    Me.TextBoxStd1.PromptForeColor = System.Drawing.SystemColors.GrayText
+    Me.TextBoxStd1.PromptText = ""
+    Me.TextBoxStd1.Size = New System.Drawing.Size(121, 20)
+    Me.TextBoxStd1.TabIndex = 62
+    '
+    'txt_codigo
+    '
+    Me.txt_codigo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+    Me.txt_codigo.Location = New System.Drawing.Point(129, 99)
+    Me.txt_codigo.Mensaje = ""
+    Me.txt_codigo.Name = "txt_codigo"
+    Me.txt_codigo.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    Me.txt_codigo.PromptForeColor = System.Drawing.SystemColors.GrayText
+    Me.txt_codigo.PromptText = ""
+    Me.txt_codigo.Size = New System.Drawing.Size(121, 20)
+    Me.txt_codigo.TabIndex = 62
+    '
+    'DateTimePickerStd1
+    '
+    Me.DateTimePickerStd1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+    Me.DateTimePickerStd1.Location = New System.Drawing.Point(129, 126)
+    Me.DateTimePickerStd1.Name = "DateTimePickerStd1"
+    Me.DateTimePickerStd1.Size = New System.Drawing.Size(121, 20)
+    Me.DateTimePickerStd1.TabIndex = 61
+    '
+    'dtpFecdesde
+    '
+    Me.dtpFecdesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+    Me.dtpFecdesde.Location = New System.Drawing.Point(395, 99)
+    Me.dtpFecdesde.Name = "dtpFecdesde"
+    Me.dtpFecdesde.Size = New System.Drawing.Size(121, 20)
+    Me.dtpFecdesde.TabIndex = 60
+    '
+    'Label3
+    '
+    Me.Label3.AutoSize = True
+    Me.Label3.Location = New System.Drawing.Point(271, 102)
+    Me.Label3.Name = "Label3"
+    Me.Label3.Size = New System.Drawing.Size(95, 13)
+    Me.Label3.TabIndex = 55
+    Me.Label3.Text = "Fecha de Entrega:"
+    '
+    'Label5
+    '
+    Me.Label5.AutoSize = True
+    Me.Label5.Location = New System.Drawing.Point(538, 73)
+    Me.Label5.Name = "Label5"
+    Me.Label5.Size = New System.Drawing.Size(115, 13)
+    Me.Label5.TabIndex = 55
+    Me.Label5.Text = "Número de Liquidición:"
+    '
+    'Label4
+    '
+    Me.Label4.AutoSize = True
+    Me.Label4.Location = New System.Drawing.Point(271, 73)
+    Me.Label4.Name = "Label4"
+    Me.Label4.Size = New System.Drawing.Size(87, 13)
+    Me.Label4.TabIndex = 55
+    Me.Label4.Text = "Acta de Entrega:"
+    '
+    'Label2
+    '
+    Me.Label2.AutoSize = True
+    Me.Label2.Location = New System.Drawing.Point(3, 102)
+    Me.Label2.Name = "Label2"
+    Me.Label2.Size = New System.Drawing.Size(118, 13)
+    Me.Label2.TabIndex = 55
+    Me.Label2.Text = "Número de Resolución:"
+    '
+    'Label1
+    '
+    Me.Label1.AutoSize = True
+    Me.Label1.Location = New System.Drawing.Point(3, 129)
+    Me.Label1.Name = "Label1"
+    Me.Label1.Size = New System.Drawing.Size(111, 13)
+    Me.Label1.TabIndex = 55
+    Me.Label1.Text = "Fecha de Resolución:"
+    '
+    'lbl_cod
+    '
+    Me.lbl_cod.AutoSize = True
+    Me.lbl_cod.Location = New System.Drawing.Point(3, 74)
+    Me.lbl_cod.Name = "lbl_cod"
+    Me.lbl_cod.Size = New System.Drawing.Size(102, 13)
+    Me.lbl_cod.TabIndex = 55
+    Me.lbl_cod.Text = "Tipo de Resolución:"
+    '
+    'ComboBoxParametroDet1
+    '
+    Me.ComboBoxParametroDet1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.ComboBoxParametroDet1.FormattingEnabled = True
+    Me.ComboBoxParametroDet1.Location = New System.Drawing.Point(129, 71)
+    Me.ComboBoxParametroDet1.Name = "ComboBoxParametroDet1"
+    Me.ComboBoxParametroDet1.OperadorDatos = Nothing
+    Me.ComboBoxParametroDet1.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.ComboBoxParametroDet1.ParametroDet = Nothing
+    Me.ComboBoxParametroDet1.PuedeActualizar = True
+    Me.ComboBoxParametroDet1.PuedeEliminar = True
+    Me.ComboBoxParametroDet1.PuedeModificar = True
+    Me.ComboBoxParametroDet1.PuedeNuevo = True
+    Me.ComboBoxParametroDet1.Size = New System.Drawing.Size(121, 21)
+    Me.ComboBoxParametroDet1.TabIndex = 38
     '
     'FlowLayoutPanel2
     '
@@ -134,137 +259,12 @@ Partial Class CtlIncautacionSalida
     Me.CtlBuscaEmpleado2.TipoEmpleado = Nothing
     Me.CtlBuscaEmpleado2.Ubicacion = Incautacion.Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
     '
-    'CtlIncautacionDet1
+    'CtlIncautacioSalidaDet1
     '
-    Me.CtlIncautacionDet1.Location = New System.Drawing.Point(2, 145)
-    Me.CtlIncautacionDet1.Name = "CtlIncautacionDet1"
-    Me.CtlIncautacionDet1.Size = New System.Drawing.Size(819, 208)
-    Me.CtlIncautacionDet1.TabIndex = 36
-    '
-    'ComboBoxParametroDet1
-    '
-    Me.ComboBoxParametroDet1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.ComboBoxParametroDet1.FormattingEnabled = True
-    Me.ComboBoxParametroDet1.Location = New System.Drawing.Point(127, 71)
-    Me.ComboBoxParametroDet1.Name = "ComboBoxParametroDet1"
-    Me.ComboBoxParametroDet1.OperadorDatos = Nothing
-    Me.ComboBoxParametroDet1.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.ComboBoxParametroDet1.ParametroDet = Nothing
-    Me.ComboBoxParametroDet1.PuedeActualizar = True
-    Me.ComboBoxParametroDet1.PuedeEliminar = True
-    Me.ComboBoxParametroDet1.PuedeModificar = True
-    Me.ComboBoxParametroDet1.PuedeNuevo = True
-    Me.ComboBoxParametroDet1.Size = New System.Drawing.Size(121, 21)
-    Me.ComboBoxParametroDet1.TabIndex = 38
-    '
-    'lbl_cod
-    '
-    Me.lbl_cod.AutoSize = True
-    Me.lbl_cod.Location = New System.Drawing.Point(3, 74)
-    Me.lbl_cod.Name = "lbl_cod"
-    Me.lbl_cod.Size = New System.Drawing.Size(102, 13)
-    Me.lbl_cod.TabIndex = 55
-    Me.lbl_cod.Text = "Tipo de Resolución:"
-    '
-    'Label1
-    '
-    Me.Label1.AutoSize = True
-    Me.Label1.Location = New System.Drawing.Point(3, 102)
-    Me.Label1.Name = "Label1"
-    Me.Label1.Size = New System.Drawing.Size(111, 13)
-    Me.Label1.TabIndex = 55
-    Me.Label1.Text = "Fecha de Resolución:"
-    '
-    'Label2
-    '
-    Me.Label2.AutoSize = True
-    Me.Label2.Location = New System.Drawing.Point(271, 74)
-    Me.Label2.Name = "Label2"
-    Me.Label2.Size = New System.Drawing.Size(118, 13)
-    Me.Label2.TabIndex = 55
-    Me.Label2.Text = "Número de Resolución:"
-    '
-    'Label3
-    '
-    Me.Label3.AutoSize = True
-    Me.Label3.Location = New System.Drawing.Point(271, 102)
-    Me.Label3.Name = "Label3"
-    Me.Label3.Size = New System.Drawing.Size(111, 13)
-    Me.Label3.TabIndex = 55
-    Me.Label3.Text = "Fecha de Resolución:"
-    '
-    'dtpFecdesde
-    '
-    Me.dtpFecdesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-    Me.dtpFecdesde.Location = New System.Drawing.Point(395, 102)
-    Me.dtpFecdesde.Name = "dtpFecdesde"
-    Me.dtpFecdesde.Size = New System.Drawing.Size(121, 20)
-    Me.dtpFecdesde.TabIndex = 60
-    '
-    'DateTimePickerStd1
-    '
-    Me.DateTimePickerStd1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-    Me.DateTimePickerStd1.Location = New System.Drawing.Point(127, 102)
-    Me.DateTimePickerStd1.Name = "DateTimePickerStd1"
-    Me.DateTimePickerStd1.Size = New System.Drawing.Size(121, 20)
-    Me.DateTimePickerStd1.TabIndex = 61
-    '
-    'txt_codigo
-    '
-    Me.txt_codigo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-    Me.txt_codigo.Location = New System.Drawing.Point(395, 74)
-    Me.txt_codigo.Mensaje = ""
-    Me.txt_codigo.Name = "txt_codigo"
-    Me.txt_codigo.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.txt_codigo.PromptForeColor = System.Drawing.SystemColors.GrayText
-    Me.txt_codigo.PromptText = ""
-    Me.txt_codigo.Size = New System.Drawing.Size(121, 20)
-    Me.txt_codigo.TabIndex = 62
-    '
-    'Label4
-    '
-    Me.Label4.AutoSize = True
-    Me.Label4.Location = New System.Drawing.Point(549, 74)
-    Me.Label4.Name = "Label4"
-    Me.Label4.Size = New System.Drawing.Size(87, 13)
-    Me.Label4.TabIndex = 55
-    Me.Label4.Text = "Acta de Entrega:"
-    '
-    'TextBoxStd1
-    '
-    Me.TextBoxStd1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-    Me.TextBoxStd1.Location = New System.Drawing.Point(673, 74)
-    Me.TextBoxStd1.Mensaje = ""
-    Me.TextBoxStd1.Name = "TextBoxStd1"
-    Me.TextBoxStd1.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.TextBoxStd1.PromptForeColor = System.Drawing.SystemColors.GrayText
-    Me.TextBoxStd1.PromptText = ""
-    Me.TextBoxStd1.Size = New System.Drawing.Size(121, 20)
-    Me.TextBoxStd1.TabIndex = 62
-    '
-    'Label5
-    '
-    Me.Label5.AutoSize = True
-    Me.Label5.Location = New System.Drawing.Point(549, 102)
-    Me.Label5.Name = "Label5"
-    Me.Label5.Size = New System.Drawing.Size(115, 13)
-    Me.Label5.TabIndex = 55
-    Me.Label5.Text = "Número de Liquidición:"
-    '
-    'TextBoxStd2
-    '
-    Me.TextBoxStd2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-    Me.TextBoxStd2.Location = New System.Drawing.Point(673, 102)
-    Me.TextBoxStd2.Mensaje = ""
-    Me.TextBoxStd2.Name = "TextBoxStd2"
-    Me.TextBoxStd2.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.TextBoxStd2.PromptForeColor = System.Drawing.SystemColors.GrayText
-    Me.TextBoxStd2.PromptText = ""
-    Me.TextBoxStd2.Size = New System.Drawing.Size(121, 20)
-    Me.TextBoxStd2.TabIndex = 62
+    Me.CtlIncautacioSalidaDet1.Location = New System.Drawing.Point(3, 144)
+    Me.CtlIncautacioSalidaDet1.Name = "CtlIncautacioSalidaDet1"
+    Me.CtlIncautacioSalidaDet1.Size = New System.Drawing.Size(814, 248)
+    Me.CtlIncautacioSalidaDet1.TabIndex = 63
     '
     'CtlIncautacionSalida
     '
@@ -289,7 +289,6 @@ Partial Class CtlIncautacionSalida
   Friend WithEvents CtlBuscaContribuyente2 As Incautacion.Modulo.CtlBuscaContribuyente
   Friend WithEvents CtlBuscaEmpleado1 As Incautacion.Modulo.CtlBuscaEmpleado
   Friend WithEvents CtlBuscaEmpleado2 As Incautacion.Modulo.CtlBuscaEmpleado
-  Friend WithEvents CtlIncautacionDet1 As Incautacion.Modulo.CtlIncautacionDet
   Friend WithEvents Label3 As System.Windows.Forms.Label
   Friend WithEvents Label2 As System.Windows.Forms.Label
   Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -301,5 +300,6 @@ Partial Class CtlIncautacionSalida
   Friend WithEvents txt_codigo As Infoware.Controles.Base.TextBoxStd
   Friend WithEvents Label5 As System.Windows.Forms.Label
   Friend WithEvents Label4 As System.Windows.Forms.Label
+  Friend WithEvents CtlIncautacioSalidaDet1 As Incautacion.Modulo.CtlIncautacioSalidaDet
 
 End Class
