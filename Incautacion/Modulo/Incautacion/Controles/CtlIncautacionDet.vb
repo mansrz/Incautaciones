@@ -4,7 +4,7 @@
 
     ' This call is required by the designer.
     InitializeComponent()
-    Me.GridComboBox1.Egreso.Visible = False
+    Me.GridComboBox1.Salida.Visible = False
     ' Add any initialization after the InitializeComponent() call.
 
   End Sub

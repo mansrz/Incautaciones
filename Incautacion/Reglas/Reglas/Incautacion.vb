@@ -48,9 +48,7 @@ Partial Public Class Incautacion
     MyBase.New()
     OperadorDatos = _Sucursal.OperadorDatos
     Sucursal = _Sucursal
-    Parame_Tipomovinv = _PardetTipoMovinv.Parame_Codigo
-    Pardet_TipoMovinv = _PardetTipoMovinv.Pardet_Secuencia
-    Movinv_Secuencia = _Movinv_Secuencia
+
 
     If Me.RecargarporMovimientoInventario() Then
     Else
@@ -95,24 +93,7 @@ Partial Public Class Incautacion
     End Set
   End Property
 
-  'MovimientoInventario
-  Public Overridable Property MovimientoInventario() As MovimientoInventario
-    Get
-      If Me.mMovimientoInventario Is Nothing AndAlso Movinv_Secuencia > 0 Then
-        Me.mMovimientoInventario = New MovimientoInventario(New Sucursal(New Empresa(OperadorDatos, Empres_Codigo), Sucurs_Codigo), Enumerados.enumTipoMovInv.Incautacion, Movinv_Secuencia)
-        mMovimientoInventario.Incautacion = Me
-      End If
-      Return Me.mMovimientoInventario
-    End Get
-    Set(ByVal value As MovimientoInventario)
-      Me.mMovimientoInventario = value
-      Parame_Tipomovinv = value.Parame_Tipomovinv
-      Pardet_TipoMovinv = value.Pardet_Tipomovinv
-      Empres_Codigo = value.Empres_Bodega
-      Sucurs_Codigo = value.Sucurs_Bodega
-      Movinv_Secuencia = value.Movinv_Secuencia
-    End Set
-  End Property
+  
 
   'Proveedor
   Public Overridable Property Contribuyente() As Contribuyente
@@ -171,9 +152,6 @@ Partial Public Class Incautacion
     Pardet_TipoIncautacionMov = CType(Fila("Pardet_TipoIncautacionMov"), Integer)
     Entida_Contribuyente = CType(Fila("Entida_Contribuyente"), Integer)
     Incautacion_Numero = CType(Fila("Incautacion_Numero"), String)
-    Parame_Tipomovinv = CType(Fila("Parame_Tipomovinv"), Integer)
-    Pardet_TipoMovinv = CType(Fila("Pardet_TipoMovinv"), Integer)
-    Movinv_Secuencia = CType(Fila("Movinv_Secuencia"), Integer)
     Incaut_Secuencia = CType(Fila("Incaut_Secuncia"), Integer)
     Incaut_Responsable = CType(Fila("Incaut_Responsable"), String)
     Incaut_Fecha = CType(Fila("Incaut_Fecha"), Date)
@@ -195,16 +173,10 @@ Partial Public Class Incautacion
 
     OperadorDatos.ComenzarTransaccion()
 
-    bReturn = MovimientoInventario.Guardar
+
 
     If bReturn Then
-      Empres_Codigo = MovimientoInventario.Empres_Bodega
-
-      Sucurs_Codigo = MovimientoInventario.Sucurs_Bodega
-      Parame_Tipomovinv = MovimientoInventario.Parame_Tipomovinv
-      Pardet_TipoMovinv = MovimientoInventario.Pardet_Tipomovinv
-      Movinv_Secuencia = MovimientoInventario.Movinv_Secuencia
-
+    
       Dim sAccion As String = "M"
       If EsNuevo Then
         sAccion = "I"
@@ -217,10 +189,6 @@ Partial Public Class Incautacion
       OperadorDatos.AgregarParametro("@Entida_Contribuyente", Contribuyente.Entida_Codigo)
       OperadorDatos.AgregarParametro("@Incautacion_Numero", Incautacion_Numero)
       OperadorDatos.AgregarParametro("@Incaut_Secuencia", Incaut_Secuencia)
-      OperadorDatos.AgregarParametro("@Parame_Tipomovinv", Parame_Tipomovinv)
-      OperadorDatos.AgregarParametro("@Movinv_Secuencia", Movinv_Secuencia)
-
-      OperadorDatos.AgregarParametro("@Pardet_TipoMovinv", Pardet_TipoMovinv)
       OperadorDatos.AgregarParametro("@Incaut_Fecha", Incaut_Fecha)
       OperadorDatos.AgregarParametro("@Incaut_Responsable", Incaut_Responsable)
       OperadorDatos.Procedimiento = _Procedimiento
@@ -291,9 +259,6 @@ Partial Public Class Incautacion
     OperadorDatos.AgregarParametro("@accion", "CM")
     OperadorDatos.AgregarParametro("@Empres_Codigo", Empres_Codigo)
     OperadorDatos.AgregarParametro("@Sucurs_Codigo", Sucurs_Codigo)
-    OperadorDatos.AgregarParametro("@Parame_Tipomovinv", Parame_Tipomovinv)
-    OperadorDatos.AgregarParametro("@Pardet_Tipomovinv", Pardet_TipoMovinv)
-    OperadorDatos.AgregarParametro("@Movinv_Secuencia", Movinv_Secuencia)
     OperadorDatos.Procedimiento = _Procedimiento
     bReturn = OperadorDatos.Ejecutar(Result)
     OperadorDatos.LimpiarParametros()

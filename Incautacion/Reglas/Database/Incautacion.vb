@@ -37,23 +37,66 @@ Partial Public Class Incautacion
 
     Private mIncautacion_Numero As String = String.Empty
 
-    Private mParame_Tipomovinv As Integer = 440
-
-    Private mPardet_TipoMovinv As Integer = 1
-
-    Private mMovinv_Secuencia As Integer = 0
-
   Private mIncaut_Secuencia As Integer = 0
 
     Private mIncaut_Fecha As Date = Now.Date
 
-    Private mIncaut_Responsable As String = String.Empty
+  Private mIncaut_Responsable As String = String.Empty
+  Private mEntida_Tenedor As Integer = 0
+  Private mIncaut_Observacion As String = String.Empty
 
-
+  Private mEmpleado_Fedatario As Integer = 0
+  Private mEmpleado_Administrattivo
 
     Public Sub New()
         MyBase.New()
     End Sub
+
+
+
+  <XmlAttribute()> _
+  Public Overridable Property Incaut_Observacion() As String
+    Get
+      Return Me.mIncaut_Observacion
+    End Get
+    Set(ByVal value As String)
+      Me.mIncaut_Observacion = value
+      EsModificado = True
+    End Set
+  End Property
+
+  <XmlAttribute()> _
+  Public Overridable Property Empleado_Administrativo() As Integer
+    Get
+      Return Me.mEmpleado_Administrattivo
+    End Get
+    Set(ByVal value As Integer)
+      Me.mEmpleado_Administrattivo = value
+      EsModificado = True
+    End Set
+  End Property
+
+  <XmlAttribute()> _
+  Public Overridable Property Empleado_Fedatario() As Integer
+    Get
+      Return Me.mEmpleado_Fedatario
+    End Get
+    Set(ByVal value As Integer)
+      Me.mEmpleado_Fedatario = value
+      EsModificado = True
+    End Set
+  End Property
+
+  <XmlAttribute()> _
+  Public Overridable Property Entida_Tenedor() As Integer
+    Get
+      Return Me.mEntida_Tenedor
+    End Get
+    Set(ByVal value As Integer)
+      Me.mEntida_Tenedor = value
+      EsModificado = True
+    End Set
+  End Property
 
     <XmlAttribute()> _
     Public Overridable Property Empres_Codigo() As Integer
@@ -121,38 +164,7 @@ Partial Public Class Incautacion
         End Set
     End Property
 
-    <XmlAttribute()> _
-    Public Overridable Property Parame_Tipomovinv() As Integer
-        Get
-            Return Me.mParame_Tipomovinv
-        End Get
-        Set(ByVal value As Integer)
-            Me.mParame_Tipomovinv = value
-            EsModificado = True
-        End Set
-    End Property
 
-    <XmlAttribute()> _
-    Public Overridable Property Pardet_TipoMovinv() As Integer
-        Get
-            Return Me.mPardet_TipoMovinv
-        End Get
-        Set(ByVal value As Integer)
-            Me.mPardet_TipoMovinv = value
-            EsModificado = True
-        End Set
-    End Property
-
-    <XmlAttribute()> _
-    Public Overridable Property Movinv_Secuencia() As Integer
-        Get
-            Return Me.mMovinv_Secuencia
-        End Get
-        Set(ByVal value As Integer)
-            Me.mMovinv_Secuencia = value
-            EsModificado = True
-        End Set
-  End Property
 
   <XmlAttribute()> _
   Public Overridable Property Incaut_Secuencia() As Integer
