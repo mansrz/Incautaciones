@@ -392,6 +392,48 @@
     <Compile Include="FrmTrabajoHistorial.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Incautacion\Controles\CtlIncautacion.Designer.vb">
+      <DependentUpon>CtlIncautacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Controles\CtlIncautacion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incautacion\Controles\CtlIncautacionDet.Designer.vb">
+      <DependentUpon>CtlIncautacionDet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Controles\CtlIncautacionDet.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incautacion\Controles\CtlIncautacionSalida.Designer.vb">
+      <DependentUpon>CtlIncautacionSalida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Controles\CtlIncautacionSalida.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incautacion\Controles\CtlIncautacioSalidaDet.Designer.vb">
+      <DependentUpon>CtlIncautacioSalidaDet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Controles\CtlIncautacioSalidaDet.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incautacion\Controles\GridComboBox.Designer.vb">
+      <DependentUpon>GridComboBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Controles\GridComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmIncautacion.Designer.vb">
+      <DependentUpon>FrmIncautacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmIncautacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmListaIncautacion.Designer.vb">
+      <DependentUpon>FrmListaIncautacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmListaIncautacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reporteador\ComboBoxConexionOtros.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -818,6 +860,12 @@
     <EmbeddedResource Include="FrmTrabajoHistorial.resx">
       <DependentUpon>FrmTrabajoHistorial.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Incautacion\Controles\GridComboBox.resx">
+      <DependentUpon>GridComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incautacion\Forms\FrmListaIncautacion.resx">
+      <DependentUpon>FrmListaIncautacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporteador\FrmEnvioMailsenLotes.resx">
       <DependentUpon>FrmEnvioMailsenLotes.vb</DependentUpon>
     </EmbeddedResource>
@@ -1122,6 +1170,7 @@
   <ItemGroup>
     <None Include="Resources\configure.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

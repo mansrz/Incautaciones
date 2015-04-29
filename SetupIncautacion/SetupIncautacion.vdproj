@@ -998,7 +998,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Incautacion"
         "ProductCode" = "8:{A045F927-051B-403C-B197-B38698C3CF9E}"
-        "PackageCode" = "8:{C896CCA8-F83A-4650-BDFC-BAC045034ED8}"
+        "PackageCode" = "8:{7CDE17A6-8DE8-40DD-9A77-29387AC7703B}"
         "UpgradeCode" = "8:{91D20EE7-0B68-41FF-A893-B036F90E27AB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

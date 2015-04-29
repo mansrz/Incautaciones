@@ -589,7 +589,6 @@ Public Class MovimientoInventario
         If EsNuevo Then
           'TODO new Incautacion sub
           mIncautacion = New Incautacion(Sucursal, True)
-          mIncautacion.MovimientoInventario = Me
         Else
           Try
             mIncautacion = New Incautacion(Sucursal, PardetTipoMovInv, Movinv_Secuencia, True)

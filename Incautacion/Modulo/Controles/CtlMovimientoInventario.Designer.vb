@@ -28,10 +28,7 @@ Partial Class CtlMovimientoInventario
     Me.pnlcodigo = New System.Windows.Forms.Panel()
     Me.barracancelar = New System.Windows.Forms.ToolStrip()
     Me.btncancelar = New System.Windows.Forms.ToolStripButton()
-    Me.ComboBoxBodega1 = New Incautacion.Modulo.ComboBoxBodega()
     Me.pnlbodegadstno = New System.Windows.Forms.Panel()
-    Me.ComboBoxBodega2 = New Incautacion.Modulo.ComboBoxBodega()
-    Me.ComboBoxSucursal1 = New Incautacion.Modulo.ComboBoxSucursal()
     Me.Label5 = New System.Windows.Forms.Label()
     Me.txtnumero = New Infoware.Controles.Base.TextBoxCalculator()
     Me.lbl_tipomov = New System.Windows.Forms.Label()
@@ -43,27 +40,19 @@ Partial Class CtlMovimientoInventario
     Me.txtobservacion = New Infoware.Controles.Base.TextBoxStd()
     Me.Label3 = New System.Windows.Forms.Label()
     Me.pnlactivo = New System.Windows.Forms.Panel()
-    Me.CtlBuscaActivo = New Incautacion.Modulo.CtlBuscaItem()
     Me.pnlclienteproveedor = New System.Windows.Forms.Panel()
     Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
-    Me.CtlBuscaCliente1 = New Incautacion.Modulo.CtlBuscaCliente()
-    Me.CtlBuscaProveedor1 = New Incautacion.Modulo.CtlBuscaProveedor()
-    Me.CtlBuscaContribuyente1 = New Incautacion.Modulo.CtlBuscaContribuyente()
     Me.pnlIncautacion = New System.Windows.Forms.Panel()
     Me.txt_responsable = New Infoware.Controles.Base.TextBoxStd()
     Me.lbl_responable = New System.Windows.Forms.Label()
     Me.txt_codigo = New Infoware.Controles.Base.TextBoxStd()
     Me.lbl_cod = New System.Windows.Forms.Label()
-    Me.CtlDireccion1 = New Incautacion.Modulo.CtlDireccion()
     Me.pnlformapago = New System.Windows.Forms.Panel()
     Me.Label12 = New System.Windows.Forms.Label()
-    Me.ComboBoxFormaPago = New Incautacion.Modulo.ComboBoxParametroDet()
     Me.pnldatosventa = New System.Windows.Forms.Panel()
     Me.txtfactura = New Infoware.Controles.Base.TextBoxCalculator()
     Me.Label23 = New System.Windows.Forms.Label()
-    Me.CtlBuscaEmpleado1 = New Incautacion.Modulo.CtlBuscaEmpleado()
     Me.Label14 = New System.Windows.Forms.Label()
-    Me.ComboBoxTipoPrecio = New Incautacion.Modulo.ComboBoxParametroDet()
     Me.pnltipocompte = New System.Windows.Forms.Panel()
     Me.Label21 = New System.Windows.Forms.Label()
     Me.pnlnumerocompra = New System.Windows.Forms.Panel()
@@ -76,12 +65,9 @@ Partial Class CtlMovimientoInventario
     Me.Label20 = New System.Windows.Forms.Label()
     Me.Panel1 = New System.Windows.Forms.Panel()
     Me.Label4 = New System.Windows.Forms.Label()
-    Me.ComboBoxParametroDet1 = New Incautacion.Modulo.ComboBoxParametroDet()
     Me.Label11 = New System.Windows.Forms.Label()
-    Me.ComboBoxParametroDet2 = New Incautacion.Modulo.ComboBoxParametroDet()
     Me.Panel2 = New System.Windows.Forms.Panel()
     Me.pnldetalles = New System.Windows.Forms.Panel()
-    Me.DataGridViewDetalles = New Incautacion.Modulo.CtlMovimientoInventarioDet1()
     Me.pnltotalsimple = New System.Windows.Forms.Panel()
     Me.txttotalgeneralsimple = New Infoware.Controles.Base.TextBoxCalculator()
     Me.Label17 = New System.Windows.Forms.Label()
@@ -100,6 +86,20 @@ Partial Class CtlMovimientoInventario
     Me.Label8 = New System.Windows.Forms.Label()
     Me.Label15 = New System.Windows.Forms.Label()
     Me.Label6 = New System.Windows.Forms.Label()
+    Me.ComboBoxBodega1 = New Incautacion.Modulo.ComboBoxBodega()
+    Me.ComboBoxBodega2 = New Incautacion.Modulo.ComboBoxBodega()
+    Me.ComboBoxSucursal1 = New Incautacion.Modulo.ComboBoxSucursal()
+    Me.CtlBuscaActivo = New Incautacion.Modulo.CtlBuscaItem()
+    Me.CtlBuscaCliente1 = New Incautacion.Modulo.CtlBuscaCliente()
+    Me.CtlBuscaProveedor1 = New Incautacion.Modulo.CtlBuscaProveedor()
+    Me.CtlBuscaContribuyente1 = New Incautacion.Modulo.CtlBuscaContribuyente()
+    Me.CtlDireccion1 = New Incautacion.Modulo.CtlDireccion()
+    Me.ComboBoxFormaPago = New Incautacion.Modulo.ComboBoxParametroDet()
+    Me.CtlBuscaEmpleado1 = New Incautacion.Modulo.CtlBuscaEmpleado()
+    Me.ComboBoxTipoPrecio = New Incautacion.Modulo.ComboBoxParametroDet()
+    Me.ComboBoxParametroDet1 = New Incautacion.Modulo.ComboBoxParametroDet()
+    Me.ComboBoxParametroDet2 = New Incautacion.Modulo.ComboBoxParametroDet()
+    Me.DataGridViewDetalles = New Incautacion.Modulo.CtlMovimientoInventarioDet1()
     Me.FlowLayoutPanel1.SuspendLayout()
     Me.pnlcodigo.SuspendLayout()
     Me.barracancelar.SuspendLayout()
@@ -172,21 +172,6 @@ Partial Class CtlMovimientoInventario
     Me.btncancelar.Size = New System.Drawing.Size(23, 22)
     Me.btncancelar.Text = "ToolStripButton1"
     '
-    'ComboBoxBodega1
-    '
-    Me.ComboBoxBodega1.Bodega = Nothing
-    Me.ComboBoxBodega1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.ComboBoxBodega1.FormattingEnabled = True
-    Me.ComboBoxBodega1.Location = New System.Drawing.Point(752, 1)
-    Me.ComboBoxBodega1.Name = "ComboBoxBodega1"
-    Me.ComboBoxBodega1.PuedeActualizar = False
-    Me.ComboBoxBodega1.PuedeEliminar = False
-    Me.ComboBoxBodega1.PuedeModificar = False
-    Me.ComboBoxBodega1.PuedeNuevo = False
-    Me.ComboBoxBodega1.Size = New System.Drawing.Size(121, 21)
-    Me.ComboBoxBodega1.Sucursal = Nothing
-    Me.ComboBoxBodega1.TabIndex = 6
-    '
     'pnlbodegadstno
     '
     Me.pnlbodegadstno.Controls.Add(Me.ComboBoxBodega2)
@@ -197,36 +182,6 @@ Partial Class CtlMovimientoInventario
     Me.pnlbodegadstno.Size = New System.Drawing.Size(366, 24)
     Me.pnlbodegadstno.TabIndex = 7
     Me.pnlbodegadstno.Visible = False
-    '
-    'ComboBoxBodega2
-    '
-    Me.ComboBoxBodega2.Bodega = Nothing
-    Me.ComboBoxBodega2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.ComboBoxBodega2.FormattingEnabled = True
-    Me.ComboBoxBodega2.Location = New System.Drawing.Point(242, 2)
-    Me.ComboBoxBodega2.Name = "ComboBoxBodega2"
-    Me.ComboBoxBodega2.PuedeActualizar = False
-    Me.ComboBoxBodega2.PuedeEliminar = False
-    Me.ComboBoxBodega2.PuedeModificar = False
-    Me.ComboBoxBodega2.PuedeNuevo = False
-    Me.ComboBoxBodega2.Size = New System.Drawing.Size(121, 21)
-    Me.ComboBoxBodega2.Sucursal = Nothing
-    Me.ComboBoxBodega2.TabIndex = 5
-    '
-    'ComboBoxSucursal1
-    '
-    Me.ComboBoxSucursal1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.ComboBoxSucursal1.Empresa = Nothing
-    Me.ComboBoxSucursal1.FormattingEnabled = True
-    Me.ComboBoxSucursal1.Location = New System.Drawing.Point(117, 2)
-    Me.ComboBoxSucursal1.Name = "ComboBoxSucursal1"
-    Me.ComboBoxSucursal1.PuedeActualizar = False
-    Me.ComboBoxSucursal1.PuedeEliminar = False
-    Me.ComboBoxSucursal1.PuedeModificar = False
-    Me.ComboBoxSucursal1.PuedeNuevo = False
-    Me.ComboBoxSucursal1.Size = New System.Drawing.Size(122, 21)
-    Me.ComboBoxSucursal1.Sucursal = Nothing
-    Me.ComboBoxSucursal1.TabIndex = 1
     '
     'Label5
     '
@@ -338,17 +293,6 @@ Partial Class CtlMovimientoInventario
     Me.pnlactivo.TabIndex = 2
     Me.pnlactivo.Visible = False
     '
-    'CtlBuscaActivo
-    '
-    Me.CtlBuscaActivo.Item = Nothing
-    Me.CtlBuscaActivo.ItemText = "Activo:"
-    Me.CtlBuscaActivo.Location = New System.Drawing.Point(6, 2)
-    Me.CtlBuscaActivo.Name = "CtlBuscaActivo"
-    Me.CtlBuscaActivo.PardetTipoInventario = Nothing
-    Me.CtlBuscaActivo.Size = New System.Drawing.Size(365, 22)
-    Me.CtlBuscaActivo.TabIndex = 0
-    Me.CtlBuscaActivo.Ubicacion = Incautacion.Modulo.CtlBuscaItem.EnumUbicacion.Normal
-    '
     'pnlclienteproveedor
     '
     Me.pnlclienteproveedor.BackColor = System.Drawing.Color.Transparent
@@ -381,39 +325,6 @@ Partial Class CtlMovimientoInventario
     Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
     Me.FlowLayoutPanel2.Size = New System.Drawing.Size(1005, 107)
     Me.FlowLayoutPanel2.TabIndex = 0
-    '
-    'CtlBuscaCliente1
-    '
-    Me.CtlBuscaCliente1.Cliente = Nothing
-    Me.CtlBuscaCliente1.ClienteText = "Cliente:"
-    Me.CtlBuscaCliente1.ItemText = "Cliente:"
-    Me.CtlBuscaCliente1.Location = New System.Drawing.Point(3, 3)
-    Me.CtlBuscaCliente1.Name = "CtlBuscaCliente1"
-    Me.CtlBuscaCliente1.Size = New System.Drawing.Size(365, 21)
-    Me.CtlBuscaCliente1.TabIndex = 0
-    Me.CtlBuscaCliente1.Ubicacion = Incautacion.Modulo.CtlBuscaCliente.EnumUbicacion.Normal
-    '
-    'CtlBuscaProveedor1
-    '
-    Me.CtlBuscaProveedor1.ItemText = "Proveedor"
-    Me.CtlBuscaProveedor1.Location = New System.Drawing.Point(3, 30)
-    Me.CtlBuscaProveedor1.Name = "CtlBuscaProveedor1"
-    Me.CtlBuscaProveedor1.Proveedor = Nothing
-    Me.CtlBuscaProveedor1.ProveedorText = "Proveedor"
-    Me.CtlBuscaProveedor1.Size = New System.Drawing.Size(365, 21)
-    Me.CtlBuscaProveedor1.TabIndex = 1
-    Me.CtlBuscaProveedor1.Ubicacion = Incautacion.Modulo.CtlBuscaProveedor.EnumUbicacion.Normal
-    '
-    'CtlBuscaContribuyente1
-    '
-    Me.CtlBuscaContribuyente1.Contribuyente = Nothing
-    Me.CtlBuscaContribuyente1.ContribuyenteText = "Contribuyente"
-    Me.CtlBuscaContribuyente1.ItemText = "Contribuyente"
-    Me.CtlBuscaContribuyente1.Location = New System.Drawing.Point(3, 57)
-    Me.CtlBuscaContribuyente1.Name = "CtlBuscaContribuyente1"
-    Me.CtlBuscaContribuyente1.Size = New System.Drawing.Size(365, 22)
-    Me.CtlBuscaContribuyente1.TabIndex = 11
-    Me.CtlBuscaContribuyente1.Ubicacion = Incautacion.Modulo.CtlBuscaContribuyente.EnumUbicacion.Normal
     '
     'pnlIncautacion
     '
@@ -471,15 +382,6 @@ Partial Class CtlMovimientoInventario
     Me.lbl_cod.TabIndex = 4
     Me.lbl_cod.Text = "# Incautación:"
     '
-    'CtlDireccion1
-    '
-    Me.CtlDireccion1.Entidad = Nothing
-    Me.CtlDireccion1.Location = New System.Drawing.Point(644, 3)
-    Me.CtlDireccion1.Name = "CtlDireccion1"
-    Me.CtlDireccion1.Size = New System.Drawing.Size(365, 67)
-    Me.CtlDireccion1.TabIndex = 2
-    Me.CtlDireccion1.TipoDireccion = Incautacion.Reglas.Enumerados.enumTipoDireccion.Trabajo
-    '
     'pnlformapago
     '
     Me.pnlformapago.Controls.Add(Me.Label12)
@@ -497,22 +399,6 @@ Partial Class CtlMovimientoInventario
     Me.Label12.Size = New System.Drawing.Size(81, 13)
     Me.Label12.TabIndex = 5
     Me.Label12.Text = "Forma de pago:"
-    '
-    'ComboBoxFormaPago
-    '
-    Me.ComboBoxFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.ComboBoxFormaPago.FormattingEnabled = True
-    Me.ComboBoxFormaPago.Location = New System.Drawing.Point(124, 0)
-    Me.ComboBoxFormaPago.Name = "ComboBoxFormaPago"
-    Me.ComboBoxFormaPago.OperadorDatos = Nothing
-    Me.ComboBoxFormaPago.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.ComboBoxFormaPago.ParametroDet = Nothing
-    Me.ComboBoxFormaPago.PuedeActualizar = True
-    Me.ComboBoxFormaPago.PuedeEliminar = True
-    Me.ComboBoxFormaPago.PuedeModificar = True
-    Me.ComboBoxFormaPago.PuedeNuevo = True
-    Me.ComboBoxFormaPago.Size = New System.Drawing.Size(122, 21)
-    Me.ComboBoxFormaPago.TabIndex = 6
     '
     'pnldatosventa
     '
@@ -550,18 +436,6 @@ Partial Class CtlMovimientoInventario
     Me.Label23.TabIndex = 3
     Me.Label23.Text = "Número de factura:"
     '
-    'CtlBuscaEmpleado1
-    '
-    Me.CtlBuscaEmpleado1.Empleado = Nothing
-    Me.CtlBuscaEmpleado1.EmpleadoText = "Vendedor:"
-    Me.CtlBuscaEmpleado1.ItemText = "Vendedor:"
-    Me.CtlBuscaEmpleado1.Location = New System.Drawing.Point(0, 26)
-    Me.CtlBuscaEmpleado1.Name = "CtlBuscaEmpleado1"
-    Me.CtlBuscaEmpleado1.Size = New System.Drawing.Size(365, 21)
-    Me.CtlBuscaEmpleado1.TabIndex = 2
-    Me.CtlBuscaEmpleado1.TipoEmpleado = Nothing
-    Me.CtlBuscaEmpleado1.Ubicacion = Incautacion.Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
-    '
     'Label14
     '
     Me.Label14.AutoSize = True
@@ -570,22 +444,6 @@ Partial Class CtlMovimientoInventario
     Me.Label14.Size = New System.Drawing.Size(78, 13)
     Me.Label14.TabIndex = 0
     Me.Label14.Text = "Tipo de precio:"
-    '
-    'ComboBoxTipoPrecio
-    '
-    Me.ComboBoxTipoPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.ComboBoxTipoPrecio.FormattingEnabled = True
-    Me.ComboBoxTipoPrecio.Location = New System.Drawing.Point(124, 0)
-    Me.ComboBoxTipoPrecio.Name = "ComboBoxTipoPrecio"
-    Me.ComboBoxTipoPrecio.OperadorDatos = Nothing
-    Me.ComboBoxTipoPrecio.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.ComboBoxTipoPrecio.ParametroDet = Nothing
-    Me.ComboBoxTipoPrecio.PuedeActualizar = True
-    Me.ComboBoxTipoPrecio.PuedeEliminar = True
-    Me.ComboBoxTipoPrecio.PuedeModificar = True
-    Me.ComboBoxTipoPrecio.PuedeNuevo = True
-    Me.ComboBoxTipoPrecio.Size = New System.Drawing.Size(122, 21)
-    Me.ComboBoxTipoPrecio.TabIndex = 1
     '
     'pnltipocompte
     '
@@ -700,23 +558,6 @@ Partial Class CtlMovimientoInventario
     Me.Label4.Text = "Forma dde pago:"
     Me.Label4.Visible = False
     '
-    'ComboBoxParametroDet1
-    '
-    Me.ComboBoxParametroDet1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.ComboBoxParametroDet1.FormattingEnabled = True
-    Me.ComboBoxParametroDet1.Location = New System.Drawing.Point(124, 0)
-    Me.ComboBoxParametroDet1.Name = "ComboBoxParametroDet1"
-    Me.ComboBoxParametroDet1.OperadorDatos = Nothing
-    Me.ComboBoxParametroDet1.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.ComboBoxParametroDet1.ParametroDet = Nothing
-    Me.ComboBoxParametroDet1.PuedeActualizar = True
-    Me.ComboBoxParametroDet1.PuedeEliminar = True
-    Me.ComboBoxParametroDet1.PuedeModificar = True
-    Me.ComboBoxParametroDet1.PuedeNuevo = True
-    Me.ComboBoxParametroDet1.Size = New System.Drawing.Size(122, 21)
-    Me.ComboBoxParametroDet1.TabIndex = 6
-    Me.ComboBoxParametroDet1.Visible = False
-    '
     'Label11
     '
     Me.Label11.AutoSize = True
@@ -726,23 +567,6 @@ Partial Class CtlMovimientoInventario
     Me.Label11.TabIndex = 13
     Me.Label11.Text = "Forma de pago:"
     Me.Label11.Visible = False
-    '
-    'ComboBoxParametroDet2
-    '
-    Me.ComboBoxParametroDet2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.ComboBoxParametroDet2.FormattingEnabled = True
-    Me.ComboBoxParametroDet2.Location = New System.Drawing.Point(2040, 44)
-    Me.ComboBoxParametroDet2.Name = "ComboBoxParametroDet2"
-    Me.ComboBoxParametroDet2.OperadorDatos = Nothing
-    Me.ComboBoxParametroDet2.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.ComboBoxParametroDet2.ParametroDet = Nothing
-    Me.ComboBoxParametroDet2.PuedeActualizar = True
-    Me.ComboBoxParametroDet2.PuedeEliminar = True
-    Me.ComboBoxParametroDet2.PuedeModificar = True
-    Me.ComboBoxParametroDet2.PuedeNuevo = True
-    Me.ComboBoxParametroDet2.Size = New System.Drawing.Size(122, 21)
-    Me.ComboBoxParametroDet2.TabIndex = 14
-    Me.ComboBoxParametroDet2.Visible = False
     '
     'Panel2
     '
@@ -761,21 +585,6 @@ Partial Class CtlMovimientoInventario
     Me.pnldetalles.Size = New System.Drawing.Size(1005, 236)
     Me.pnldetalles.TabIndex = 4
     Me.pnldetalles.Text = "Productos y servicios"
-    '
-    'DataGridViewDetalles
-    '
-    Me.DataGridViewDetalles.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.DataGridViewDetalles.FactorTamanio = New Decimal(New Integer() {1, 0, 0, 0})
-    Me.DataGridViewDetalles.Location = New System.Drawing.Point(0, 0)
-    Me.DataGridViewDetalles.MovimientoInventario = Nothing
-    Me.DataGridViewDetalles.Name = "DataGridViewDetalles"
-    Me.DataGridViewDetalles.PardetTipoInventario = Nothing
-    Me.DataGridViewDetalles.PardetTipoPago = Nothing
-    Me.DataGridViewDetalles.PardetTipoPrecio = Nothing
-    Me.DataGridViewDetalles.Size = New System.Drawing.Size(1005, 236)
-    Me.DataGridViewDetalles.TabIndex = 0
-    Me.DataGridViewDetalles.Venta = Nothing
-    Me.DataGridViewDetalles.VerConfidencial = False
     '
     'pnltotalsimple
     '
@@ -999,6 +808,197 @@ Partial Class CtlMovimientoInventario
     Me.Label6.Size = New System.Drawing.Size(98, 13)
     Me.Label6.TabIndex = 5
     Me.Label6.Text = "Base imponible 0%:"
+    '
+    'ComboBoxBodega1
+    '
+    Me.ComboBoxBodega1.Bodega = Nothing
+    Me.ComboBoxBodega1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.ComboBoxBodega1.FormattingEnabled = True
+    Me.ComboBoxBodega1.Location = New System.Drawing.Point(752, 1)
+    Me.ComboBoxBodega1.Name = "ComboBoxBodega1"
+    Me.ComboBoxBodega1.PuedeActualizar = False
+    Me.ComboBoxBodega1.PuedeEliminar = False
+    Me.ComboBoxBodega1.PuedeModificar = False
+    Me.ComboBoxBodega1.PuedeNuevo = False
+    Me.ComboBoxBodega1.Size = New System.Drawing.Size(121, 21)
+    Me.ComboBoxBodega1.Sucursal = Nothing
+    Me.ComboBoxBodega1.TabIndex = 6
+    '
+    'ComboBoxBodega2
+    '
+    Me.ComboBoxBodega2.Bodega = Nothing
+    Me.ComboBoxBodega2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.ComboBoxBodega2.FormattingEnabled = True
+    Me.ComboBoxBodega2.Location = New System.Drawing.Point(242, 2)
+    Me.ComboBoxBodega2.Name = "ComboBoxBodega2"
+    Me.ComboBoxBodega2.PuedeActualizar = False
+    Me.ComboBoxBodega2.PuedeEliminar = False
+    Me.ComboBoxBodega2.PuedeModificar = False
+    Me.ComboBoxBodega2.PuedeNuevo = False
+    Me.ComboBoxBodega2.Size = New System.Drawing.Size(121, 21)
+    Me.ComboBoxBodega2.Sucursal = Nothing
+    Me.ComboBoxBodega2.TabIndex = 5
+    '
+    'ComboBoxSucursal1
+    '
+    Me.ComboBoxSucursal1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.ComboBoxSucursal1.Empresa = Nothing
+    Me.ComboBoxSucursal1.FormattingEnabled = True
+    Me.ComboBoxSucursal1.Location = New System.Drawing.Point(117, 2)
+    Me.ComboBoxSucursal1.Name = "ComboBoxSucursal1"
+    Me.ComboBoxSucursal1.PuedeActualizar = False
+    Me.ComboBoxSucursal1.PuedeEliminar = False
+    Me.ComboBoxSucursal1.PuedeModificar = False
+    Me.ComboBoxSucursal1.PuedeNuevo = False
+    Me.ComboBoxSucursal1.Size = New System.Drawing.Size(122, 21)
+    Me.ComboBoxSucursal1.Sucursal = Nothing
+    Me.ComboBoxSucursal1.TabIndex = 1
+    '
+    'CtlBuscaActivo
+    '
+    Me.CtlBuscaActivo.Item = Nothing
+    Me.CtlBuscaActivo.ItemText = "Activo:"
+    Me.CtlBuscaActivo.Location = New System.Drawing.Point(6, 2)
+    Me.CtlBuscaActivo.Name = "CtlBuscaActivo"
+    Me.CtlBuscaActivo.PardetTipoInventario = Nothing
+    Me.CtlBuscaActivo.Size = New System.Drawing.Size(365, 22)
+    Me.CtlBuscaActivo.TabIndex = 0
+    Me.CtlBuscaActivo.Ubicacion = Incautacion.Modulo.CtlBuscaItem.EnumUbicacion.Normal
+    '
+    'CtlBuscaCliente1
+    '
+    Me.CtlBuscaCliente1.Cliente = Nothing
+    Me.CtlBuscaCliente1.ClienteText = "Cliente:"
+    Me.CtlBuscaCliente1.ItemText = "Cliente:"
+    Me.CtlBuscaCliente1.Location = New System.Drawing.Point(3, 3)
+    Me.CtlBuscaCliente1.Name = "CtlBuscaCliente1"
+    Me.CtlBuscaCliente1.Size = New System.Drawing.Size(365, 21)
+    Me.CtlBuscaCliente1.TabIndex = 0
+    Me.CtlBuscaCliente1.Ubicacion = Incautacion.Modulo.CtlBuscaCliente.EnumUbicacion.Normal
+    '
+    'CtlBuscaProveedor1
+    '
+    Me.CtlBuscaProveedor1.ItemText = "Proveedor"
+    Me.CtlBuscaProveedor1.Location = New System.Drawing.Point(3, 30)
+    Me.CtlBuscaProveedor1.Name = "CtlBuscaProveedor1"
+    Me.CtlBuscaProveedor1.Proveedor = Nothing
+    Me.CtlBuscaProveedor1.ProveedorText = "Proveedor"
+    Me.CtlBuscaProveedor1.Size = New System.Drawing.Size(365, 21)
+    Me.CtlBuscaProveedor1.TabIndex = 1
+    Me.CtlBuscaProveedor1.Ubicacion = Incautacion.Modulo.CtlBuscaProveedor.EnumUbicacion.Normal
+    '
+    'CtlBuscaContribuyente1
+    '
+    Me.CtlBuscaContribuyente1.Contribuyente = Nothing
+    Me.CtlBuscaContribuyente1.ContribuyenteText = "Contribuyente"
+    Me.CtlBuscaContribuyente1.ItemText = "Contribuyente"
+    Me.CtlBuscaContribuyente1.Location = New System.Drawing.Point(3, 57)
+    Me.CtlBuscaContribuyente1.Name = "CtlBuscaContribuyente1"
+    Me.CtlBuscaContribuyente1.Size = New System.Drawing.Size(365, 22)
+    Me.CtlBuscaContribuyente1.TabIndex = 11
+    Me.CtlBuscaContribuyente1.Ubicacion = Incautacion.Modulo.CtlBuscaContribuyente.EnumUbicacion.Normal
+    '
+    'CtlDireccion1
+    '
+    Me.CtlDireccion1.Entidad = Nothing
+    Me.CtlDireccion1.Location = New System.Drawing.Point(644, 3)
+    Me.CtlDireccion1.Name = "CtlDireccion1"
+    Me.CtlDireccion1.Size = New System.Drawing.Size(365, 67)
+    Me.CtlDireccion1.TabIndex = 2
+    Me.CtlDireccion1.TipoDireccion = Incautacion.Reglas.Enumerados.enumTipoDireccion.Trabajo
+    '
+    'ComboBoxFormaPago
+    '
+    Me.ComboBoxFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.ComboBoxFormaPago.FormattingEnabled = True
+    Me.ComboBoxFormaPago.Location = New System.Drawing.Point(124, 0)
+    Me.ComboBoxFormaPago.Name = "ComboBoxFormaPago"
+    Me.ComboBoxFormaPago.OperadorDatos = Nothing
+    Me.ComboBoxFormaPago.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.ComboBoxFormaPago.ParametroDet = Nothing
+    Me.ComboBoxFormaPago.PuedeActualizar = True
+    Me.ComboBoxFormaPago.PuedeEliminar = True
+    Me.ComboBoxFormaPago.PuedeModificar = True
+    Me.ComboBoxFormaPago.PuedeNuevo = True
+    Me.ComboBoxFormaPago.Size = New System.Drawing.Size(122, 21)
+    Me.ComboBoxFormaPago.TabIndex = 6
+    '
+    'CtlBuscaEmpleado1
+    '
+    Me.CtlBuscaEmpleado1.Empleado = Nothing
+    Me.CtlBuscaEmpleado1.EmpleadoText = "Vendedor:"
+    Me.CtlBuscaEmpleado1.ItemText = "Vendedor:"
+    Me.CtlBuscaEmpleado1.Location = New System.Drawing.Point(0, 26)
+    Me.CtlBuscaEmpleado1.Name = "CtlBuscaEmpleado1"
+    Me.CtlBuscaEmpleado1.Size = New System.Drawing.Size(365, 21)
+    Me.CtlBuscaEmpleado1.TabIndex = 2
+    Me.CtlBuscaEmpleado1.TipoEmpleado = Nothing
+    Me.CtlBuscaEmpleado1.Ubicacion = Incautacion.Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
+    '
+    'ComboBoxTipoPrecio
+    '
+    Me.ComboBoxTipoPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.ComboBoxTipoPrecio.FormattingEnabled = True
+    Me.ComboBoxTipoPrecio.Location = New System.Drawing.Point(124, 0)
+    Me.ComboBoxTipoPrecio.Name = "ComboBoxTipoPrecio"
+    Me.ComboBoxTipoPrecio.OperadorDatos = Nothing
+    Me.ComboBoxTipoPrecio.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.ComboBoxTipoPrecio.ParametroDet = Nothing
+    Me.ComboBoxTipoPrecio.PuedeActualizar = True
+    Me.ComboBoxTipoPrecio.PuedeEliminar = True
+    Me.ComboBoxTipoPrecio.PuedeModificar = True
+    Me.ComboBoxTipoPrecio.PuedeNuevo = True
+    Me.ComboBoxTipoPrecio.Size = New System.Drawing.Size(122, 21)
+    Me.ComboBoxTipoPrecio.TabIndex = 1
+    '
+    'ComboBoxParametroDet1
+    '
+    Me.ComboBoxParametroDet1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.ComboBoxParametroDet1.FormattingEnabled = True
+    Me.ComboBoxParametroDet1.Location = New System.Drawing.Point(124, 0)
+    Me.ComboBoxParametroDet1.Name = "ComboBoxParametroDet1"
+    Me.ComboBoxParametroDet1.OperadorDatos = Nothing
+    Me.ComboBoxParametroDet1.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.ComboBoxParametroDet1.ParametroDet = Nothing
+    Me.ComboBoxParametroDet1.PuedeActualizar = True
+    Me.ComboBoxParametroDet1.PuedeEliminar = True
+    Me.ComboBoxParametroDet1.PuedeModificar = True
+    Me.ComboBoxParametroDet1.PuedeNuevo = True
+    Me.ComboBoxParametroDet1.Size = New System.Drawing.Size(122, 21)
+    Me.ComboBoxParametroDet1.TabIndex = 6
+    Me.ComboBoxParametroDet1.Visible = False
+    '
+    'ComboBoxParametroDet2
+    '
+    Me.ComboBoxParametroDet2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.ComboBoxParametroDet2.FormattingEnabled = True
+    Me.ComboBoxParametroDet2.Location = New System.Drawing.Point(2040, 44)
+    Me.ComboBoxParametroDet2.Name = "ComboBoxParametroDet2"
+    Me.ComboBoxParametroDet2.OperadorDatos = Nothing
+    Me.ComboBoxParametroDet2.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.ComboBoxParametroDet2.ParametroDet = Nothing
+    Me.ComboBoxParametroDet2.PuedeActualizar = True
+    Me.ComboBoxParametroDet2.PuedeEliminar = True
+    Me.ComboBoxParametroDet2.PuedeModificar = True
+    Me.ComboBoxParametroDet2.PuedeNuevo = True
+    Me.ComboBoxParametroDet2.Size = New System.Drawing.Size(122, 21)
+    Me.ComboBoxParametroDet2.TabIndex = 14
+    Me.ComboBoxParametroDet2.Visible = False
+    '
+    'DataGridViewDetalles
+    '
+    Me.DataGridViewDetalles.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.DataGridViewDetalles.FactorTamanio = New Decimal(New Integer() {1, 0, 0, 0})
+    Me.DataGridViewDetalles.Location = New System.Drawing.Point(0, 0)
+    Me.DataGridViewDetalles.MovimientoInventario = Nothing
+    Me.DataGridViewDetalles.Name = "DataGridViewDetalles"
+    Me.DataGridViewDetalles.PardetTipoInventario = Nothing
+    Me.DataGridViewDetalles.PardetTipoPago = Nothing
+    Me.DataGridViewDetalles.PardetTipoPrecio = Nothing
+    Me.DataGridViewDetalles.Size = New System.Drawing.Size(1005, 236)
+    Me.DataGridViewDetalles.TabIndex = 0
+    Me.DataGridViewDetalles.Venta = Nothing
+    Me.DataGridViewDetalles.VerConfidencial = False
     '
     'CtlMovimientoInventario
     '

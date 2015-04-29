@@ -43,18 +43,18 @@ Partial Class FrmMantenimientoItem
     Me.BindingSourceExistencias = New System.Windows.Forms.BindingSource(Me.components)
     Me.grpdetallescombo = New System.Windows.Forms.GroupBox()
     Me.DGDetallesCombo = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-    Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.BSDetallesCombo = New System.Windows.Forms.BindingSource(Me.components)
     Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.BSDetallesCombo = New System.Windows.Forms.BindingSource(Me.components)
+    Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.ToolStrip3 = New System.Windows.Forms.ToolStrip()
     Me.btnnuevo = New System.Windows.Forms.ToolStripButton()
     Me.btnmodificar = New System.Windows.Forms.ToolStripButton()
     Me.btneliminar = New System.Windows.Forms.ToolStripButton()
     Me.grppreciosxcantidad = New System.Windows.Forms.GroupBox()
     Me.DGPreciosxcantidad = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-    Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.BSPreciosxcantidad = New System.Windows.Forms.BindingSource(Me.components)
     Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.BSPreciosxcantidad = New System.Windows.Forms.BindingSource(Me.components)
+    Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.ToolStrip4 = New System.Windows.Forms.ToolStrip()
     Me.btnnuevopxc = New System.Windows.Forms.ToolStripButton()
     Me.btnelipxc = New System.Windows.Forms.ToolStripButton()
@@ -86,6 +86,8 @@ Partial Class FrmMantenimientoItem
     Me.txtubicacion = New Infoware.Controles.Base.TextBoxStd()
     Me.txtdescripcion = New Infoware.Controles.Base.TextBoxStd()
     Me.ComboBoxGrupo1 = New Incautacion.Modulo.ComboBoxParametroDetImagen()
+    Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -139,7 +141,7 @@ Partial Class FrmMantenimientoItem
     Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
     Me.Panel1.Location = New System.Drawing.Point(0, 74)
     Me.Panel1.Name = "Panel1"
-    Me.Panel1.Size = New System.Drawing.Size(411, 133)
+    Me.Panel1.Size = New System.Drawing.Size(454, 128)
     Me.Panel1.TabIndex = 4
     '
     'TabControl1
@@ -149,7 +151,7 @@ Partial Class FrmMantenimientoItem
     Me.TabControl1.Location = New System.Drawing.Point(0, 0)
     Me.TabControl1.Name = "TabControl1"
     Me.TabControl1.SelectedIndex = 0
-    Me.TabControl1.Size = New System.Drawing.Size(411, 133)
+    Me.TabControl1.Size = New System.Drawing.Size(454, 128)
     Me.TabControl1.TabIndex = 2
     Me.TabControl1.TabStop = False
     '
@@ -160,7 +162,7 @@ Partial Class FrmMantenimientoItem
     Me.TabPage1.Location = New System.Drawing.Point(4, 22)
     Me.TabPage1.Name = "TabPage1"
     Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-    Me.TabPage1.Size = New System.Drawing.Size(403, 107)
+    Me.TabPage1.Size = New System.Drawing.Size(446, 102)
     Me.TabPage1.TabIndex = 0
     Me.TabPage1.Text = "Detalles"
     Me.TabPage1.UseVisualStyleBackColor = True
@@ -174,7 +176,7 @@ Partial Class FrmMantenimientoItem
     Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
     Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 353)
     Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-    Me.FlowLayoutPanel1.Size = New System.Drawing.Size(397, 0)
+    Me.FlowLayoutPanel1.Size = New System.Drawing.Size(440, 0)
     Me.FlowLayoutPanel1.TabIndex = 2
     Me.FlowLayoutPanel1.Visible = False
     '
@@ -300,7 +302,7 @@ Partial Class FrmMantenimientoItem
     DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
     Me.DGDetallesCombo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
     Me.DGDetallesCombo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-    Me.DGDetallesCombo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn23})
+    Me.DGDetallesCombo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn25})
     Me.DGDetallesCombo.DataSource = Me.BSDetallesCombo
     DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
     DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
@@ -328,15 +330,15 @@ Partial Class FrmMantenimientoItem
     Me.DGDetallesCombo.StandardTab = True
     Me.DGDetallesCombo.TabIndex = 1
     '
-    'DataGridViewTextBoxColumn21
-    '
-    Me.DataGridViewTextBoxColumn21.HeaderText = "No existen registros a presentar"
-    Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
-    '
     'DataGridViewTextBoxColumn23
     '
     Me.DataGridViewTextBoxColumn23.HeaderText = "No existen registros a presentar"
     Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
+    '
+    'DataGridViewTextBoxColumn25
+    '
+    Me.DataGridViewTextBoxColumn25.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
     '
     'ToolStrip3
     '
@@ -405,7 +407,7 @@ Partial Class FrmMantenimientoItem
     DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
     Me.DGPreciosxcantidad.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
     Me.DGPreciosxcantidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-    Me.DGPreciosxcantidad.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn24})
+    Me.DGPreciosxcantidad.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn26})
     Me.DGPreciosxcantidad.DataSource = Me.BSPreciosxcantidad
     DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
     DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
@@ -433,15 +435,15 @@ Partial Class FrmMantenimientoItem
     Me.DGPreciosxcantidad.StandardTab = True
     Me.DGPreciosxcantidad.TabIndex = 0
     '
-    'DataGridViewTextBoxColumn22
-    '
-    Me.DataGridViewTextBoxColumn22.HeaderText = "No existen registros a presentar"
-    Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-    '
     'DataGridViewTextBoxColumn24
     '
     Me.DataGridViewTextBoxColumn24.HeaderText = "No existen registros a presentar"
     Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
+    '
+    'DataGridViewTextBoxColumn26
+    '
+    Me.DataGridViewTextBoxColumn26.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
     '
     'ToolStrip4
     '
@@ -503,7 +505,7 @@ Partial Class FrmMantenimientoItem
     Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
     Me.Panel2.Location = New System.Drawing.Point(3, 3)
     Me.Panel2.Name = "Panel2"
-    Me.Panel2.Size = New System.Drawing.Size(397, 350)
+    Me.Panel2.Size = New System.Drawing.Size(440, 350)
     Me.Panel2.TabIndex = 0
     '
     'chkesregistroserie
@@ -562,7 +564,7 @@ Partial Class FrmMantenimientoItem
     Me.PictureBox1.ArchivoImagen = Nothing
     Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
     Me.PictureBox1.Imagen = Nothing
-    Me.PictureBox1.Location = New System.Drawing.Point(298, 6)
+    Me.PictureBox1.Location = New System.Drawing.Point(341, 6)
     Me.PictureBox1.Name = "PictureBox1"
     Me.PictureBox1.Padding = New System.Windows.Forms.Padding(8, 7, 8, 7)
     Me.PictureBox1.Size = New System.Drawing.Size(87, 47)
@@ -794,7 +796,7 @@ Partial Class FrmMantenimientoItem
     Me.txtubicacion.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.txtubicacion.PromptForeColor = System.Drawing.SystemColors.GrayText
     Me.txtubicacion.PromptText = ""
-    Me.txtubicacion.Size = New System.Drawing.Size(256, 20)
+    Me.txtubicacion.Size = New System.Drawing.Size(299, 20)
     Me.txtubicacion.TabIndex = 16
     Me.txtubicacion.Visible = False
     '
@@ -809,7 +811,7 @@ Partial Class FrmMantenimientoItem
     Me.txtdescripcion.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.txtdescripcion.PromptForeColor = System.Drawing.SystemColors.GrayText
     Me.txtdescripcion.PromptText = ""
-    Me.txtdescripcion.Size = New System.Drawing.Size(141, 22)
+    Me.txtdescripcion.Size = New System.Drawing.Size(184, 22)
     Me.txtdescripcion.TabIndex = 3
     '
     'ComboBoxGrupo1
@@ -825,6 +827,16 @@ Partial Class FrmMantenimientoItem
     Me.ComboBoxGrupo1.Size = New System.Drawing.Size(256, 38)
     Me.ComboBoxGrupo1.TabIndex = 5
     Me.ComboBoxGrupo1.Visible = False
+    '
+    'DataGridViewTextBoxColumn21
+    '
+    Me.DataGridViewTextBoxColumn21.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
+    '
+    'DataGridViewTextBoxColumn22
+    '
+    Me.DataGridViewTextBoxColumn22.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
     '
     'DataGridViewTextBoxColumn19
     '
@@ -931,7 +943,7 @@ Partial Class FrmMantenimientoItem
     Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnReporte})
     Me.ToolStrip2.Location = New System.Drawing.Point(0, 49)
     Me.ToolStrip2.Name = "ToolStrip2"
-    Me.ToolStrip2.Size = New System.Drawing.Size(411, 25)
+    Me.ToolStrip2.Size = New System.Drawing.Size(454, 25)
     Me.ToolStrip2.TabIndex = 5
     Me.ToolStrip2.Text = "ToolStrip2"
     '
@@ -961,7 +973,7 @@ Partial Class FrmMantenimientoItem
     'FrmMantenimientoItem
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-    Me.ClientSize = New System.Drawing.Size(411, 207)
+    Me.ClientSize = New System.Drawing.Size(454, 202)
     Me.Controls.Add(Me.Panel1)
     Me.Controls.Add(Me.ToolStrip2)
     Me.Name = "FrmMantenimientoItem"
@@ -1082,5 +1094,7 @@ Partial Class FrmMantenimientoItem
   Friend WithEvents DataGridViewTextBoxColumn22 As System.Windows.Forms.DataGridViewTextBoxColumn
   Friend WithEvents DataGridViewTextBoxColumn23 As System.Windows.Forms.DataGridViewTextBoxColumn
   Friend WithEvents DataGridViewTextBoxColumn24 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents DataGridViewTextBoxColumn25 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents DataGridViewTextBoxColumn26 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

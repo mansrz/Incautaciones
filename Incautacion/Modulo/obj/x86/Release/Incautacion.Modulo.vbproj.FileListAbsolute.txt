@@ -416,3 +416,5 @@ D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Mod
 D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaContribuyentes.resources
 C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmIncautacionIngreso.resources
 D:\Dropbox\GitHub\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmIncautacionIngreso.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.GridComboBox.resources
+C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaIncautacion.resources

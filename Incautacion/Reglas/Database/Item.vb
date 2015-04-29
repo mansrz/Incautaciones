@@ -24,6 +24,10 @@ Partial Public Class Item
 
   Private mItem_Codigo As Integer = 0
 
+  Private mIncaut_Codigo As Integer = 0
+
+  Private mItem_Serie As String = String.Empty
+
   Private mParame_Grupo As Integer = CInt(Enumerados.EnumParametros.Grupo)
 
   Private mPardet_Grupo As Integer = 0
@@ -214,12 +218,35 @@ Partial Public Class Item
   End Property
 
   <XmlAttribute()> _
+  Public Overridable Property Incaut_Codigo() As Integer
+    Get
+      Return Me.mIncaut_Codigo
+    End Get
+    Set(ByVal value As Integer)
+      Me.mIncaut_Codigo = value
+      EsModificado = True
+    End Set
+  End Property
+
+  <XmlAttribute()> _
   Public Overridable Property Entida_Proveedor() As Integer
     Get
       Return Me.mEntida_Proveedor
     End Get
     Set(ByVal value As Integer)
       Me.mEntida_Proveedor = value
+      EsModificado = True
+    End Set
+  End Property
+
+  <XmlAttribute()> _
+  Public Overridable Property Item_Serie() As String
+    Get
+      Return Me.mItem_Serie
+    End Get
+
+    Set(ByVal value As String)
+      Me.mItem_Serie = value
       EsModificado = True
     End Set
   End Property

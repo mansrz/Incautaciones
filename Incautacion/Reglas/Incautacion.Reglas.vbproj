@@ -83,6 +83,8 @@
     <Compile Include="Database\Compra.vb" />
     <Compile Include="Database\Contribuyente.vb" />
     <Compile Include="Database\Incautacion.vb" />
+    <Compile Include="Database\IncautacionResolucion.vb" />
+    <Compile Include="Database\IncautacionSalida.vb" />
     <Compile Include="Database\PagosDetAsignacion.vb" />
     <Compile Include="Database\ItemPrecioxCantidad.vb" />
     <Compile Include="Database\TrabajoxMovimientoInventario.vb" />
@@ -131,6 +133,8 @@
     <Compile Include="Reglas\Cliente.vb" />
     <Compile Include="Reglas\Compra.vb" />
     <Compile Include="Reglas\Contribuyente.vb" />
+    <Compile Include="Reglas\IncautacionResolucion.vb" />
+    <Compile Include="Reglas\IncautacionSalida.vb" />
     <Compile Include="Reglas\Incautacion.vb" />
     <Compile Include="Reglas\PagosDetAsignacion.vb" />
     <Compile Include="Reglas\ItemDetalle.vb" />

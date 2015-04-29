@@ -62,11 +62,6 @@ Public Class FrmIncautacionIngreso
     With _incautacion.OperadorDatos
       .AgregarParametro("@Empres_Codigo", _incautacion.Empres_Codigo)
       .AgregarParametro("@Entida_Contribuyente", _incautacion.Entida_Contribuyente)
-      .AgregarParametro("@Incaut_Secuncia", _incautacion.Incaut_Secuencia)
-      .AgregarParametro("@Pardet_TipoIncautacionMov", _incautacion.Pardet_TipoIncautacionMov)
-      .AgregarParametro("@Parame_TipoIncautacionMov", _incautacion.Parame_TipoIncautacionMov)
-      .AgregarParametro("@Sucurs_Codigo", _incautacion.Sucurs_Codigo)
-      .AgregarParametro("@Incautacion_Numero", _incautacion.Incautacion_Numero)
       .Comando.CommandText = "rp_Incautacion"
 
       Dim DataAdapter As SqlDataAdapter

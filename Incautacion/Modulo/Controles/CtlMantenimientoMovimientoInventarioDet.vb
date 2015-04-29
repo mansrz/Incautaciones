@@ -79,9 +79,9 @@ Public Class CtlMantenimientoMovimientoInventarioDet
         Me.txtvalor.Value = mMovimientoInventarioDet.Moinde_Valor
         Me.txtdescto.Value = mMovimientoInventarioDet.Moinde_Descto
         Me.chkaplicaiva.Checked = mMovimientoInventarioDet.Moinde_Aplicaiva
-        Me.txt_descripcionlugar.Text = mMovimientoInventarioDet.Moinde_DescripcionLugar
-        Me.txt_marca.Text = mMovimientoInventarioDet.Moinde_Marca
-        Me.txt_modelo.Text = mMovimientoInventarioDet.Moinde_Modelo
+        ' Me.txt_descripcionlugar.Text = mMovimientoInventarioDet.Moinde_DescripcionLugar
+        ' Me.txt_marca.Text = mMovimientoInventarioDet.Moinde_Marca
+        ' Me.txt_modelo.Text = mMovimientoInventarioDet.Moinde_Modelo
       End If
       Me.CtlBuscaItem1.Select()
 
@@ -109,9 +109,9 @@ Public Class CtlMantenimientoMovimientoInventarioDet
       mMovimientoInventarioDet.Moinde_Valor = Me.txtvalor.Value
       mMovimientoInventarioDet.Moinde_Descto = Me.txtdescto.Value
       mMovimientoInventarioDet.Moinde_Aplicaiva = Me.chkaplicaiva.Checked
-      mMovimientoInventarioDet.Moinde_DescripcionLugar = Me.txt_descripcionlugar.Text
-      mMovimientoInventarioDet.Moinde_Modelo = Me.txt_modelo.Text
-      mMovimientoInventarioDet.Moinde_Marca = Me.txt_marca.Text
+      ' mMovimientoInventarioDet.Moinde_DescripcionLugar = Me.txt_descripcionlugar.Text
+      ' mMovimientoInventarioDet.Moinde_Modelo = Me.txt_modelo.Text
+      ' mMovimientoInventarioDet.Moinde_Marca = Me.txt_marca.Text
       RaiseEvent Actualizodatos(Me, Nothing)
     Catch ex As Exception
 

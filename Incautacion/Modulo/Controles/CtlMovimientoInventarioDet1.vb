@@ -12,7 +12,7 @@ Public Class CtlMovimientoInventarioDet1
     End Get
     Set(ByVal value As Decimal)
       mFactorTamanio = value
-      Me.CtlMovimientoInventarioDet2.FactorTamanio = value
+      'Me.CtlMovimientoInventarioDet2.FactorTamanio = value
     End Set
   End Property
 
@@ -50,8 +50,8 @@ Public Class CtlMovimientoInventarioDet1
         MovimientoInventario = value.MovimientoInventario
         PardetTipoPago = value.PardetTipoPago
 
-        Me.CtlMovimientoInventarioDet2.MovimientoInventario = value.MovimientoInventario
-        Me.CtlMovimientoInventarioDet2.PardetTipoPago = value.PardetTipoPago
+        '  Me.CtlMovimientoInventarioDet2.MovimientoInventario = value.MovimientoInventario
+        ' Me.CtlMovimientoInventarioDet2.PardetTipoPago = value.PardetTipoPago
       End If
     End Set
   End Property
@@ -64,18 +64,14 @@ Public Class CtlMovimientoInventarioDet1
     Set(ByVal value As MovimientoInventario)
       mMovimientoInventario = value
       If value IsNot Nothing Then
-        Me.CtlMovimientoInventarioDet2.ReadOnly = Not value.EsNuevo
-        Me.CtlGruposTouch1.Enabled = value.EsNuevo
-        Me.CtlItemsTouch1.Enabled = value.EsNuevo
+        'Me.CtlMovimientoInventarioDet2.ReadOnly = Not value.EsNuevo
+  
       End If
-      Me.CtlMovimientoInventarioDet2.MovimientoInventario = value
-      Me.CtlMantenimientoMovimientoInventarioDet1.BindingSource1 = Me.CtlMovimientoInventarioDet2.BindingSourceDetalles
+      'Me.CtlMovimientoInventarioDet2.MovimientoInventario = value
+      '      Me.CtlMantenimientoMovimientoInventarioDet1.BindingSource1 =AcceptRejectRule Me.CtlMovimientoInventarioDet2.BindingSourceDetalles
 
       If value IsNot Nothing Then
-        Me.CtlGruposTouch1.OperadorDatos = value.OperadorDatos
-        Me.CtlItemsTouch1.OperadorDatos = value.OperadorDatos
-
-        Me.CtlGruposTouch1.Llenar_datos()
+    
         Llenar_detalles()
       End If
     End Set
@@ -83,7 +79,7 @@ Public Class CtlMovimientoInventarioDet1
 
   Public ReadOnly Property MovimientoInventarioDet() As MovimientoInventarioDet
     Get
-      Return Me.CtlMovimientoInventarioDet2.MovimientoInventarioDet
+      ' Return Me.CtlMovimientoInventarioDet2.MovimientoInventarioDet
     End Get
   End Property
 
@@ -94,7 +90,7 @@ Public Class CtlMovimientoInventarioDet1
     End Get
     Set(ByVal value As ParametroDet)
       mPardetTipoPago = value
-      Me.CtlMovimientoInventarioDet2.PardetTipoPago = value
+      'Me.CtlMovimientoInventarioDet2.PardetTipoPago = value
     End Set
   End Property
 
@@ -120,21 +116,21 @@ Public Class CtlMovimientoInventarioDet1
   End Sub
 #End Region
 
-  Private Sub CtlMovimientoInventarioDet2_Cambio_MovimientoDets(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlMovimientoInventarioDet2.Cambio_MovimientoDets
+  Private Sub CtlMovimientoInventarioDet2_Cambio_MovimientoDets(ByVal sender As Object, ByVal e As System.EventArgs)
     actualizar_totales()
   End Sub
 
   Public Event RowEnter As DataGridViewCellEventHandler
 
-  Private Sub CtlMovimientoInventarioDet2_RowEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles CtlMovimientoInventarioDet2.RowEnter
+  Private Sub CtlMovimientoInventarioDet2_RowEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
     RaiseEvent RowEnter(sender, e)
   End Sub
 
-  Private Sub CtlGruposTouch1_CambioGrupo(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlGruposTouch1.CambioGrupo
-    Me.CtlItemsTouch1.Grupo = Me.CtlGruposTouch1.Grupo
+  Private Sub CtlGruposTouch1_CambioGrupo(ByVal sender As Object, ByVal e As System.EventArgs)
+
   End Sub
 
-  Private Sub CtlItemsTouch1_CambioItem(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlItemsTouch1.CambioItem
+  Private Sub CtlItemsTouch1_CambioItem(ByVal sender As Object, ByVal e As System.EventArgs)
     AgregarLinea()
     Dim mMovimientoInventarioDet As MovimientoInventarioDet = MovimientoInventarioDet
     'If mMovimientoInventarioDet Is Nothing OrElse mMovimientoInventarioDet.Item IsNot Nothing Then
@@ -146,18 +142,7 @@ Public Class CtlMovimientoInventarioDet1
       _tipopagoxprecio = New TipoPagoxTipoPrecio(mMovimientoInventario.Sucursal, mPardetTipoPago)
     End If
 
-    mMovimientoInventarioDet.Item = Me.CtlItemsTouch1.Item
-    mMovimientoInventarioDet.Moinde_Descripcion = ""
-    mMovimientoInventarioDet.Moinde_Cantidad = Me.CtlItemsTouch1.Cantidad
-    mMovimientoInventarioDet.PardetUnidadMedida = Me.CtlItemsTouch1.PardetUnidadMedida
-
-    Dim _unidadmedidaconversion As UnidadMedidaConversion
-    _unidadmedidaconversion = New UnidadMedidaConversion(Me.CtlItemsTouch1.Item.PardetUnidadMedida, Me.CtlItemsTouch1.PardetUnidadMedida)
-
-    mMovimientoInventarioDet.Moinde_Valor = Me.CtlItemsTouch1.Item.BuscarValor(MovimientoInventario.Pardet_Tipomovinv, MovimientoInventario.Sucursal, _tipopagoxprecio.PardetTipoPrecio, mMovimientoInventario.Movinv_porcIVA, mMovimientoInventario.Bodega, Me.CtlItemsTouch1.Cantidad) * (1 / _unidadmedidaconversion.Unmeco_Factor)
-
-    mMovimientoInventarioDet.Moinde_Descto = 0
-    mMovimientoInventarioDet.Moinde_Aplicaiva = Me.CtlItemsTouch1.Item.Item_Aplicaiva
+   
 
     VerificarCombo()
     actualizar_totales()
@@ -167,21 +152,7 @@ Public Class CtlMovimientoInventarioDet1
   End Sub
 
   Sub VerificarCombo()
-    If Me.CtlItemsTouch1.Item.Item_Combo Then
-      Dim posicionpadre As Integer = Me.CtlMantenimientoMovimientoInventarioDet1.BindingSource1.Position
-      For Each _itemdetalle As ItemDetalle In Me.CtlItemsTouch1.Item.DetallesCombo(MovimientoInventarioDet.MovimientoInventario.Sucursal)
-        Dim mmovdet As New MovimientoInventarioDet(MovimientoInventarioDet.MovimientoInventario, True)
-        mmovdet.Item = _itemdetalle.ItemDetalle
-        mmovdet.PardetUnidadMedida = _itemdetalle.PardetUnidadMedida
-        mmovdet.Moinde_Cantidad = _itemdetalle.IteDet_Cantidad
-        mmovdet.Moinde_Valor = _itemdetalle.IteDet_Valor
-        mmovdet.Moinde_esDetalleCombo = True
 
-        posicionpadre += 1
-        Me.CtlMantenimientoMovimientoInventarioDet1.BindingSource1.Insert(posicionpadre, mmovdet)
-      Next
-      'RaiseEvent Actualizodatos(Me, Nothing)
-    End If
   End Sub
 
   Sub AgregarLinea()
@@ -193,12 +164,24 @@ Public Class CtlMovimientoInventarioDet1
 
   End Sub
 
-  Private Sub CtlMantenimientoMovimientoInventarioDet1_Actualizodatos(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlMantenimientoMovimientoInventarioDet1.Actualizodatos
-    Me.CtlMovimientoInventarioDet2.Invalidate()
+  Private Sub CtlMantenimientoMovimientoInventarioDet1_Actualizodatos(ByVal sender As Object, ByVal e As System.EventArgs)
+    'Me.CtlMovimientoInventarioDet2.Invalidate()
     actualizar_totales()
   End Sub
 
-  Private Sub CtlItemsTouch1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CtlItemsTouch1.Load
+  Private Sub CtlItemsTouch1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+  End Sub
+
+  Private Sub CtlItemsTouch1_Load_1(sender As System.Object, e As System.EventArgs)
+
+  End Sub
+
+  Private Sub CtlGruposTouch1_Load(sender As System.Object, e As System.EventArgs)
+
+  End Sub
+
+  Private Sub TabControl1_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles TabControl1.SelectedIndexChanged
 
   End Sub
 End Class

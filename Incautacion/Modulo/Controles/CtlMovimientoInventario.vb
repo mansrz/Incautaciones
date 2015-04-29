@@ -365,8 +365,6 @@ Public Class CtlMovimientoInventario
     End If
     If mMovimientoInventario.Incautacion IsNot Nothing Then
       Me.CtlBuscaContribuyente1.Contribuyente = Me.mMovimientoInventario.Incautacion.Contribuyente
-      Me.txt_codigo.Text = Me.mMovimientoInventario.Incautacion.Incautacion_Numero
-      Me.txt_responsable.Text = Me.mMovimientoInventario.Incautacion.Incaut_Responsable
 
     End If
 
@@ -564,15 +562,12 @@ Public Class CtlMovimientoInventario
 
     If mMovimientoInventario.Incautacion Is Nothing Then
       mIncautacion = New Reglas.Incautacion(mSucursal, True)
-      mIncautacion.MovimientoInventario = mMovimientoInventario
       mMovimientoInventario.Incautacion = mIncautacion
     Else
       mIncautacion = mMovimientoInventario.Incautacion
     End If
-    mIncautacion.MovimientoInventario = mMovimientoInventario
     mIncautacion.Contribuyente = Me.CtlBuscaContribuyente1.Contribuyente
-    mIncautacion.Incaut_Responsable = Me.txt_responsable.Text
-    mIncautacion.Incautacion_Numero = Me.txt_codigo.Text
+  
 
     'If ComboBoxTipoComprobante1.tipo_comprobante Is Nothing Then
     '  Throw New Exception("Debe seleccionar un tipo de comprobante de Incautacion, verifique que el Contribuyente tenga asignado un RUC válido")
@@ -777,6 +772,10 @@ Public Class CtlMovimientoInventario
     End Sub
 
   Private Sub FlowLayoutPanel2_Paint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs) Handles FlowLayoutPanel2.Paint
+
+  End Sub
+
+  Private Sub FlowLayoutPanel1_Paint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs) Handles FlowLayoutPanel1.Paint
 
   End Sub
 End Class

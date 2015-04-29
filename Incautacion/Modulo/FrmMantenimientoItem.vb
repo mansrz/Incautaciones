@@ -127,6 +127,7 @@ Public Class FrmMantenimientoItem
     mItem.Item_CodigoProveedor = Me.txtcodigoproveedor.Text
     mItem.Proveedor = Me.CtlBuscaProveedor1.Proveedor
     mItem.Item_PrecioxCantidad = Me.chkprecioxcantidad.Checked
+
   End Sub
 
   Private Function Guardar_datos() As Boolean

@@ -25,9 +25,11 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Me.components = New System.ComponentModel.Container()
     Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CtlMantenimientoMovimientoInventarioDet))
     Me.DGSeries = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-    Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.BSSeries = New System.Windows.Forms.BindingSource(Me.components)
+    Me.DataGridViewTextBoxColumn29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,6 +55,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.chkaplicaiva = New Infoware.Controles.Base.CheckBoxStd()
     Me.Panel2 = New System.Windows.Forms.Panel()
+    Me.CtlBuscaItem1 = New Incautacion.Modulo.CtlBuscaItem()
     Me.txtcantidad = New Infoware.Controles.Base.TextBoxCalculator()
     Me.Label5 = New System.Windows.Forms.Label()
     Me.Label3 = New System.Windows.Forms.Label()
@@ -76,22 +79,13 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
     Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
     Me.pnlcantidad = New System.Windows.Forms.Panel()
-    Me.Panel1 = New System.Windows.Forms.Panel()
-    Me.txt_descripcionlugar = New System.Windows.Forms.TextBox()
-    Me.Label1 = New System.Windows.Forms.Label()
+    Me.ComboBoxUnidadMedida = New Incautacion.Modulo.ComboBoxParametroDet()
     Me.pnlaccion = New System.Windows.Forms.Panel()
     Me.btnquitar = New System.Windows.Forms.Button()
     Me.btnagregar = New System.Windows.Forms.Button()
     Me.grpcombo = New System.Windows.Forms.GroupBox()
     Me.DGCombo = New System.Windows.Forms.DataGridView()
     Me.BSCombo = New System.Windows.Forms.BindingSource(Me.components)
-    Me.Panel3 = New System.Windows.Forms.Panel()
-    Me.Label7 = New System.Windows.Forms.Label()
-    Me.txt_modelo = New System.Windows.Forms.TextBox()
-    Me.txt_marca = New System.Windows.Forms.TextBox()
-    Me.Label8 = New System.Windows.Forms.Label()
-    Me.CtlBuscaItem1 = New Incautacion.Modulo.CtlBuscaItem()
-    Me.ComboBoxUnidadMedida = New Incautacion.Modulo.ComboBoxParametroDet()
     CType(Me.DGSeries, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.BSSeries, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.Panel2.SuspendLayout()
@@ -106,12 +100,10 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.FlowLayoutPanel1.SuspendLayout()
     Me.pnlcantidad.SuspendLayout()
-    Me.Panel1.SuspendLayout()
     Me.pnlaccion.SuspendLayout()
     Me.grpcombo.SuspendLayout()
     CType(Me.DGCombo, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.BSCombo, System.ComponentModel.ISupportInitialize).BeginInit()
-    Me.Panel3.SuspendLayout()
     Me.SuspendLayout()
     '
     'DGSeries
@@ -124,22 +116,32 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
     Me.DGSeries.AutoGenerateColumns = False
     Me.DGSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-    Me.DGSeries.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn27})
+    Me.DGSeries.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn29})
     Me.DGSeries.DataSource = Me.BSSeries
     Me.DGSeries.Location = New System.Drawing.Point(6, 33)
     Me.DGSeries.Name = "DGSeries"
     Me.DGSeries.Size = New System.Drawing.Size(234, 65)
     Me.DGSeries.TabIndex = 0
     '
-    'DataGridViewTextBoxColumn26
+    'DataGridViewTextBoxColumn28
     '
-    Me.DataGridViewTextBoxColumn26.HeaderText = "No existen registros a presentar"
-    Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
+    Me.DataGridViewTextBoxColumn28.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn28.Name = "DataGridViewTextBoxColumn28"
+    '
+    'DataGridViewTextBoxColumn29
+    '
+    Me.DataGridViewTextBoxColumn29.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn29.Name = "DataGridViewTextBoxColumn29"
     '
     'DataGridViewTextBoxColumn27
     '
     Me.DataGridViewTextBoxColumn27.HeaderText = "No existen registros a presentar"
     Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
+    '
+    'DataGridViewTextBoxColumn26
+    '
+    Me.DataGridViewTextBoxColumn26.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
     '
     'DataGridViewTextBoxColumn25
     '
@@ -275,6 +277,17 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Me.Panel2.Size = New System.Drawing.Size(347, 26)
     Me.Panel2.TabIndex = 0
     '
+    'CtlBuscaItem1
+    '
+    Me.CtlBuscaItem1.Item = Nothing
+    Me.CtlBuscaItem1.ItemText = "Item"
+    Me.CtlBuscaItem1.Location = New System.Drawing.Point(3, 3)
+    Me.CtlBuscaItem1.Name = "CtlBuscaItem1"
+    Me.CtlBuscaItem1.PardetTipoInventario = Nothing
+    Me.CtlBuscaItem1.Size = New System.Drawing.Size(341, 21)
+    Me.CtlBuscaItem1.TabIndex = 0
+    Me.CtlBuscaItem1.Ubicacion = Incautacion.Modulo.CtlBuscaItem.EnumUbicacion.Normal
+    '
     'txtcantidad
     '
     Me.txtcantidad.Location = New System.Drawing.Point(127, 0)
@@ -318,7 +331,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     '
     'PictureBox1
     '
-    Me.PictureBox1.Location = New System.Drawing.Point(356, 222)
+    Me.PictureBox1.Location = New System.Drawing.Point(356, 115)
     Me.PictureBox1.Name = "PictureBox1"
     Me.PictureBox1.Size = New System.Drawing.Size(61, 64)
     Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -333,7 +346,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     'grpexistencias
     '
     Me.grpexistencias.Controls.Add(Me.DGExistencias)
-    Me.grpexistencias.Location = New System.Drawing.Point(356, 110)
+    Me.grpexistencias.Location = New System.Drawing.Point(356, 3)
     Me.grpexistencias.Name = "grpexistencias"
     Me.grpexistencias.Size = New System.Drawing.Size(277, 106)
     Me.grpexistencias.TabIndex = 6
@@ -393,7 +406,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Me.pnlserie.Controls.Add(Me.ToolStrip2)
     Me.pnlserie.Controls.Add(Me.DGSeries)
     Me.pnlserie.Controls.Add(Me.Label6)
-    Me.pnlserie.Location = New System.Drawing.Point(356, 3)
+    Me.pnlserie.Location = New System.Drawing.Point(3, 145)
     Me.pnlserie.Name = "pnlserie"
     Me.pnlserie.Size = New System.Drawing.Size(265, 101)
     Me.pnlserie.TabIndex = 4
@@ -484,8 +497,6 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Me.FlowLayoutPanel1.Controls.Add(Me.pnlcantidad)
     Me.FlowLayoutPanel1.Controls.Add(Me.pnlvalor)
     Me.FlowLayoutPanel1.Controls.Add(Me.pnldescto)
-    Me.FlowLayoutPanel1.Controls.Add(Me.Panel1)
-    Me.FlowLayoutPanel1.Controls.Add(Me.Panel3)
     Me.FlowLayoutPanel1.Controls.Add(Me.pnlaccion)
     Me.FlowLayoutPanel1.Controls.Add(Me.pnlserie)
     Me.FlowLayoutPanel1.Controls.Add(Me.grpexistencias)
@@ -496,7 +507,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
     Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
     Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-    Me.FlowLayoutPanel1.Size = New System.Drawing.Size(808, 303)
+    Me.FlowLayoutPanel1.Size = New System.Drawing.Size(880, 303)
     Me.FlowLayoutPanel1.TabIndex = 0
     '
     'pnlcantidad
@@ -509,36 +520,27 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Me.pnlcantidad.Size = New System.Drawing.Size(347, 21)
     Me.pnlcantidad.TabIndex = 1
     '
-    'Panel1
+    'ComboBoxUnidadMedida
     '
-    Me.Panel1.Controls.Add(Me.txt_descripcionlugar)
-    Me.Panel1.Controls.Add(Me.Label1)
-    Me.Panel1.Location = New System.Drawing.Point(3, 114)
-    Me.Panel1.Name = "Panel1"
-    Me.Panel1.Size = New System.Drawing.Size(347, 27)
-    Me.Panel1.TabIndex = 11
-    '
-    'txt_descripcionlugar
-    '
-    Me.txt_descripcionlugar.Location = New System.Drawing.Point(127, 3)
-    Me.txt_descripcionlugar.Name = "txt_descripcionlugar"
-    Me.txt_descripcionlugar.Size = New System.Drawing.Size(217, 20)
-    Me.txt_descripcionlugar.TabIndex = 1
-    '
-    'Label1
-    '
-    Me.Label1.AutoSize = True
-    Me.Label1.Location = New System.Drawing.Point(3, 5)
-    Me.Label1.Name = "Label1"
-    Me.Label1.Size = New System.Drawing.Size(92, 13)
-    Me.Label1.TabIndex = 0
-    Me.Label1.Text = "Descripcion lugar:"
+    Me.ComboBoxUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.ComboBoxUnidadMedida.FormattingEnabled = True
+    Me.ComboBoxUnidadMedida.Location = New System.Drawing.Point(251, 0)
+    Me.ComboBoxUnidadMedida.Name = "ComboBoxUnidadMedida"
+    Me.ComboBoxUnidadMedida.OperadorDatos = Nothing
+    Me.ComboBoxUnidadMedida.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.ComboBoxUnidadMedida.ParametroDet = Nothing
+    Me.ComboBoxUnidadMedida.PuedeActualizar = True
+    Me.ComboBoxUnidadMedida.PuedeEliminar = True
+    Me.ComboBoxUnidadMedida.PuedeModificar = True
+    Me.ComboBoxUnidadMedida.PuedeNuevo = True
+    Me.ComboBoxUnidadMedida.Size = New System.Drawing.Size(93, 21)
+    Me.ComboBoxUnidadMedida.TabIndex = 3
     '
     'pnlaccion
     '
     Me.pnlaccion.Controls.Add(Me.btnquitar)
     Me.pnlaccion.Controls.Add(Me.btnagregar)
-    Me.pnlaccion.Location = New System.Drawing.Point(3, 176)
+    Me.pnlaccion.Location = New System.Drawing.Point(3, 114)
     Me.pnlaccion.Name = "pnlaccion"
     Me.pnlaccion.Size = New System.Drawing.Size(156, 25)
     Me.pnlaccion.TabIndex = 5
@@ -564,7 +566,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     'grpcombo
     '
     Me.grpcombo.Controls.Add(Me.DGCombo)
-    Me.grpcombo.Location = New System.Drawing.Point(639, 3)
+    Me.grpcombo.Location = New System.Drawing.Point(356, 185)
     Me.grpcombo.Name = "grpcombo"
     Me.grpcombo.Size = New System.Drawing.Size(393, 106)
     Me.grpcombo.TabIndex = 10
@@ -595,83 +597,13 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Me.DGCombo.TabIndex = 0
     Me.DGCombo.TabStop = False
     '
-    'Panel3
-    '
-    Me.Panel3.Controls.Add(Me.txt_marca)
-    Me.Panel3.Controls.Add(Me.Label8)
-    Me.Panel3.Controls.Add(Me.txt_modelo)
-    Me.Panel3.Controls.Add(Me.Label7)
-    Me.Panel3.Location = New System.Drawing.Point(3, 147)
-    Me.Panel3.Name = "Panel3"
-    Me.Panel3.Size = New System.Drawing.Size(347, 23)
-    Me.Panel3.TabIndex = 12
-    '
-    'Label7
-    '
-    Me.Label7.AutoSize = True
-    Me.Label7.Location = New System.Drawing.Point(6, 4)
-    Me.Label7.Name = "Label7"
-    Me.Label7.Size = New System.Drawing.Size(48, 13)
-    Me.Label7.TabIndex = 0
-    Me.Label7.Text = "Modelo: "
-    '
-    'txt_modelo
-    '
-    Me.txt_modelo.Location = New System.Drawing.Point(54, 2)
-    Me.txt_modelo.Name = "txt_modelo"
-    Me.txt_modelo.Size = New System.Drawing.Size(102, 20)
-    Me.txt_modelo.TabIndex = 1
-    '
-    'txt_marca
-    '
-    Me.txt_marca.Location = New System.Drawing.Point(233, 2)
-    Me.txt_marca.Name = "txt_marca"
-    Me.txt_marca.Size = New System.Drawing.Size(111, 20)
-    Me.txt_marca.TabIndex = 3
-    '
-    'Label8
-    '
-    Me.Label8.AutoSize = True
-    Me.Label8.Location = New System.Drawing.Point(187, 5)
-    Me.Label8.Name = "Label8"
-    Me.Label8.Size = New System.Drawing.Size(40, 13)
-    Me.Label8.TabIndex = 2
-    Me.Label8.Text = "Marca:"
-    '
-    'CtlBuscaItem1
-    '
-    Me.CtlBuscaItem1.Item = Nothing
-    Me.CtlBuscaItem1.ItemText = "Item"
-    Me.CtlBuscaItem1.Location = New System.Drawing.Point(3, 3)
-    Me.CtlBuscaItem1.Name = "CtlBuscaItem1"
-    Me.CtlBuscaItem1.PardetTipoInventario = Nothing
-    Me.CtlBuscaItem1.Size = New System.Drawing.Size(341, 21)
-    Me.CtlBuscaItem1.TabIndex = 0
-    Me.CtlBuscaItem1.Ubicacion = Incautacion.Modulo.CtlBuscaItem.EnumUbicacion.Normal
-    '
-    'ComboBoxUnidadMedida
-    '
-    Me.ComboBoxUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.ComboBoxUnidadMedida.FormattingEnabled = True
-    Me.ComboBoxUnidadMedida.Location = New System.Drawing.Point(251, 0)
-    Me.ComboBoxUnidadMedida.Name = "ComboBoxUnidadMedida"
-    Me.ComboBoxUnidadMedida.OperadorDatos = Nothing
-    Me.ComboBoxUnidadMedida.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.ComboBoxUnidadMedida.ParametroDet = Nothing
-    Me.ComboBoxUnidadMedida.PuedeActualizar = True
-    Me.ComboBoxUnidadMedida.PuedeEliminar = True
-    Me.ComboBoxUnidadMedida.PuedeModificar = True
-    Me.ComboBoxUnidadMedida.PuedeNuevo = True
-    Me.ComboBoxUnidadMedida.Size = New System.Drawing.Size(93, 21)
-    Me.ComboBoxUnidadMedida.TabIndex = 3
-    '
     'CtlMantenimientoMovimientoInventarioDet
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.Controls.Add(Me.FlowLayoutPanel1)
     Me.Name = "CtlMantenimientoMovimientoInventarioDet"
-    Me.Size = New System.Drawing.Size(808, 303)
+    Me.Size = New System.Drawing.Size(880, 303)
     CType(Me.DGSeries, System.ComponentModel.ISupportInitialize).EndInit()
     CType(Me.BSSeries, System.ComponentModel.ISupportInitialize).EndInit()
     Me.Panel2.ResumeLayout(False)
@@ -691,14 +623,10 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Me.FlowLayoutPanel1.ResumeLayout(False)
     Me.pnlcantidad.ResumeLayout(False)
     Me.pnlcantidad.PerformLayout()
-    Me.Panel1.ResumeLayout(False)
-    Me.Panel1.PerformLayout()
     Me.pnlaccion.ResumeLayout(False)
     Me.grpcombo.ResumeLayout(False)
     CType(Me.DGCombo, System.ComponentModel.ISupportInitialize).EndInit()
     CType(Me.BSCombo, System.ComponentModel.ISupportInitialize).EndInit()
-    Me.Panel3.ResumeLayout(False)
-    Me.Panel3.PerformLayout()
     Me.ResumeLayout(False)
 
   End Sub
@@ -761,14 +689,8 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
   Friend WithEvents btnquitar As System.Windows.Forms.Button
   Friend WithEvents btnagregar As System.Windows.Forms.Button
   Friend WithEvents DataGridViewTextBoxColumn26 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents Panel1 As System.Windows.Forms.Panel
-  Friend WithEvents txt_descripcionlugar As System.Windows.Forms.TextBox
-  Friend WithEvents Label1 As System.Windows.Forms.Label
   Friend WithEvents DataGridViewTextBoxColumn27 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents Panel3 As System.Windows.Forms.Panel
-  Friend WithEvents txt_marca As System.Windows.Forms.TextBox
-  Friend WithEvents Label8 As System.Windows.Forms.Label
-  Friend WithEvents txt_modelo As System.Windows.Forms.TextBox
-  Friend WithEvents Label7 As System.Windows.Forms.Label
+  Friend WithEvents DataGridViewTextBoxColumn28 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents DataGridViewTextBoxColumn29 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

@@ -23,137 +23,138 @@ Partial Class GridComboBox
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
     Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-    Me.Item = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.Salida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+    Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.Medida = New System.Windows.Forms.DataGridViewComboBoxColumn()
-    Me.Descripcion = New System.Windows.Forms.DataGridViewComboBoxColumn()
-    Me.Marca = New System.Windows.Forms.DataGridViewComboBoxColumn()
-    Me.Modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.Serie = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.Estado = New System.Windows.Forms.DataGridViewComboBoxColumn()
-    Me.ValorUnit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.ValorTot = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.Caract = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.Ubica = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+    Me.Column3 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+    Me.Column4 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+    Me.M = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.Column5 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+    Me.e = New System.Windows.Forms.DataGridViewComboBoxColumn()
+    Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+    Me.FlowLayoutPanel1.SuspendLayout()
     Me.SuspendLayout()
     '
     'DataGridView1
     '
     Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-    Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Item, Me.Salida, Me.Cantidad, Me.Medida, Me.Descripcion, Me.Marca, Me.Modelo, Me.Serie, Me.Estado, Me.ValorUnit, Me.ValorTot, Me.Caract, Me.Ubica})
-    Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
+    Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Cantidad, Me.Column2, Me.Column3, Me.Column4, Me.M, Me.Column5, Me.e, Me.Column6, Me.Column7, Me.Column8, Me.Column9})
+    Me.DataGridView1.Location = New System.Drawing.Point(3, 3)
     Me.DataGridView1.Name = "DataGridView1"
-    Me.DataGridView1.Size = New System.Drawing.Size(813, 212)
+    Me.DataGridView1.Size = New System.Drawing.Size(944, 223)
     Me.DataGridView1.TabIndex = 0
     '
-    'Item
+    'FlowLayoutPanel1
     '
-    Me.Item.HeaderText = "Item"
-    Me.Item.MinimumWidth = 2
-    Me.Item.Name = "Item"
-    Me.Item.Width = 40
+    Me.FlowLayoutPanel1.Controls.Add(Me.DataGridView1)
+    Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 3)
+    Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+    Me.FlowLayoutPanel1.Size = New System.Drawing.Size(952, 226)
+    Me.FlowLayoutPanel1.TabIndex = 1
     '
-    'Salida
+    'Column1
     '
-    Me.Salida.HeaderText = "Egreso"
-    Me.Salida.Name = "Salida"
-    Me.Salida.Width = 50
+    Me.Column1.HeaderText = "Item"
+    Me.Column1.Name = "Column1"
+    Me.Column1.Width = 40
     '
     'Cantidad
     '
     Me.Cantidad.HeaderText = "Cantidad"
     Me.Cantidad.Name = "Cantidad"
-    Me.Cantidad.Width = 50
+    Me.Cantidad.Width = 60
     '
-    'Medida
+    'Column2
     '
-    Me.Medida.HeaderText = "Medida"
-    Me.Medida.Name = "Medida"
-    Me.Medida.Width = 60
+    Me.Column2.HeaderText = "Unidad de Medida"
+    Me.Column2.Name = "Column2"
+    Me.Column2.Width = 80
     '
-    'Descripcion
+    'Column3
     '
-    Me.Descripcion.HeaderText = "Descripcion"
-    Me.Descripcion.Name = "Descripcion"
-    Me.Descripcion.Width = 80
+    Me.Column3.HeaderText = "Descripcion"
+    Me.Column3.Name = "Column3"
+    Me.Column3.Width = 80
     '
-    'Marca
+    'Column4
     '
-    Me.Marca.HeaderText = "Marca"
-    Me.Marca.Name = "Marca"
-    Me.Marca.Width = 80
+    Me.Column4.HeaderText = "Marca"
+    Me.Column4.Name = "Column4"
+    Me.Column4.Width = 80
     '
-    'Modelo
+    'M
     '
-    Me.Modelo.HeaderText = "Modelo"
-    Me.Modelo.Name = "Modelo"
-    Me.Modelo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-    Me.Modelo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-    Me.Modelo.Width = 80
+    Me.M.HeaderText = "Modelo"
+    Me.M.Name = "M"
+    Me.M.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+    Me.M.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+    Me.M.Width = 80
     '
-    'Serie
+    'Column5
     '
-    Me.Serie.HeaderText = "Serie"
-    Me.Serie.Name = "Serie"
-    Me.Serie.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-    Me.Serie.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-    Me.Serie.Width = 80
+    Me.Column5.HeaderText = "Serie"
+    Me.Column5.Name = "Column5"
     '
-    'Estado
+    'e
     '
-    Me.Estado.HeaderText = "Estado"
-    Me.Estado.Name = "Estado"
-    Me.Estado.Width = 60
+    Me.e.HeaderText = "Estado"
+    Me.e.Name = "e"
+    Me.e.Width = 80
     '
-    'ValorUnit
+    'Column6
     '
-    Me.ValorUnit.HeaderText = "Valor Unitario"
-    Me.ValorUnit.Name = "ValorUnit"
-    Me.ValorUnit.Width = 40
+    Me.Column6.HeaderText = "Valor Unitario"
+    Me.Column6.Name = "Column6"
+    Me.Column6.Width = 70
     '
-    'ValorTot
+    'Column7
     '
-    Me.ValorTot.HeaderText = "Valor Total"
-    Me.ValorTot.Name = "ValorTot"
-    Me.ValorTot.Width = 40
+    Me.Column7.HeaderText = "Valor Total"
+    Me.Column7.Name = "Column7"
+    Me.Column7.Width = 70
     '
-    'Caract
+    'Column8
     '
-    Me.Caract.HeaderText = "Caracteristicas"
-    Me.Caract.Name = "Caract"
+    Me.Column8.HeaderText = "Caracteristicas"
+    Me.Column8.Name = "Column8"
+    Me.Column8.Width = 80
     '
-    'Ubica
+    'Column9
     '
-    Me.Ubica.HeaderText = "Ubicacion"
-    Me.Ubica.Name = "Ubica"
-    Me.Ubica.Width = 60
+    Me.Column9.HeaderText = "Ubicacion"
+    Me.Column9.Name = "Column9"
+    Me.Column9.Width = 80
     '
     'GridComboBox
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-    Me.Controls.Add(Me.DataGridView1)
+    Me.Controls.Add(Me.FlowLayoutPanel1)
     Me.Name = "GridComboBox"
-    Me.Size = New System.Drawing.Size(843, 242)
+    Me.Size = New System.Drawing.Size(948, 242)
     CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+    Me.FlowLayoutPanel1.ResumeLayout(False)
     Me.ResumeLayout(False)
 
   End Sub
   Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-  Friend WithEvents Item As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents Salida As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
+  Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
   Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents Medida As System.Windows.Forms.DataGridViewComboBoxColumn
-  Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewComboBoxColumn
-  Friend WithEvents Marca As System.Windows.Forms.DataGridViewComboBoxColumn
-  Friend WithEvents Modelo As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents Serie As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents Estado As System.Windows.Forms.DataGridViewComboBoxColumn
-  Friend WithEvents ValorUnit As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents ValorTot As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents Caract As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents Ubica As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents Column2 As System.Windows.Forms.DataGridViewComboBoxColumn
+  Friend WithEvents Column3 As System.Windows.Forms.DataGridViewComboBoxColumn
+  Friend WithEvents Column4 As System.Windows.Forms.DataGridViewComboBoxColumn
+  Friend WithEvents M As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents Column5 As System.Windows.Forms.DataGridViewComboBoxColumn
+  Friend WithEvents e As System.Windows.Forms.DataGridViewComboBoxColumn
+  Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents Column8 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents Column9 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

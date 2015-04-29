@@ -529,6 +529,9 @@ Public Class Item
     Item_CodigoProveedor = CType(Fila("Item_CodigoProveedor"), String)
     Item_esIvaIncluido = CType(Fila("Item_esIvaIncluido"), Boolean)
     Item_esRegistroSerie = CType(Fila("Item_esRegistroSerie"), Boolean)
+    Incaut_Codigo = CType(Fila("Incaut_Codigo"), Integer)
+    Item_Serie = CType(Fila("Item_Serie"), String)
+
     Try
       Entida_Proveedor = CInt(Fila("Entida_Proveedor"))
     Catch ex As Exception
@@ -601,6 +604,8 @@ Public Class Item
     OperadorDatos.AgregarParametro("@Item_CodigoProveedor", Item_CodigoProveedor)
     OperadorDatos.AgregarParametro("@Item_esIvaIncluido", Item_esIvaIncluido)
     OperadorDatos.AgregarParametro("@Item_esRegistroSerie", Item_esRegistroSerie)
+    OperadorDatos.AgregarParametro("@Item_Serie", Item_Serie)
+    OperadorDatos.AgregarParametro("@Incaut_Codigo", Incaut_Codigo)
     If Entida_Proveedor > 0 Then
       OperadorDatos.AgregarParametro("@Entida_Proveedor", Entida_Proveedor)
     End If
