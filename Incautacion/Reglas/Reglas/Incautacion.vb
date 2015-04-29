@@ -51,7 +51,12 @@ Partial Public Class Incautacion
   Public Sub New(ByVal _Sucursal As Sucursal, ByVal _PardetTipoMovinv As WWTSParametroDet, ByVal _Movinv_Secuencia As Integer, ByVal _estricto As Boolean)
     MyBase.New()
     OperadorDatos = _Sucursal.OperadorDatos
+<<<<<<< HEAD
    
+=======
+    Sucursal = _Sucursal
+
+>>>>>>> origin/master
 
     If Me.Recargar Then
     Else
@@ -63,6 +68,24 @@ Partial Public Class Incautacion
 
 
 
+<<<<<<< HEAD
+=======
+  'Sucursal
+  Public Overridable Property Sucursal() As Sucursal
+    Get
+      If Me.mSucursal Is Nothing AndAlso Sucurs_Codigo > 0 Then
+        Me.mSucursal = New Sucursal(New Empresa(OperadorDatos, Empres_Codigo), Sucurs_Codigo)
+      End If
+      Return Me.mSucursal
+    End Get
+    Set(ByVal value As Sucursal)
+      Me.mSucursal = value
+      Empres_Codigo = value.Empres_Codigo
+      Sucurs_Codigo = value.Sucurs_Codigo
+    End Set
+  End Property
+
+>>>>>>> origin/master
   
 
   'Proveedor
@@ -128,8 +151,14 @@ Partial Public Class Incautacion
   Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
     Empres_Codigo = CType(Fila("Empres_Codigo"), Integer)
     Entida_Contribuyente = CType(Fila("Entida_Contribuyente"), Integer)
+<<<<<<< HEAD
     Incaut_Numero = CType(Fila("Incautacion_Numero"), String)
     Incaut_Codigo = CType(Fila("Incaut_Codigo"), Integer)
+=======
+    Incautacion_Numero = CType(Fila("Incautacion_Numero"), String)
+    Incaut_Secuencia = CType(Fila("Incaut_Secuncia"), Integer)
+    Incaut_Responsable = CType(Fila("Incaut_Responsable"), String)
+>>>>>>> origin/master
     Incaut_Fecha = CType(Fila("Incaut_Fecha"), Date)
     Incaut_TenedorNombre = CType(Fila("Incaut_TenedorNombre"), String)
     Incaut_TenedorCI = CType(Fila("Incaut_TenedorCI"), String)
@@ -156,6 +185,7 @@ Partial Public Class Incautacion
 
     OperadorDatos.ComenzarTransaccion()
 
+<<<<<<< HEAD
     Dim sAccion As String = "M"
     If EsNuevo Then
       sAccion = "I"
@@ -190,6 +220,42 @@ Partial Public Class Incautacion
         'TODO
         'cambiar la fecha de pago según forma de pago
         'bReturn = _pago.Guardar()
+=======
+
+
+    If bReturn Then
+    
+      Dim sAccion As String = "M"
+      If EsNuevo Then
+        sAccion = "I"
+      End If
+      OperadorDatos.AgregarParametro("@accion", sAccion)
+      OperadorDatos.AgregarParametro("@Empres_Codigo", Empres_Codigo)
+      OperadorDatos.AgregarParametro("@Sucurs_Codigo", Sucurs_Codigo)
+      OperadorDatos.AgregarParametro("@Parame_TipoIncautacionMov", Parame_TipoIncautacionMov)
+      OperadorDatos.AgregarParametro("@Pardet_TipoIncautacionMov", Pardet_TipoIncautacionMov)
+      OperadorDatos.AgregarParametro("@Entida_Contribuyente", Contribuyente.Entida_Codigo)
+      OperadorDatos.AgregarParametro("@Incautacion_Numero", Incautacion_Numero)
+      OperadorDatos.AgregarParametro("@Incaut_Secuencia", Incaut_Secuencia)
+      OperadorDatos.AgregarParametro("@Incaut_Fecha", Incaut_Fecha)
+      OperadorDatos.AgregarParametro("@Incaut_Responsable", Incaut_Responsable)
+      OperadorDatos.Procedimiento = _Procedimiento
+      bReturn = OperadorDatos.Ejecutar(Result)
+      OperadorDatos.LimpiarParametros()
+      If bReturn Then
+        If EsNuevo Then
+          Me.RecargarporMovimientoInventario()
+          'Incaut_Secuencia = Result
+          ' Compra_Numero = Result
+
+          'Dim _pago As New PagosDet(Me.MovimientoIfnventario, True)
+          '_pago.Pardet_TipoMovPago = Enumerados.enumTipoMovPagos.Documento
+          '_pago.Pagdet_Valor = -Me.MovimientoInventario.TotalGeneral
+          '_pago.Pagdet_FechaPago = Me.MovimientoInventario.Movinv_Fecha
+          'TODO
+          'cambiar la fecha de pago según forma de pago
+          'bReturn = _pago.Guardar()
+>>>>>>> origin/master
 
       End If
       If Not OperadorDatos.EstaenTransaccion Then
@@ -236,6 +302,10 @@ Partial Public Class Incautacion
     Dim bReturn As Boolean = True
     OperadorDatos.AgregarParametro("@accion", "CM")
     OperadorDatos.AgregarParametro("@Empres_Codigo", Empres_Codigo)
+<<<<<<< HEAD
+=======
+    OperadorDatos.AgregarParametro("@Sucurs_Codigo", Sucurs_Codigo)
+>>>>>>> origin/master
     OperadorDatos.Procedimiento = _Procedimiento
     bReturn = OperadorDatos.Ejecutar(Result)
     OperadorDatos.LimpiarParametros()

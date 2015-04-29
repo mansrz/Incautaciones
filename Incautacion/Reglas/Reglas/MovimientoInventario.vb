@@ -589,6 +589,10 @@ Public Class MovimientoInventario
         If EsNuevo Then
           'TODO new Incautacion sub
           mIncautacion = New Incautacion(Sucursal, True)
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
         Else
           Try
             mIncautacion = New Incautacion(Sucursal, PardetTipoMovInv, Movinv_Secuencia, True)

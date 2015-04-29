@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Option Strict Off
 Option Explicit On
 
@@ -12,10 +13,17 @@ Option Explicit On
 'IncSal_NumeroLiquidacion	nvarchar(50)	Unchecked
 'IncSal_FechaRegistro	datetime	Unchecked
 
+=======
+﻿
+Option Strict Off
+Option Explicit On
+
+>>>>>>> origin/master
 Imports System
 Imports System.Xml
 Imports System.Xml.Serialization
 Imports Infoware.Reglas
+<<<<<<< HEAD
 Imports Infoware.Reglas.General
 
 #Region "Incautacion Salida"
@@ -159,3 +167,12 @@ Public Class IncautacionSalida
 
 End Class
 #End Region
+=======
+
+#Region "IncautacionSalida"
+Partial Public Class IncautacionSalida
+
+End Class
+#End Region
+
+>>>>>>> origin/master
