@@ -47,6 +47,17 @@ Public Class CtlBuscaItem
     End Set
   End Property
 
+    Private mIncautacion As Reglas.Incautacion = Nothing
+    Public Property Incautacion As Reglas.Incautacion
+        Get
+            Return mIncautacion
+        End Get
+        Set(value As Reglas.Incautacion)
+            mIncautacion = value
+        End Set
+    End Property
+
+
   Private mEstaCargando = False
 
   Sub llenar_datos()

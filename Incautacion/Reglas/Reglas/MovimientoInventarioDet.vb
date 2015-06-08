@@ -211,25 +211,33 @@ Public Class MovimientoInventarioDet
 #End Region
 
   'Item
-  Public Overridable Property Item() As Item
-    Get
-      If Me.mItem Is Nothing AndAlso Item_Codigo > 0 Then
-        Try
-          Me.mItem = New Item(OperadorDatos, Item_Codigo)
-        Catch ex As Exception
-          mItem = Nothing
-        End Try
-      End If
-      Return Me.mItem
-    End Get
-    Set(ByVal value As Item)
-      Me.mItem = value
-      Item_Codigo = value.Item_Codigo
+    Public Overridable Property Item() As Item
+        Get
+            If Me.mItem Is Nothing AndAlso Item_Codigo > 0 Then
+                Try
+                    Me.mItem = New Item(OperadorDatos, Item_Codigo)
+                Catch ex As Exception
+                    mItem = Nothing
+                End Try
+            End If
+            If Me.mItem Is Nothing AndAlso Item_Codigo = 0 Then
+                Try
+                    Me.mItem = New Item(OperadorDatos, True)
+                Catch ex As Exception
+                    mItem = Nothing
+                End Try
+            End If
+            Return Me.mItem
+        End Get
+        Set(ByVal value As Item)
+            Me.mItem = value
 
-      Parame_UnidMedStd = value.Parame_Unidadmedida
-      Pardet_UnidMedStd = value.Pardet_Unidadmedida
-    End Set
-  End Property
+            Item_Codigo = value.Item_Codigo
+
+            Parame_UnidMedStd = value.Parame_Unidadmedida
+            Pardet_UnidMedStd = value.Pardet_Unidadmedida
+        End Set
+    End Property
 
   <Infoware.Reportes.CampoReporteAtributo("Nombre_Item")> _
   Public Overridable ReadOnly Property ItemString() As String
@@ -241,6 +249,85 @@ Public Class MovimientoInventarioDet
       End If
     End Get
   End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Item_Secuencia", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales)> _
+    Public Overridable ReadOnly Property ItemSecuencia() As String
+        Get
+            If Item Is Nothing Then
+                Return 0
+            Else
+                Return mItem.Item_Secuencia
+            End If
+        End Get
+    End Property
+
+    'Tipo de Item
+    <Infoware.Reportes.CampoReporteAtributo("Item_Descripcion", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto)> _
+    Public Overridable ReadOnly Property ItemDescripcion() As String
+        Get
+            If Item Is Nothing Then
+                Return String.Empty
+            Else
+                Return mItem.PardetTipo.Pardet_Descripcion
+            End If
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Item_Marca", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto)> _
+    Public Overridable ReadOnly Property ItemMarca() As String
+        Get
+            If Item Is Nothing Then
+                Return String.Empty
+            Else
+                Return mItem.PardetMarca.Pardet_Descripcion
+            End If
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Item_Modelo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto)> _
+    Public Overridable ReadOnly Property ItemModelo() As String
+        Get
+            If Item Is Nothing Then
+                Return String.Empty
+            Else
+                Return mItem.Item_Modelo
+            End If
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Item_Serie", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto)> _
+    Public Overridable ReadOnly Property ItemSerie() As String
+        Get
+            If Item Is Nothing Then
+                Return String.Empty
+            Else
+                Return String.Format("{0}", IIf(mItem.Item_esRegistroSerie, mItem.Item_Serie, "-"))
+            End If
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Item_Estado")> _
+    Public Overridable ReadOnly Property ItemEstado() As String
+        Get
+            If Item Is Nothing Then
+                Return String.Empty
+            Else
+                Return mItem.PardetEstadoItem.Pardet_Descripcion
+            End If
+        End Get
+    End Property
+
+    'Descripcion
+    <Infoware.Reportes.CampoReporteAtributo("Item_Caracteristicas")> _
+    Public Overridable ReadOnly Property ItemCaracteristicas() As String
+        Get
+            If Item Is Nothing Then
+                Return String.Empty
+            Else
+                Return mItem.Item_Descripcion
+            End If
+        End Get
+    End Property
 
   Public Overridable Property UnidadMedidaConversion() As UnidadMedidaConversion
     Get
@@ -284,16 +371,16 @@ Public Class MovimientoInventarioDet
     End Get
   End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("CantidadStd", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales)> _
+    <Infoware.Reportes.CampoReporteAtributo("CantidadStd", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales)> _
   Public ReadOnly Property Moinde_CantidadStd() As Decimal
-    Get
-      If UnidadMedidaConversion Is Nothing Then
-        Return Moinde_Cantidad
-      Else
-        Return Moinde_Cantidad * mUnidadMedidaConversion.Unmeco_Factor
-      End If
-    End Get
-  End Property
+        Get
+            If UnidadMedidaConversion Is Nothing Then
+                Return Moinde_Cantidad
+            Else
+                Return Moinde_Cantidad * mUnidadMedidaConversion.Unmeco_Factor
+            End If
+        End Get
+    End Property
 
   <Infoware.Reportes.CampoReporteAtributo("Subtotal", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales)> _
   Public ReadOnly Property SubTotal() As Decimal
@@ -386,23 +473,23 @@ Public Class MovimientoInventarioDet
       Moinde_Descripcion = ""
     End Try
 
-    Try
-      Moinde_DescripcionLugar = CStr(Fila("Moinde_DescripcionLugar"))
-    Catch ex As Exception
-      Moinde_DescripcionLugar = ""
-    End Try
+        'Try
+        '  Moinde_DescripcionLugar = CStr(Fila("Moinde_DescripcionLugar"))
+        'Catch ex As Exception
+        '  Moinde_DescripcionLugar = ""
+        'End Try
 
-    Try
-      Moinde_Modelo = CStr(Fila("Moinde_Modelo"))
-    Catch ex As Exception
-      Moinde_Modelo = ""
-    End Try
+        'Try
+        '  Moinde_Modelo = CStr(Fila("Moinde_Modelo"))
+        'Catch ex As Exception
+        '  Moinde_Modelo = ""
+        'End Try
 
-    Try
-      Moinde_Marca = CStr(Fila("Moinde_Marca"))
-    Catch ex As Exception
-      Moinde_Marca = ""
-    End Try
+        'Try
+        '  Moinde_Marca = CStr(Fila("Moinde_Marca"))
+        'Catch ex As Exception
+        '  Moinde_Marca = ""
+        'End Try
     mMovimientoInventario = Nothing
     mItem = Nothing
   End Sub
@@ -451,7 +538,7 @@ Public Class MovimientoInventarioDet
     OperadorDatos.AgregarParametro("@Sucurs_Bodega", Sucurs_Bodega)
     OperadorDatos.AgregarParametro("@Movinv_Secuencia", Movinv_Secuencia)
     OperadorDatos.AgregarParametro("@Moinde_Secuencia", Moinde_Secuencia)
-    OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
+        OperadorDatos.AgregarParametro("@Item_Codigo", Item.Item_Codigo)
     OperadorDatos.AgregarParametro("@Parame_UnidadMedida", Parame_UnidadMedida)
     OperadorDatos.AgregarParametro("@Pardet_UnidadMedida", Pardet_UnidadMedida)
     OperadorDatos.AgregarParametro("@Moinde_Cantidad", Moinde_Cantidad)
@@ -465,9 +552,6 @@ Public Class MovimientoInventarioDet
     OperadorDatos.AgregarParametro("@Moinde_Aplicaiva", Moinde_Aplicaiva)
     OperadorDatos.AgregarParametro("@Moinde_Descripcion", Moinde_Descripcion)
     OperadorDatos.AgregarParametro("@Moinde_esDetalleCombo", Moinde_esDetalleCombo)
-    OperadorDatos.AgregarParametro("@Moinde_DescripcionLugar", Moinde_DescripcionLugar)
-    OperadorDatos.AgregarParametro("@Moinde_Marca", Moinde_Marca)
-    OperadorDatos.AgregarParametro("@Moinde_Modelo", Moinde_Modelo)
     OperadorDatos.Procedimiento = _Procedimiento
     bReturn = OperadorDatos.Ejecutar(Result)
     OperadorDatos.LimpiarParametros()

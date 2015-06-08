@@ -53,7 +53,12 @@
     Modulos = 9005
     Opciones = 9010
     Formatos = 9015
-    Valores = 9020
+        Valores = 9020
+
+        ListaIncautaciones = 610
+        Incautacion = 620
+        Resolucion = 630
+
   End Enum
 
   Enum enumTipoAccion
@@ -68,72 +73,78 @@
 #End Region
 
 #Region "Parametros"
-  Enum EnumParametros
-    Empresas = 2
-    Modulos = 4
-    Opciones = 5
-    TipoAccion = 10
-    Formatos = 20
+    Enum EnumParametros
 
-    TipoObjeto = 100
-    TipoEntidad = 110
-    TipoLugar = 115
-    TipoIdentificacion = 120
-    TipoDireccion = 125
-    SectorDomicilio = 127
-    TipoOtrosDatos = 130
+        Empresas = 2
+        Modulos = 4
+        Opciones = 5
+        TipoAccion = 10
+        Formatos = 20
 
-    TipoTelefono = 131
-    TipoEmail = 132
+        TipoObjeto = 100
+        TipoEntidad = 110
+        TipoLugar = 115
+        TipoIdentificacion = 120
+        TipoDireccion = 125
+        SectorDomicilio = 127
+        TipoOtrosDatos = 130
+        TipoTelefono = 131
+        TipoEmail = 132
 
-    Sexo = 140
-    EstadoCivil = 141
+        Sexo = 140
+        EstadoCivil = 141
 
-    TipoContribuyente = 145
+        TipoContribuyente = 145
 
-    TipoEmpleado = 150
+        TipoEmpleado = 150
 
-    Pais = 200
-    Provincia = 210
-    Ciudad = 220
-    Parroquia = 230
+        Pais = 200
+        Provincia = 210
+        Ciudad = 220
+        Parroquia = 230
 
-    Banco = 300
-    TarjetaCredito = 305
-    TipoCtaBan = 310
+        Banco = 300
+        TarjetaCredito = 305
+        TipoCtaBan = 310
 
-    TipotrabajoSobre = 425
-    EstadoSobre = 426
+        TipotrabajoSobre = 425
+        EstadoSobre = 426
 
-    TipoMovInventario = 440
-    TipoCompra = 441
-    TipoVenta = 442
+        TipoMovInventario = 440
+        TipoCompra = 441
+        TipoVenta = 442
 
-    TipoPrecio = 450
-    TipoFormaPago = 460
-    TipoMovPagos = 470
+        TipoPrecio = 450
+        TipoFormaPago = 460
+        TipoMovPagos = 470
 
-    TipoDiscapacidad = 707
-    Nacionalidad = 710
-    TipoSangre = 715
-    FormaPagoRol = 720
-    MotivoPago = 722
-    SeguroCorporativo = 724
+        TipoDiscapacidad = 707
+        Nacionalidad = 710
+        TipoSangre = 715
+        FormaPagoRol = 720
+        MotivoPago = 722
+        SeguroCorporativo = 724
 
-    Adjuntos = 2000
-    Adjuntosdetalle = 2005
+        Adjuntos = 2000
+        Adjuntosdetalle = 2005
 
-    Grupo = 400
-    Marca = 410
-    TipoInventario = 420
-    UnidadMedida = 430
+        EstadoItem = 415
+        Grupo = 405
+        TipoItem = 406
+        Marca = 410
+        TipoInventario = 420
+        UnidadMedida = 430
 
-    TipoCuenta = 444
+        TipoCuenta = 444
 
-    ConceptoRetencion = 473
-    TipoRetencionIVa = 474
-    RetencionIVA = 475
-  End Enum
+        ConceptoRetencion = 473
+        TipoRetencionIVa = 474
+        RetencionIVA = 475
+
+
+        TipoResolucion = 1021
+
+    End Enum
 #End Region
 
 #Region "TipoEntidad"
@@ -235,9 +246,8 @@
     OrdenProduccion = 15
     Cortesia = 16
         Cxp = 18
-    DevIncautacion = 20
-    DevIncautacionDonacion = 21
-    DevIncautacionChatarra = 22
+        IncautSalida = 21
+
   End Enum
 #End Region
 

@@ -85,90 +85,133 @@ Public Class CtlMovimientoInventarioDet
   Private Sub Llenar_detalles()
     _BindingSourceDetalles.DataSource = GetType(MovimientoInventarioDetList)
     _BindingSourceDetalles.DataSource = mMovimientoInventario.Detalles
-    MyBase.Columns.Clear()
+        MyBase.Columns.Clear()
 
-    Dim DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+        Dim DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
 
-    DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-    DataGridViewTextBoxColumn1.DataPropertyName = "Item_Codigo"
-    DataGridViewTextBoxColumn1.HeaderText = "Código"
-    DataGridViewTextBoxColumn1.Width = 75 * mFactorTamanio
-    DataGridViewTextBoxColumn1.ReadOnly = False
-    MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
-
-    DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-    DataGridViewTextBoxColumn1.DataPropertyName = "ItemString"
-    DataGridViewTextBoxColumn1.HeaderText = "Item"
-    DataGridViewTextBoxColumn1.Width = 285 * mFactorTamanio
-    DataGridViewTextBoxColumn1.ReadOnly = True
-    MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
-
-    DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-    DataGridViewTextBoxColumn1.DataPropertyName = "Moinde_Descripcion"
-    DataGridViewTextBoxColumn1.HeaderText = "Descripción"
-    DataGridViewTextBoxColumn1.Width = 225 * mFactorTamanio
-    DataGridViewTextBoxColumn1.ReadOnly = False
-    MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
-
-    DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-    DataGridViewTextBoxColumn1.DataPropertyName = "Moinde_Cantidad"
-    DataGridViewTextBoxColumn1.HeaderText = "Cantidad"
-    DataGridViewTextBoxColumn1.Width = 80 * mFactorTamanio
-    DataGridViewTextBoxColumn1.ReadOnly = False
-    Dim estilonum2 As New DataGridViewCellStyle()
-    estilonum2.Format = "N2"
-    DataGridViewTextBoxColumn1.DefaultCellStyle = estilonum2
-    MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
-
-    DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-    DataGridViewTextBoxColumn1.DataPropertyName = "PardetUnidadMedidaString"
-    DataGridViewTextBoxColumn1.HeaderText = "Medida"
-    DataGridViewTextBoxColumn1.Width = 50 * mFactorTamanio
-    'DataGridViewTextBoxColumn1.ReadOnly = False
-    MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
-
-
-    Dim _total As Boolean = False
-    Select Case mMovimientoInventario.Pardet_Tipomovinv
-      Case Enumerados.enumTipoMovInv.AjustePos, Enumerados.enumTipoMovInv.AjusteNeg, Enumerados.enumTipoMovInv.Transferencia, Enumerados.enumTipoMovInv.Consumo, Enumerados.enumTipoMovInv.DesperdicioOP, Enumerados.enumTipoMovInv.OrdenProduccion
-      Case Else
         DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        DataGridViewTextBoxColumn1.DataPropertyName = "Moinde_Valor"
-        DataGridViewTextBoxColumn1.HeaderText = "Valor Unit"
+        DataGridViewTextBoxColumn1.DataPropertyName = "ItemSecuencia"
+        DataGridViewTextBoxColumn1.HeaderText = "Item"
+        DataGridViewTextBoxColumn1.Width = 75 * mFactorTamanio
+        DataGridViewTextBoxColumn1.ReadOnly = False
+        MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
+
+        DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        DataGridViewTextBoxColumn1.DataPropertyName = "Moinde_Cantidad"
+        DataGridViewTextBoxColumn1.HeaderText = "Cantidad"
         DataGridViewTextBoxColumn1.Width = 80 * mFactorTamanio
         DataGridViewTextBoxColumn1.ReadOnly = False
+        Dim estilonum2 As New DataGridViewCellStyle()
+        estilonum2.Format = "N2"
         DataGridViewTextBoxColumn1.DefaultCellStyle = estilonum2
         MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
 
-        _total = True
-    End Select
-
-    Select Case mMovimientoInventario.Pardet_Tipomovinv
-      Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevVenta, Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevCompra
         DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        DataGridViewTextBoxColumn1.DataPropertyName = "Moinde_Descto"
-        DataGridViewTextBoxColumn1.HeaderText = "Dscto%"
-        DataGridViewTextBoxColumn1.Width = 65 * mFactorTamanio
+        DataGridViewTextBoxColumn1.DataPropertyName = "PardetUnidadMedidaString"
+        DataGridViewTextBoxColumn1.HeaderText = "Unidad de Medida"
+        DataGridViewTextBoxColumn1.Width = 50 * mFactorTamanio
+        'DataGridViewTextBoxColumn1.ReadOnly = False
+        MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
+
+        DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        DataGridViewTextBoxColumn1.DataPropertyName = "ItemDescripcion"
+        DataGridViewTextBoxColumn1.HeaderText = "Descripción"
+        DataGridViewTextBoxColumn1.Width = 285 * mFactorTamanio
+        DataGridViewTextBoxColumn1.ReadOnly = True
+        MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
+
+        
+        DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        DataGridViewTextBoxColumn1.DataPropertyName = "ItemMarca"
+        DataGridViewTextBoxColumn1.HeaderText = "Marca"
+        DataGridViewTextBoxColumn1.Width = 50 * mFactorTamanio
+        DataGridViewTextBoxColumn1.ReadOnly = True
+        MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
+
+        DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        DataGridViewTextBoxColumn1.DataPropertyName = "ItemModelo"
+        DataGridViewTextBoxColumn1.HeaderText = "Modelo"
+        DataGridViewTextBoxColumn1.Width = 50 * mFactorTamanio
         DataGridViewTextBoxColumn1.ReadOnly = False
-        DataGridViewTextBoxColumn1.DefaultCellStyle = estilonum2
-        MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
-    End Select
+        MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
 
-    If _total Then
-      DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-      DataGridViewTextBoxColumn1.DataPropertyName = "Total"
-      DataGridViewTextBoxColumn1.HeaderText = "Total"
-      DataGridViewTextBoxColumn1.Width = 85 * mFactorTamanio
-      DataGridViewTextBoxColumn1.ReadOnly = True
-      DataGridViewTextBoxColumn1.DefaultCellStyle = estilonum2
-      MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
-    End If
+        DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        DataGridViewTextBoxColumn1.DataPropertyName = "ItemSerie"
+        DataGridViewTextBoxColumn1.HeaderText = "Serie"
+        DataGridViewTextBoxColumn1.Width = 100 * mFactorTamanio
+        DataGridViewTextBoxColumn1.ReadOnly = False
+        MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
 
-    If mMovimientoInventario.Detalles.Count = 0 Then
-      _BindingSourceDetalles.AddNew()
-    End If
-    actualizar_totales()
-  End Sub
+        DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        DataGridViewTextBoxColumn1.DataPropertyName = "ItemPardetEstado"
+        DataGridViewTextBoxColumn1.HeaderText = "Estado"
+        DataGridViewTextBoxColumn1.Width = 50 * mFactorTamanio
+        DataGridViewTextBoxColumn1.ReadOnly = True
+        MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
+
+
+        'DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        'DataGridViewTextBoxColumn1.DataPropertyName = "Moinde_Descripcion"
+        'DataGridViewTextBoxColumn1.HeaderText = "Descripción"
+        'DataGridViewTextBoxColumn1.Width = 225 * mFactorTamanio
+        'DataGridViewTextBoxColumn1.ReadOnly = False
+        'MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
+
+        
+        
+
+        Dim _total As Boolean = False
+        Select Case mMovimientoInventario.Pardet_Tipomovinv
+            Case Enumerados.enumTipoMovInv.AjustePos, Enumerados.enumTipoMovInv.AjusteNeg, Enumerados.enumTipoMovInv.Transferencia, Enumerados.enumTipoMovInv.Consumo, Enumerados.enumTipoMovInv.DesperdicioOP, Enumerados.enumTipoMovInv.OrdenProduccion
+            Case Else
+                DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+                DataGridViewTextBoxColumn1.DataPropertyName = "Moinde_Valor"
+                DataGridViewTextBoxColumn1.HeaderText = "Valor Unit"
+                DataGridViewTextBoxColumn1.Width = 80 * mFactorTamanio
+                DataGridViewTextBoxColumn1.ReadOnly = False
+                DataGridViewTextBoxColumn1.DefaultCellStyle = estilonum2
+                MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+
+                _total = True
+        End Select
+
+        Select Case mMovimientoInventario.Pardet_Tipomovinv
+            Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevVenta, Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevCompra
+                DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+                DataGridViewTextBoxColumn1.DataPropertyName = "Moinde_Descto"
+                DataGridViewTextBoxColumn1.HeaderText = "Dscto%"
+                DataGridViewTextBoxColumn1.Width = 65 * mFactorTamanio
+                DataGridViewTextBoxColumn1.ReadOnly = False
+                DataGridViewTextBoxColumn1.DefaultCellStyle = estilonum2
+                MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        End Select
+
+        If _total Then
+            DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn1.DataPropertyName = "Total"
+            DataGridViewTextBoxColumn1.HeaderText = "Total"
+            DataGridViewTextBoxColumn1.Width = 85 * mFactorTamanio
+            DataGridViewTextBoxColumn1.ReadOnly = True
+            DataGridViewTextBoxColumn1.DefaultCellStyle = estilonum2
+            MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        End If
+
+        DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        DataGridViewTextBoxColumn1.DataPropertyName = "ItemCaracteristicas"
+        DataGridViewTextBoxColumn1.HeaderText = "Características"
+        DataGridViewTextBoxColumn1.Width = 100 * mFactorTamanio
+        DataGridViewTextBoxColumn1.ReadOnly = False
+        MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
+
+
+        'If mMovimientoInventario.Detalles.Count = 0 Then
+        '    _BindingSourceDetalles.AddNew()
+        'Else
+
+        'End If
+
+        actualizar_totales()
+    End Sub
 
   Private Sub MyBase_CellEndEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles MyBase.CellEndEdit
     actualizar_totales()

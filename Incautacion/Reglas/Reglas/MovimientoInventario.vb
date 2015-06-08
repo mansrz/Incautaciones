@@ -28,14 +28,14 @@ Public Class MovimientoInventario
 
   Private mSucursal As Sucursal = Nothing
 
+    Private mIncautacion As Incautacion = Nothing
+
   Private mPardetTipoMovInv As WWTSParametroDet = Nothing
 
   Private mVenta As Venta = Nothing
 
   Private mCompra As Compra = Nothing
     'Add Incautacion
-
-    Private mIncautacion As Incautacion = Nothing
 
   'Private mRegistroContable As RegistroContable = Nothing
 
@@ -588,14 +588,10 @@ Public Class MovimientoInventario
       If mIncautacion Is Nothing And (Pardet_Tipomovinv = Enumerados.enumTipoMovInv.Incautacion) Then
         If EsNuevo Then
           'TODO new Incautacion sub
-          mIncautacion = New Incautacion(Sucursal, True)
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
+                    mIncautacion = New Incautacion(OperadorDatos, True)
         Else
           Try
-            mIncautacion = New Incautacion(Sucursal, PardetTipoMovInv, Movinv_Secuencia, True)
+                        'mIncautacion = New Incautacion(Sucursal, PardetTipoMovInv, Movinv_Secuencia, True)
           Catch ex As Exception
             mIncautacion = Nothing
           End Try
@@ -862,7 +858,8 @@ Public Class MovimientoInventario
     Sucurs_Bodega = CType(Fila("Sucurs_Bodega"), Integer)
     Movinv_Secuencia = CType(Fila("Movinv_Secuencia"), Integer)
     Bodega_Codigo = CType(Fila("Bodega_Codigo"), Integer)
-    Movinv_autorizado = CBool(Fila("Movinv_autorizado"))
+        Movinv_autorizado = CBool(Fila("Movinv_autorizado"))
+        Incaut_Codigo = CType(Fila("Incaut_Codigo"), Integer)
     Dim obj As Object
     obj = Fila("Sucurs_Bodegadestino")
     If TypeOf obj Is DBNull Then
@@ -944,97 +941,119 @@ Public Class MovimientoInventario
     Return bReturn
   End Function
 
-  Public Overridable Function Guardar() As Boolean
-    'If Not EsNuevo And Not EsModificado Then
-    '  Return True
-    'End If
+    Public Overridable Function Guardar() As Boolean
+        MsgBox("voy a guardar movimiento inventario")
+        'If Not EsNuevo And Not EsModificado Then
+        '  Return True
+        'End If
 
-    Dim Result As Integer = 0
-    Dim bReturn As Boolean = True
+        Dim Result As Integer = 0
+        Dim bReturn As Boolean = True
 
-    Dim _comenzotransaccion As Boolean = False
-    If Not OperadorDatos.EstaenTransaccion Then
-      OperadorDatos.ComenzarTransaccion()
-      _comenzotransaccion = True
-    End If
-
-    Dim sAccion As String = "M"
-    If EsNuevo Then
-      sAccion = "I"
-    End If
-    OperadorDatos.AgregarParametro("@accion", sAccion)
-    OperadorDatos.AgregarParametro("@Parame_Tipomovinv", Parame_Tipomovinv)
-
-    OperadorDatos.AgregarParametro("@Pardet_Tipomovinv", Pardet_Tipomovinv)
-    OperadorDatos.AgregarParametro("@Empres_Bodega", Empres_Bodega)
-    OperadorDatos.AgregarParametro("@Sucurs_Bodega", Sucurs_Bodega)
-    OperadorDatos.AgregarParametro("@Movinv_Secuencia", Movinv_Secuencia)
-    OperadorDatos.AgregarParametro("@Bodega_Codigo", Bodega_Codigo)
-    If Pardet_Tipomovinv = Enumerados.enumTipoMovInv.Transferencia Then
-      OperadorDatos.AgregarParametro("@Sucurs_Bodegadestino", Sucurs_Bodegadestino)
-      OperadorDatos.AgregarParametro("@Bodega_Bodegadestino", Bodega_Bodegadestino)
-    End If
-    OperadorDatos.AgregarParametro("@Movinv_Fecha", Movinv_Fecha)
-    OperadorDatos.AgregarParametro("@Movinv_Observaciones", Movinv_Observaciones)
-    OperadorDatos.AgregarParametro("@SRI_iva", SRI_iva)
-    OperadorDatos.AgregarParametro("@Movinv_porcIVA", Movinv_porcIVA)
-    OperadorDatos.AgregarParametro("@Movinv_Descto", Movinv_Descto)
-    OperadorDatos.AgregarParametro("@Movinv_esAnulada", Movinv_esAnulada)
-    OperadorDatos.AgregarParametro("@Movinv_autorizado", Movinv_autorizado)
-    If Item_Codigo > 0 Then
-      OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
-    End If
-    'If Trabaj_Secuencia > 0 Then
-    '  OperadorDatos.AgregarParametro("@Trabaj_Secuencia", Trabaj_Secuencia)
-    'End If
-
-    'If RegCtb_Secuencia > 0 Then
-    '  OperadorDatos.AgregarParametro("@RegCtb_Secuencia", RegCtb_Secuencia)
-    'End If
-    'If Not CtaCtb_Codigo = String.Empty Then
-    '  OperadorDatos.AgregarParametro("@CtaCtb_Codigo", CtaCtb_Codigo)
-    'End If
-    'If Parame_SubCuenta > 0 Then
-    '  OperadorDatos.AgregarParametro("@Parame_SubCuenta", Parame_SubCuenta)
-    '  OperadorDatos.AgregarParametro("@Pardet_SubCuenta", Pardet_SubCuenta)
-    'End If
-
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar(Result)
-    OperadorDatos.LimpiarParametros()
-    If bReturn Then
-      If EsNuevo Then
-        Movinv_Secuencia = Result
-      End If
-
-      'guardar detalles
-      For Each _detalle As MovimientoInventarioDet In Detalles
-        _detalle.MovimientoInventario = Me
-        _detalle.EsNuevo = True
-        If Not _detalle.Item_Codigo = 0 And Not _detalle.Moinde_Cantidad = 0 Then
-          If Not _detalle.Guardar() Then
-            bReturn = False
-            Exit For
-          End If
+        Dim _comenzotransaccion As Boolean = False
+        If Not OperadorDatos.EstaenTransaccion Then
+            OperadorDatos.ComenzarTransaccion()
+            _comenzotransaccion = True
         End If
-      Next
 
-      If Not OperadorDatos.EstaenTransaccion Then
-        EsNuevo = False
-        EsModificado = False
-      End If
-    End If
+        Dim sAccion As String = "M"
+        If EsNuevo Then
+            sAccion = "I"
+        End If
 
-    If _comenzotransaccion Then
-      If bReturn Then
-        OperadorDatos.TerminarTransaccion()
-        AceptarCambios()
-      Else
-        OperadorDatos.CancelarTransaccion()
-      End If
-    End If
-    Return bReturn
-  End Function
+        OperadorDatos.AgregarParametro("@accion", sAccion)
+        OperadorDatos.AgregarParametro("@Parame_Tipomovinv", Parame_Tipomovinv)
+
+        OperadorDatos.AgregarParametro("@Incaut_Codigo", Incaut_Codigo)
+
+        OperadorDatos.AgregarParametro("@Pardet_Tipomovinv", Pardet_Tipomovinv)
+        OperadorDatos.AgregarParametro("@Empres_Bodega", Empres_Bodega)
+        OperadorDatos.AgregarParametro("@Sucurs_Bodega", Sucurs_Bodega)
+        OperadorDatos.AgregarParametro("@Movinv_Secuencia", Movinv_Secuencia)
+        OperadorDatos.AgregarParametro("@Bodega_Codigo", Bodega_Codigo)
+        If Pardet_Tipomovinv = Enumerados.enumTipoMovInv.Transferencia Then
+            OperadorDatos.AgregarParametro("@Sucurs_Bodegadestino", Sucurs_Bodegadestino)
+            OperadorDatos.AgregarParametro("@Bodega_Bodegadestino", Bodega_Bodegadestino)
+        End If
+        OperadorDatos.AgregarParametro("@Movinv_Fecha", Movinv_Fecha)
+        OperadorDatos.AgregarParametro("@Movinv_Observaciones", Movinv_Observaciones)
+        OperadorDatos.AgregarParametro("@SRI_iva", SRI_iva)
+        OperadorDatos.AgregarParametro("@Movinv_porcIVA", Movinv_porcIVA)
+        OperadorDatos.AgregarParametro("@Movinv_Descto", Movinv_Descto)
+        OperadorDatos.AgregarParametro("@Movinv_esAnulada", Movinv_esAnulada)
+        OperadorDatos.AgregarParametro("@Movinv_autorizado", Movinv_autorizado)
+        If Item_Codigo > 0 Then
+            OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
+        End If
+        'If Trabaj_Secuencia > 0 Then
+        '  OperadorDatos.AgregarParametro("@Trabaj_Secuencia", Trabaj_Secuencia)
+        'End If
+
+        'If RegCtb_Secuencia > 0 Then
+        '  OperadorDatos.AgregarParametro("@RegCtb_Secuencia", RegCtb_Secuencia)
+        'End If
+        'If Not CtaCtb_Codigo = String.Empty Then
+        '  OperadorDatos.AgregarParametro("@CtaCtb_Codigo", CtaCtb_Codigo)
+        'End If
+        'If Parame_SubCuenta > 0 Then
+        '  OperadorDatos.AgregarParametro("@Parame_SubCuenta", Parame_SubCuenta)
+        '  OperadorDatos.AgregarParametro("@Pardet_SubCuenta", Pardet_SubCuenta)
+        'End If
+
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar(Result)
+        OperadorDatos.LimpiarParametros()
+        If bReturn Then
+            If EsNuevo Then
+                Movinv_Secuencia = Result
+            End If
+
+            'guardar detalles
+
+            For Each _detalle As MovimientoInventarioDet In Detalles
+                MsgBox("detalles")
+                _detalle.MovimientoInventario = Me
+                _detalle.EsNuevo = True
+                If Not _detalle.Item_Codigo = 0 And Not _detalle.Moinde_Cantidad = 0 Then
+                    If Not _detalle.Guardar() Then
+                        bReturn = False
+                        Exit For
+                    End If
+                End If
+                If Pardet_TipomovinvEnum = Enumerados.enumTipoMovInv.Incautacion Then
+                    MsgBox("es incautacion")
+                    If _detalle.Item_Codigo = 0 And Not _detalle.Moinde_Cantidad = 0 And _detalle.Item IsNot Nothing Then
+                        MsgBox("es nuevoooo" + _detalle.Item.Item_Descripcion)
+                        _detalle.Item.Incautacion = Incautacion
+                        _detalle.Item.Empresa = Sucursal.Empresa
+                        If _detalle.Item.Guardar() Then
+                            MsgBox("item guardado")
+                            MsgBox(_detalle.Item.Item_Codigo.ToString)
+                            If Not _detalle.Guardar() Then
+                                bReturn = False
+                                Exit For
+                            End If
+                        End If
+                    End If
+                End If
+            Next
+
+            If Not OperadorDatos.EstaenTransaccion Then
+                EsNuevo = False
+                EsModificado = False
+            End If
+        End If
+
+        If _comenzotransaccion Then
+            If bReturn Then
+                OperadorDatos.TerminarTransaccion()
+                AceptarCambios()
+            Else
+                OperadorDatos.CancelarTransaccion()
+            End If
+        End If
+        Return bReturn
+    End Function
 
   Public Overridable Function GuardarPagos() As Boolean
     Dim Result As Integer = 0

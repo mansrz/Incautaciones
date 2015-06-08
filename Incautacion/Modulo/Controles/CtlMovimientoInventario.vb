@@ -50,6 +50,7 @@ Public Class CtlMovimientoInventario
         Me.CtlBuscaProveedor1.OperadorDatos = mSucursal.OperadorDatos
                 Me.CtlBuscaEmpleado1.OperadorDatos = mSucursal.OperadorDatos
                 Me.CtlBuscaContribuyente1.OperadorDatos = mSucursal.OperadorDatos
+                Me.CtlBuscaIncautacion1.OperadorDatos = mSucursal.OperadorDatos
 
         Me.ComboBoxFormaPago.OperadorDatos = mSucursal.OperadorDatos
         Me.ComboBoxFormaPago.Parametro = Enumerados.EnumParametros.TipoFormaPago
@@ -59,9 +60,9 @@ Public Class CtlMovimientoInventario
         Me.ComboBoxTipoPrecio.Parametro = Enumerados.EnumParametros.TipoPrecio
         Me.ComboBoxTipoPrecio.Llenar_Datos()
 
-        Me.CtlBuscaActivo.Sucursal = mSucursal
-        Me.CtlBuscaActivo.PardetTipoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.TipoInventario, Enumerados.EnumTipoInventario.ActivoFijo)
-        Me.CtlBuscaActivo.llenar_datos()
+                'Me.CtlBuscaActivo.Sucursal = mSucursal
+                'Me.CtlBuscaActivo.PardetTipoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.TipoInventario, Enumerados.EnumTipoInventario.ActivoFijo)
+                'Me.CtlBuscaActivo.llenar_datos()
       End If
     End Set
   End Property
@@ -121,7 +122,9 @@ Public Class CtlMovimientoInventario
     Set(ByVal value As Boolean)
       Me.barracancelar.Visible = value
     End Set
-  End Property
+    End Property
+
+    
 #End Region
 
 #Region "Compra Venta"
@@ -140,310 +143,329 @@ Public Class CtlMovimientoInventario
 #End Region
 
 #Region "Movimientos"
-  Sub cambiar_tipomovimiento()
-    Me.lbl_tipomov.Text = TipoMovimiento.Pardet_Descripcion
-    If TipoMovimientoCompraVenta IsNot Nothing Then
-      Me.lbl_tipomov.Text += " - " + TipoMovimientoCompraVenta.Pardet_Descripcion
-    End If
+    Sub cambiar_tipomovimiento()
 
-    Me.pnlbodegadstno.Visible = TipoMovimientoEnum = Enumerados.enumTipoMovInv.Transferencia
-    'Me.pnlclienteproveedor.Visible = _enumtipomov = Enumerados.enumTipoMovInv.Venta Or _enumtipomov = Enumerados.enumTipoMovInv.Compra
-    Me.pnldetalles.Visible = True
-    'Me.SepPagos.Visible = False
-    'Me.btnpagos.Visible = False
-    Me.pnltipocompte.Visible = False
-    Me.pnlbodega.Visible = True
-    Me.pnlIncautacion.Visible = False
-    'Me.comboTipoCompraVenta.Visible = False
-    Me.pnlclienteproveedor.Visible = False
-    Me.pnlactivo.Visible = False
-    Select Case TipoMovimientoEnum
-            Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevCompra, Enumerados.enumTipoMovInv.DevVenta, Enumerados.enumTipoMovInv.DevIncautacion, Enumerados.enumTipoMovInv.Incautacion
-                'Me.comboTipoCompraVenta.Visible = True
-                Me.pnlclienteproveedor.Visible = True
-                'Me.SepPagos.Visible = True
-                'Me.btnpagos.Visible = True
-                'pnltipocompte.Visible = True
+        Me.lbl_tipomov.Text = TipoMovimiento.Pardet_Descripcion
+        If TipoMovimientoCompraVenta IsNot Nothing Then
+            Me.lbl_tipomov.Text += " - " + TipoMovimientoCompraVenta.Pardet_Descripcion
+        End If
 
-      Case Enumerados.enumTipoMovInv.OrdenProduccion, Enumerados.enumTipoMovInv.OrdenDesensamble, Enumerados.enumTipoMovInv.DesperdicioOP
-        Me.pnlactivo.Visible = True
-    End Select
-
-    Me.pnlnumerocompra.Visible = False
-    Me.pnldatosventa.Visible = False
-    Select Case TipoMovimientoEnum
-      Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevCompra
-        Me.pnlclienteproveedor.Text = "Proveedor"
-        Me.CtlBuscaCliente1.Visible = False
-        Me.CtlBuscaProveedor1.Visible = True
-        Me.CtlBuscaEmpleado1.Visible = False
-                Me.CtlBuscaContribuyente1.Visible = False
-        'Me.comboTipoCompraVenta.ComboBox.ValueMember = "Pardet_Secuencia"
-        'Me.comboTipoCompraVenta.ComboBox.DisplayMember = "Pardet_Descripcion"
-        'tipocompraventas = ParametroDetList.ObtenerLista(mSucursal.OperadorDatos, Enumerados.EnumParametros.TipoCompra)
-        'Me.comboTipoCompraVenta.ComboBox.DataSource = tipocompraventas
-        'Me.comboTipoMovimiento.ComboBox.SelectedValue = CInt(_enumtipomov)
-        Me.pnldatosventa.Visible = True
-        Me.pnlnumerocompra.Visible = True
-        'llenar_creditotributario()
-
-      Case Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevVenta
-        Me.pnlclienteproveedor.Text = "Cliente"
-        Me.CtlBuscaCliente1.Visible = True
-        Me.CtlBuscaProveedor1.Visible = False
-        Me.CtlBuscaEmpleado1.Visible = True
-
-        'Me.comboTipoCompraVenta.ComboBox.ValueMember = "Pardet_Secuencia"
-        'Me.comboTipoCompraVenta.ComboBox.DisplayMember = "Pardet_Descripcion"
-        'tipocompraventas = ParametroDetList.ObtenerLista(mSucursal.OperadorDatos, Enumerados.EnumParametros.TipoVenta)
-        'Me.comboTipoCompraVenta.ComboBox.DataSource = tipocompraventas
-        'Me.comboTipoMovimiento.ComboBox.SelectedValue = CInt(_enumtipomov)
-        Me.pnldatosventa.Visible = True
-        ''Me.pnlnumerocompra.Visible = False
-                'llenar_creditotributario()
-      Case Enumerados.enumTipoMovInv.Incautacion, Enumerados.enumTipoMovInv.DevIncautacion
-        Me.pnlclienteproveedor.Text = "Contribuyente"
-        Me.CtlBuscaCliente1.Visible = False
-        Me.CtlBuscaProveedor1.Visible = False
-        Me.CtlBuscaEmpleado1.Visible = False
-        Me.CtlBuscaContribuyente1.Visible = True
-        Me.pnlformapago.Visible = False
+        Me.pnlbodegadstno.Visible = TipoMovimientoEnum = Enumerados.enumTipoMovInv.Transferencia
+        'Me.pnlclienteproveedor.Visible = _enumtipomov = Enumerados.enumTipoMovInv.Venta Or _enumtipomov = Enumerados.enumTipoMovInv.Compra
+        Me.pnldetalles.Visible = True
+        'Me.SepPagos.Visible = False
+        'Me.btnpagos.Visible = False
+        Me.pnltipocompte.Visible = False
+        Me.pnlbodega.Visible = True
+        'Me.pnlIncautacion.Visible = False
+        'Me.comboTipoCompraVenta.Visible = False
+        Me.pnlclienteproveedor.Visible = False
         Me.pnlIncautacion.Visible = True
 
 
-    End Select
+        Me.pnlnumerocompra.Visible = False
+        Me.pnldatosventa.Visible = False
 
-    If mMovimientoInventario Is Nothing Then
-      Exit Sub
-    End If
-    mMovimientoInventario.Pardet_Tipomovinv = TipoMovimientoEnum
-    'mMovimientoInventario.Detalles = Nothing
-    Me.DataGridViewDetalles.MovimientoInventario = mMovimientoInventario
-    Me.DataGridViewDetalles.PardetTipoPago = Me.ComboBoxFormaPago.ParametroDet
-    Me.DataGridViewDetalles.PardetTipoPrecio = Me.ComboBoxTipoPrecio.ParametroDet
-    tamano()
-
-    Llenar_detalles()
-
-    'Me.pnldetalles.Height = Me.FlowLayoutPanel1.Height - Me.pnldetalles.Location.Y - Me.pnltotalcompleto.Height - 5
-  End Sub
-
-  Public Function Guardar(ByVal _VerificarSaldo As Boolean) As Boolean
-    Try
-      mapear_datos()
-
-      Dim _puedegrabar As Boolean = True
-      'If Not mMovimientoInventario.EsNuevo Then
-      '  If MsgBox("¿Desea crear un movimiento nuevo a partir del actual, anulando el movimiento actual?", MsgBoxStyle.YesNo, "Pregunta") = MsgBoxResult.No Then
-      '    _puedegrabar = False
-      '  End If
-      'End If
-      Me.DataGridViewDetalles.CtlMantenimientoMovimientoInventarioDet1.ValidarRegistros()
-      If _puedegrabar Then
         Select Case TipoMovimientoEnum
-          Case Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevVenta
-            'mapear_venta()
-            If Not mVenta.Guardar(_VerificarSaldo) Then
-              Throw New Exception(mVenta.OperadorDatos.MsgError)
-            End If
-            MsgBox(String.Format("Movimiento guardado {0} {1}" & vbNewLine & "{2} {3}", mVenta.MovimientoInventario.PardetTipoMovInv.Pardet_Descripcion, mVenta.MovimientoInventario.Movinv_Secuencia, mVenta.PardetTipoVenta.Pardet_Descripcion, mVenta.Venta_Numero))
-          Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevCompra
-            'mapear_compra()
-            If Not mCompra.Guardar Then
-              Throw New Exception(mCompra.OperadorDatos.MsgError)
-            End If
-            MsgBox(String.Format("Movimiento guardado {0} {1}" & vbNewLine & "{2} {3}", mCompra.MovimientoInventario.PardetTipoMovInv.Pardet_Descripcion, mCompra.MovimientoInventario.Movinv_Secuencia, mCompra.PardetTipoCompra.Pardet_Descripcion, mCompra.Compra_Numero))
-          Case Enumerados.enumTipoMovInv.Incautacion, Enumerados.enumTipoMovInv.DevIncautacion
-            'mapear_compra()
+            Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevCompra
+                Me.pnlclienteproveedor.Text = "Proveedor"
+                Me.CtlBuscaCliente1.Visible = False
+                Me.CtlBuscaProveedor1.Visible = True
+                Me.CtlBuscaEmpleado1.Visible = False
+                Me.CtlBuscaContribuyente1.Visible = False
+                'Me.comboTipoCompraVenta.ComboBox.ValueMember = "Pardet_Secuencia"
+                'Me.comboTipoCompraVenta.ComboBox.DisplayMember = "Pardet_Descripcion"
+                'tipocompraventas = ParametroDetList.ObtenerLista(mSucursal.OperadorDatos, Enumerados.EnumParametros.TipoCompra)
+                'Me.comboTipoCompraVenta.ComboBox.DataSource = tipocompraventas
+                'Me.comboTipoMovimiento.ComboBox.SelectedValue = CInt(_enumtipomov)
+                Me.pnldatosventa.Visible = True
+                Me.pnlnumerocompra.Visible = True
+                'llenar_creditotributario()
 
-            If Not mIncautacion.Guardar Then
-              Throw New Exception(mIncautacion.OperadorDatos.MsgError)
-            End If
-            MsgBox("Incautación guardada")
-            'LLamar reporte 
-          Case Else
-            Dim _esnuevo As Boolean = mMovimientoInventario.EsNuevo
-            If Not mMovimientoInventario.Guardar() Then
-              Throw New Exception(mMovimientoInventario.OperadorDatos.MsgError)
-            Else
-              Auditoria.Registrar_Auditoria(CType(Me.ParentForm, Infoware.Consola.Base.FrmFormaBase).Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mMovimientoInventario.Movinv_Observaciones)
+            Case Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevVenta
+                Me.pnlclienteproveedor.Text = "Cliente"
+                Me.CtlBuscaCliente1.Visible = True
+                Me.CtlBuscaProveedor1.Visible = False
+                Me.CtlBuscaEmpleado1.Visible = True
 
-            End If
-            MsgBox(String.Format("Movimiento guardado {0} {1}", mMovimientoInventario.PardetTipoMovInv.Pardet_Descripcion, mMovimientoInventario.Movinv_Secuencia))
+                'Me.comboTipoCompraVenta.ComboBox.ValueMember = "Pardet_Secuencia"
+                'Me.comboTipoCompraVenta.ComboBox.DisplayMember = "Pardet_Descripcion"
+                'tipocompraventas = ParametroDetList.ObtenerLista(mSucursal.OperadorDatos, Enumerados.EnumParametros.TipoVenta)
+                'Me.comboTipoCompraVenta.ComboBox.DataSource = tipocompraventas
+                'Me.comboTipoMovimiento.ComboBox.SelectedValue = CInt(_enumtipomov)
+                Me.pnldatosventa.Visible = True
+                ''Me.pnlnumerocompra.Visible = False
+                'llenar_creditotributario()
+            Case Enumerados.enumTipoMovInv.Incautacion, Enumerados.enumTipoMovInv.IncautSalida
+                Me.pnlclienteproveedor.Text = "Contribuyente"
+                Me.CtlBuscaCliente1.Visible = False
+                Me.CtlBuscaProveedor1.Visible = False
+                Me.CtlBuscaEmpleado1.Visible = False
+                Me.CtlBuscaContribuyente1.Visible = True
+                Me.pnlformapago.Visible = False
+                'Me.pnlIncautacion.Visible = True
+
+
         End Select
-      Else
-        Throw New Exception()
-      End If
 
-      Me.txtnumero.Value = mMovimientoInventario.Movinv_Secuencia
-
-      'Me.btnpagos.Enabled = Not mMovimientoInventario.EsNuevo
-      llenar_datos()
-
-      Return True
-    Catch ex As Exception
-      MsgBox("No se puede guardar MovimientoInventario" & Environment.NewLine & ex.Message, MsgBoxStyle.Critical, "Error")
-      Return False
-    End Try
-  End Function
-
-  Private mestallenando As Boolean = False
-
-  Private Sub llenar_datos()
-    If mSucursal Is Nothing OrElse MovimientoInventario Is Nothing Then
-      Exit Sub
-    End If
-
-    cambiar_tipomovimiento()
-    mestallenando = True
-    barracancelar.Enabled = mMovimientoInventario.EsNuevo
-    Me.dtpFecdesde.Value = mMovimientoInventario.Movinv_Fecha
-    Me.txtnumero.Value = mMovimientoInventario.Movinv_Secuencia
-    Me.txtobservacion.Text = mMovimientoInventario.Movinv_Observaciones
-    'Me.comboTipoMovimiento.ComboBox.SelectedValue = CInt(mMovimientoInventario.Pardet_Tipomovinv)
-    Me.ComboBoxBodega1.Bodega = mMovimientoInventario.Bodega
-    Me.ComboBoxBodega2.Bodega = mMovimientoInventario.BodegaDsno
-    Me.txtdsctoglobal.Value = Me.mMovimientoInventario.Movinv_Descto
-
-    Me.dtpFecdesde.Enabled = mVerConfidencial
-    Me.txtnumero.Enabled = mVerConfidencial
-
-    If mMovimientoInventario.EsNuevo Then
-      mMovimientoInventario.Movinv_porcIVA = New WWTSParametroDet(Sistema.OperadorDatos, 465, 1).Pardet_DatoDec1
-    End If
-
-    txtporciva.Value = mMovimientoInventario.Movinv_porcIVA
-    Llenar_detalles()
-    mestallenando = False
-
-    If mMovimientoInventario.Venta IsNot Nothing Then
-      Me.CtlBuscaCliente1.Cliente = mMovimientoInventario.Venta.Cliente
-
-      If mMovimientoInventario.Venta.Cliente IsNot Nothing Then
-        With mMovimientoInventario.Venta.Cliente
-          'If .Entidad.Entidadjuridica IsNot Nothing Then
-          '  'Me.txt_otrosdatos.Text = String.Format("Contacto: {0}", .Entidad.Entidadjuridica.ContactoString)
-          'End If
-          'Me.txt_otrosdatos.Text = String.Format("{0}{1}Teléfono:{2}", Me.txt_otrosdatos.Text, vbCrLf, .TelefonosString)
-
-          Me.CtlDireccion1.Entidad = .Entidad
-          Me.CtlBuscaEmpleado1.Empleado = .Empleado
-        End With
-      End If
-
-      Me.CtlBuscaEmpleado1.Empleado = mMovimientoInventario.Venta.Empleado
-      Me.ComboBoxFormaPago.ParametroDet = mMovimientoInventario.Venta.PardetTipoPago
-      Me.ComboBoxTipoPrecio.ParametroDet = mMovimientoInventario.Venta.PardetTipoPrecio
-      Me.txtfactura.Value = mMovimientoInventario.Venta.Venta_Numero
-
-      'llenar_creditotributario()
-      'Me.ComboBoxTipoComprobante1.SelectedValue = mMovimientoInventario.Venta.SRI_tipocomprobante
-    End If
-
-    If mMovimientoInventario.Compra IsNot Nothing Then
-      'Me.comboTipoMovimiento.ComboBox.SelectedValue = CInt(mMovimientoInventario.Pardet_Tipomovinv)
-      'Me.comboTipoCompraVenta.ComboBox.SelectedValue = CInt(mMovimientoInventario.Compra.Pardet_TipoCompra)
-      Me.CtlBuscaProveedor1.Proveedor = mMovimientoInventario.Compra.Proveedor
-      Me.msk_compranumero.Text = mMovimientoInventario.Compra.Compra_Numero
-      Me.msk_autorizacion.Text = mMovimientoInventario.Compra.Compra_Autorizacion
-      Me.msk_fechacaducidad.Text = mMovimientoInventario.Compra.Compra_Caducidad
-
-      If mMovimientoInventario.Venta IsNot Nothing Then
-        With mMovimientoInventario.Compra.Proveedor
-          'If .Entidad.Entidadjuridica IsNot Nothing Then
-          '  'Me.txt_otrosdatos.Text = String.Format("Contacto: {0}", .Entidad.Entidadjuridica.ContactoString)
-          'End If
-          ''Me.txt_otrosdatos.Text = String.Format("{0}{1}Teléfono:{2}", Me.txt_otrosdatos.Text, vbCrLf, .TelefonosString)
-
-          Me.CtlDireccion1.Entidad = .Entidad
-        End With
-      End If
-
-      Me.ComboBoxFormaPago.ParametroDet = mMovimientoInventario.Compra.PardetTipoPago
-      'Me.ComboBoxTipoComprobante1.SelectedValue = mMovimientoInventario.Compra.SRI_tipocomprobante
-      'Me.ComboBoxCreditoTributario1.SelectedValue = mMovimientoInventario.Compra.SRI_creditotributario
-    End If
-    If mMovimientoInventario.Incautacion IsNot Nothing Then
-      Me.CtlBuscaContribuyente1.Contribuyente = Me.mMovimientoInventario.Incautacion.Contribuyente
-
-    End If
-
-    'Me.comboTipoMovimiento.Enabled = mMovimientoInventario.EsNuevo
-    'Me.comboTipoCompraVenta.Enabled = mMovimientoInventario.EsNuevo
-    'Me.btnpagos.Enabled = Not mMovimientoInventario.EsNuevo
-    Me.CtlBuscaActivo.Item = mMovimientoInventario.Item
-    'mapear_datos()
-
-    'Me.comboTipoMovimiento.Enabled = mMovimientoInventario.EsNuevo
-    'Me.comboTipoCompraVenta.Enabled = mMovimientoInventario.EsNuevo
-    Me.pnlcodigo.Enabled = mMovimientoInventario.EsNuevo
-    Me.pnldatosventa.Enabled = mMovimientoInventario.EsNuevo
-    Me.pnlbodega.Enabled = mMovimientoInventario.EsNuevo
-    Me.pnlactivo.Enabled = mMovimientoInventario.EsNuevo
-    Me.pnlclienteproveedor.Enabled = mMovimientoInventario.EsNuevo
-    Me.pnltotalcompleto.Enabled = mMovimientoInventario.EsNuevo
-    Me.pnltotalsimple.Enabled = mMovimientoInventario.EsNuevo
-  End Sub
-
-  Public Sub mapear_datos()
-    If mestallenando Then
-      Exit Sub
-    End If
-    If mMovimientoInventario IsNot Nothing Then
-      mestallenando = True
-      'Dim _indice As Integer = 12  'TODO OJO CAMBIAR OJO Me.ComboBoxIVA1.SelectedIndex
-      'Me.ComboBoxIVA1.Llenar_datos(Me.dtpFecdesde.Value)
-      'If _indice >= 0 Then
-      '  Me.ComboBoxIVA1.SelectedIndex = _indice
-      'End If
-
-      Try
-        If Me.ComboBoxBodega1.Bodega Is Nothing AndAlso Me.ComboBoxBodega1.Items.Count > 0 Then
-          Me.ComboBoxBodega1.SelectedIndex = 0
+        If mMovimientoInventario Is Nothing Then
+            Exit Sub
         End If
-      Catch ex As Exception
+        mMovimientoInventario.Pardet_Tipomovinv = TipoMovimientoEnum
+        'mMovimientoInventario.Detalles = Nothing
+        Me.DataGridViewDetalles.MovimientoInventario = mMovimientoInventario
+        Me.DataGridViewDetalles.PardetTipoPago = Me.ComboBoxFormaPago.ParametroDet
+        Me.DataGridViewDetalles.PardetTipoPrecio = Me.ComboBoxTipoPrecio.ParametroDet
+        tamano()
 
-      End Try
+        Llenar_detalles()
 
-      'If Me.ComboBoxIVA1.SelectedIndex = -1 AndAlso Me.ComboBoxIVA1.Items.Count > 0 Then
-      '  Me.ComboBoxIVA1.SelectedIndex = 0
-      'End If
-      mMovimientoInventario.Movinv_Fecha = Me.dtpFecdesde.Value
-      If ComboBoxBodega1.Bodega Is Nothing Then
-        Throw New Exception("Debe especificar una bodega")
-      End If
-      mMovimientoInventario.Bodega = Me.ComboBoxBodega1.Bodega
-      'mMovimientoInventario.SRI_iva = Me.ComboBoxIVA1.SelectedValue
-      mMovimientoInventario.Movinv_porcIVA = Me.txtporciva.Value
-      mMovimientoInventario.Movinv_Descto = Me.txtdsctoglobal.Value
-      mMovimientoInventario.Pardet_Tipomovinv = TipoMovimientoEnum
-      mMovimientoInventario.BodegaDsno = Me.ComboBoxBodega2.Bodega
-      mMovimientoInventario.Movinv_Observaciones = Me.txtobservacion.Text
+        'Me.pnldetalles.Height = Me.FlowLayoutPanel1.Height - Me.pnldetalles.Location.Y - Me.pnltotalcompleto.Height - 5
+    End Sub
 
-      Me.DataGridViewDetalles.PardetTipoPago = Me.ComboBoxFormaPago.ParametroDet
-      Me.DataGridViewDetalles.PardetTipoPrecio = Me.ComboBoxTipoPrecio.ParametroDet
+    Public Function Guardar(ByVal _VerificarSaldo As Boolean) As Boolean
+        Try
+            If Me.CtlBuscaIncautacion1.Incautacion Is Nothing Then
+                MessageBox.Show("Debe seleccionar una Incautación")
+                'Throw New Exception("No ha seleccionado una incautación")
+                Return False
+            End If
 
-      If TipoMovimientoEnum = Enumerados.enumTipoMovInv.OrdenProduccion Or TipoMovimientoEnum = Enumerados.enumTipoMovInv.OrdenDesensamble Or TipoMovimientoEnum = Enumerados.enumTipoMovInv.DesperdicioOP Then
-        mMovimientoInventario.Item = Me.CtlBuscaActivo.Item
-        If mMovimientoInventario.Item Is Nothing Then
-          Throw New Exception("Debe especificar un activo")
+            If ComboBoxBodega1.Bodega Is Nothing Then
+                'Throw New Exception("Debe especificar una bodega")
+                MessageBox.Show("Debe seleccionar una Bodega")
+                Return False
+            End If
+
+
+            mapear_datos()
+
+            Dim _puedegrabar As Boolean = True
+            'If Not mMovimientoInventario.EsNuevo Then
+            '  If MsgBox("¿Desea crear un movimiento nuevo a partir del actual, anulando el movimiento actual?", MsgBoxStyle.YesNo, "Pregunta") = MsgBoxResult.No Then
+            '    _puedegrabar = False
+            '  End If
+            'End If
+            Me.DataGridViewDetalles.CtlMantenimientoMovimientoInventarioDet1.ValidarRegistros()
+            If _puedegrabar Then
+
+                Select Case TipoMovimientoEnum
+                    Case Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevVenta
+                        'mapear_venta()
+                        If Not mVenta.Guardar(_VerificarSaldo) Then
+                            Throw New Exception(mVenta.OperadorDatos.MsgError)
+                        End If
+                        MsgBox(String.Format("Movimiento guardado {0} {1}" & vbNewLine & "{2} {3}", mVenta.MovimientoInventario.PardetTipoMovInv.Pardet_Descripcion, mVenta.MovimientoInventario.Movinv_Secuencia, mVenta.PardetTipoVenta.Pardet_Descripcion, mVenta.Venta_Numero))
+                    Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevCompra
+                        'mapear_compra()
+                        If Not mCompra.Guardar Then
+                            Throw New Exception(mCompra.OperadorDatos.MsgError)
+                        End If
+                        MsgBox(String.Format("Movimiento guardado {0} {1}" & vbNewLine & "{2} {3}", mCompra.MovimientoInventario.PardetTipoMovInv.Pardet_Descripcion, mCompra.MovimientoInventario.Movinv_Secuencia, mCompra.PardetTipoCompra.Pardet_Descripcion, mCompra.Compra_Numero))
+                        'Case Enumerados.enumTipoMovInv.Incautacion, Enumerados.enumTipoMovInv.IncautSalida
+                        'mapear_compra()
+
+                        'If Not mIncautacion.Guardar Then
+                        '    Throw New Exception(mIncautacion.OperadorDatos.MsgError)
+                        'End If
+                        'MsgBox("Incautación guardada")
+                        'LLamar reporte 
+                    Case Else
+                        Dim _esnuevo As Boolean = mMovimientoInventario.EsNuevo
+                        If Not mMovimientoInventario.Guardar() Then
+                            Throw New Exception(mMovimientoInventario.OperadorDatos.MsgError)
+                        Else
+                            Auditoria.Registrar_Auditoria(CType(Me.ParentForm, Infoware.Consola.Base.FrmFormaBase).Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mMovimientoInventario.Movinv_Observaciones)
+
+                        End If
+                        MsgBox(String.Format("Movimiento guardado {0} {1}", mMovimientoInventario.PardetTipoMovInv.Pardet_Descripcion, mMovimientoInventario.Movinv_Secuencia))
+                End Select
+            Else
+                Throw New Exception()
+            End If
+
+            Me.txtnumero.Value = mMovimientoInventario.Movinv_Secuencia
+
+            'Me.btnpagos.Enabled = Not mMovimientoInventario.EsNuevo
+            llenar_datos()
+
+            Return True
+        Catch ex As Exception
+            MsgBox("No se puede guardar MovimientoInventario" & Environment.NewLine & ex.Message, MsgBoxStyle.Critical, "Error")
+            Return False
+        End Try
+    End Function
+
+    Private mestallenando As Boolean = False
+
+    Private Sub llenar_datos()
+        If mSucursal Is Nothing OrElse MovimientoInventario Is Nothing Then
+            Exit Sub
         End If
-      Else
-        mMovimientoInventario.Item = Nothing
-      End If
-      mostrar_totales()
-      mestallenando = False
 
-      Select Case TipoMovimientoEnum
-        Case Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevVenta
-          mapear_venta()
-        Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevCompra
-          mapear_compra()
-        Case Enumerados.enumTipoMovInv.Incautacion, Enumerados.enumTipoMovInv.DevIncautacion
-          mapear_Incautacion()
-      End Select
-    End If
-  End Sub
+        cambiar_tipomovimiento()
+        mestallenando = True
+        barracancelar.Enabled = mMovimientoInventario.EsNuevo
+        Me.dtpFecdesde.Value = mMovimientoInventario.Movinv_Fecha
+        Me.txtnumero.Value = mMovimientoInventario.Movinv_Secuencia
+        Me.txtobservacion.Text = mMovimientoInventario.Movinv_Observaciones
+        'Me.comboTipoMovimiento.ComboBox.SelectedValue = CInt(mMovimientoInventario.Pardet_Tipomovinv)
+        Me.ComboBoxBodega1.Bodega = mMovimientoInventario.Bodega
+        Me.ComboBoxBodega2.Bodega = mMovimientoInventario.BodegaDsno
+        Me.txtdsctoglobal.Value = Me.mMovimientoInventario.Movinv_Descto
+
+        Me.CtlBuscaIncautacion1.Incautacion = mMovimientoInventario.Incautacion
+
+        Me.dtpFecdesde.Enabled = mVerConfidencial
+        Me.txtnumero.Enabled = mVerConfidencial
+
+        If mMovimientoInventario.EsNuevo Then
+            mMovimientoInventario.Movinv_porcIVA = New WWTSParametroDet(Sistema.OperadorDatos, 465, 1).Pardet_DatoDec1
+        End If
+
+        txtporciva.Value = mMovimientoInventario.Movinv_porcIVA
+        Llenar_detalles()
+        mestallenando = False
+
+        If mMovimientoInventario.Venta IsNot Nothing Then
+            Me.CtlBuscaCliente1.Cliente = mMovimientoInventario.Venta.Cliente
+
+            If mMovimientoInventario.Venta.Cliente IsNot Nothing Then
+                With mMovimientoInventario.Venta.Cliente
+                    'If .Entidad.Entidadjuridica IsNot Nothing Then
+                    '  'Me.txt_otrosdatos.Text = String.Format("Contacto: {0}", .Entidad.Entidadjuridica.ContactoString)
+                    'End If
+                    'Me.txt_otrosdatos.Text = String.Format("{0}{1}Teléfono:{2}", Me.txt_otrosdatos.Text, vbCrLf, .TelefonosString)
+
+                    Me.CtlDireccion1.Entidad = .Entidad
+                    Me.CtlBuscaEmpleado1.Empleado = .Empleado
+                End With
+            End If
+
+            Me.CtlBuscaEmpleado1.Empleado = mMovimientoInventario.Venta.Empleado
+            Me.ComboBoxFormaPago.ParametroDet = mMovimientoInventario.Venta.PardetTipoPago
+            Me.ComboBoxTipoPrecio.ParametroDet = mMovimientoInventario.Venta.PardetTipoPrecio
+            Me.txtfactura.Value = mMovimientoInventario.Venta.Venta_Numero
+
+            'llenar_creditotributario()
+            'Me.ComboBoxTipoComprobante1.SelectedValue = mMovimientoInventario.Venta.SRI_tipocomprobante
+        End If
+
+        If mMovimientoInventario.Compra IsNot Nothing Then
+            'Me.comboTipoMovimiento.ComboBox.SelectedValue = CInt(mMovimientoInventario.Pardet_Tipomovinv)
+            'Me.comboTipoCompraVenta.ComboBox.SelectedValue = CInt(mMovimientoInventario.Compra.Pardet_TipoCompra)
+            Me.CtlBuscaProveedor1.Proveedor = mMovimientoInventario.Compra.Proveedor
+            Me.msk_compranumero.Text = mMovimientoInventario.Compra.Compra_Numero
+            Me.msk_autorizacion.Text = mMovimientoInventario.Compra.Compra_Autorizacion
+            Me.msk_fechacaducidad.Text = mMovimientoInventario.Compra.Compra_Caducidad
+
+            If mMovimientoInventario.Venta IsNot Nothing Then
+                With mMovimientoInventario.Compra.Proveedor
+                    'If .Entidad.Entidadjuridica IsNot Nothing Then
+                    '  'Me.txt_otrosdatos.Text = String.Format("Contacto: {0}", .Entidad.Entidadjuridica.ContactoString)
+                    'End If
+                    ''Me.txt_otrosdatos.Text = String.Format("{0}{1}Teléfono:{2}", Me.txt_otrosdatos.Text, vbCrLf, .TelefonosString)
+
+                    Me.CtlDireccion1.Entidad = .Entidad
+                End With
+            End If
+
+            Me.ComboBoxFormaPago.ParametroDet = mMovimientoInventario.Compra.PardetTipoPago
+            'Me.ComboBoxTipoComprobante1.SelectedValue = mMovimientoInventario.Compra.SRI_tipocomprobante
+            'Me.ComboBoxCreditoTributario1.SelectedValue = mMovimientoInventario.Compra.SRI_creditotributario
+        End If
+        If mMovimientoInventario.Incautacion IsNot Nothing Then
+            Me.CtlBuscaContribuyente1.Contribuyente = Me.mMovimientoInventario.Incautacion.Contribuyente
+            Me.CtlBuscaIncautacion1.Incautacion = Me.mMovimientoInventario.Incautacion
+        End If
+
+        'Me.comboTipoMovimiento.Enabled = mMovimientoInventario.EsNuevo
+        'Me.comboTipoCompraVenta.Enabled = mMovimientoInventario.EsNuevo
+        'Me.btnpagos.Enabled = Not mMovimientoInventario.EsNuevo
+        'Me.CtlBuscaActivo.Item = mMovimientoInventario.Item
+        'mapear_datos()
+
+        'Me.comboTipoMovimiento.Enabled = mMovimientoInventario.EsNuevo
+        'Me.comboTipoCompraVenta.Enabled = mMovimientoInventario.EsNuevo
+        Me.pnlcodigo.Enabled = mMovimientoInventario.EsNuevo
+        Me.pnldatosventa.Enabled = mMovimientoInventario.EsNuevo
+        Me.pnlbodega.Enabled = mMovimientoInventario.EsNuevo
+        Me.pnlIncautacion.Enabled = mMovimientoInventario.EsNuevo
+        Me.pnlclienteproveedor.Enabled = mMovimientoInventario.EsNuevo
+        Me.pnltotalcompleto.Enabled = mMovimientoInventario.EsNuevo
+        Me.pnltotalsimple.Enabled = mMovimientoInventario.EsNuevo
+    End Sub
+
+    Public Sub mapear_datos()
+        If mestallenando Then
+            Exit Sub
+        End If
+
+
+        If mMovimientoInventario IsNot Nothing Then
+            mestallenando = True
+            'Dim _indice As Integer = 12  'TODO OJO CAMBIAR OJO Me.ComboBoxIVA1.SelectedIndex
+            'Me.ComboBoxIVA1.Llenar_datos(Me.dtpFecdesde.Value)
+            'If _indice >= 0 Then
+            '  Me.ComboBoxIVA1.SelectedIndex = _indice
+            'End If
+
+            Try
+                If Me.ComboBoxBodega1.Bodega Is Nothing AndAlso Me.ComboBoxBodega1.Items.Count > 0 Then
+                    Me.ComboBoxBodega1.SelectedIndex = 0
+                End If
+            Catch ex As Exception
+
+            End Try
+
+            'If Me.ComboBoxIVA1.SelectedIndex = -1 AndAlso Me.ComboBoxIVA1.Items.Count > 0 Then
+            '  Me.ComboBoxIVA1.SelectedIndex = 0
+            'End If
+            mMovimientoInventario.Movinv_Fecha = Me.dtpFecdesde.Value
+            
+            mMovimientoInventario.Bodega = Me.ComboBoxBodega1.Bodega
+            'mMovimientoInventario.SRI_iva = Me.ComboBoxIVA1.SelectedValue
+            mMovimientoInventario.Movinv_porcIVA = Me.txtporciva.Value
+            mMovimientoInventario.Movinv_Descto = Me.txtdsctoglobal.Value
+            mMovimientoInventario.Pardet_Tipomovinv = TipoMovimientoEnum
+            mMovimientoInventario.BodegaDsno = Me.ComboBoxBodega2.Bodega
+            mMovimientoInventario.Movinv_Observaciones = Me.txtobservacion.Text
+
+            mMovimientoInventario.Incautacion = Me.CtlBuscaIncautacion1.Incautacion
+
+
+            Me.DataGridViewDetalles.PardetTipoPago = Me.ComboBoxFormaPago.ParametroDet
+            Me.DataGridViewDetalles.PardetTipoPrecio = Me.ComboBoxTipoPrecio.ParametroDet
+
+            If TipoMovimientoEnum = Enumerados.enumTipoMovInv.OrdenProduccion Or TipoMovimientoEnum = Enumerados.enumTipoMovInv.OrdenDesensamble Or TipoMovimientoEnum = Enumerados.enumTipoMovInv.DesperdicioOP Then
+                'mMovimientoInventario.Item = Me.CtlBuscaActivo.Item
+                If mMovimientoInventario.Item Is Nothing Then
+                    Throw New Exception("Debe especificar un activo")
+                End If
+            Else
+                mMovimientoInventario.Item = Nothing
+            End If
+            mostrar_totales()
+            mestallenando = False
+
+            Select Case TipoMovimientoEnum
+                Case Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevVenta
+                    mapear_venta()
+                Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevCompra
+                    mapear_compra()
+                Case Enumerados.enumTipoMovInv.Incautacion, Enumerados.enumTipoMovInv.IncautSalida
+                    For Each _movinvdet As MovimientoInventarioDet In mMovimientoInventario.Detalles
+                        MessageBox.Show("item codigo " + _movinvdet.Item_Codigo.ToString + " item string " + _movinvdet.ItemString)
+                        MessageBox.Show("item codigo " + _movinvdet.Item.Item_Codigo.ToString + "item descr " + _movinvdet.Item.Item_Descripcion + "item marca " + _movinvdet.Item.MarcaString)
+                    Next
+                    mMovimientoInventario.Incaut_Codigo = CtlBuscaIncautacion1.Incautacion.Incaut_Codigo
+                    'mapear_Incautacion()
+            End Select
+        End If
+
+        MessageBox.Show("termine de mapear para CtlMovimiento Inv")
+
+    End Sub
 
 #End Region
 
@@ -561,7 +583,7 @@ Public Class CtlMovimientoInventario
     '_enumtipocmp = CType(tipoIncautacionventas(Me.comboTipoIncautacionVenta.SelectedIndex).Pardet_Secuencia, Enumerados.enumTipoIncautacion)
 
     If mMovimientoInventario.Incautacion Is Nothing Then
-      mIncautacion = New Reglas.Incautacion(mSucursal, True)
+            mIncautacion = New Reglas.Incautacion(mSucursal.OperadorDatos, True)
       mMovimientoInventario.Incautacion = mIncautacion
     Else
       mIncautacion = mMovimientoInventario.Incautacion
@@ -578,103 +600,111 @@ Public Class CtlMovimientoInventario
     'mIncautacion.SRI_secuencialtransaccion = Me.ComboBoxTipoComprobante1.tipo_comprobante.secuencial_transaciones.RetornarCodigo(mIncautacion.Contribuyente.Entidad.SRICodigo_Identificacion)
   End Sub
 
-  Private Sub CtlBuscaContribuyente1_CambioContribuyente(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlBuscaContribuyente1.CambioItem
-    If Me.CtlBuscaContribuyente1.Contribuyente Is Nothing Then
-      Exit Sub
-    End If
-    With Me.CtlBuscaContribuyente1.Contribuyente
-      If .Entidad.Entidadjuridica IsNot Nothing Then
-        'Me.txt_otrosdatos.Text = String.Format("Contacto: {0}", .Entidad.Entidadjuridica.ContactoString)
-      End If
-      'Me.txt_otrosdatos.Text = String.Format("{0}{1}Teléfono:{2}", Me.txt_otrosdatos.Text, vbCrLf, .TelefonosString)
+    Private Sub CtlBuscaContribuyente1_CambioItem(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlBuscaContribuyente1.CambioItem
+        'If Me.CtlBuscaContribuyente1.Contribuyente Is Nothing Then
+        '    Exit Sub
+        'End If
+        'With Me.CtlBuscaContribuyente1.Contribuyente
+        '    If .Entidad.Entidadjuridica IsNot Nothing Then
+        '        'Me.txt_otrosdatos.Text = String.Format("Contacto: {0}", .Entidad.Entidadjuridica.ContactoString)
+        '    End If
+        '    'Me.txt_otrosdatos.Text = String.Format("{0}{1}Teléfono:{2}", Me.txt_otrosdatos.Text, vbCrLf, .TelefonosString)
 
-      Me.CtlDireccion1.Entidad = .Entidad
-    End With
-  End Sub
+        '    Me.CtlDireccion1.Entidad = .Entidad
+        'End With
+
+        Me.CtlBuscaIncautacion1.Contribuyente = Me.CtlBuscaContribuyente1.Contribuyente
+        Me.CtlBuscaIncautacion1.Sucursal = Me.Sucursal
+        MessageBox.Show("sucursal cargada en buscaIncaut" + Me.Sucursal.Empresa.NombreCompleto)
+        Me.CtlBuscaIncautacion1.llenar_datos()
+
+    End Sub
+
 #End Region
 
 #Region "Detalles de factura"
-  Sub Llenar_detalles()
-    Me.DataGridViewDetalles.MovimientoInventario = mMovimientoInventario
 
-    Me.pnltotalcompleto.Visible = False
-    Me.pnltotalsimple.Visible = False
-    txttotalgeneralsimple.ReadOnly = True
-    Select Case TipoMovimientoEnum
-      Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevCompra, Enumerados.enumTipoMovInv.DevVenta
-        Me.pnltotalcompleto.Visible = True
-      Case Enumerados.enumTipoMovInv.InvInicial
-        Me.pnltotalsimple.Visible = True
-      Case Enumerados.enumTipoMovInv.Cxc, Enumerados.enumTipoMovInv.Cxp
-        Me.pnltotalsimple.Visible = True
-        txttotalgeneralsimple.ReadOnly = False
-      Case Enumerados.enumTipoMovInv.DevIncautacion, Enumerados.enumTipoMovInv.Incautacion
-        Me.pnlformapago.Visible = False
-    End Select
-  End Sub
+    Sub Llenar_detalles()
+        Me.DataGridViewDetalles.MovimientoInventario = mMovimientoInventario
 
-  Private Sub txtdsctoglobal_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtdsctoglobal.Validating
-    mostrar_totales()
-  End Sub
+        Me.pnltotalcompleto.Visible = False
+        Me.pnltotalsimple.Visible = False
+        txttotalgeneralsimple.ReadOnly = True
+        Select Case TipoMovimientoEnum
+            Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevCompra, Enumerados.enumTipoMovInv.DevVenta
+                Me.pnltotalcompleto.Visible = True
+            Case Enumerados.enumTipoMovInv.InvInicial
+                Me.pnltotalsimple.Visible = True
+            Case Enumerados.enumTipoMovInv.Cxc, Enumerados.enumTipoMovInv.Cxp
+                Me.pnltotalsimple.Visible = True
+                txttotalgeneralsimple.ReadOnly = False
+            Case Enumerados.enumTipoMovInv.IncautSalida, Enumerados.enumTipoMovInv.Incautacion
+                Me.pnlformapago.Visible = False
+        End Select
+    End Sub
 
-  Private Sub DataGridViewDetalles_Cambio_MovimientoDets(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGridViewDetalles.Cambio_MovimientoDets
-    mostrar_totales()
-  End Sub
+    Private Sub txtdsctoglobal_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtdsctoglobal.Validating
+        mostrar_totales()
+    End Sub
 
-  Private Sub mostrar_totales()
-    If mMovimientoInventario Is Nothing Then
-      Me.txtsubtotal.Value = 0
-      Me.txttotalgeneralsimple.Value = 0
-      Me.txtbase0.Value = 0
-      Me.txtbasegravada.Value = 0
-      Me.txtiva.Value = 0
-      Me.txttotalgeneral.Value = 0
-    Else
-      Me.mMovimientoInventario.Movinv_Descto = Me.txtdsctoglobal.Value
-      Me.txtsubtotal.Value = mMovimientoInventario.BaseImponibleRetFte
-      Me.txttotalgeneralsimple.Value = mMovimientoInventario.BaseImponibleRetFte
-      Me.txtbase0.Value = mMovimientoInventario.Base0
-      Me.txtbasegravada.Value = mMovimientoInventario.BaseGravadaIVA
-      Me.txtiva.Value = mMovimientoInventario.TotalIva
-      Me.txttotalgeneral.Value = mMovimientoInventario.TotalGeneral
-    End If
-  End Sub
+    Private Sub DataGridViewDetalles_Cambio_MovimientoDets(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGridViewDetalles.Cambio_MovimientoDets
+        mostrar_totales()
+    End Sub
 
-  '  Private Sub ComboBoxCreditoTributario1_CambioItem(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlBuscaCliente1.CambioItem, CtlBuscaProveedor1.CambioItem
-  '    'ComboBoxCreditoTributario1.CambioItem,
-  '    llenar_creditotributario()
-  '    If sender Is Me.CtlBuscaProveedor1 Then
-  '      Try
-  '        Me.msk_autorizacion.Text = Me.CtlBuscaProveedor1.Proveedor.Entidad.Entida_AutorizacionFactura
-  '        Me.msk_fechacaducidad.Text = Me.CtlBuscaProveedor1.Proveedor.Entidad.Entida_CaducidadFactura
-  '      Catch ex As Exception
+    Private Sub mostrar_totales()
+        If mMovimientoInventario Is Nothing Then
+            Me.txtsubtotal.Value = 0
+            Me.txttotalgeneralsimple.Value = 0
+            Me.txtbase0.Value = 0
+            Me.txtbasegravada.Value = 0
+            Me.txtiva.Value = 0
+            Me.txttotalgeneral.Value = 0
+        Else
+            Me.mMovimientoInventario.Movinv_Descto = Me.txtdsctoglobal.Value
+            Me.txtsubtotal.Value = mMovimientoInventario.BaseImponibleRetFte
+            Me.txttotalgeneralsimple.Value = mMovimientoInventario.BaseImponibleRetFte
+            Me.txtbase0.Value = mMovimientoInventario.Base0
+            Me.txtbasegravada.Value = mMovimientoInventario.BaseGravadaIVA
+            Me.txtiva.Value = mMovimientoInventario.TotalIva
+            Me.txttotalgeneral.Value = mMovimientoInventario.TotalGeneral
+        End If
+    End Sub
 
-  '      End Try
-  '    End If
-  '  End Sub
+    '  Private Sub ComboBoxCreditoTributario1_CambioItem(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlBuscaCliente1.CambioItem, CtlBuscaProveedor1.CambioItem
+    '    'ComboBoxCreditoTributario1.CambioItem,
+    '    llenar_creditotributario()
+    '    If sender Is Me.CtlBuscaProveedor1 Then
+    '      Try
+    '        Me.msk_autorizacion.Text = Me.CtlBuscaProveedor1.Proveedor.Entidad.Entida_AutorizacionFactura
+    '        Me.msk_fechacaducidad.Text = Me.CtlBuscaProveedor1.Proveedor.Entidad.Entida_CaducidadFactura
+    '      Catch ex As Exception
 
-  '  Sub llenar_creditotributario()
-  '    'If tipocompraventas Is Nothing Then
-  '    '  comboTipoMovimiento_SelectedIndexChanged(Me, Nothing)
-  '    'End If
-  '    'Me.ComboBoxTipoComprobante1.credito_tributario = Me.ComboBoxCreditoTributario1.credito_tributario
-  '    Select Case _enumtipomov
-  '      Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevCompra
-  '        If Me.CtlBuscaProveedor1.Proveedor Is Nothing Then
-  '          Exit Sub
-  '        End If
-  '        If CType(tipocompraventas(IIf(Me.comboTipoCompraVenta.SelectedIndex = -1, 0, Me.comboTipoCompraVenta.SelectedIndex)).Pardet_Secuencia, Enumerados.enumTipoCompra) = Enumerados.enumTipoCompra.Importacion Then
-  '          'Me.ComboBoxTipoComprobante1.Llenar_datos(Me.CtlBuscaProveedor1.Proveedor.Entidad.SRICodigo_Identificacion, Me.dtpFecdesde.Value, credito_tributario.EnumTipoTransaccion.Importacion)
-  '        Else
-  '          'Me.ComboBoxTipoComprobante1.Llenar_datos(Me.CtlBuscaProveedor1.Proveedor.Entidad.SRICodigo_Identificacion, Me.dtpFecdesde.Value, credito_tributario.EnumTipoTransaccion.Compra)
-  '        End If
-  '      Case Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevVenta
-  '        If Me.CtlBuscaCliente1.Cliente Is Nothing Then
-  '          Exit Sub
-  '        End If
-  '        'Me.ComboBoxTipoComprobante1.Llenar_datos(Me.CtlBuscaCliente1.Cliente.Entidad.SRICodigo_Identificacion, Me.dtpFecdesde.Value, credito_tributario.EnumTipoTransaccion.Venta)
-  '    End Select
-  '  End Sub
+    '      End Try
+    '    End If
+    '  End Sub
+
+    '  Sub llenar_creditotributario()
+    '    'If tipocompraventas Is Nothing Then
+    '    '  comboTipoMovimiento_SelectedIndexChanged(Me, Nothing)
+    '    'End If
+    '    'Me.ComboBoxTipoComprobante1.credito_tributario = Me.ComboBoxCreditoTributario1.credito_tributario
+    '    Select Case _enumtipomov
+    '      Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevCompra
+    '        If Me.CtlBuscaProveedor1.Proveedor Is Nothing Then
+    '          Exit Sub
+    '        End If
+    '        If CType(tipocompraventas(IIf(Me.comboTipoCompraVenta.SelectedIndex = -1, 0, Me.comboTipoCompraVenta.SelectedIndex)).Pardet_Secuencia, Enumerados.enumTipoCompra) = Enumerados.enumTipoCompra.Importacion Then
+    '          'Me.ComboBoxTipoComprobante1.Llenar_datos(Me.CtlBuscaProveedor1.Proveedor.Entidad.SRICodigo_Identificacion, Me.dtpFecdesde.Value, credito_tributario.EnumTipoTransaccion.Importacion)
+    '        Else
+    '          'Me.ComboBoxTipoComprobante1.Llenar_datos(Me.CtlBuscaProveedor1.Proveedor.Entidad.SRICodigo_Identificacion, Me.dtpFecdesde.Value, credito_tributario.EnumTipoTransaccion.Compra)
+    '        End If
+    '      Case Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevVenta
+    '        If Me.CtlBuscaCliente1.Cliente Is Nothing Then
+    '          Exit Sub
+    '        End If
+    '        'Me.ComboBoxTipoComprobante1.Llenar_datos(Me.CtlBuscaCliente1.Cliente.Entidad.SRICodigo_Identificacion, Me.dtpFecdesde.Value, credito_tributario.EnumTipoTransaccion.Venta)
+    '    End Select
+    '  End Sub
 #End Region
 
 #Region "Busqueda"

@@ -113,6 +113,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ICA\Infoware.Reportes.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -148,6 +149,18 @@
     </Compile>
     <Compile Include="Controles\ComboBoxUsuario.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmListaIncautacion.designer.vb">
+      <DependentUpon>FrmListaIncautacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmListaIncautacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incautacion\Controles\CtlBuscaIncautacion.designer.vb">
+      <DependentUpon>CtlBuscaIncautacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Controles\CtlBuscaIncautacion.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controles\CtlBuscaContribuyente.Designer.vb">
       <DependentUpon>CtlBuscaContribuyente.vb</DependentUpon>
@@ -416,11 +429,23 @@
     <Compile Include="Incautacion\Controles\CtlIncautacioSalidaDet.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Incautacion\Controles\CtlItem.Designer.vb">
+      <DependentUpon>CtlItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Controles\CtlItem.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Incautacion\Controles\GridComboBox.Designer.vb">
       <DependentUpon>GridComboBox.vb</DependentUpon>
     </Compile>
     <Compile Include="Incautacion\Controles\GridComboBox.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmMantenimientoResolucion.designer.vb">
+      <DependentUpon>FrmMantenimientoResolucion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmMantenimientoResolucion.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Incautacion\Forms\FrmIncautacion.Designer.vb">
       <DependentUpon>FrmIncautacion.vb</DependentUpon>
@@ -428,10 +453,10 @@
     <Compile Include="Incautacion\Forms\FrmIncautacion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Incautacion\Forms\FrmListaIncautacion.Designer.vb">
-      <DependentUpon>FrmListaIncautacion.vb</DependentUpon>
+    <Compile Include="Incautacion\Forms\FrmMantenimientoIncautacion.designer.vb">
+      <DependentUpon>FrmMantenimientoIncautacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="Incautacion\Forms\FrmListaIncautacion.vb">
+    <Compile Include="Incautacion\Forms\FrmMantenimientoIncautacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reporteador\ComboBoxConexionOtros.vb">
@@ -746,6 +771,12 @@
     <EmbeddedResource Include="Controles\ComboBoxUsuario.resx">
       <DependentUpon>ComboBoxUsuario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Incautacion\Forms\FrmListaIncautacion.resx">
+      <DependentUpon>FrmListaIncautacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incautacion\Controles\CtlBuscaIncautacion.resx">
+      <DependentUpon>CtlBuscaIncautacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\CtlBuscaContribuyente.resx">
       <DependentUpon>CtlBuscaContribuyente.vb</DependentUpon>
     </EmbeddedResource>
@@ -860,11 +891,20 @@
     <EmbeddedResource Include="FrmTrabajoHistorial.resx">
       <DependentUpon>FrmTrabajoHistorial.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Incautacion\Controles\CtlItem.resx">
+      <DependentUpon>CtlItem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Incautacion\Controles\GridComboBox.resx">
       <DependentUpon>GridComboBox.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Incautacion\Forms\FrmListaIncautacion.resx">
-      <DependentUpon>FrmListaIncautacion.vb</DependentUpon>
+    <EmbeddedResource Include="Incautacion\Forms\FrmMantenimientoResolucion.resx">
+      <DependentUpon>FrmMantenimientoResolucion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incautacion\Forms\FrmIncautacion.resx">
+      <DependentUpon>FrmIncautacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incautacion\Forms\FrmMantenimientoIncautacion.resx">
+      <DependentUpon>FrmMantenimientoIncautacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporteador\FrmEnvioMailsenLotes.resx">
       <DependentUpon>FrmEnvioMailsenLotes.vb</DependentUpon>

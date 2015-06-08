@@ -26,13 +26,21 @@ Public Class Item
 
   Private mPardetMarca As WWTSParametroDet = Nothing
 
-  Private mPardetMedida As WWTSParametroDet = Nothing
+    Private mPardetMedida As WWTSParametroDet = Nothing
+
+    Private mPardetTipo As WWTSParametroDet = Nothing
+
+    Private mPardetEstadoItem As WWTSParametroDet = Nothing
 
   Private mPardetTipoInventario As WWTSParametroDet = Nothing
 
   Private mPardetUnidadMedida As WWTSParametroDet = Nothing
 
-  Private mItem_Imagen As System.Drawing.Image = Nothing
+    Private mItem_Imagen As System.Drawing.Image = Nothing
+
+    Private mIncautacion As Reglas.Incautacion = Nothing
+
+    Private mEmpresa As Empresa = Nothing
 
   Private mProveedor As Proveedor = Nothing
 
@@ -77,6 +85,36 @@ Public Class Item
     End Set
   End Property
 
+    'WWTSParametroDet
+    Public Overridable Property PardetTipo() As WWTSParametroDet
+        Get
+            If Me.mPardetTipo Is Nothing AndAlso Pardet_Tipo > 0 Then
+                Me.mPardetTipo = New WWTSParametroDet(OperadorDatos, Parame_Tipo, Pardet_Tipo)
+            End If
+            Return Me.mPardetTipo
+        End Get
+        Set(ByVal value As WWTSParametroDet)
+            Me.mPardetTipo = value
+            Parame_Tipo = value.Parame_Codigo
+            Pardet_Tipo = value.Pardet_Secuencia
+        End Set
+    End Property
+
+    'WWTSParametroDet
+    Public Overridable Property PardetEstadoItem() As WWTSParametroDet
+        Get
+            If Me.mPardetEstadoItem Is Nothing AndAlso Pardet_EstadoItem > 0 Then
+                Me.mPardetEstadoItem = New WWTSParametroDet(OperadorDatos, Parame_EstadoItem, Pardet_EstadoItem)
+            End If
+            Return Me.mPardetEstadoItem
+        End Get
+        Set(ByVal value As WWTSParametroDet)
+            Me.mPardetEstadoItem = value
+            Parame_EstadoItem = value.Parame_Codigo
+            Pardet_EstadoItem = value.Pardet_Secuencia
+        End Set
+    End Property
+
   'WWTSParametroDet
   Public Overridable Property PardetMarca() As WWTSParametroDet
     Get
@@ -112,6 +150,42 @@ Public Class Item
       End If
     End Set
   End Property
+
+    'Proveedor
+    Public Overridable Property Incautacion() As Reglas.Incautacion
+        Get
+            If Me.mIncautacion Is Nothing AndAlso Incaut_Codigo > 0 Then
+                Me.mIncautacion = New Reglas.Incautacion(OperadorDatos, Incaut_Codigo)
+            End If
+            Return Me.mIncautacion
+        End Get
+        Set(ByVal value As Reglas.Incautacion)
+            Me.mIncautacion = value
+            If value Is Nothing Then
+                Incaut_Codigo = 0
+            Else
+                Incaut_Codigo = value.Incaut_Codigo
+            End If
+        End Set
+    End Property
+
+    'Empresa
+    Public Overridable Property Empresa() As Empresa
+        Get
+            If Me.mEmpresa Is Nothing AndAlso Empres_Codigo > 0 Then
+                Me.mEmpresa = New Empresa(OperadorDatos, Empres_Codigo)
+            End If
+            Return Me.mEmpresa
+        End Get
+        Set(ByVal value As Empresa)
+            Me.mEmpresa = value
+            If value Is Nothing Then
+                Empres_Codigo = 0
+            Else
+                Empres_Codigo = value.Empres_Codigo
+            End If
+        End Set
+    End Property
 
   'WWTSParametroDet
   Public Overridable Property PardetTipoInventario() As WWTSParametroDet
@@ -194,7 +268,18 @@ Public Class Item
       EsModificado = True
       mCambio_Imagen = True
     End Set
-  End Property
+    End Property
+
+    '<Infoware.Reportes.CampoReporteAtributo("Item", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 200, True)> _
+    'Public ReadOnly Property ItemString() As String
+    '    Get
+    '        If Item_Descripcion Is Nothing Then
+    '            Return String.Empty
+    '        Else
+    '            Return PardetTipo.Descripcion + " " + Item_Descripcion
+    '        End If
+    '    End Get
+    'End Property
 
   <Infoware.Reportes.CampoReporteAtributo("Grupo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)> _
   Public ReadOnly Property GrupoString() As String
@@ -229,15 +314,18 @@ Public Class Item
     End Get
   End Property
 
-  Public ReadOnly Property UnidadMedidaString() As String
-    Get
-      If PardetUnidadMedida Is Nothing Then
-        Return String.Empty
-      Else
-        Return mPardetUnidadMedida.Pardet_Descripcion
-      End If
-    End Get
-  End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Unidad medida", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 90, True)> _
+    Public ReadOnly Property UnidadMedidaString() As String
+        Get
+            If PardetUnidadMedida Is Nothing Then
+                Return String.Empty
+            Else
+                Return PardetUnidadMedida.Pardet_Descripcion
+            End If
+        End Get
+    End Property
+
 
   Public ReadOnly Property BuscarValor(ByVal _tipomovinv As Enumerados.enumTipoMovInv, ByVal _sucursal As Sucursal, ByVal _PardetTipoPrecio As WWTSParametroDet, ByVal _porciva As Decimal, ByVal _bodega As Bodega, ByVal _cantidad As Decimal) As Decimal
     Get
@@ -569,133 +657,143 @@ Public Class Item
     Return bReturn
   End Function
 
-  Public Overridable Function Guardar() As Boolean
-    If Not EsNuevo And Not EsModificado Then
-      Return True
-    End If
-    Dim Result As Integer = 0
-    Dim bReturn As Boolean = True
+    Public Overridable Function Guardar() As Boolean
+        MsgBox("voy a guardar item")
+        If Not EsNuevo And Not EsModificado Then
+            Return True
+        End If
+        Dim Result As Integer = 0
+        Dim bReturn As Boolean = True
 
-    Dim _comenzotransaccion As Boolean = False
-    If Not OperadorDatos.EstaenTransaccion Then
-      OperadorDatos.ComenzarTransaccion()
-      _comenzotransaccion = True
-    End If
+        Dim _comenzotransaccion As Boolean = False
+        If Not OperadorDatos.EstaenTransaccion Then
+            OperadorDatos.ComenzarTransaccion()
+            _comenzotransaccion = True
+        End If
 
-    Dim sAccion As String = "M"
-    If EsNuevo Then
-      sAccion = "I"
-    End If
-    OperadorDatos.AgregarParametro("@accion", sAccion)
-    OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
-    OperadorDatos.AgregarParametro("@Parame_Grupo", Parame_Grupo)
-    OperadorDatos.AgregarParametro("@Pardet_Grupo", Pardet_Grupo)
-    OperadorDatos.AgregarParametro("@Parame_Marca", Parame_Marca)
-    OperadorDatos.AgregarParametro("@Pardet_Marca", Pardet_Marca)
-    OperadorDatos.AgregarParametro("@Parame_Tipoinventario", Parame_Tipoinventario)
-    OperadorDatos.AgregarParametro("@Pardet_Tipoinventario", Pardet_Tipoinventario)
-    OperadorDatos.AgregarParametro("@Item_Aplicaiva", Item_Aplicaiva)
-    OperadorDatos.AgregarParametro("@Item_Estangible", Item_Estangible)
-    OperadorDatos.AgregarParametro("@Item_Descripcion", Item_Descripcion)
-    OperadorDatos.AgregarParametro("@Item_Ubicacion", Item_Ubicacion)
-    OperadorDatos.AgregarParametro("@Parame_Unidadmedida", Parame_Unidadmedida)
-    OperadorDatos.AgregarParametro("@Pardet_Unidadmedida", Pardet_Unidadmedida)
-    OperadorDatos.AgregarParametro("@Item_CodigoAuxiliar", Item_CodigoAuxiliar)
-    OperadorDatos.AgregarParametro("@Item_CodigoProveedor", Item_CodigoProveedor)
-    OperadorDatos.AgregarParametro("@Item_esIvaIncluido", Item_esIvaIncluido)
-    OperadorDatos.AgregarParametro("@Item_esRegistroSerie", Item_esRegistroSerie)
-    OperadorDatos.AgregarParametro("@Item_Serie", Item_Serie)
-    OperadorDatos.AgregarParametro("@Incaut_Codigo", Incaut_Codigo)
-    If Entida_Proveedor > 0 Then
-      OperadorDatos.AgregarParametro("@Entida_Proveedor", Entida_Proveedor)
-    End If
-    OperadorDatos.AgregarParametro("@Item_Combo", Item_Combo)
-    OperadorDatos.AgregarParametro("@Item_PrecioxCantidad", Item_PrecioxCantidad)
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar(Result)
-    OperadorDatos.LimpiarParametros()
-    If bReturn Then
-      If EsNuevo Then
-        Item_Codigo = Result
-      End If
-      
-      If mDetallesComboEliminados IsNot Nothing Then
-        For Each _detalle As ItemDetalle In mDetallesComboEliminados
-          If Not _detalle.EsNuevo Then
-            _detalle.Item = Me
-            If Not _detalle.Eliminar Then
-              bReturn = False
+        Dim sAccion As String = "M"
+        If EsNuevo Then
+            sAccion = "I"
+        End If
+        OperadorDatos.AgregarParametro("@accion", sAccion)
+        OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
+        OperadorDatos.AgregarParametro("@Incaut_Codigo", Incaut_Codigo)
+        OperadorDatos.AgregarParametro("@Parame_Tipo", Parame_Tipo)
+        OperadorDatos.AgregarParametro("@Pardet_Tipo", Pardet_Tipo)
+        OperadorDatos.AgregarParametro("@Item_Descripcion", Item_Descripcion)
+        OperadorDatos.AgregarParametro("@Parame_Marca", Parame_Marca)
+        OperadorDatos.AgregarParametro("@Pardet_Marca", Pardet_Marca)
+        OperadorDatos.AgregarParametro("@Item_Modelo", Item_Modelo)
+        OperadorDatos.AgregarParametro("@Item_Serie", Item_Serie)
+        OperadorDatos.AgregarParametro("@Item_esRegistroSerie", Item_esRegistroSerie)
+        OperadorDatos.AgregarParametro("@Item_Ubicacion", Item_Ubicacion)
+        OperadorDatos.AgregarParametro("@Parame_Unidadmedida", Parame_Unidadmedida)
+        OperadorDatos.AgregarParametro("@Pardet_Unidadmedida", Pardet_Unidadmedida)
+        OperadorDatos.AgregarParametro("@Parame_EstadoItem", Parame_EstadoItem)
+        OperadorDatos.AgregarParametro("@Pardet_EstadoItem", Pardet_EstadoItem)
+        OperadorDatos.AgregarParametro("@Empres_Codigo", Empres_Codigo)
+        OperadorDatos.AgregarParametro("@precio", Item_Precio)
+        OperadorDatos.AgregarParametro("@Parame_Grupo", Parame_Grupo)
+        OperadorDatos.AgregarParametro("@Pardet_Grupo", Pardet_Grupo)
+        OperadorDatos.AgregarParametro("@Parame_Tipoinventario", Parame_Tipoinventario)
+        OperadorDatos.AgregarParametro("@Pardet_Tipoinventario", Pardet_Tipoinventario)
+        OperadorDatos.AgregarParametro("@Item_Aplicaiva", Item_Aplicaiva)
+        OperadorDatos.AgregarParametro("@Item_Estangible", Item_Estangible)
+        OperadorDatos.AgregarParametro("@Item_CodigoAuxiliar", Item_CodigoAuxiliar)
+        OperadorDatos.AgregarParametro("@Item_CodigoProveedor", Item_CodigoProveedor)
+        OperadorDatos.AgregarParametro("@Item_esIvaIncluido", Item_esIvaIncluido)
+
+
+        If Entida_Proveedor > 0 Then
+            OperadorDatos.AgregarParametro("@Entida_Proveedor", Entida_Proveedor)
+        End If
+        'OperadorDatos.AgregarParametro("@Item_Combo", Item_Combo)
+        'OperadorDatos.AgregarParametro("@Item_PrecioxCantidad", Item_PrecioxCantidad)
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar(Result)
+        OperadorDatos.LimpiarParametros()
+        If bReturn Then
+            If EsNuevo Then
+                Item_Codigo = Result
             End If
-          End If
-        Next
-      End If
-      If mDetallesCombo IsNot Nothing Then
-        For Each _detalle As ItemDetalle In mDetallesCombo
-          _detalle.Item = Me
-          If Not _detalle.Guardar Then
-            bReturn = False
-          End If
-        Next
-      End If
 
-      If mDetallesprecioxcantidadEliminados IsNot Nothing Then
-        For Each _detalle As ItemPrecioxCantidad In mDetallesPrecioxCantidadEliminados
-          If Not _detalle.EsNuevo Then
-            _detalle.Item = Me
-            If Not _detalle.Eliminar Then
-              bReturn = False
+            'If mDetallesComboEliminados IsNot Nothing Then
+            '  For Each _detalle As ItemDetalle In mDetallesComboEliminados
+            '    If Not _detalle.EsNuevo Then
+            '      _detalle.Item = Me
+            '      If Not _detalle.Eliminar Then
+            '        bReturn = False
+            '      End If
+            '    End If
+            '  Next
+            'End If
+            'If mDetallesCombo IsNot Nothing Then
+            '  For Each _detalle As ItemDetalle In mDetallesCombo
+            '    _detalle.Item = Me
+            '    If Not _detalle.Guardar Then
+            '      bReturn = False
+            '    End If
+            '  Next
+            'End If
+
+            'If mDetallesprecioxcantidadEliminados IsNot Nothing Then
+            '  For Each _detalle As ItemPrecioxCantidad In mDetallesPrecioxCantidadEliminados
+            '    If Not _detalle.EsNuevo Then
+            '      _detalle.Item = Me
+            '      If Not _detalle.Eliminar Then
+            '        bReturn = False
+            '      End If
+            '    End If
+            '  Next
+            'End If
+            'If mDetallesPrecioxCantidad IsNot Nothing Then
+            '  For Each _detalle As ItemPrecioxCantidad In mDetallesPrecioxCantidad
+            '    _detalle.Item = Me
+            '    If Not _detalle.Guardar Then
+            '      bReturn = False
+            '    End If
+            '  Next
+            'End If
+
+            If Not OperadorDatos.EstaenTransaccion Then
+                AceptarCambios()
             End If
-          End If
-        Next
-      End If
-      If mDetallesPrecioxCantidad IsNot Nothing Then
-        For Each _detalle As ItemPrecioxCantidad In mDetallesPrecioxCantidad
-          _detalle.Item = Me
-          If Not _detalle.Guardar Then
-            bReturn = False
-          End If
-        Next
-      End If
 
-      If Not OperadorDatos.EstaenTransaccion Then
-        AceptarCambios()
-      End If
+            'If mCambio_Imagen Then
+            '  Guardar_Imagen()
+            'End If
+        End If
 
-      If mCambio_Imagen Then
-        Guardar_Imagen()
-      End If
-    End If
-
-    If _comenzotransaccion Then
-      If bReturn Then
-        OperadorDatos.TerminarTransaccion()
-        AceptarCambios()
-      Else
-        OperadorDatos.CancelarTransaccion()
-      End If
-    End If
-    Return bReturn
-  End Function
+        If _comenzotransaccion Then
+            If bReturn Then
+                OperadorDatos.TerminarTransaccion()
+                AceptarCambios()
+            Else
+                OperadorDatos.CancelarTransaccion()
+            End If
+        End If
+        Return bReturn
+    End Function
 
   Public Overridable Sub AceptarCambios()
     EsNuevo = False
     EsModificado = False
 
-    If mDetallesCombo IsNot Nothing Then
-      For Each _detalle As ItemDetalle In mDetallesCombo
-        _detalle.AceptarCambios()
-      Next
-    End If
-    mDetallesCombo = Nothing
-    mDetallesComboEliminados = Nothing
+        'If mDetallesCombo IsNot Nothing Then
+        '  For Each _detalle As ItemDetalle In mDetallesCombo
+        '    _detalle.AceptarCambios()
+        '  Next
+        'End If
+        'mDetallesCombo = Nothing
+        'mDetallesComboEliminados = Nothing
 
-    If mDetallesPrecioxCantidad IsNot Nothing Then
-      For Each _detalle As ItemPrecioxCantidad In mDetallesPrecioxCantidad
-        _detalle.AceptarCambios()
-      Next
-    End If
-    mDetallesPrecioxCantidad = Nothing
-    mDetallesPrecioxCantidadEliminados = Nothing
+        'If mDetallesPrecioxCantidad IsNot Nothing Then
+        '  For Each _detalle As ItemPrecioxCantidad In mDetallesPrecioxCantidad
+        '    _detalle.AceptarCambios()
+        '  Next
+        'End If
+        'mDetallesPrecioxCantidad = Nothing
+        'mDetallesPrecioxCantidadEliminados = Nothing
   End Sub
 
   Public Overridable Function Guardar_Imagen() As Boolean

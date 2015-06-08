@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿'IncSal_Codigo	int	Unchecked
 'Empres_Codigo	int	Unchecked
 'IncSal_Secuencia	int	Unchecked
@@ -12,15 +11,11 @@
 
 
 
-=======
-﻿
->>>>>>> origin/master
 Option Strict Off
 Option Explicit On
 
 Imports Infoware.Datos
 Imports Infoware.Reglas.General
-<<<<<<< HEAD
 #Region "IncautacionSalida "
 Partial Public Class IncautacionSalida
   Const _Procedimiento As String = "proc_IncautacionSalida"
@@ -215,17 +210,12 @@ Partial Public Class IncautacionSalida
   End Function
 
 
-=======
-#Region "IncautacionSalida"
-Public Class IncautacionSalida
->>>>>>> origin/master
 
 End Class
 
 #End Region
 
 #Region "IncautacionSalidaList"
-<<<<<<< HEAD
 Public Class IncautacionSalidaList
   Inherits System.ComponentModel.BindingList(Of IncautacionSalida)
 
@@ -257,7 +247,3 @@ Public Class IncautacionSalidaList
 
 End Class
 #End Region
-=======
-
-#End Region
->>>>>>> origin/master

@@ -22,19 +22,48 @@ Imports Infoware.Reglas.General
 Partial Public Class Item
   Inherits _Database
 
+    'usados en incautacion
   Private mItem_Codigo As Integer = 0
 
-  Private mIncaut_Codigo As Integer = 0
+    Private mIncaut_Codigo As Integer = 0
 
-  Private mItem_Serie As String = String.Empty
+    Private mItem_Secuencia As Integer = 0
+
+    Private mParame_Tipo As Integer = CInt(Enumerados.EnumParametros.TipoItem)
+
+    Private mPardet_Tipo As Integer = 0
+
+    Private mItem_Descripcion As String = ""
+
+    Private mParame_Marca As Integer = CInt(Enumerados.EnumParametros.Marca)
+
+    Private mPardet_Marca As Integer = 0
+
+    Private mItem_Modelo As String = ""
+
+    Private mItem_Serie As String = ""
+
+    Private mParame_Unidadmedida As Integer = CInt(Enumerados.EnumParametros.UnidadMedida)
+
+    Private mPardet_Unidadmedida As Integer = 0
+
+    Private mParame_EstadoItem As Integer = CInt(Enumerados.EnumParametros.EstadoItem)
+
+    Private mPardet_EstadoItem As Integer = 0
+
+    Private mItem_esRegistroSerie As Boolean = False
+
+    Private mItem_Ubicacion As String = ""
+
+    Private mEmpres_Codigo As Integer = 0
+
+    Private mItem_Precio As Decimal = 0
+
+    'no usados en incautacion
 
   Private mParame_Grupo As Integer = CInt(Enumerados.EnumParametros.Grupo)
 
   Private mPardet_Grupo As Integer = 0
-
-  Private mParame_Marca As Integer = CInt(Enumerados.EnumParametros.Marca)
-
-  Private mPardet_Marca As Integer = 0
 
   Private mParame_Tipoinventario As Integer = CInt(Enumerados.EnumParametros.TipoInventario)
 
@@ -44,21 +73,11 @@ Partial Public Class Item
 
   Private mItem_Estangible As Boolean = True
 
-  Private mItem_Descripcion As String = ""
-
-  Private mItem_Ubicacion As String = ""
-
-  Private mParame_Unidadmedida As Integer = CInt(Enumerados.EnumParametros.UnidadMedida)
-
-  Private mPardet_Unidadmedida As Integer = 0
-
-  Private mItem_CodigoAuxiliar As String = ""
+    Private mItem_CodigoAuxiliar As String = ""
 
   Private mItem_CodigoProveedor As String = ""
 
   Private mItem_esIvaIncluido As Boolean = False
-
-  Private mItem_esRegistroSerie As Boolean = False
 
   Private mEntida_Proveedor As Integer = 0
 
@@ -82,7 +101,200 @@ Partial Public Class Item
       Me.mItem_Codigo = value
       EsModificado = True
     End Set
-  End Property
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Incaut_Codigo() As Integer
+        Get
+            Return Me.mIncaut_Codigo
+        End Get
+        Set(ByVal value As Integer)
+            Me.mIncaut_Codigo = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+  <Infoware.Reportes.CampoReporteAtributo("Código", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Numero, 50, True)> _
+    Public Overridable Property Item_Secuencia() As Integer
+        Get
+            Return Me.mItem_Secuencia
+        End Get
+        Set(ByVal value As Integer)
+            Me.mItem_Secuencia = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Parame_Tipo() As Integer
+        Get
+            Return Me.mParame_Tipo
+        End Get
+        Set(ByVal value As Integer)
+            Me.mParame_Tipo = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Pardet_Tipo() As Integer
+        Get
+            Return Me.mPardet_Tipo
+        End Get
+        Set(ByVal value As Integer)
+            Me.mPardet_Tipo = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+  <Infoware.Reportes.CampoReporteAtributo("Descripción", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, True)> _
+    Public Overridable Property Item_Descripcion() As String
+        Get
+            Return Me.mItem_Descripcion
+        End Get
+        Set(ByVal value As String)
+            Me.mItem_Descripcion = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Parame_Marca() As Integer
+        Get
+            Return Me.mParame_Marca
+        End Get
+        Set(ByVal value As Integer)
+            Me.mParame_Marca = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Pardet_Marca() As Integer
+        Get
+            Return Me.mPardet_Marca
+        End Get
+        Set(ByVal value As Integer)
+            Me.mPardet_Marca = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Item_Modelo() As String
+        Get
+            Return Me.mItem_Modelo
+        End Get
+        Set(ByVal value As String)
+            Me.mItem_Modelo = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Item_Serie() As String
+        Get
+            Return Me.mItem_Serie
+        End Get
+
+        Set(ByVal value As String)
+            Me.mItem_Serie = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Parame_Unidadmedida() As Integer
+        Get
+            Return Me.mParame_Unidadmedida
+        End Get
+        Set(ByVal value As Integer)
+            Me.mParame_Unidadmedida = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Pardet_Unidadmedida() As Integer
+        Get
+            Return Me.mPardet_Unidadmedida
+        End Get
+        Set(ByVal value As Integer)
+            Me.mPardet_Unidadmedida = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Parame_EstadoItem() As Integer
+        Get
+            Return Me.mParame_EstadoItem
+        End Get
+        Set(ByVal value As Integer)
+            Me.mParame_EstadoItem = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Pardet_EstadoItem() As Integer
+        Get
+            Return Me.mPardet_EstadoItem
+        End Get
+        Set(ByVal value As Integer)
+            Me.mPardet_EstadoItem = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Item_esRegistroSerie() As Boolean
+        Get
+            Return Me.mItem_esRegistroSerie
+        End Get
+        Set(ByVal value As Boolean)
+            Me.mItem_esRegistroSerie = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Empres_Codigo() As Integer
+        Get
+            Return Me.mEmpres_Codigo
+        End Get
+        Set(ByVal value As Integer)
+            Me.mEmpres_Codigo = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Item_Precio() As Decimal
+        Get
+            Return Me.mItem_Precio
+        End Get
+        Set(ByVal value As Decimal)
+            Me.mItem_Precio = value
+            EsModificado = True
+        End Set
+    End Property
+
+
+    <XmlAttribute()> _
+    Public Overridable Property Item_Ubicacion() As String
+        Get
+            Return Me.mItem_Ubicacion
+        End Get
+        Set(ByVal value As String)
+            Me.mItem_Ubicacion = value
+            EsModificado = True
+        End Set
+    End Property
+
+    'no usados en incautaciones
 
   <XmlAttribute()> _
   Public Overridable Property Parame_Grupo() As Integer
@@ -102,28 +314,6 @@ Partial Public Class Item
     End Get
     Set(ByVal value As Integer)
       Me.mPardet_Grupo = value
-      EsModificado = True
-    End Set
-  End Property
-
-  <XmlAttribute()> _
-  Public Overridable Property Parame_Marca() As Integer
-    Get
-      Return Me.mParame_Marca
-    End Get
-    Set(ByVal value As Integer)
-      Me.mParame_Marca = value
-      EsModificado = True
-    End Set
-  End Property
-
-  <XmlAttribute()> _
-  Public Overridable Property Pardet_Marca() As Integer
-    Get
-      Return Me.mPardet_Marca
-    End Get
-    Set(ByVal value As Integer)
-      Me.mPardet_Marca = value
       EsModificado = True
     End Set
   End Property
@@ -173,80 +363,12 @@ Partial Public Class Item
   End Property
 
   <XmlAttribute()> _
-  <Infoware.Reportes.CampoReporteAtributo("Descripción", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, True)> _
-  Public Overridable Property Item_Descripcion() As String
-    Get
-      Return Me.mItem_Descripcion
-    End Get
-    Set(ByVal value As String)
-      Me.mItem_Descripcion = value
-      EsModificado = True
-    End Set
-  End Property
-
-  <XmlAttribute()> _
-  Public Overridable Property Item_Ubicacion() As String
-    Get
-      Return Me.mItem_Ubicacion
-    End Get
-    Set(ByVal value As String)
-      Me.mItem_Ubicacion = value
-      EsModificado = True
-    End Set
-  End Property
-
-  <XmlAttribute()> _
-  Public Overridable Property Parame_Unidadmedida() As Integer
-    Get
-      Return Me.mParame_Unidadmedida
-    End Get
-    Set(ByVal value As Integer)
-      Me.mParame_Unidadmedida = value
-      EsModificado = True
-    End Set
-  End Property
-
-  <XmlAttribute()> _
-  Public Overridable Property Pardet_Unidadmedida() As Integer
-    Get
-      Return Me.mPardet_Unidadmedida
-    End Get
-    Set(ByVal value As Integer)
-      Me.mPardet_Unidadmedida = value
-      EsModificado = True
-    End Set
-  End Property
-
-  <XmlAttribute()> _
-  Public Overridable Property Incaut_Codigo() As Integer
-    Get
-      Return Me.mIncaut_Codigo
-    End Get
-    Set(ByVal value As Integer)
-      Me.mIncaut_Codigo = value
-      EsModificado = True
-    End Set
-  End Property
-
-  <XmlAttribute()> _
   Public Overridable Property Entida_Proveedor() As Integer
     Get
       Return Me.mEntida_Proveedor
     End Get
     Set(ByVal value As Integer)
       Me.mEntida_Proveedor = value
-      EsModificado = True
-    End Set
-  End Property
-
-  <XmlAttribute()> _
-  Public Overridable Property Item_Serie() As String
-    Get
-      Return Me.mItem_Serie
-    End Get
-
-    Set(ByVal value As String)
-      Me.mItem_Serie = value
       EsModificado = True
     End Set
   End Property
@@ -280,17 +402,6 @@ Partial Public Class Item
     End Get
     Set(ByVal value As Boolean)
       Me.mItem_esIvaIncluido = value
-      EsModificado = True
-    End Set
-  End Property
-
-  <XmlAttribute()> _
-  Public Overridable Property Item_esRegistroSerie() As Boolean
-    Get
-      Return Me.mItem_esRegistroSerie
-    End Get
-    Set(ByVal value As Boolean)
-      Me.mItem_esRegistroSerie = value
       EsModificado = True
     End Set
   End Property

@@ -46,18 +46,23 @@ Public Class ItemDetalle
   End Sub
 
   'Item
-  Public Overridable Property Item() As Item
-    Get
-      If Me.mItem Is Nothing AndAlso Item_Codigo > 0 Then
-        Me.mItem = New Item(OperadorDatos, Item_Codigo)
-      End If
-      Return Me.mItem
-    End Get
-    Set(ByVal value As Item)
-      Me.mItem = value
-      Item_Codigo = value.Item_Codigo
-    End Set
-  End Property
+    Public Overridable Property Item() As Item
+
+        Get
+            If Me.mItem Is Nothing AndAlso Item_Codigo > 0 Then
+                Me.mItem = New Item(OperadorDatos, Item_Codigo)
+            End If
+
+            If Me.mItem Is Nothing AndAlso Item_Codigo = 0 Then
+                Me.mItem = New Item(OperadorDatos, True)
+            End If
+            Return Me.mItem
+        End Get
+        Set(ByVal value As Item)
+            Me.mItem = value
+            Item_Codigo = value.Item_Codigo
+        End Set
+    End Property
 
   'Sucursal
   Public Overridable Overloads Property Sucursal() As Sucursal
@@ -104,7 +109,7 @@ Public Class ItemDetalle
       If ItemDetalle Is Nothing Then
         Return String.Empty
       Else
-        Return ItemDetalle.Item_Descripcion
+                Return ItemDetalle.PardetTipo.Descripcion + " " + ItemDetalle.Item_Descripcion
       End If
     End Get
   End Property

@@ -12,57 +12,104 @@ Option Strict Off
 Option Explicit On
 
 Imports Infoware.Datos
-Imports Infoware.Reglas.General
+'Imports Infoware.Reglas.General
+
 #Region "IncautacionResolucion"
 Partial Public Class IncautacionResolucion
   Const _Procedimiento As String = "proc_IncautacionResolucion"
 
-  Private mContribuyente As Contribuyente = Nothing
+    Private mContribuyente As Contribuyente = Nothing
+
+    Private mIncautacion As Incautacion = Nothing
 
   Private mPardetTipoResolucion As WWTSParametroDet = Nothing
 
 
-  Public Sub New(ByVal _Empresa As Empresa, ByVal _EsNuevo As Boolean)
-    MyBase.New()
-    OperadorDatos = _Empresa.OperadorDatos
-    Empresa_Codigo = _Empresa.Empres_Codigo
-    EsNuevo = _EsNuevo
-  End Sub
-
-  Public Sub New(ByVal _Sucursal As Sucursal, ByVal _EsNuevo As Boolean)
-    MyBase.New()
-    OperadorDatos = _Sucursal.OperadorDatos
-    EsNuevo = _EsNuevo
-  End Sub
+    Public Sub New(ByVal _Incautacion As Reglas.Incautacion, ByVal _EsNuevo As Boolean)
+        MyBase.New()
+        OperadorDatos = _Incautacion.OperadorDatos
+        mIncautacion = _Incautacion
+        EsNuevo = _EsNuevo
+    End Sub
 
 
-  Public Sub New(ByVal _Sucursal As Sucursal, ByVal _PardetTipoMovinv As WWTSParametroDet, ByVal _Movinv_Secuencia As Integer, ByVal _estricto As Boolean)
-    MyBase.New()
-    OperadorDatos = _Sucursal.OperadorDatos
+    Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _Incaut_Codigo As Integer, ByVal _IncRes_Codigo As Integer)
+        'MyBase.New()
+        OperadorDatos = _OperadorDatos
+        Incaut_Codigo = _Incaut_Codigo
+        IncRes_Codigo = _IncRes_Codigo
+        If Me.Recargar Then
+
+        Else
+            Throw New System.Exception("No se puede cargar objeto IncautacionResolucion")
+        End If
+    End Sub
+
+    'Incautacion
+    Public Overridable Property Incautacion() As Incautacion
+        Get
+            If mIncautacion Is Nothing AndAlso Incaut_Codigo > 0 Then
+                mIncautacion = New Incautacion(OperadorDatos, Incaut_Codigo)
+            End If
+            Return Me.mIncautacion
+        End Get
+        Set(value As Incautacion)
+            Me.mIncautacion = value
+            Incaut_Codigo = value.Incaut_Codigo
+        End Set
+    End Property
 
 
-    If Me.Recargar Then
-    Else
-      If _estricto Then
-        Throw New System.Exception("No se puede cargar objeto IncautacionResolucion")
-      End If
-    End If
-  End Sub
+    Public Overridable Overloads Property PardetTipoResolucion() As WWTSParametroDet
+        Get
+            If Me.mPardetTipoResolucion Is Nothing AndAlso Pardet_TipoResolucion > 0 Then
+                Me.mPardetTipoResolucion = New WWTSParametroDet(OperadorDatos, Parame_TipoResolucion, Pardet_TipoResolucion)
+            End If
+            Return Me.mPardetTipoResolucion
+        End Get
+        Set(ByVal value As WWTSParametroDet)
+            Me.mPardetTipoResolucion = value
+            Parame_TipoResolucion = value.Parame_Codigo
+            Pardet_TipoResolucion = value.Pardet_Secuencia
+        End Set
+    End Property
 
+    <Infoware.Reportes.CampoReporteAtributo("Número de Resolución", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 120, True)> _
+    Public ReadOnly Property DescripcionString() As String
+        Get
+            Return IncRes_Numero
+        End Get
+    End Property
 
-  Public Overridable Property PardetTipoResolucion() As WWTSParametroDet
-    Get
-      If Me.mPardetTipoResolucion Is Nothing AndAlso Pardet_TipoResolucion > 0 Then
-        Me.mPardetTipoResolucion = New WWTSParametroDet(OperadorDatos, Parame_TipoResolucion, Pardet_TipoResolucion)
-      End If
-      Return Me.mPardetTipoResolucion
-    End Get
-    Set(ByVal value As WWTSParametroDet)
-      Me.mPardetTipoResolucion = value
-      Parame_TipoResolucion = value.Parame_Codigo
-      Pardet_TipoResolucion = value.Pardet_Secuencia
-    End Set
-  End Property
+    <Infoware.Reportes.CampoReporteAtributo("Tipo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 120, True)> _
+    Public ReadOnly Property TipoResolucionString() As String
+        Get
+            If PardetTipoResolucion Is Nothing Then
+                Return String.Empty
+            Else
+                Return PardetTipoResolucion.Descripcion
+            End If
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Fecha de Notificación", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 120, True)> _
+    Public ReadOnly Property FechaNotificacionString() As String
+        Get
+            Return IncRes_FechaNotificacion.ToString
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Fecha de entrega", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 120, True)> _
+    Public ReadOnly Property FechaEntregaString() As String
+        Get
+            If IncRes_FechaEntrega = DateTime.MinValue Then
+                Return String.Empty
+            Else
+                Return IncRes_FechaEntrega.ToString
+            End If
+        End Get
+    End Property
+
 
   Public Overridable Function Recargar() As Boolean
     Dim Result As New DataTable
@@ -83,17 +130,16 @@ Partial Public Class IncautacionResolucion
   End Function
 
   Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
-    Empresa_Codigo = CType(Fila("Empres_Codigo"), Integer)
     IncRes_Codigo = CType(Fila("IncRes_Codigo"), Integer)
-    IncRes_Numero = CType(Fila("IncRes_Numero"), Integer)
+        IncRes_Numero = CType(Fila("IncRes_Numero"), String)
     IncRes_Fecha = CType(Fila("IncRes_Fecha"), String)
-    IncRes_FechaNotificacion = CType(Fila("IncRes_FechaNotificacion "), Date)
+        IncRes_FechaNotificacion = CType(Fila("IncRes_FechaNotificacion"), Date)
     Parame_TipoResolucion = CType(Fila("Parame_TipoResolucion"), Integer)
-    IncRes_FechaEntrega = CType(Fila("IncRes_FechaEntrega"), Date)
+        IncRes_FechaEntrega = CType(Fila("IncRes_FechaEntrega"), Date)
     Pardet_TipoResolucion = CType(Fila("Pardet_TipoResolucion"), Integer)
     IncRes_Codigo = CType(Fila("IncRes_Codigo"), Integer)
-    IncRes_NumeroLiquidacion = CType(Fila("Incres_NumeroLiquidacion"), Integer)
-
+        IncRes_NumeroLiquidacion = CType(Fila("Incres_NumeroLiquidacion"), String)
+        Incaut_Codigo = CType(Fila("Incaut_Codigo"), Integer)
     
   End Sub
 
@@ -120,7 +166,8 @@ Partial Public Class IncautacionResolucion
     OperadorDatos.AgregarParametro("@Parame_TipoResolucion", Parame_TipoResolucion)
     OperadorDatos.AgregarParametro("@Pardet_TipoResolucion", Pardet_TipoResolucion)
     OperadorDatos.AgregarParametro("@IncRes_NumeroLiquidacion", IncRes_NumeroLiquidacion)
-    OperadorDatos.AgregarParametro("@IncRes_FechaEntrega", IncRes_FechaEntrega)
+        OperadorDatos.AgregarParametro("@IncRes_FechaEntrega", IncRes_FechaEntrega)
+        OperadorDatos.AgregarParametro("@Incaut_Codigo", Incaut_Codigo)
     OperadorDatos.Procedimiento = _Procedimiento
     bReturn = OperadorDatos.Ejecutar(Result)
     OperadorDatos.LimpiarParametros()
@@ -197,6 +244,15 @@ Partial Public Class IncautacionResolucion
   End Function
 
 
+    Private mAceptado As Boolean = False
+    Public Property Aceptado As Boolean
+        Get
+            Return mAceptado
+        End Get
+        Set(value As Boolean)
+            mAceptado = value
+        End Set
+    End Property
 
 End Class
 
@@ -206,30 +262,26 @@ End Class
 Public Class IncautacionResolucionList
   Inherits System.ComponentModel.BindingList(Of IncautacionResolucion)
 
-  Public Shared Function ObtenerLista(ByVal _Empresa As Empresa, ByVal _Desde As Date, ByVal _Hasta As Date) As IncautacionResolucionList
-    Dim oResult As IncautacionResolucionList = New IncautacionResolucionList
-    Dim bReturn As Boolean
-    Dim ds As DataTable = Nothing
-    With _Empresa.OperadorDatos
-      .AgregarParametro("@Accion", "F")
-      .AgregarParametro("@Empres_Codigo", _Empresa.Empres_Codigo)
-      .AgregarParametro("@fecdesde", _Desde.Date)
-      .AgregarParametro("@fechasta", _Hasta.Date.AddDays(1))
-      '.AgregarParametro("@Parame_TipoCompra", _PardetTipoCompra.Parame_Codigo)
-      '.AgregarParametro("@Pardet_TipoCompra", _PardetTipoCompra.Pardet_Secuencia)
-      .Procedimiento = "proc_IncautacionResolucion"
-      bReturn = .Ejecutar(ds)
-      .LimpiarParametros()
-    End With
-    If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
-      For Each _dr As DataRow In ds.Rows
-        Dim _fila As New IncautacionResolucion(_Empresa, False)
-        _fila.MapearDataRowaObjeto(_dr)
-        oResult.Add(_fila)
-      Next
-    End If
-    Return oResult
-  End Function
+    Public Shared Function ObtenerLista(ByVal _Incautacion As Incautacion) As IncautacionResolucionList
+        Dim oResult As IncautacionResolucionList = New IncautacionResolucionList
+        Dim bReturn As Boolean
+        Dim ds As DataTable = Nothing
+        With _Incautacion.OperadorDatos
+            .AgregarParametro("@Accion", "F")
+            .AgregarParametro("@Incaut_Codigo", _Incautacion.Incaut_Codigo)
+            .Procedimiento = "proc_IncautacionResolucion"
+            bReturn = .Ejecutar(ds)
+            .LimpiarParametros()
+        End With
+        If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
+            For Each _dr As DataRow In ds.Rows
+                Dim _fila As New IncautacionResolucion(_Incautacion, False)
+                _fila.MapearDataRowaObjeto(_dr)
+                oResult.Add(_fila)
+            Next
+        End If
+        Return oResult
+    End Function
 
 
 End Class

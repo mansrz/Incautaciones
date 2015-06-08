@@ -14,14 +14,16 @@ Imports System
 Imports System.Xml
 Imports System.Xml.Serialization
 Imports Infoware.Reglas
-Imports Infoware.Reglas.General
+'Imports Infoware.Reglas.General
 
 #Region "Incautacion Resolucion"
 
 Public Class IncautacionResolucion
   Inherits _Database
 
-  Private mIncRes_Codigo As Integer = 0
+    Private mIncRes_Codigo As Integer = 0
+
+    Private mIncaut_Codigo As Integer = 0
 
   Private mIncRes_Numero As String = String.Empty
 
@@ -37,7 +39,9 @@ Public Class IncautacionResolucion
 
   Private mPardet_TipoResolucion As Integer = 0
 
-  Private mIncres_NumeroLiquidacion As String = String.Empty
+    Private mIncres_NumeroLiquidacion As String = String.Empty
+
+    Private mIncRes_Observacion As String = ""
 
   Public Sub New()
     MyBase.New()
@@ -52,7 +56,18 @@ Public Class IncautacionResolucion
       Me.mIncRes_Codigo = value
       EsModificado = True
     End Set
-  End Property
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Incaut_Codigo() As Integer
+        Get
+            Return Me.mIncaut_Codigo
+        End Get
+        Set(ByVal value As Integer)
+            Me.mIncaut_Codigo = value
+            EsModificado = True
+        End Set
+    End Property
 
   <XmlAttribute()> _
   Public Overridable Property IncRes_NumeroLiquidacion() As String
@@ -145,9 +160,16 @@ Public Class IncautacionResolucion
     End Set
   End Property
 
-
-
-
+    <XmlAttribute()> _
+    Public Overridable Property IncRes_Observacion() As String
+        Get
+            Return Me.mIncRes_Observacion
+        End Get
+        Set(ByVal value As String)
+            Me.mIncRes_Observacion = value
+            EsModificado = True
+        End Set
+    End Property
 
 
 End Class

@@ -48,6 +48,8 @@ Partial Public Class MovimientoInventario
 
   Private mMovinv_esAnulada As Boolean = False
 
+    Private mIncaut_Codigo As Integer = 0
+
   'Private mRegCtb_Secuencia As Integer = 0
 
   'Private mCtaCtb_Codigo As String = ""
@@ -107,6 +109,17 @@ Partial Public Class MovimientoInventario
       EsModificado = True
     End Set
   End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Incaut_Codigo() As Integer
+        Get
+            Return Me.mIncaut_Codigo
+        End Get
+        Set(ByVal value As Integer)
+            Me.mIncaut_Codigo = value
+            EsModificado = True
+        End Set
+    End Property
 
   <XmlAttribute()> _
   Public Overridable Property Movinv_Secuencia() As Integer

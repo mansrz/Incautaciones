@@ -123,30 +123,6 @@
   <metadata name="BindingSourceExistencias.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>114, 17</value>
   </metadata>
-  <metadata name="ToolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>651, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnnuevoserie.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVDhPtcw/C8IwEIfhfnK/gCBVBxfxz+JsBBGc1MFF
-        sIM6dLCgQkGKWKQoRMhPDu1QkrPn4MGz5C6vl0/NV/jmc8YPHS0iWFqDKSazXXmEDpYHWCiQ3nV5hJar
-        Eyx5gKyDiI/QIojhVKm2C5wRetye4dTsj9HojVDvKvidIR8IEzip+aaADewvEGEDx6sRYQPxzYiwgSQz
-        ImwgfRgRNpBpI8IG9NOI/C/wi/cvz3sBbR94BfIBNI4AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btneliserie.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEySURBVDhPzZLBUcMwEEUVhOQrJdBBYsmCNlICpdBBSqCE
-        lJASfOQCxBiDCRAEwWM75CD+gjJhHJOE4cKf2bH9tft2V2P2P1QZbikKI3re+p2ouDbclWZ/I8R12cF7
-        1BkuDD/11peqY3ZYqb0YAFdE7ZA5vAVyKAjk7ZUszBKHALgZIK9GnPgjVh/xPk05N51Ra/FSBHnT/AwA
-        9xIJZwEpNB+U+K7h+7TtmiGZABQEI6g/2k0T7DvVwj0DQDFRq3W2KkdyrqV9AGCKzk940jv5PuVnpT0x
-        yLR0d4hlwaOW/VwLe//NW9MYl3cZilGiApcq6bJGIq1EUxH4Rsv1+7hQQXyF4nMV2LEKWrtkgNwqGdOE
-        adiAEOCzuLv5V6ZJrwFJ0SxpQnYVQZIwGNK63vqLGPsAK1ieTVuluwsAAAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="BindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>409, 17</value>
   </metadata>

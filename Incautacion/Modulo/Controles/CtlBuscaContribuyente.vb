@@ -1,7 +1,6 @@
 Imports System.Windows.Forms.SendKeys
 Imports Infoware.Datos
 Imports Infoware.Consola.Base
-
 Imports Incautacion.Reglas
 
 Public Class CtlBuscaContribuyente
@@ -89,8 +88,8 @@ Public Class CtlBuscaContribuyente
     End Sub
 
     Private Sub abrir_consulta(Optional ByVal filtro As String = "")
-
-    Dim f As New FrmListaContribuyentes(Sistema, Enumerados.EnumOpciones.ListadoContribuyentes, True)
+        'Dim f As New FrmListaContribuyentes(Sistema, Enumerados.EnumOpciones.ListadoContribuyentes, True)
+        Dim f As New FrmListaContribuyentes(CType(Me.ParentForm, FrmFormaBase).Sistema, Enumerados.EnumOpciones.ListadoContribuyentes, True)
         f.Contribuyente = Contribuyente
         f.Filtro = filtro
         If f.ShowDialog() = DialogResult.OK Then

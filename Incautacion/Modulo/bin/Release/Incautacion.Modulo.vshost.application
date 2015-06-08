@@ -14,14 +14,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Incautacion.Modulo.exe.manifest" size="16778">
+    <dependentAssembly dependencyType="install" codebase="Incautacion.Modulo.exe.manifest" size="17091">
       <assemblyIdentity name="Incautacion.Modulo.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>40l5noQUrubAD5iVDEQPDZvIc4Q=</dsig:DigestValue>
+        <dsig:DigestValue>VMz+rc4NI4LdDazlfMc1/zXEm8s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

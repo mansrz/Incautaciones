@@ -82,10 +82,10 @@ Public Class FrmMantenimientoMovimientoInventario
     e.Cancel = Not Guardar_datos()
   End Sub
 
-  Private Function Guardar_datos() As Boolean
-    'CtlMovimientoInventario1.mapear_datos()
-    Return CtlMovimientoInventario1.Guardar(Me.CtlBloqueo1.Bloqueado)
-  End Function
+    Private Function Guardar_datos() As Boolean
+        CtlMovimientoInventario1.mapear_datos()
+        Return CtlMovimientoInventario1.Guardar(Me.CtlBloqueo1.Bloqueado)
+    End Function
 
   Private Sub FrmMantenimientoMovimientoInventario_Eliminar(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Eliminar
     If mMovimientoInventario.Eliminar() AndAlso MovimientoInventarios.Current IsNot Nothing Then
@@ -308,20 +308,4 @@ Public Class FrmMantenimientoMovimientoInventario
     f.ShowDialog()
   End Sub
 
-  Private Sub CtlBloqueo1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CtlBloqueo1.Load
-
-  End Sub
-
-    Private Sub CtlMovimientoInventario1_Load(sender As System.Object, e As System.EventArgs) Handles CtlMovimientoInventario1.Load
-
-  End Sub
-
-
-  Private Sub comboTipoMovimiento_Click(sender As System.Object, e As System.EventArgs) Handles comboTipoMovimiento.Click
-
-  End Sub
-
-  Private Sub ToolStripLabel2_Click(sender As System.Object, e As System.EventArgs) Handles ToolStripLabel2.Click
-
-  End Sub
 End Class

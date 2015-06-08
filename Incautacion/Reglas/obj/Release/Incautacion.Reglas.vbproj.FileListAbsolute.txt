@@ -39,17 +39,16 @@ C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\In
 C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.pdb
 C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbprojResolveAssemblyReference.cache
 D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbprojResolveAssemblyReference.cache
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.dll
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.pdb
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\bin\Release\Incautacion.Reglas.xml
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Datos.dll
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reglas.dll
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reglas.General.dll
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Reportes.dll
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\bin\Release\Infoware.Controles.Base.dll
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbprojResolveAssemblyReference.cache
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.Resources.resources
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbproj.GenerateResource.Cache
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.dll
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.xml
-C:\Users\Interprof 8\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.pdb
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Incautacion.Reglas.dll
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Incautacion.Reglas.pdb
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Incautacion.Reglas.xml
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Infoware.Datos.dll
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Infoware.Reglas.dll
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Infoware.Reglas.General.dll
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Infoware.Reportes.dll
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Infoware.Controles.Base.dll
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\obj\Release\Incautacion.Reglas.Resources.resources
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbproj.GenerateResource.Cache
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\obj\Release\Incautacion.Reglas.dll
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\obj\Release\Incautacion.Reglas.xml
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\obj\Release\Incautacion.Reglas.pdb
