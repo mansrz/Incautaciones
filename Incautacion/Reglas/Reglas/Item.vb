@@ -599,66 +599,79 @@ Public Class Item
   End Property
 #End Region
 
-  Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
-    Item_Codigo = CType(Fila("Item_Codigo"), Integer)
-    Parame_Grupo = CType(Fila("Parame_Grupo"), Integer)
-    Pardet_Grupo = CType(Fila("Pardet_Grupo"), Integer)
-    Parame_Marca = CType(Fila("Parame_Marca"), Integer)
-    Pardet_Marca = CType(Fila("Pardet_Marca"), Integer)
-    Parame_Tipoinventario = CType(Fila("Parame_Tipoinventario"), Integer)
-    Pardet_Tipoinventario = CType(Fila("Pardet_Tipoinventario"), Integer)
-    Item_Aplicaiva = CType(Fila("Item_Aplicaiva"), Boolean)
-    Item_Estangible = CType(Fila("Item_Estangible"), Boolean)
-    Item_Descripcion = CType(Fila("Item_Descripcion"), String)
-    Item_Ubicacion = CType(Fila("Item_Ubicacion"), String)
-    Parame_Unidadmedida = CType(Fila("Parame_Unidadmedida"), Integer)
-    Pardet_Unidadmedida = CType(Fila("Pardet_Unidadmedida"), Integer)
-    Item_CodigoAuxiliar = CType(Fila("Item_CodigoAuxiliar"), String)
-    Item_CodigoProveedor = CType(Fila("Item_CodigoProveedor"), String)
-    Item_esIvaIncluido = CType(Fila("Item_esIvaIncluido"), Boolean)
-    Item_esRegistroSerie = CType(Fila("Item_esRegistroSerie"), Boolean)
-    Incaut_Codigo = CType(Fila("Incaut_Codigo"), Integer)
-    Item_Serie = CType(Fila("Item_Serie"), String)
+    Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
+        Item_Codigo = CType(Fila("Item_Codigo"), Integer)
+        Incaut_Codigo = CType(Fila("Incaut_Codigo"), Integer)
+        Parame_Tipo = CType(Fila("Parame_Tipo"), Integer)
+        Pardet_Tipo = CType(Fila("Pardet_Tipo"), Integer)
+        Item_Descripcion = CType(Fila("Item_Descripcion"), String)
+        Parame_Marca = CType(Fila("Parame_Marca"), Integer)
+        Pardet_Marca = CType(Fila("Pardet_Marca"), Integer)
+        Item_Modelo = CType(Fila("Item_Modelo"), String)
+        Item_Serie = CType(Fila("Item_Serie"), String)
+        Parame_Unidadmedida = CType(Fila("Parame_Unidadmedida"), Integer)
+        Pardet_Unidadmedida = CType(Fila("Pardet_Unidadmedida"), Integer)
+        Parame_EstadoItem = CType(Fila("Parame_EstadoItem"), Integer)
+        Pardet_EstadoItem = CType(Fila("Pardet_EstadoItem"), Integer)
+        Item_Ubicacion = CType(Fila("Item_Ubicacion"), String)
+        Item_esRegistroSerie = CType(Fila("Item_esRegistroSerie"), Boolean)
+        Empres_Codigo = CType(Fila("Empres_Codigo"), Integer)
 
-    Try
-      Entida_Proveedor = CInt(Fila("Entida_Proveedor"))
-    Catch ex As Exception
-      Entida_Proveedor = 0
-    End Try
-    Item_Combo = CType(Fila("Item_Combo"), Boolean)
-    Item_PrecioxCantidad = CBool(Fila("Item_PrecioxCantidad"))
-    mPardetGrupo = Nothing
-    mPardetMarca = Nothing
-    mPardetTipoInventario = Nothing
-    mPardetUnidadMedida = Nothing
-    mDetallesCombo = Nothing
-    mDetallesComboEliminados = Nothing
-    mDetallesPrecioxCantidad = Nothing
-    mDetallesPrecioxCantidadEliminados = Nothing
-    'mItemxTipoPrecios = Nothing
-    'mItemxBodegas = Nothing
-  End Sub
+        Try
+            Parame_Grupo = CType(Fila("Parame_Grupo"), Integer)
+            Pardet_Grupo = CType(Fila("Pardet_Grupo"), Integer)
+            Parame_Tipoinventario = CType(Fila("Parame_Tipoinventario"), Integer)
+            Pardet_Tipoinventario = CType(Fila("Pardet_Tipoinventario"), Integer)
+            Item_Aplicaiva = CType(Fila("Item_Aplicaiva"), Boolean)
+            Item_Estangible = CType(Fila("Item_Estangible"), Boolean)
+            Item_CodigoAuxiliar = CType(Fila("Item_CodigoAuxiliar"), String)
+            Item_CodigoProveedor = CType(Fila("Item_CodigoProveedor"), String)
+            Item_esIvaIncluido = CType(Fila("Item_esIvaIncluido"), Boolean)
+        Catch ex As Exception
 
-  Public Overridable Function Recargar() As Boolean
-    Dim Result As New DataTable
-    Dim bReturn As Boolean = True
-    OperadorDatos.AgregarParametro("@accion", "C")
-    OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar(Result)
-    OperadorDatos.LimpiarParametros()
-    Try
-      Me.MapearDataRowaObjeto(Result.Rows(0))
-      EsNuevo = False
-      EsModificado = False
-    Catch ex As System.Exception
-      bReturn = False
-    End Try
-    Return bReturn
-  End Function
+        End Try
+
+
+        Try
+            Entida_Proveedor = CInt(Fila("Entida_Proveedor"))
+        Catch ex As Exception
+            Entida_Proveedor = 0
+        End Try
+        'Item_Combo = CType(Fila("Item_Combo"), Boolean)
+        'Item_PrecioxCantidad = CBool(Fila("Item_PrecioxCantidad"))
+        mPardetGrupo = Nothing
+        mPardetMarca = Nothing
+        mPardetTipoInventario = Nothing
+        mPardetUnidadMedida = Nothing
+        mDetallesCombo = Nothing
+        mDetallesComboEliminados = Nothing
+        mDetallesPrecioxCantidad = Nothing
+        mDetallesPrecioxCantidadEliminados = Nothing
+        'mItemxTipoPrecios = Nothing
+        'mItemxBodegas = Nothing
+    End Sub
+
+    Public Overridable Function Recargar() As Boolean
+
+        Dim Result As New DataTable
+        Dim bReturn As Boolean = True
+        OperadorDatos.AgregarParametro("@accion", "C")
+        OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar(Result)
+        OperadorDatos.LimpiarParametros()
+
+        Try
+            Me.MapearDataRowaObjeto(Result.Rows(0))
+            EsNuevo = False
+            EsModificado = False
+        Catch ex As System.Exception
+            bReturn = False
+        End Try
+        Return bReturn
+    End Function
 
     Public Overridable Function Guardar() As Boolean
-        MsgBox("voy a guardar item")
         If Not EsNuevo And Not EsModificado Then
             Return True
         End If

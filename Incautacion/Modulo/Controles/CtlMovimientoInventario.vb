@@ -224,18 +224,20 @@ Public Class CtlMovimientoInventario
     End Sub
 
     Public Function Guardar(ByVal _VerificarSaldo As Boolean) As Boolean
-        Try
-            If Me.CtlBuscaIncautacion1.Incautacion Is Nothing Then
-                MessageBox.Show("Debe seleccionar una Incautación")
-                'Throw New Exception("No ha seleccionado una incautación")
-                Return False
-            End If
+        If Me.CtlBuscaIncautacion1.Incautacion Is Nothing Then
+            MessageBox.Show("Debe seleccionar una Incautación")
+            'Throw New Exception("No ha seleccionado una incautación")
+            Return False
+        End If
 
-            If ComboBoxBodega1.Bodega Is Nothing Then
-                'Throw New Exception("Debe especificar una bodega")
-                MessageBox.Show("Debe seleccionar una Bodega")
-                Return False
-            End If
+        If ComboBoxBodega1.Bodega Is Nothing Then
+            'Throw New Exception("Debe especificar una bodega")
+            MessageBox.Show("Debe seleccionar una Bodega")
+            Return False
+        End If
+
+
+        Try
 
 
             mapear_datos()
@@ -454,10 +456,10 @@ Public Class CtlMovimientoInventario
                 Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevCompra
                     mapear_compra()
                 Case Enumerados.enumTipoMovInv.Incautacion, Enumerados.enumTipoMovInv.IncautSalida
-                    For Each _movinvdet As MovimientoInventarioDet In mMovimientoInventario.Detalles
-                        MessageBox.Show("item codigo " + _movinvdet.Item_Codigo.ToString + " item string " + _movinvdet.ItemString)
-                        MessageBox.Show("item codigo " + _movinvdet.Item.Item_Codigo.ToString + "item descr " + _movinvdet.Item.Item_Descripcion + "item marca " + _movinvdet.Item.MarcaString)
-                    Next
+                    'For Each _movinvdet As MovimientoInventarioDet In mMovimientoInventario.Detalles
+                    '    MessageBox.Show("item codigo " + _movinvdet.Item_Codigo.ToString + " item string " + _movinvdet.ItemString)
+                    '    MessageBox.Show("item codigo " + _movinvdet.Item.Item_Codigo.ToString + "item descr " + _movinvdet.Item.Item_Descripcion + "item marca " + _movinvdet.Item.MarcaString)
+                    'Next
                     mMovimientoInventario.Incaut_Codigo = CtlBuscaIncautacion1.Incautacion.Incaut_Codigo
                     'mapear_Incautacion()
             End Select

@@ -92,7 +92,7 @@ Public Class CtlMovimientoInventarioDet
         DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
         DataGridViewTextBoxColumn1.DataPropertyName = "ItemSecuencia"
         DataGridViewTextBoxColumn1.HeaderText = "Item"
-        DataGridViewTextBoxColumn1.Width = 75 * mFactorTamanio
+        DataGridViewTextBoxColumn1.Width = 30 * mFactorTamanio
         DataGridViewTextBoxColumn1.ReadOnly = False
         MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
 
@@ -143,7 +143,7 @@ Public Class CtlMovimientoInventarioDet
         MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
 
         DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        DataGridViewTextBoxColumn1.DataPropertyName = "ItemPardetEstado"
+        DataGridViewTextBoxColumn1.DataPropertyName = "ItemEstado"
         DataGridViewTextBoxColumn1.HeaderText = "Estado"
         DataGridViewTextBoxColumn1.Width = 50 * mFactorTamanio
         DataGridViewTextBoxColumn1.ReadOnly = True
@@ -204,11 +204,11 @@ Public Class CtlMovimientoInventarioDet
         MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})
 
 
-        'If mMovimientoInventario.Detalles.Count = 0 Then
-        '    _BindingSourceDetalles.AddNew()
-        'Else
+        If mMovimientoInventario.Detalles.Count = 0 Then
+            _BindingSourceDetalles.AddNew()
+        Else
 
-        'End If
+        End If
 
         actualizar_totales()
     End Sub
@@ -231,7 +231,7 @@ Public Class CtlMovimientoInventarioDet
       Exit Sub
     End If
     If mMovimientoInventario.Detalles.Count = 0 Then
-      _BindingSourceDetalles.AddNew()
+            _BindingSourceDetalles.AddNew()
       'AbrirDetalle()
     ElseIf mMovimientoInventario.Detalles.Count = 1 AndAlso mMovimientoInventario.Detalles(0).Item_Codigo = 0 Then
       'AbrirDetalle()

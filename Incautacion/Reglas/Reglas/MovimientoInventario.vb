@@ -324,27 +324,27 @@ Public Class MovimientoInventario
   End Property
 
 #Region "Detalles"
-  Private WithEvents mDetalles As MovimientoInventarioDetList = Nothing
-  Public Property Detalles() As MovimientoInventarioDetList
-    Get
-      If mDetalles Is Nothing Then
-        If EsNuevo Then
-          mDetalles = New MovimientoInventarioDetList
-          mDetalles.AddNew()
-        Else
-          mDetalles = MovimientoInventarioDetList.ObtenerLista(Me)
-        End If
-      End If
-      Return mDetalles
-    End Get
-    Set(ByVal value As MovimientoInventarioDetList)
-      mDetalles = value
-    End Set
-  End Property
+    Private WithEvents mDetalles As MovimientoInventarioDetList = Nothing
+    Public Property Detalles() As MovimientoInventarioDetList
+        Get
+            If mDetalles Is Nothing Then
+                If EsNuevo Then
+                    mDetalles = New MovimientoInventarioDetList
+                    mDetalles.AddNew()
+                Else
+                    mDetalles = MovimientoInventarioDetList.ObtenerLista(Me)
+                End If
+            End If
+            Return mDetalles
+        End Get
+        Set(ByVal value As MovimientoInventarioDetList)
+            mDetalles = value
+        End Set
+    End Property
 
-  Private Sub mDetalles_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mDetalles.AddingNew
-    e.NewObject = New MovimientoInventarioDet(Me, True)
-  End Sub
+    Private Sub mDetalles_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mDetalles.AddingNew
+        e.NewObject = New MovimientoInventarioDet(Me, True)
+    End Sub
 #End Region
 
 #Region "DetalleSerie"
@@ -942,7 +942,6 @@ Public Class MovimientoInventario
   End Function
 
     Public Overridable Function Guardar() As Boolean
-        MsgBox("voy a guardar movimiento inventario")
         'If Not EsNuevo And Not EsModificado Then
         '  Return True
         'End If
@@ -1011,7 +1010,6 @@ Public Class MovimientoInventario
             'guardar detalles
 
             For Each _detalle As MovimientoInventarioDet In Detalles
-                MsgBox("detalles")
                 _detalle.MovimientoInventario = Me
                 _detalle.EsNuevo = True
                 If Not _detalle.Item_Codigo = 0 And Not _detalle.Moinde_Cantidad = 0 Then
@@ -1021,14 +1019,13 @@ Public Class MovimientoInventario
                     End If
                 End If
                 If Pardet_TipomovinvEnum = Enumerados.enumTipoMovInv.Incautacion Then
-                    MsgBox("es incautacion")
                     If _detalle.Item_Codigo = 0 And Not _detalle.Moinde_Cantidad = 0 And _detalle.Item IsNot Nothing Then
-                        MsgBox("es nuevoooo" + _detalle.Item.Item_Descripcion)
+                        'MsgBox("es nuevoooo" + _detalle.Item.Item_Descripcion)
                         _detalle.Item.Incautacion = Incautacion
                         _detalle.Item.Empresa = Sucursal.Empresa
                         If _detalle.Item.Guardar() Then
-                            MsgBox("item guardado")
-                            MsgBox(_detalle.Item.Item_Codigo.ToString)
+                            'MsgBox("item guardado")
+                            'MsgBox(_detalle.Item.Item_Codigo.ToString)
                             If Not _detalle.Guardar() Then
                                 bReturn = False
                                 Exit For

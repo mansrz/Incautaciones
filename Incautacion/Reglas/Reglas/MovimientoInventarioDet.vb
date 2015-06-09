@@ -265,7 +265,7 @@ Public Class MovimientoInventarioDet
     <Infoware.Reportes.CampoReporteAtributo("Item_Descripcion", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto)> _
     Public Overridable ReadOnly Property ItemDescripcion() As String
         Get
-            If Item Is Nothing Then
+            If Item Is Nothing Or Item.PardetTipo Is Nothing Then
                 Return String.Empty
             Else
                 Return mItem.PardetTipo.Pardet_Descripcion
@@ -276,7 +276,7 @@ Public Class MovimientoInventarioDet
     <Infoware.Reportes.CampoReporteAtributo("Item_Marca", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto)> _
     Public Overridable ReadOnly Property ItemMarca() As String
         Get
-            If Item Is Nothing Then
+            If Item Is Nothing Or mItem.PardetMarca Is Nothing Then
                 Return String.Empty
             Else
                 Return mItem.PardetMarca.Pardet_Descripcion
@@ -306,10 +306,10 @@ Public Class MovimientoInventarioDet
         End Get
     End Property
 
-    <Infoware.Reportes.CampoReporteAtributo("Item_Estado")> _
+    <Infoware.Reportes.CampoReporteAtributo("Item_Estado", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto)> _
     Public Overridable ReadOnly Property ItemEstado() As String
         Get
-            If Item Is Nothing Then
+            If Item Is Nothing Or mItem.PardetEstadoItem Is Nothing Then
                 Return String.Empty
             Else
                 Return mItem.PardetEstadoItem.Pardet_Descripcion
@@ -491,7 +491,8 @@ Public Class MovimientoInventarioDet
         '  Moinde_Marca = ""
         'End Try
     mMovimientoInventario = Nothing
-    mItem = Nothing
+        mItem = New Item(OperadorDatos, Item_Codigo)
+        mItem.Recargar()
   End Sub
 
   Public Overridable Function Recargar() As Boolean
