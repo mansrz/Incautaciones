@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMovimientoInventarioIncautacion" targetNamespace="http://tempuri.org/dsMovimientoInventarioIncautacion.xsd" xmlns:mstns="http://tempuri.org/dsMovimientoInventarioIncautacion.xsd" xmlns="http://tempuri.org/dsMovimientoInventarioIncautacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="IncautacionesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IncautacionesConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Incautacion.Reglas.My.MySettings.GlobalReference.Default.IncautacionesConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_MovimientoInventarioIncautacionTableAdapter" GeneratorDataComponentClassName="vw_MovimientoInventarioIncautacionTableAdapter" Name="vw_MovimientoInventarioIncautacion" UserDataComponentName="vw_MovimientoInventarioIncautacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IncautacionesConnectionString (MySettings)" DbObjectName="Incautaciones.dbo.vw_MovimientoInventarioIncautacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Incaut_Numero, PropieatrioNombre, PropietarioIdentificacion, Movinv_Fecha, FedatarioNombre, FedatarioIdentificaicon, AdministrativoNombre, AdministrativoIdentificacion, Incaut_TenedorNombre, Incaut_TenedorCI, Item_Secuencia, Moinde_Cantidad, UnidadMedida, Descripcion, Marca, Modelo, Serie, Estado, ValorUnitario, ValorTotal, Caracteristicas, Observacion FROM dbo.vw_MovimientoInventarioIncautacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Incaut_Numero" DataSetColumn="Incaut_Numero" />
+              <Mapping SourceColumn="PropieatrioNombre" DataSetColumn="PropieatrioNombre" />
+              <Mapping SourceColumn="PropietarioIdentificacion" DataSetColumn="PropietarioIdentificacion" />
+              <Mapping SourceColumn="Movinv_Fecha" DataSetColumn="Movinv_Fecha" />
+              <Mapping SourceColumn="FedatarioNombre" DataSetColumn="FedatarioNombre" />
+              <Mapping SourceColumn="FedatarioIdentificaicon" DataSetColumn="FedatarioIdentificaicon" />
+              <Mapping SourceColumn="AdministrativoNombre" DataSetColumn="AdministrativoNombre" />
+              <Mapping SourceColumn="AdministrativoIdentificacion" DataSetColumn="AdministrativoIdentificacion" />
+              <Mapping SourceColumn="Incaut_TenedorNombre" DataSetColumn="Incaut_TenedorNombre" />
+              <Mapping SourceColumn="Incaut_TenedorCI" DataSetColumn="Incaut_TenedorCI" />
+              <Mapping SourceColumn="Item_Secuencia" DataSetColumn="Item_Secuencia" />
+              <Mapping SourceColumn="Moinde_Cantidad" DataSetColumn="Moinde_Cantidad" />
+              <Mapping SourceColumn="UnidadMedida" DataSetColumn="UnidadMedida" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="Modelo" DataSetColumn="Modelo" />
+              <Mapping SourceColumn="Serie" DataSetColumn="Serie" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="ValorUnitario" DataSetColumn="ValorUnitario" />
+              <Mapping SourceColumn="ValorTotal" DataSetColumn="ValorTotal" />
+              <Mapping SourceColumn="Caracteristicas" DataSetColumn="Caracteristicas" />
+              <Mapping SourceColumn="Observacion" DataSetColumn="Observacion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMovimientoInventarioIncautacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dsMovimientoInventarioIncautacion" msprop:Generator_UserDSName="dsMovimientoInventarioIncautacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_MovimientoInventarioIncautacion" msprop:Generator_TableClassName="vw_MovimientoInventarioIncautacionDataTable" msprop:Generator_TableVarName="tablevw_MovimientoInventarioIncautacion" msprop:Generator_TablePropName="vw_MovimientoInventarioIncautacion" msprop:Generator_RowDeletingName="vw_MovimientoInventarioIncautacionRowDeleting" msprop:Generator_RowChangingName="vw_MovimientoInventarioIncautacionRowChanging" msprop:Generator_RowEvHandlerName="vw_MovimientoInventarioIncautacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_MovimientoInventarioIncautacionRowDeleted" msprop:Generator_UserTableName="vw_MovimientoInventarioIncautacion" msprop:Generator_RowChangedName="vw_MovimientoInventarioIncautacionRowChanged" msprop:Generator_RowEvArgName="vw_MovimientoInventarioIncautacionRowChangeEvent" msprop:Generator_RowClassName="vw_MovimientoInventarioIncautacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Incaut_Numero" msprop:Generator_ColumnVarNameInTable="columnIncaut_Numero" msprop:Generator_ColumnPropNameInRow="Incaut_Numero" msprop:Generator_ColumnPropNameInTable="Incaut_NumeroColumn" msprop:Generator_UserColumnName="Incaut_Numero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PropieatrioNombre" msprop:Generator_ColumnVarNameInTable="columnPropieatrioNombre" msprop:Generator_ColumnPropNameInRow="PropieatrioNombre" msprop:Generator_ColumnPropNameInTable="PropieatrioNombreColumn" msprop:Generator_UserColumnName="PropieatrioNombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PropietarioIdentificacion" msprop:Generator_ColumnVarNameInTable="columnPropietarioIdentificacion" msprop:Generator_ColumnPropNameInRow="PropietarioIdentificacion" msprop:Generator_ColumnPropNameInTable="PropietarioIdentificacionColumn" msprop:Generator_UserColumnName="PropietarioIdentificacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Movinv_Fecha" msprop:Generator_ColumnVarNameInTable="columnMovinv_Fecha" msprop:Generator_ColumnPropNameInRow="Movinv_Fecha" msprop:Generator_ColumnPropNameInTable="Movinv_FechaColumn" msprop:Generator_UserColumnName="Movinv_Fecha" type="xs:dateTime" />
+              <xs:element name="FedatarioNombre" msprop:Generator_ColumnVarNameInTable="columnFedatarioNombre" msprop:Generator_ColumnPropNameInRow="FedatarioNombre" msprop:Generator_ColumnPropNameInTable="FedatarioNombreColumn" msprop:Generator_UserColumnName="FedatarioNombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FedatarioIdentificaicon" msprop:Generator_ColumnVarNameInTable="columnFedatarioIdentificaicon" msprop:Generator_ColumnPropNameInRow="FedatarioIdentificaicon" msprop:Generator_ColumnPropNameInTable="FedatarioIdentificaiconColumn" msprop:Generator_UserColumnName="FedatarioIdentificaicon" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdministrativoNombre" msprop:Generator_ColumnVarNameInTable="columnAdministrativoNombre" msprop:Generator_ColumnPropNameInRow="AdministrativoNombre" msprop:Generator_ColumnPropNameInTable="AdministrativoNombreColumn" msprop:Generator_UserColumnName="AdministrativoNombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdministrativoIdentificacion" msprop:Generator_ColumnVarNameInTable="columnAdministrativoIdentificacion" msprop:Generator_ColumnPropNameInRow="AdministrativoIdentificacion" msprop:Generator_ColumnPropNameInTable="AdministrativoIdentificacionColumn" msprop:Generator_UserColumnName="AdministrativoIdentificacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Incaut_TenedorNombre" msprop:Generator_ColumnVarNameInTable="columnIncaut_TenedorNombre" msprop:Generator_ColumnPropNameInRow="Incaut_TenedorNombre" msprop:Generator_ColumnPropNameInTable="Incaut_TenedorNombreColumn" msprop:Generator_UserColumnName="Incaut_TenedorNombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Incaut_TenedorCI" msprop:Generator_ColumnVarNameInTable="columnIncaut_TenedorCI" msprop:Generator_ColumnPropNameInRow="Incaut_TenedorCI" msprop:Generator_ColumnPropNameInTable="Incaut_TenedorCIColumn" msprop:Generator_UserColumnName="Incaut_TenedorCI">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Item_Secuencia" msprop:Generator_ColumnVarNameInTable="columnItem_Secuencia" msprop:Generator_ColumnPropNameInRow="Item_Secuencia" msprop:Generator_ColumnPropNameInTable="Item_SecuenciaColumn" msprop:Generator_UserColumnName="Item_Secuencia" type="xs:int" />
+              <xs:element name="Moinde_Cantidad" msprop:Generator_ColumnVarNameInTable="columnMoinde_Cantidad" msprop:Generator_ColumnPropNameInRow="Moinde_Cantidad" msprop:Generator_ColumnPropNameInTable="Moinde_CantidadColumn" msprop:Generator_UserColumnName="Moinde_Cantidad" type="xs:int" />
+              <xs:element name="UnidadMedida" msprop:Generator_ColumnVarNameInTable="columnUnidadMedida" msprop:Generator_ColumnPropNameInRow="UnidadMedida" msprop:Generator_ColumnPropNameInTable="UnidadMedidaColumn" msprop:Generator_UserColumnName="UnidadMedida">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modelo" msprop:Generator_ColumnVarNameInTable="columnModelo" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_UserColumnName="Modelo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Serie" msprop:Generator_ColumnVarNameInTable="columnSerie" msprop:Generator_ColumnPropNameInRow="Serie" msprop:Generator_ColumnPropNameInTable="SerieColumn" msprop:Generator_UserColumnName="Serie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ValorUnitario" msprop:Generator_ColumnVarNameInTable="columnValorUnitario" msprop:Generator_ColumnPropNameInRow="ValorUnitario" msprop:Generator_ColumnPropNameInTable="ValorUnitarioColumn" msprop:Generator_UserColumnName="ValorUnitario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ValorTotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValorTotal" msprop:Generator_ColumnPropNameInRow="ValorTotal" msprop:Generator_ColumnPropNameInTable="ValorTotalColumn" msprop:Generator_UserColumnName="ValorTotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Caracteristicas" msprop:Generator_ColumnVarNameInTable="columnCaracteristicas" msprop:Generator_ColumnPropNameInRow="Caracteristicas" msprop:Generator_ColumnPropNameInTable="CaracteristicasColumn" msprop:Generator_UserColumnName="Caracteristicas">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observacion" msprop:Generator_ColumnVarNameInTable="columnObservacion" msprop:Generator_ColumnPropNameInRow="Observacion" msprop:Generator_ColumnPropNameInTable="ObservacionColumn" msprop:Generator_UserColumnName="Observacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

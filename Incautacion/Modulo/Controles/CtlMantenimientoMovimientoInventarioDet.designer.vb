@@ -55,6 +55,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlExistente = New System.Windows.Forms.Panel()
+        Me.CtlBuscaItem1 = New Incautacion.Modulo.CtlBuscaItem()
         Me.grpexistencias = New System.Windows.Forms.GroupBox()
         Me.DGExistencias = New System.Windows.Forms.DataGridView()
         Me.BindingSourceExistencias = New System.Windows.Forms.BindingSource(Me.components)
@@ -64,33 +65,34 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.txtvalor = New Infoware.Controles.Base.TextBoxCalculator()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.pnlNuevo = New System.Windows.Forms.Panel()
+        Me.chkEsRegistroSerie = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtSerie = New Infoware.Controles.Base.TextBoxStd()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtModelo = New Infoware.Controles.Base.TextBoxStd()
+        Me.ComboBoxMarca1 = New Incautacion.Modulo.ComboBoxParametroDet()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.cboTipoItem = New Incautacion.Modulo.ComboBoxParametroDet()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtdescripcion = New Infoware.Controles.Base.TextBoxStd()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.pnlcantidad = New System.Windows.Forms.Panel()
+        Me.ComboBoxUnidadMedida = New Incautacion.Modulo.ComboBoxParametroDet()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.pnlNuevo2 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtUbicacion = New Infoware.Controles.Base.TextBoxStd()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cboEstado = New Incautacion.Modulo.ComboBoxParametroDet()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.pnlcantidad = New System.Windows.Forms.Panel()
         Me.pnlaccion = New System.Windows.Forms.Panel()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnquitar = New System.Windows.Forms.Button()
         Me.btnagregar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BSCombo = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CtlBuscaItem1 = New Incautacion.Modulo.CtlBuscaItem()
-        Me.ComboBoxMarca1 = New Incautacion.Modulo.ComboBoxParametroDet()
-        Me.cboTipoItem = New Incautacion.Modulo.ComboBoxParametroDet()
-        Me.ComboBoxUnidadMedida = New Incautacion.Modulo.ComboBoxParametroDet()
-        Me.cboEstado = New Incautacion.Modulo.ComboBoxParametroDet()
         CType(Me.BSSeries, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlExistente.SuspendLayout()
         Me.grpexistencias.SuspendLayout()
@@ -99,8 +101,8 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.pnlNuevo.SuspendLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel1.SuspendLayout()
-        Me.pnlNuevo2.SuspendLayout()
         Me.pnlcantidad.SuspendLayout()
+        Me.pnlNuevo2.SuspendLayout()
         Me.pnlaccion.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BSCombo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -247,16 +249,28 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.pnlExistente.Controls.Add(Me.grpexistencias)
         Me.pnlExistente.Location = New System.Drawing.Point(3, 3)
         Me.pnlExistente.Name = "pnlExistente"
-        Me.pnlExistente.Size = New System.Drawing.Size(347, 138)
+        Me.pnlExistente.Size = New System.Drawing.Size(347, 97)
         Me.pnlExistente.TabIndex = 0
         Me.pnlExistente.Visible = False
+        '
+        'CtlBuscaItem1
+        '
+        Me.CtlBuscaItem1.Incautacion = Nothing
+        Me.CtlBuscaItem1.Item = Nothing
+        Me.CtlBuscaItem1.ItemText = "Item"
+        Me.CtlBuscaItem1.Location = New System.Drawing.Point(3, 3)
+        Me.CtlBuscaItem1.Name = "CtlBuscaItem1"
+        Me.CtlBuscaItem1.PardetTipoInventario = Nothing
+        Me.CtlBuscaItem1.Size = New System.Drawing.Size(341, 21)
+        Me.CtlBuscaItem1.TabIndex = 0
+        Me.CtlBuscaItem1.Ubicacion = Incautacion.Modulo.CtlBuscaItem.EnumUbicacion.Normal
         '
         'grpexistencias
         '
         Me.grpexistencias.Controls.Add(Me.DGExistencias)
         Me.grpexistencias.Location = New System.Drawing.Point(3, 30)
         Me.grpexistencias.Name = "grpexistencias"
-        Me.grpexistencias.Size = New System.Drawing.Size(341, 106)
+        Me.grpexistencias.Size = New System.Drawing.Size(341, 65)
         Me.grpexistencias.TabIndex = 6
         Me.grpexistencias.TabStop = False
         Me.grpexistencias.Text = "Existencias"
@@ -304,14 +318,14 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.DGExistencias.RowHeadersVisible = False
         Me.DGExistencias.RowTemplate.Height = 25
         Me.DGExistencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGExistencias.Size = New System.Drawing.Size(335, 87)
+        Me.DGExistencias.Size = New System.Drawing.Size(335, 46)
         Me.DGExistencias.StandardTab = True
         Me.DGExistencias.TabIndex = 0
         Me.DGExistencias.TabStop = False
         '
         'txtcantidad
         '
-        Me.txtcantidad.Location = New System.Drawing.Point(127, 0)
+        Me.txtcantidad.Location = New System.Drawing.Point(103, 24)
         Me.txtcantidad.Mensaje = ""
         Me.txtcantidad.Name = "txtcantidad"
         Me.txtcantidad.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -319,14 +333,15 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.txtcantidad.PromptText = ""
         Me.txtcantidad.Size = New System.Drawing.Size(77, 20)
         Me.txtcantidad.TabIndex = 2
-        Me.txtcantidad.Text = "0.00"
+        Me.txtcantidad.Text = "0"
         Me.txtcantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtcantidad.TipoNumero = Infoware.Controles.Base.EnumTipoNumero.EnterosPositivos
         Me.txtcantidad.Value = 0.0R
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 2)
+        Me.Label5.Location = New System.Drawing.Point(1, 27)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 1
@@ -339,23 +354,22 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         '
         'txtvalor
         '
-        Me.txtvalor.Location = New System.Drawing.Point(103, 55)
+        Me.txtvalor.Location = New System.Drawing.Point(103, 47)
         Me.txtvalor.Mensaje = ""
         Me.txtvalor.Name = "txtvalor"
-        Me.txtvalor.NumeroDecimales = 5
         Me.txtvalor.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtvalor.PromptForeColor = System.Drawing.SystemColors.GrayText
         Me.txtvalor.PromptText = ""
         Me.txtvalor.Size = New System.Drawing.Size(74, 20)
-        Me.txtvalor.TabIndex = 1
-        Me.txtvalor.Text = "0.00000"
+        Me.txtvalor.TabIndex = 8
+        Me.txtvalor.Text = "0.00"
         Me.txtvalor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtvalor.Value = 0.0R
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(1, 58)
+        Me.Label4.Location = New System.Drawing.Point(1, 50)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 13)
         Me.Label4.TabIndex = 0
@@ -363,26 +377,34 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         '
         'pnlNuevo
         '
+        Me.pnlNuevo.Controls.Add(Me.chkEsRegistroSerie)
         Me.pnlNuevo.Controls.Add(Me.Label6)
         Me.pnlNuevo.Controls.Add(Me.txtSerie)
         Me.pnlNuevo.Controls.Add(Me.Label3)
         Me.pnlNuevo.Controls.Add(Me.txtModelo)
-        Me.pnlNuevo.Controls.Add(Me.Label2)
-        Me.pnlNuevo.Controls.Add(Me.txtdescripcion)
         Me.pnlNuevo.Controls.Add(Me.ComboBoxMarca1)
         Me.pnlNuevo.Controls.Add(Me.Label9)
         Me.pnlNuevo.Controls.Add(Me.cboTipoItem)
         Me.pnlNuevo.Controls.Add(Me.Label1)
-        Me.pnlNuevo.Location = New System.Drawing.Point(3, 147)
+        Me.pnlNuevo.Location = New System.Drawing.Point(356, 3)
         Me.pnlNuevo.Name = "pnlNuevo"
-        Me.pnlNuevo.Size = New System.Drawing.Size(347, 121)
+        Me.pnlNuevo.Size = New System.Drawing.Size(347, 97)
         Me.pnlNuevo.TabIndex = 2
         Me.pnlNuevo.Visible = False
+        '
+        'chkEsRegistroSerie
+        '
+        Me.chkEsRegistroSerie.AutoSize = True
+        Me.chkEsRegistroSerie.Location = New System.Drawing.Point(83, 76)
+        Me.chkEsRegistroSerie.Name = "chkEsRegistroSerie"
+        Me.chkEsRegistroSerie.Size = New System.Drawing.Size(15, 14)
+        Me.chkEsRegistroSerie.TabIndex = 45
+        Me.chkEsRegistroSerie.UseVisualStyleBackColor = True
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 101)
+        Me.Label6.Location = New System.Drawing.Point(3, 76)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(34, 13)
         Me.Label6.TabIndex = 42
@@ -392,20 +414,20 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         '
         Me.txtSerie.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtSerie.Location = New System.Drawing.Point(83, 98)
+        Me.txtSerie.Location = New System.Drawing.Point(104, 73)
         Me.txtSerie.Mensaje = ""
         Me.txtSerie.Multiline = True
         Me.txtSerie.Name = "txtSerie"
         Me.txtSerie.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSerie.PromptForeColor = System.Drawing.SystemColors.GrayText
         Me.txtSerie.PromptText = ""
-        Me.txtSerie.Size = New System.Drawing.Size(137, 22)
-        Me.txtSerie.TabIndex = 43
+        Me.txtSerie.Size = New System.Drawing.Size(144, 22)
+        Me.txtSerie.TabIndex = 6
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(3, 76)
+        Me.Label3.Location = New System.Drawing.Point(3, 51)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 13)
         Me.Label3.TabIndex = 40
@@ -415,200 +437,21 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         '
         Me.txtModelo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtModelo.Location = New System.Drawing.Point(83, 73)
+        Me.txtModelo.Location = New System.Drawing.Point(83, 48)
         Me.txtModelo.Mensaje = ""
         Me.txtModelo.Multiline = True
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtModelo.PromptForeColor = System.Drawing.SystemColors.GrayText
         Me.txtModelo.PromptText = ""
-        Me.txtModelo.Size = New System.Drawing.Size(137, 22)
-        Me.txtModelo.TabIndex = 41
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 27)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(79, 13)
-        Me.Label2.TabIndex = 38
-        Me.Label2.Text = "Caracteristicas:"
-        '
-        'txtdescripcion
-        '
-        Me.txtdescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtdescripcion.Location = New System.Drawing.Point(83, 24)
-        Me.txtdescripcion.Mensaje = ""
-        Me.txtdescripcion.Multiline = True
-        Me.txtdescripcion.Name = "txtdescripcion"
-        Me.txtdescripcion.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdescripcion.PromptForeColor = System.Drawing.SystemColors.GrayText
-        Me.txtdescripcion.PromptText = ""
-        Me.txtdescripcion.Size = New System.Drawing.Size(258, 22)
-        Me.txtdescripcion.TabIndex = 39
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(3, 52)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(40, 13)
-        Me.Label9.TabIndex = 36
-        Me.Label9.Text = "Marca:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Descripcion"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'BindingSource1
-        '
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.Controls.Add(Me.pnlExistente)
-        Me.FlowLayoutPanel1.Controls.Add(Me.pnlNuevo)
-        Me.FlowLayoutPanel1.Controls.Add(Me.pnlNuevo2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.pnlcantidad)
-        Me.FlowLayoutPanel1.Controls.Add(Me.pnlaccion)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox1)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(880, 303)
-        Me.FlowLayoutPanel1.TabIndex = 0
-        '
-        'pnlNuevo2
-        '
-        Me.pnlNuevo2.Controls.Add(Me.Label8)
-        Me.pnlNuevo2.Controls.Add(Me.ComboBoxUnidadMedida)
-        Me.pnlNuevo2.Controls.Add(Me.txtUbicacion)
-        Me.pnlNuevo2.Controls.Add(Me.cboEstado)
-        Me.pnlNuevo2.Controls.Add(Me.Label7)
-        Me.pnlNuevo2.Controls.Add(Me.Label10)
-        Me.pnlNuevo2.Controls.Add(Me.txtvalor)
-        Me.pnlNuevo2.Controls.Add(Me.Label4)
-        Me.pnlNuevo2.Location = New System.Drawing.Point(356, 3)
-        Me.pnlNuevo2.Name = "pnlNuevo2"
-        Me.pnlNuevo2.Size = New System.Drawing.Size(347, 102)
-        Me.pnlNuevo2.TabIndex = 4
-        Me.pnlNuevo2.Visible = False
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(1, 30)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(70, 13)
-        Me.Label8.TabIndex = 46
-        Me.Label8.Text = "Observación:"
-        '
-        'txtUbicacion
-        '
-        Me.txtUbicacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtUbicacion.Location = New System.Drawing.Point(103, 24)
-        Me.txtUbicacion.Mensaje = ""
-        Me.txtUbicacion.Multiline = True
-        Me.txtUbicacion.Name = "txtUbicacion"
-        Me.txtUbicacion.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUbicacion.PromptForeColor = System.Drawing.SystemColors.GrayText
-        Me.txtUbicacion.PromptText = ""
-        Me.txtUbicacion.Size = New System.Drawing.Size(137, 22)
-        Me.txtUbicacion.TabIndex = 47
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(1, 84)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(96, 13)
-        Me.Label7.TabIndex = 1
-        Me.Label7.Text = "Unidad de medida:"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(1, 3)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(43, 13)
-        Me.Label10.TabIndex = 44
-        Me.Label10.Text = "Estado:"
-        '
-        'pnlcantidad
-        '
-        Me.pnlcantidad.Controls.Add(Me.txtcantidad)
-        Me.pnlcantidad.Controls.Add(Me.Label5)
-        Me.pnlcantidad.Location = New System.Drawing.Point(356, 111)
-        Me.pnlcantidad.Name = "pnlcantidad"
-        Me.pnlcantidad.Size = New System.Drawing.Size(347, 21)
-        Me.pnlcantidad.TabIndex = 1
-        '
-        'pnlaccion
-        '
-        Me.pnlaccion.Controls.Add(Me.btnquitar)
-        Me.pnlaccion.Controls.Add(Me.btnagregar)
-        Me.pnlaccion.Location = New System.Drawing.Point(356, 138)
-        Me.pnlaccion.Name = "pnlaccion"
-        Me.pnlaccion.Size = New System.Drawing.Size(156, 25)
-        Me.pnlaccion.TabIndex = 5
-        '
-        'btnquitar
-        '
-        Me.btnquitar.Location = New System.Drawing.Point(81, -1)
-        Me.btnquitar.Name = "btnquitar"
-        Me.btnquitar.Size = New System.Drawing.Size(75, 23)
-        Me.btnquitar.TabIndex = 1
-        Me.btnquitar.Text = "Quitar"
-        Me.btnquitar.UseVisualStyleBackColor = True
-        '
-        'btnagregar
-        '
-        Me.btnagregar.Location = New System.Drawing.Point(0, -1)
-        Me.btnagregar.Name = "btnagregar"
-        Me.btnagregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnagregar.TabIndex = 0
-        Me.btnagregar.Text = "Agregar"
-        Me.btnagregar.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(356, 169)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(61, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
-        '
-        'CtlBuscaItem1
-        '
-        Me.CtlBuscaItem1.Incautacion = Nothing
-        Me.CtlBuscaItem1.Item = Nothing
-        Me.CtlBuscaItem1.ItemText = "Item"
-        Me.CtlBuscaItem1.Location = New System.Drawing.Point(3, 3)
-        Me.CtlBuscaItem1.Name = "CtlBuscaItem1"
-        Me.CtlBuscaItem1.PardetTipoInventario = Nothing
-        Me.CtlBuscaItem1.Size = New System.Drawing.Size(341, 21)
-        Me.CtlBuscaItem1.TabIndex = 0
-        Me.CtlBuscaItem1.Ubicacion = Incautacion.Modulo.CtlBuscaItem.EnumUbicacion.Normal
+        Me.txtModelo.Size = New System.Drawing.Size(165, 22)
+        Me.txtModelo.TabIndex = 5
         '
         'ComboBoxMarca1
         '
         Me.ComboBoxMarca1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxMarca1.FormattingEnabled = True
-        Me.ComboBoxMarca1.Location = New System.Drawing.Point(83, 49)
+        Me.ComboBoxMarca1.Location = New System.Drawing.Point(83, 24)
         Me.ComboBoxMarca1.Name = "ComboBoxMarca1"
         Me.ComboBoxMarca1.OperadorDatos = Nothing
         Me.ComboBoxMarca1.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
@@ -617,8 +460,17 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.ComboBoxMarca1.PuedeEliminar = True
         Me.ComboBoxMarca1.PuedeModificar = True
         Me.ComboBoxMarca1.PuedeNuevo = True
-        Me.ComboBoxMarca1.Size = New System.Drawing.Size(137, 21)
-        Me.ComboBoxMarca1.TabIndex = 37
+        Me.ComboBoxMarca1.Size = New System.Drawing.Size(165, 21)
+        Me.ComboBoxMarca1.TabIndex = 4
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(3, 27)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(40, 13)
+        Me.Label9.TabIndex = 36
+        Me.Label9.Text = "Marca:"
         '
         'cboTipoItem
         '
@@ -636,11 +488,80 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.cboTipoItem.Size = New System.Drawing.Size(258, 21)
         Me.cboTipoItem.TabIndex = 3
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(3, 3)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(63, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Descripcion"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(1, 27)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(79, 13)
+        Me.Label2.TabIndex = 38
+        Me.Label2.Text = "Caracteristicas:"
+        '
+        'txtdescripcion
+        '
+        Me.txtdescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtdescripcion.Location = New System.Drawing.Point(83, 24)
+        Me.txtdescripcion.Mensaje = ""
+        Me.txtdescripcion.Multiline = True
+        Me.txtdescripcion.Name = "txtdescripcion"
+        Me.txtdescripcion.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdescripcion.PromptForeColor = System.Drawing.SystemColors.GrayText
+        Me.txtdescripcion.PromptText = ""
+        Me.txtdescripcion.Size = New System.Drawing.Size(258, 22)
+        Me.txtdescripcion.TabIndex = 9
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'BindingSource1
+        '
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Controls.Add(Me.pnlExistente)
+        Me.FlowLayoutPanel1.Controls.Add(Me.pnlcantidad)
+        Me.FlowLayoutPanel1.Controls.Add(Me.pnlNuevo)
+        Me.FlowLayoutPanel1.Controls.Add(Me.pnlNuevo2)
+        Me.FlowLayoutPanel1.Controls.Add(Me.pnlaccion)
+        Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox1)
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(880, 217)
+        Me.FlowLayoutPanel1.TabIndex = 0
+        '
+        'pnlcantidad
+        '
+        Me.pnlcantidad.Controls.Add(Me.txtcantidad)
+        Me.pnlcantidad.Controls.Add(Me.ComboBoxUnidadMedida)
+        Me.pnlcantidad.Controls.Add(Me.Label5)
+        Me.pnlcantidad.Controls.Add(Me.txtvalor)
+        Me.pnlcantidad.Controls.Add(Me.Label7)
+        Me.pnlcantidad.Controls.Add(Me.Label4)
+        Me.pnlcantidad.Location = New System.Drawing.Point(3, 106)
+        Me.pnlcantidad.Name = "pnlcantidad"
+        Me.pnlcantidad.Size = New System.Drawing.Size(347, 68)
+        Me.pnlcantidad.TabIndex = 1
+        '
         'ComboBoxUnidadMedida
         '
         Me.ComboBoxUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxUnidadMedida.FormattingEnabled = True
-        Me.ComboBoxUnidadMedida.Location = New System.Drawing.Point(103, 81)
+        Me.ComboBoxUnidadMedida.Location = New System.Drawing.Point(103, 0)
         Me.ComboBoxUnidadMedida.Name = "ComboBoxUnidadMedida"
         Me.ComboBoxUnidadMedida.OperadorDatos = Nothing
         Me.ComboBoxUnidadMedida.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
@@ -650,13 +571,59 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.ComboBoxUnidadMedida.PuedeModificar = True
         Me.ComboBoxUnidadMedida.PuedeNuevo = True
         Me.ComboBoxUnidadMedida.Size = New System.Drawing.Size(137, 21)
-        Me.ComboBoxUnidadMedida.TabIndex = 3
+        Me.ComboBoxUnidadMedida.TabIndex = 1
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(1, 3)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(96, 13)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Unidad de medida:"
+        '
+        'pnlNuevo2
+        '
+        Me.pnlNuevo2.Controls.Add(Me.Label8)
+        Me.pnlNuevo2.Controls.Add(Me.txtUbicacion)
+        Me.pnlNuevo2.Controls.Add(Me.Label2)
+        Me.pnlNuevo2.Controls.Add(Me.cboEstado)
+        Me.pnlNuevo2.Controls.Add(Me.txtdescripcion)
+        Me.pnlNuevo2.Controls.Add(Me.Label10)
+        Me.pnlNuevo2.Location = New System.Drawing.Point(356, 106)
+        Me.pnlNuevo2.Name = "pnlNuevo2"
+        Me.pnlNuevo2.Size = New System.Drawing.Size(347, 72)
+        Me.pnlNuevo2.TabIndex = 4
+        Me.pnlNuevo2.Visible = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(1, 52)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(70, 13)
+        Me.Label8.TabIndex = 46
+        Me.Label8.Text = "Observación:"
+        '
+        'txtUbicacion
+        '
+        Me.txtUbicacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtUbicacion.Location = New System.Drawing.Point(83, 49)
+        Me.txtUbicacion.Mensaje = ""
+        Me.txtUbicacion.Multiline = True
+        Me.txtUbicacion.Name = "txtUbicacion"
+        Me.txtUbicacion.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUbicacion.PromptForeColor = System.Drawing.SystemColors.GrayText
+        Me.txtUbicacion.PromptText = ""
+        Me.txtUbicacion.Size = New System.Drawing.Size(258, 22)
+        Me.txtUbicacion.TabIndex = 10
         '
         'cboEstado
         '
         Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboEstado.FormattingEnabled = True
-        Me.cboEstado.Location = New System.Drawing.Point(103, 0)
+        Me.cboEstado.Location = New System.Drawing.Point(83, 0)
         Me.cboEstado.Name = "cboEstado"
         Me.cboEstado.OperadorDatos = Nothing
         Me.cboEstado.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.Grupo
@@ -665,8 +632,63 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.cboEstado.PuedeEliminar = True
         Me.cboEstado.PuedeModificar = True
         Me.cboEstado.PuedeNuevo = True
-        Me.cboEstado.Size = New System.Drawing.Size(137, 21)
-        Me.cboEstado.TabIndex = 45
+        Me.cboEstado.Size = New System.Drawing.Size(165, 21)
+        Me.cboEstado.TabIndex = 7
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(1, 3)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(43, 13)
+        Me.Label10.TabIndex = 44
+        Me.Label10.Text = "Estado:"
+        '
+        'pnlaccion
+        '
+        Me.pnlaccion.Controls.Add(Me.btnLimpiar)
+        Me.pnlaccion.Controls.Add(Me.btnquitar)
+        Me.pnlaccion.Controls.Add(Me.btnagregar)
+        Me.pnlaccion.Location = New System.Drawing.Point(356, 184)
+        Me.pnlaccion.Name = "pnlaccion"
+        Me.pnlaccion.Size = New System.Drawing.Size(240, 25)
+        Me.pnlaccion.TabIndex = 5
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.Location = New System.Drawing.Point(162, 0)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(75, 23)
+        Me.btnLimpiar.TabIndex = 13
+        Me.btnLimpiar.Text = "Limpiar"
+        Me.btnLimpiar.UseVisualStyleBackColor = True
+        '
+        'btnquitar
+        '
+        Me.btnquitar.Location = New System.Drawing.Point(81, -1)
+        Me.btnquitar.Name = "btnquitar"
+        Me.btnquitar.Size = New System.Drawing.Size(75, 23)
+        Me.btnquitar.TabIndex = 12
+        Me.btnquitar.Text = "Quitar"
+        Me.btnquitar.UseVisualStyleBackColor = True
+        '
+        'btnagregar
+        '
+        Me.btnagregar.Location = New System.Drawing.Point(0, -1)
+        Me.btnagregar.Name = "btnagregar"
+        Me.btnagregar.Size = New System.Drawing.Size(75, 23)
+        Me.btnagregar.TabIndex = 11
+        Me.btnagregar.Text = "Agregar"
+        Me.btnagregar.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(709, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(61, 64)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
         '
         'CtlMantenimientoMovimientoInventarioDet
         '
@@ -674,7 +696,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Name = "CtlMantenimientoMovimientoInventarioDet"
-        Me.Size = New System.Drawing.Size(880, 303)
+        Me.Size = New System.Drawing.Size(880, 217)
         CType(Me.BSSeries, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlExistente.ResumeLayout(False)
         Me.grpexistencias.ResumeLayout(False)
@@ -684,10 +706,10 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.pnlNuevo.PerformLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.pnlNuevo2.ResumeLayout(False)
-        Me.pnlNuevo2.PerformLayout()
         Me.pnlcantidad.ResumeLayout(False)
         Me.pnlcantidad.PerformLayout()
+        Me.pnlNuevo2.ResumeLayout(False)
+        Me.pnlNuevo2.PerformLayout()
         Me.pnlaccion.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BSCombo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -759,5 +781,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
     Friend WithEvents txtUbicacion As Infoware.Controles.Base.TextBoxStd
     Friend WithEvents cboEstado As Incautacion.Modulo.ComboBoxParametroDet
     Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents chkEsRegistroSerie As System.Windows.Forms.CheckBox
+    Friend WithEvents btnLimpiar As System.Windows.Forms.Button
 
 End Class

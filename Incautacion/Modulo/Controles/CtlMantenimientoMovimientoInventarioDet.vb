@@ -64,9 +64,21 @@ Public Class CtlMantenimientoMovimientoInventarioDet
   End Sub
 
     Sub llenar_datos()
+        btnLimpiar.Visible = False
         If EsNuevo Then
             pnlaccion.Enabled = True
             pnlcantidad.Enabled = True
+            btnLimpiar.Visible = True
+            txtSerie.Text = ""
+
+            If chkEsRegistroSerie.Checked Then
+                txtcantidad.Enabled = False
+                txtSerie.Enabled = True
+            Else
+                txtcantidad.Enabled = True
+                txtSerie.Enabled = False
+            End If
+
         End If
 
         If mMovimientoInventarioDet Is Nothing Then
@@ -93,7 +105,19 @@ Public Class CtlMantenimientoMovimientoInventarioDet
             If Me.CtlBuscaItem1.Item IsNot Nothing Then
                 Me.CtlBuscaItem1.Enabled = Not Me.CtlBuscaItem1.Item.Item_Combo
             End If
+        Else
+            If Not mMovimientoInventarioDet.EsNuevo Then
+                Me.cboTipoItem.ParametroDet = mMovimientoInventarioDet.Item.PardetTipo
+                Me.ComboBoxMarca1.ParametroDet = mMovimientoInventarioDet.Item.PardetMarca
+                Me.txtModelo.Text = mMovimientoInventarioDet.Item.Item_Modelo
+                Me.chkEsRegistroSerie.Checked = mMovimientoInventarioDet.Item.Item_esRegistroSerie
+                Me.txtSerie.Text = mMovimientoInventarioDet.Item.Item_Serie
+                Me.cboEstado.ParametroDet = mMovimientoInventarioDet.Item.PardetEstadoItem
+                Me.txtdescripcion.Text = mMovimientoInventarioDet.Item.Item_Descripcion
+                Me.txtUbicacion.Text = mMovimientoInventarioDet.Item.Item_Ubicacion
+            End If
         End If
+
         Me.ComboBoxUnidadMedida.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
 
         Me.txtcantidad.Value = mMovimientoInventarioDet.Moinde_Cantidad
@@ -132,6 +156,7 @@ Public Class CtlMantenimientoMovimientoInventarioDet
   Public Event Actualizodatos As EventHandler
 
     Private Sub Mapear_datos()
+
         If EsNuevo Then
             Item = New Item(MovimientoInventarioDet.OperadorDatos, True)
             Item.PardetTipo = Me.cboTipoItem.ParametroDet
@@ -551,30 +576,58 @@ Public Class CtlMantenimientoMovimientoInventarioDet
     Private mCombosCargados As Boolean = False
 
     Private Sub CargarCombos()
-        
 
         If mMovimientoInventarioDet Is Nothing AndAlso Not mCombosCargados Then
             Exit Sub
         End If
 
+        If Not mCombosCargados Then
+
+            Me.cboTipoItem.Parametro = Enumerados.EnumParametros.TipoItem
+            Me.cboTipoItem.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
+            Me.cboTipoItem.Llenar_Datos()
+
+            Me.ComboBoxMarca1.Parametro = Enumerados.EnumParametros.Marca
+            Me.ComboBoxMarca1.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
+            Me.ComboBoxMarca1.Llenar_Datos()
+
+            Me.cboEstado.Parametro = Enumerados.EnumParametros.EstadoItem
+            Me.cboEstado.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
+            Me.cboEstado.Llenar_Datos()
+
+            Me.ComboBoxUnidadMedida.Parametro = Enumerados.EnumParametros.UnidadMedida
+            Me.ComboBoxUnidadMedida.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
+            Me.ComboBoxUnidadMedida.Llenar_Datos()
+
+        End If
+
         mCombosCargados = True
-
-        Me.cboTipoItem.Parametro = Enumerados.EnumParametros.TipoItem
-        Me.cboTipoItem.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
-        Me.cboTipoItem.Llenar_Datos()
-
-        Me.ComboBoxMarca1.Parametro = Enumerados.EnumParametros.Marca
-        Me.ComboBoxMarca1.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
-        Me.ComboBoxMarca1.Llenar_Datos()
-
-        Me.cboEstado.Parametro = Enumerados.EnumParametros.EstadoItem
-        Me.cboEstado.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
-        Me.cboestado.Llenar_Datos()
-
-        Me.ComboBoxUnidadMedida.Parametro = Enumerados.EnumParametros.UnidadMedida
-        Me.ComboBoxUnidadMedida.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
-        Me.ComboBoxUnidadMedida.Llenar_Datos()
-
     End Sub
 
+    Private Sub chkEsRegistroSerie_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkEsRegistroSerie.CheckedChanged
+        If chkEsRegistroSerie.Checked Then
+            txtSerie.Enabled = True
+            txtcantidad.Enabled = False
+            txtcantidad.Value = 1
+        Else
+            txtSerie.Enabled = False
+            txtcantidad.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar.Click
+        cboTipoItem.SelectedItem = -1
+        ComboBoxMarca1.SelectedItem = -1
+        txtModelo.Text = ""
+        chkEsRegistroSerie.Checked = False
+        txtSerie.Text = ""
+        txtSerie.Enabled = False
+        txtcantidad.Enabled = True
+        cboEstado.SelectedItem = -1
+        txtvalor.Value = 0
+        txtdescripcion.Text = ""
+        txtUbicacion.Text = ""
+        mCombosCargados = False
+        CargarCombos()
+    End Sub
 End Class

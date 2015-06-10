@@ -601,6 +601,7 @@ Public Class Item
 
     Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
         Item_Codigo = CType(Fila("Item_Codigo"), Integer)
+        Item_Secuencia = CType(Fila("Item_Secuencia"), Integer)
         Incaut_Codigo = CType(Fila("Incaut_Codigo"), Integer)
         Parame_Tipo = CType(Fila("Parame_Tipo"), Integer)
         Pardet_Tipo = CType(Fila("Pardet_Tipo"), Integer)

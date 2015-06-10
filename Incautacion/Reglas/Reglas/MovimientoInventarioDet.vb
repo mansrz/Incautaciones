@@ -301,7 +301,12 @@ Public Class MovimientoInventarioDet
             If Item Is Nothing Then
                 Return String.Empty
             Else
-                Return String.Format("{0}", IIf(mItem.Item_esRegistroSerie, mItem.Item_Serie, "-"))
+                If (mItem.Item_Serie = "") Then
+                    Return "-"
+                Else
+                    Return mItem.Item_Serie
+                    'Return String.Format("{0}", IIf(mItem.Item_esRegistroSerie, mItem.Item_Serie, "-"))
+                End If
             End If
         End Get
     End Property
@@ -325,6 +330,18 @@ Public Class MovimientoInventarioDet
                 Return String.Empty
             Else
                 Return mItem.Item_Descripcion
+            End If
+        End Get
+    End Property
+
+    'Ubicacion
+    <Infoware.Reportes.CampoReporteAtributo("Item_Observacion")> _
+    Public Overridable ReadOnly Property ItemObservacion() As String
+        Get
+            If Item Is Nothing Then
+                Return String.Empty
+            Else
+                Return mItem.Item_Ubicacion
             End If
         End Get
     End Property

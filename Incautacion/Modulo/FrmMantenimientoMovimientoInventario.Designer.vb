@@ -25,7 +25,8 @@ Partial Class FrmMantenimientoMovimientoInventario
     Me.CtlMovimientoInventario1 = New Incautacion.Modulo.CtlMovimientoInventario()
     Me.HeaderStrip1 = New Infoware.Docking.HeaderStrip()
     Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
-    Me.ToolStripMovimiento = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripMovimiento = New System.Windows.Forms.ToolStrip()
+        Me.btnexportar = New System.Windows.Forms.ToolStripButton()
     Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
     Me.comboTipoMovimiento = New System.Windows.Forms.ToolStripComboBox()
     Me.comboTipoCompraVenta = New System.Windows.Forms.ToolStripComboBox()
@@ -95,7 +96,7 @@ Partial Class FrmMantenimientoMovimientoInventario
     '
     'ToolStripMovimiento
     '
-    Me.ToolStripMovimiento.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.comboTipoMovimiento, Me.btnimprbarcode, Me.comboTipoCompraVenta, Me.SepPagos, Me.btnpagos, Me.btnformatobarcode})
+        Me.ToolStripMovimiento.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.comboTipoMovimiento, Me.btnimprbarcode, Me.comboTipoCompraVenta, Me.SepPagos, Me.btnpagos, Me.btnformatobarcode, Me.btnexportar})
     Me.ToolStripMovimiento.Location = New System.Drawing.Point(0, 49)
     Me.ToolStripMovimiento.Name = "ToolStripMovimiento"
     Me.ToolStripMovimiento.Size = New System.Drawing.Size(1008, 25)
@@ -167,7 +168,17 @@ Partial Class FrmMantenimientoMovimientoInventario
     Me.btnformatobarcode.Name = "btnformatobarcode"
     Me.btnformatobarcode.Size = New System.Drawing.Size(23, 22)
     Me.btnformatobarcode.Text = "Modificar formato códigos de barra"
-    '
+        '
+        'btnexportar
+        '
+        Me.btnexportar.Image = CType(resources.GetObject("btnexportar.Image"), System.Drawing.Image)
+        Me.btnexportar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnexportar.Name = "btnexportar"
+        Me.btnexportar.Size = New System.Drawing.Size(70, 22)
+        Me.btnexportar.Text = "Exportar"
+        Me.btnexportar.Visible = False
+
+        '
     'FrmMantenimientoMovimientoInventario
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -211,5 +222,5 @@ Partial Class FrmMantenimientoMovimientoInventario
   Friend WithEvents btnformatobarcode As System.Windows.Forms.ToolStripButton
   Friend WithEvents CtlMovimientoInventario1 As Incautacion.Modulo.CtlMovimientoInventario
   Friend WithEvents CtlBloqueo1 As Incautacion.Modulo.CtlBloqueo
-
+    Friend WithEvents btnexportar As System.Windows.Forms.ToolStripButton
 End Class

@@ -1843,7 +1843,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Infoware.Docking, Version=2.3.1.38415, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Infoware.Docking, Version=2.3.1.38715, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_DA7A85C8B6947B1CE84D48776A4CDAB4"
@@ -1969,7 +1969,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Incautacion"
         "ProductCode" = "8:{A045F927-051B-403C-B197-B38698C3CF9E}"
-        "PackageCode" = "8:{45102187-BD23-4DB2-8827-BFCBCD3B05D7}"
+        "PackageCode" = "8:{D4D2248B-1515-4B8D-A65E-61FFD6024D10}"
         "UpgradeCode" = "8:{91D20EE7-0B68-41FF-A893-B036F90E27AB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

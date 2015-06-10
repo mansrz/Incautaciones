@@ -147,14 +147,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Incautacion.Modulo.exe" size="1112064">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Incautacion.Modulo.exe" size="1114624">
       <assemblyIdentity name="Incautacion.Modulo" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>fLpP0dxdpc8903WEMo8no2LFsrI=</dsig:DigestValue>
+        <dsig:DigestValue>wIRyMasLu+oAqsHVMnKzG7v7vVI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -166,31 +166,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Lp6HP34Ur0aBmQ4/a7ebKNFNc7I=</dsig:DigestValue>
+        <dsig:DigestValue>VGnQhlmkOivVV+2tDEW0B5CDTL8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Infoware.Consola.Base.dll" size="328192">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Infoware.Consola.Base.dll" size="334848">
       <assemblyIdentity name="Infoware.Consola.Base" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>REcce5xJeZoJxxnc5A9mxnPifr0=</dsig:DigestValue>
+        <dsig:DigestValue>tvg39BiYxkIBOmwD30OTNRPtDb8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Infoware.Controles.Base.dll" size="224768">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Infoware.Controles.Base.dll" size="225280">
       <assemblyIdentity name="Infoware.Controles.Base" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>VroefyDQNMAp1buaKe70+I2c6u0=</dsig:DigestValue>
+        <dsig:DigestValue>08exeBD7Z2Qn00gmkFrzk2NZ0wY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -202,31 +202,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>RPQJEHDKuWa092z1m+IsCK51n5I=</dsig:DigestValue>
+        <dsig:DigestValue>OYatPNjsltZQW2Wi39UVXyB6DmI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Infoware.Datos.dll" size="21504">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Infoware.Datos.dll" size="26112">
       <assemblyIdentity name="Infoware.Datos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>rgEQXF4AAtHhehaecqE4rGAM8NQ=</dsig:DigestValue>
+        <dsig:DigestValue>vZVROgviXVJqeUFDleJQz1f2DrI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Infoware.Docking.dll" size="426496">
-      <assemblyIdentity name="Infoware.Docking" version="2.3.1.38415" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Infoware.Docking" version="2.3.1.38715" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>f9AX/5qolaeVgKVw0OtU0AaGoSU=</dsig:DigestValue>
+        <dsig:DigestValue>RqTwmQ7KeXmCCe7FTYIyPTNxwjM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -250,19 +250,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>0TtX+iHDbNGLFwGw0UGp9EFvJc0=</dsig:DigestValue>
+        <dsig:DigestValue>2eF8EEqo8BFv8arfRYrbMCjTedI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Infoware.Reglas.General.dll" size="41472">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Infoware.Reglas.General.dll" size="41984">
       <assemblyIdentity name="Infoware.Reglas.General" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+nbNtIl0pgVuTmsddOLPnCGrnUM=</dsig:DigestValue>
+        <dsig:DigestValue>SBcMLvYxtOepAZA1XoT8yy/q+VE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -286,7 +286,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>i+xBnjUIZdnUazHMPnKR/BBIuRI=</dsig:DigestValue>
+        <dsig:DigestValue>BccS/paFRLTjlyR78tJEfwosR90=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
