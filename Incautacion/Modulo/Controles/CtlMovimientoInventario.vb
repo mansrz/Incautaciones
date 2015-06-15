@@ -617,7 +617,6 @@ Public Class CtlMovimientoInventario
 
         Me.CtlBuscaIncautacion1.Contribuyente = Me.CtlBuscaContribuyente1.Contribuyente
         Me.CtlBuscaIncautacion1.Sucursal = Me.Sucursal
-        MessageBox.Show("sucursal cargada en buscaIncaut" + Me.Sucursal.Empresa.NombreCompleto)
         Me.CtlBuscaIncautacion1.llenar_datos()
 
     End Sub
@@ -762,7 +761,7 @@ Public Class CtlMovimientoInventario
     End If
     If mMovimientoInventario.Pardet_TipomovinvEnum = Enumerados.enumTipoMovInv.Incautacion Then
       Dim f As New FrmIncautacionIngreso(Sistema, Enumerados.EnumOpciones.MovimientoInventario)
-      f.Incautacion = MovimientoInventario.Incautacion
+            f.MovimientoInventario = MovimientoInventario
       f.ShowDialog()
     Else
       Dim f As New Infoware.Reportes.FrmReportSimple

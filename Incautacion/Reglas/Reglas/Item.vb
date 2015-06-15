@@ -88,9 +88,13 @@ Public Class Item
     'WWTSParametroDet
     Public Overridable Property PardetTipo() As WWTSParametroDet
         Get
-            If Me.mPardetTipo Is Nothing AndAlso Pardet_Tipo > 0 Then
-                Me.mPardetTipo = New WWTSParametroDet(OperadorDatos, Parame_Tipo, Pardet_Tipo)
+            If Me.mPardetTipo Is Nothing Then
+                If Pardet_Tipo > 0 Then
+                    Me.mPardetTipo = New WWTSParametroDet(OperadorDatos, Parame_Tipo, Pardet_Tipo)
+                End If
+                Return Nothing
             End If
+
             Return Me.mPardetTipo
         End Get
         Set(ByVal value As WWTSParametroDet)
@@ -188,19 +192,19 @@ Public Class Item
     End Property
 
   'WWTSParametroDet
-  Public Overridable Property PardetTipoInventario() As WWTSParametroDet
-    Get
-      If Me.mPardetTipoInventario Is Nothing AndAlso Pardet_Tipoinventario > 0 Then
-        Me.mPardetTipoInventario = New WWTSParametroDet(OperadorDatos, Parame_Tipoinventario, Pardet_Tipoinventario)
-      End If
-      Return Me.mPardetTipoInventario
-    End Get
-    Set(ByVal value As WWTSParametroDet)
-      Me.mPardetTipoInventario = value
-      Parame_Tipoinventario = value.Parame_Codigo
-      Pardet_Tipoinventario = value.Pardet_Secuencia
-    End Set
-  End Property
+    'Public Overridable Property PardetTipoInventario() As WWTSParametroDet
+    '  Get
+    '    If Me.mPardetTipoInventario Is Nothing AndAlso Pardet_Tipoinventario > 0 Then
+    '      Me.mPardetTipoInventario = New WWTSParametroDet(OperadorDatos, Parame_Tipoinventario, Pardet_Tipoinventario)
+    '    End If
+    '    Return Me.mPardetTipoInventario
+    '  End Get
+    '  Set(ByVal value As WWTSParametroDet)
+    '    Me.mPardetTipoInventario = value
+    '    Parame_Tipoinventario = value.Parame_Codigo
+    '    Pardet_Tipoinventario = value.Pardet_Secuencia
+    '  End Set
+    'End Property
 
   'WWTSParametroDet
   Public Overridable Property PardetUnidadMedida() As WWTSParametroDet
@@ -270,49 +274,60 @@ Public Class Item
     End Set
     End Property
 
-    '<Infoware.Reportes.CampoReporteAtributo("Item", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 200, True)> _
-    'Public ReadOnly Property ItemString() As String
-    '    Get
-    '        If Item_Descripcion Is Nothing Then
-    '            Return String.Empty
-    '        Else
-    '            Return PardetTipo.Descripcion + " " + Item_Descripcion
-    '        End If
-    '    End Get
+    <Infoware.Reportes.CampoReporteAtributo("Incautación", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 200, True)> _
+    Public ReadOnly Property ItemIncautacionString() As String
+        Get
+            If Incautacion.Incaut_Numero Is Nothing Then
+                Return String.Empty
+            Else
+                Return Incautacion.Incaut_Numero
+            End If
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Descripción", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, True)> _
+    Public Overridable ReadOnly Property TipoString() As String
+        Get
+            If PardetTipo Is Nothing Then
+                Return String.Empty
+            Else
+                Return mPardetTipo.Pardet_Descripcion
+            End If
+        End Get
+    End Property
+
+    '<Infoware.Reportes.CampoReporteAtributo("Grupo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)> _
+    Public ReadOnly Property GrupoString() As String
+        Get
+            If PardetGrupo Is Nothing Then
+                Return String.Empty
+            Else
+                Return mPardetGrupo.Pardet_Descripcion
+            End If
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Marca", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)> _
+    Public ReadOnly Property MarcaString() As String
+        Get
+            If PardetMarca Is Nothing Then
+                Return String.Empty
+            Else
+                Return mPardetMarca.Pardet_Descripcion
+            End If
+        End Get
+    End Property
+
+    '<Infoware.Reportes.CampoReporteAtributo("Tipo Inventario", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)> _
+    'Public ReadOnly Property TipoInventarioString() As String
+    '  Get
+    '    If PardetTipoInventario Is Nothing Then
+    '      Return String.Empty
+    '    Else
+    '      Return mPardetTipoInventario.Pardet_Descripcion
+    '    End If
+    '  End Get
     'End Property
-
-  <Infoware.Reportes.CampoReporteAtributo("Grupo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)> _
-  Public ReadOnly Property GrupoString() As String
-    Get
-      If PardetGrupo Is Nothing Then
-        Return String.Empty
-      Else
-        Return mPardetGrupo.Pardet_Descripcion
-      End If
-    End Get
-  End Property
-
-  <Infoware.Reportes.CampoReporteAtributo("Marca", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)> _
-  Public ReadOnly Property MarcaString() As String
-    Get
-      If PardetMarca Is Nothing Then
-        Return String.Empty
-      Else
-        Return mPardetMarca.Pardet_Descripcion
-      End If
-    End Get
-  End Property
-
-  <Infoware.Reportes.CampoReporteAtributo("Tipo Inventario", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)> _
-  Public ReadOnly Property TipoInventarioString() As String
-    Get
-      If PardetTipoInventario Is Nothing Then
-        Return String.Empty
-      Else
-        Return mPardetTipoInventario.Pardet_Descripcion
-      End If
-    End Get
-  End Property
 
 
     <Infoware.Reportes.CampoReporteAtributo("Unidad medida", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 90, True)> _
@@ -327,276 +342,276 @@ Public Class Item
     End Property
 
 
-  Public ReadOnly Property BuscarValor(ByVal _tipomovinv As Enumerados.enumTipoMovInv, ByVal _sucursal As Sucursal, ByVal _PardetTipoPrecio As WWTSParametroDet, ByVal _porciva As Decimal, ByVal _bodega As Bodega, ByVal _cantidad As Decimal) As Decimal
-    Get
-      Dim _valor As Decimal = 0
-      Select Case _tipomovinv
-        Case Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevVenta
-          If Item_PrecioxCantidad Then
-            Dim _pxc As ItemPrecioxCantidad = ItemPrecioxCantidadList.ObtenerPrecioxCantidad(Me, _sucursal, _cantidad)
-            If _pxc IsNot Nothing Then
-              _valor = _pxc.ItPrCa_ValorUnitario
-              If Item_esIvaIncluido Then
-                _valor = _valor / (1 + _porciva / 100)
-              End If
+    Public ReadOnly Property BuscarValor(ByVal _tipomovinv As Enumerados.enumTipoMovInv, ByVal _sucursal As Sucursal, ByVal _PardetTipoPrecio As WWTSParametroDet, ByVal _porciva As Decimal, ByVal _bodega As Bodega, ByVal _cantidad As Decimal) As Decimal
+        Get
+            Dim _valor As Decimal = 0
+            Select Case _tipomovinv
+                Case Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevVenta
+                    If Item_PrecioxCantidad Then
+                        Dim _pxc As ItemPrecioxCantidad = ItemPrecioxCantidadList.ObtenerPrecioxCantidad(Me, _sucursal, _cantidad)
+                        If _pxc IsNot Nothing Then
+                            _valor = _pxc.ItPrCa_ValorUnitario
+                            If Item_esIvaIncluido Then
+                                _valor = _valor / (1 + _porciva / 100)
+                            End If
+                        End If
+                    Else
+                        Dim _ItemxTipoPrecio As ItemxTipoPrecio
+                        Try
+                            _ItemxTipoPrecio = New ItemxTipoPrecio(Me, _sucursal, _PardetTipoPrecio)
+                            _valor = _ItemxTipoPrecio.IteTip_Valor
+                            If Item_esIvaIncluido Then
+                                _valor = _valor / (1 + _porciva / 100)
+                            End If
+                        Catch ex As Exception
+                            _valor = 0
+                        End Try
+                    End If
+                Case Else
+                    Try
+                        Dim _itemxbodega As New ItemxBodega(Me, _bodega)
+                        _valor = _itemxbodega.Itebod_Costopromedio
+                    Catch ex As Exception
+                        _valor = 0
+                    End Try
+            End Select
+            Return _valor
+        End Get
+    End Property
+
+    'Private mItemxTipoPrecios As ItemxTipoPrecioList = Nothing
+    Public ReadOnly Property ItemxTipoPrecios(ByVal _Sucursal As Sucursal) As ItemxTipoPrecioList
+        Get
+            'If mItemxTipoPrecios Is Nothing Then
+            '  mItemxTipoPrecios = ItemxTipoPrecioList.ObtenerLista(Me, mSucursal)
+            'End If
+            'Return mItemxTipoPrecios
+            If _Sucursal Is Nothing Then
+                Return Nothing
             End If
-          Else
-            Dim _ItemxTipoPrecio As ItemxTipoPrecio
-            Try
-              _ItemxTipoPrecio = New ItemxTipoPrecio(Me, _sucursal, _PardetTipoPrecio)
-              _valor = _ItemxTipoPrecio.IteTip_Valor
-              If Item_esIvaIncluido Then
-                _valor = _valor / (1 + _porciva / 100)
-              End If
-            Catch ex As Exception
-              _valor = 0
-            End Try
-          End If
-        Case Else
-          Try
-            Dim _itemxbodega As New ItemxBodega(Me, _bodega)
-            _valor = _itemxbodega.Itebod_Costopromedio
-          Catch ex As Exception
-            _valor = 0
-          End Try
-      End Select
-      Return _valor
-    End Get
-  End Property
+            Return ItemxTipoPrecioList.ObtenerLista(Me, _Sucursal)
+        End Get
+    End Property
 
-  'Private mItemxTipoPrecios As ItemxTipoPrecioList = Nothing
-  Public ReadOnly Property ItemxTipoPrecios(ByVal _Sucursal As Sucursal) As ItemxTipoPrecioList
-    Get
-      'If mItemxTipoPrecios Is Nothing Then
-      '  mItemxTipoPrecios = ItemxTipoPrecioList.ObtenerLista(Me, mSucursal)
-      'End If
-      'Return mItemxTipoPrecios
-      If _Sucursal Is Nothing Then
-        Return Nothing
-      End If
-      Return ItemxTipoPrecioList.ObtenerLista(Me, _Sucursal)
-    End Get
-  End Property
-
-  'Private mItemxBodegas As ItemxBodegaList = Nothing
-  Public ReadOnly Property ItemxBodegas(Optional ByVal _Sucursal As Sucursal = Nothing) As ItemxBodegaList
-    Get
-      'If mItemxBodegas Is Nothing Then
-      '  mItemxBodegas = ItemxBodegaList.ObtenerLista(Me)
-      'End If
-      'Return mItemxBodegas
-      If _Sucursal Is Nothing Then
-        Return Nothing
-      End If
-      Return ItemxBodegaList.ObtenerLista(Me, _Sucursal)
-    End Get
-  End Property
+    'Private mItemxBodegas As ItemxBodegaList = Nothing
+    Public ReadOnly Property ItemxBodegas(Optional ByVal _Sucursal As Sucursal = Nothing) As ItemxBodegaList
+        Get
+            'If mItemxBodegas Is Nothing Then
+            '  mItemxBodegas = ItemxBodegaList.ObtenerLista(Me)
+            'End If
+            'Return mItemxBodegas
+            If _Sucursal Is Nothing Then
+                Return Nothing
+            End If
+            Return ItemxBodegaList.ObtenerLista(Me, _Sucursal)
+        End Get
+    End Property
 
 #Region "Saldos bodega"
-  Private mBodegas As BodegaList = Nothing
-  Public ReadOnly Property Bodegas() As BodegaList
-    Get
-      If mBodegas Is Nothing Then
-        mBodegas = BodegaList.ObtenerLista(OperadorDatos)
-      End If
-      Return mBodegas
-    End Get
-  End Property
+    Private mBodegas As BodegaList = Nothing
+    Public ReadOnly Property Bodegas() As BodegaList
+        Get
+            If mBodegas Is Nothing Then
+                mBodegas = BodegaList.ObtenerLista(OperadorDatos)
+            End If
+            Return mBodegas
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega(ByVal _Bodega As Bodega) As Decimal
-    Get
-      If Me.Item_Estangible Then
-        Try
-          Dim _ItemxBodega As New ItemxBodega(Me, _Bodega)
-          Return _ItemxBodega.Itebod_Cantidad
-        Catch ex As Exception
-        End Try
-      End If
-      Return 0
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega(ByVal _Bodega As Bodega) As Decimal
+        Get
+            If Me.Item_Estangible Then
+                Try
+                    Dim _ItemxBodega As New ItemxBodega(Me, _Bodega)
+                    Return _ItemxBodega.Itebod_Cantidad
+                Catch ex As Exception
+                End Try
+            End If
+            Return 0
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega(ByVal _NumBodega As Integer) As Decimal
-    Get
-      If Bodegas.Count >= _NumBodega Then
-        Return SaldoBodega(mBodegas(_NumBodega))
-      Else
-        Return 0
-      End If
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega(ByVal _NumBodega As Integer) As Decimal
+        Get
+            If Bodegas.Count >= _NumBodega Then
+                Return SaldoBodega(mBodegas(_NumBodega))
+            Else
+                Return 0
+            End If
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega1() As Decimal
-    Get
-      Return SaldoBodega(0)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega1() As Decimal
+        Get
+            Return SaldoBodega(0)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega2() As Decimal
-    Get
-      Return SaldoBodega(1)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega2() As Decimal
+        Get
+            Return SaldoBodega(1)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega3() As Decimal
-    Get
-      Return SaldoBodega(2)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega3() As Decimal
+        Get
+            Return SaldoBodega(2)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega4() As Decimal
-    Get
-      Return SaldoBodega(3)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega4() As Decimal
+        Get
+            Return SaldoBodega(3)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega5() As Decimal
-    Get
-      Return SaldoBodega(4)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega5() As Decimal
+        Get
+            Return SaldoBodega(4)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega6() As Decimal
-    Get
-      Return SaldoBodega(5)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega6() As Decimal
+        Get
+            Return SaldoBodega(5)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega7() As Decimal
-    Get
-      Return SaldoBodega(6)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega7() As Decimal
+        Get
+            Return SaldoBodega(6)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega8() As Decimal
-    Get
-      Return SaldoBodega(7)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega8() As Decimal
+        Get
+            Return SaldoBodega(7)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega9() As Decimal
-    Get
-      Return SaldoBodega(8)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega9() As Decimal
+        Get
+            Return SaldoBodega(8)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega10() As Decimal
-    Get
-      Return SaldoBodega(9)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega10() As Decimal
+        Get
+            Return SaldoBodega(9)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega11() As Decimal
-    Get
-      Return SaldoBodega(10)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega11() As Decimal
+        Get
+            Return SaldoBodega(10)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega12() As Decimal
-    Get
-      Return SaldoBodega(11)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega12() As Decimal
+        Get
+            Return SaldoBodega(11)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega13() As Decimal
-    Get
-      Return SaldoBodega(12)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega13() As Decimal
+        Get
+            Return SaldoBodega(12)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega14() As Decimal
-    Get
-      Return SaldoBodega(13)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega14() As Decimal
+        Get
+            Return SaldoBodega(13)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega15() As Decimal
-    Get
-      Return SaldoBodega(14)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega15() As Decimal
+        Get
+            Return SaldoBodega(14)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega16() As Decimal
-    Get
-      Return SaldoBodega(15)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega16() As Decimal
+        Get
+            Return SaldoBodega(15)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega17() As Decimal
-    Get
-      Return SaldoBodega(16)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega17() As Decimal
+        Get
+            Return SaldoBodega(16)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega18() As Decimal
-    Get
-      Return SaldoBodega(17)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega18() As Decimal
+        Get
+            Return SaldoBodega(17)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega19() As Decimal
-    Get
-      Return SaldoBodega(18)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega19() As Decimal
+        Get
+            Return SaldoBodega(18)
+        End Get
+    End Property
 
-  Public ReadOnly Property SaldoBodega20() As Decimal
-    Get
-      Return SaldoBodega(19)
-    End Get
-  End Property
+    Public ReadOnly Property SaldoBodega20() As Decimal
+        Get
+            Return SaldoBodega(19)
+        End Get
+    End Property
 #End Region
 
 #Region "Combo"
-  Private mDetallesCombo As ItemDetalleList = Nothing
-  Public ReadOnly Property DetallesCombo(ByVal _Sucursal As Sucursal) As ItemDetalleList
-    Get
-      If mDetallesCombo Is Nothing Then
-        If EsNuevo Then
-          mDetallesCombo = New ItemDetalleList
-        Else
-          mDetallesCombo = ItemDetalleList.ObtenerLista(Me, _Sucursal)
-        End If
-      End If
-      Return mDetallesCombo
-    End Get
-  End Property
+    Private mDetallesCombo As ItemDetalleList = Nothing
+    Public ReadOnly Property DetallesCombo(ByVal _Sucursal As Sucursal) As ItemDetalleList
+        Get
+            If mDetallesCombo Is Nothing Then
+                If EsNuevo Then
+                    mDetallesCombo = New ItemDetalleList
+                Else
+                    mDetallesCombo = ItemDetalleList.ObtenerLista(Me, _Sucursal)
+                End If
+            End If
+            Return mDetallesCombo
+        End Get
+    End Property
 
-  Private mDetallesComboEliminados As ItemDetalleList = Nothing
-  Public ReadOnly Property DetallesComboEliminados As ItemDetalleList
-    Get
-      If mDetallesComboEliminados Is Nothing Then
-        mDetallesComboEliminados = New ItemDetalleList
-      End If
-      Return mDetallesComboEliminados
-    End Get
-  End Property
+    Private mDetallesComboEliminados As ItemDetalleList = Nothing
+    Public ReadOnly Property DetallesComboEliminados As ItemDetalleList
+        Get
+            If mDetallesComboEliminados Is Nothing Then
+                mDetallesComboEliminados = New ItemDetalleList
+            End If
+            Return mDetallesComboEliminados
+        End Get
+    End Property
 #End Region
 
 #Region "PrecioxCantidad"
-  Private mDetallesPrecioxCantidad As ItemPrecioxCantidadList = Nothing
-  Public ReadOnly Property DetallesPrecioxCantidad(ByVal _Sucursal As Sucursal) As ItemPrecioxCantidadList
-    Get
-      If mDetallesPrecioxCantidad Is Nothing Then
-        If EsNuevo Then
-          mDetallesPrecioxCantidad = New ItemPrecioxCantidadList
-        Else
-          mDetallesPrecioxCantidad = ItemPrecioxCantidadList.ObtenerLista(Me, _Sucursal)
-        End If
-      End If
-      Return mDetallesPrecioxCantidad
-    End Get
-  End Property
+    Private mDetallesPrecioxCantidad As ItemPrecioxCantidadList = Nothing
+    Public ReadOnly Property DetallesPrecioxCantidad(ByVal _Sucursal As Sucursal) As ItemPrecioxCantidadList
+        Get
+            If mDetallesPrecioxCantidad Is Nothing Then
+                If EsNuevo Then
+                    mDetallesPrecioxCantidad = New ItemPrecioxCantidadList
+                Else
+                    mDetallesPrecioxCantidad = ItemPrecioxCantidadList.ObtenerLista(Me, _Sucursal)
+                End If
+            End If
+            Return mDetallesPrecioxCantidad
+        End Get
+    End Property
 
-  Private mDetallesPrecioxCantidadEliminados As ItemPrecioxCantidadList = Nothing
-  Public ReadOnly Property DetallesPrecioxCantidadEliminados As ItemPrecioxCantidadList
-    Get
-      If mDetallesPrecioxCantidadEliminados Is Nothing Then
-        mDetallesPrecioxCantidadEliminados = New ItemPrecioxCantidadList
-      End If
-      Return mDetallesPrecioxCantidadEliminados
-    End Get
-  End Property
+    Private mDetallesPrecioxCantidadEliminados As ItemPrecioxCantidadList = Nothing
+    Public ReadOnly Property DetallesPrecioxCantidadEliminados As ItemPrecioxCantidadList
+        Get
+            If mDetallesPrecioxCantidadEliminados Is Nothing Then
+                mDetallesPrecioxCantidadEliminados = New ItemPrecioxCantidadList
+            End If
+            Return mDetallesPrecioxCantidadEliminados
+        End Get
+    End Property
 #End Region
 
     Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
@@ -789,9 +804,9 @@ Public Class Item
         Return bReturn
     End Function
 
-  Public Overridable Sub AceptarCambios()
-    EsNuevo = False
-    EsModificado = False
+    Public Overridable Sub AceptarCambios()
+        EsNuevo = False
+        EsModificado = False
 
         'If mDetallesCombo IsNot Nothing Then
         '  For Each _detalle As ItemDetalle In mDetallesCombo
@@ -808,42 +823,42 @@ Public Class Item
         'End If
         'mDetallesPrecioxCantidad = Nothing
         'mDetallesPrecioxCantidadEliminados = Nothing
-  End Sub
+    End Sub
 
-  Public Overridable Function Guardar_Imagen() As Boolean
-    If EsNuevo Then
-      Return False
-    End If
-    If Not mCambio_Imagen Then
-      Return True
-    End If
-    Dim bReturn As Boolean = True
-    OperadorDatos.AgregarParametro("@accion", "ps")
-    OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
-    OperadorDatos.AgregarParametroImagen("@Item_Imagen", mArchivoImagen)
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar()
-    OperadorDatos.LimpiarParametros()
-    If bReturn Then
-      mItem_Imagen = Nothing
-      mCambio_Imagen = False
-    End If
-    Return bReturn
-  End Function
+    Public Overridable Function Guardar_Imagen() As Boolean
+        If EsNuevo Then
+            Return False
+        End If
+        If Not mCambio_Imagen Then
+            Return True
+        End If
+        Dim bReturn As Boolean = True
+        OperadorDatos.AgregarParametro("@accion", "ps")
+        OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
+        OperadorDatos.AgregarParametroImagen("@Item_Imagen", mArchivoImagen)
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar()
+        OperadorDatos.LimpiarParametros()
+        If bReturn Then
+            mItem_Imagen = Nothing
+            mCambio_Imagen = False
+        End If
+        Return bReturn
+    End Function
 
-  Public Overridable Function Eliminar() As Boolean
-    If EsNuevo Then
-      Return True
-    End If
+    Public Overridable Function Eliminar() As Boolean
+        If EsNuevo Then
+            Return True
+        End If
 
-    Dim bReturn As Boolean = True
-    OperadorDatos.AgregarParametro("@accion", "E")
-    OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar
-    OperadorDatos.LimpiarParametros()
-    Return bReturn
-  End Function
+        Dim bReturn As Boolean = True
+        OperadorDatos.AgregarParametro("@accion", "E")
+        OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar
+        OperadorDatos.LimpiarParametros()
+        Return bReturn
+    End Function
 End Class
 #End Region
 
@@ -851,34 +866,37 @@ End Class
 Public Class ItemList
   Inherits BindingList(Of Item)
 
-  Public Shared Function ObtenerLista(ByVal _OperadorDatos As OperadorDatos, Optional ByVal _grupo As WWTSParametroDet = Nothing, Optional ByVal _tipoinventario As WWTSParametroDet = Nothing, Optional ByVal _filtro As String = "") As ItemList
-    Dim oResult As ItemList = New ItemList
-    Dim bReturn As Boolean
-    Dim ds As New DataTable
-    With _OperadorDatos
-      .AgregarParametro("@Accion", "F")
-      If _grupo IsNot Nothing Then
-        .AgregarParametro("@Parame_Grupo", _grupo.Parame_Codigo)
-        .AgregarParametro("@Pardet_Grupo", _grupo.Pardet_Secuencia)
-      End If
-      If _tipoinventario IsNot Nothing Then
-        .AgregarParametro("@Parame_TipoInventario", _tipoinventario.Parame_Codigo)
-        .AgregarParametro("@Pardet_TipoInventario", _tipoinventario.Pardet_Secuencia)
-      End If
-      .AgregarParametro("@filtro", _filtro)
-      .Procedimiento = "proc_Item"
-      bReturn = .Ejecutar(ds)
-      .LimpiarParametros()
-    End With
-    If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
-      For Each _dr As DataRow In ds.Rows
-        Dim _fila As New Item(_OperadorDatos, False)
-        _fila.MapearDataRowaObjeto(_dr)
-        oResult.Add(_fila)
-      Next
-    End If
-    Return oResult
-  End Function
+    Public Shared Function ObtenerLista(ByVal _OperadorDatos As OperadorDatos, Optional ByVal _grupo As WWTSParametroDet = Nothing, Optional ByVal _tipoinventario As WWTSParametroDet = Nothing, Optional ByVal _filtro As String = "", Optional ByVal _Empresa As Empresa = Nothing) As ItemList
+        Dim oResult As ItemList = New ItemList
+        Dim bReturn As Boolean
+        Dim ds As New DataTable
+        With _OperadorDatos
+            .AgregarParametro("@Accion", "F")
+            If _grupo IsNot Nothing Then
+                .AgregarParametro("@Parame_Grupo", _grupo.Parame_Codigo)
+                .AgregarParametro("@Pardet_Grupo", _grupo.Pardet_Secuencia)
+            End If
+            If _tipoinventario IsNot Nothing Then
+                .AgregarParametro("@Parame_TipoInventario", _tipoinventario.Parame_Codigo)
+                .AgregarParametro("@Pardet_TipoInventario", _tipoinventario.Pardet_Secuencia)
+            End If
+            If _Empresa IsNot Nothing Then
+                .AgregarParametro("@Empres_Codigo", _Empresa.Empres_Codigo)
+            End If
+            .AgregarParametro("@filtro", _filtro)
+            .Procedimiento = "proc_Item"
+            bReturn = .Ejecutar(ds)
+            .LimpiarParametros()
+        End With
+        If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
+            For Each _dr As DataRow In ds.Rows
+                Dim _fila As New Item(_OperadorDatos, False)
+                _fila.MapearDataRowaObjeto(_dr)
+                oResult.Add(_fila)
+            Next
+        End If
+        Return oResult
+    End Function
 
   Public Shared Function ObtenerListaxTipoInventario(ByVal _OperadorDatos As OperadorDatos, Optional ByVal _tipoinventario As WWTSParametroDet = Nothing, Optional ByVal _filtro As String = "") As ItemList
     Dim oResult As ItemList = New ItemList

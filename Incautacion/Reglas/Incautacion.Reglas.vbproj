@@ -113,6 +113,11 @@
     <Compile Include="Database\TrabajoLog.vb" />
     <Compile Include="Database\UnidadMedidaConversion.vb" />
     <Compile Include="Database\Venta.vb" />
+    <Compile Include="dsMovimientoInventarioIncautacion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMovimientoInventarioIncautacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Enumerados.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -182,6 +187,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="dsMovimientoInventarioIncautacion.xsc">
+      <DependentUpon>dsMovimientoInventarioIncautacion.xsd</DependentUpon>
+    </None>
+    <None Include="dsMovimientoInventarioIncautacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMovimientoInventarioIncautacion.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsMovimientoInventarioIncautacion.xss">
+      <DependentUpon>dsMovimientoInventarioIncautacion.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

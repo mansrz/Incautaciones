@@ -44,7 +44,7 @@ Public Class CtlBuscaIncautacion
             mOperadorDatos = value
 
             If value IsNot Nothing Then
-                llenar_datos()
+                'llenar_datos()
             End If
         End Set
     End Property
@@ -76,14 +76,12 @@ Public Class CtlBuscaIncautacion
     Private mEstaCargando = False
 
     Sub llenar_datos()
-        If mContribuyente Is Nothing Then
-            Exit Sub
-        End If
-
+        MsgBox("voy a llenar lista incautaciones")
+        mIncautaciones = IncautacionList.ObtenerLista(mSucursal.Empresa, mContribuyente)
+        MsgBox("llene lista incautaciones")
         Me.ComboBox1.DisplayMember = "Incaut_Numero"
         Me.ComboBox1.ValueMember = "Incaut_Codigo"
 
-        mIncautaciones = IncautacionList.ObtenerLista(mSucursal.Empresa, mContribuyente)
 
         mEstaCargando = True
         Me.ComboBox1.DataSource = mIncautaciones

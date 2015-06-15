@@ -19,48 +19,30 @@ Partial Class FrmIncautacionIngreso
   'Do not modify it using the code editor.
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
-    Me.BarraEmpresa1 = New Incautacion.Modulo.BarraEmpresa()
-    CType(Me.ListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-    Me.pnlcuerpo.SuspendLayout()
-    Me.SuspendLayout()
-    '
-    'pnlcuerpo
-    '
-    Me.pnlcuerpo.Size = New System.Drawing.Size(1076, 515)
-    '
-    'Panel1
-    '
-    Me.Panel1.Size = New System.Drawing.Size(1076, 31)
-    Me.Panel1.Visible = False
-    '
-    'BarraEmpresa1
-    '
-    Me.BarraEmpresa1.Empresa = Nothing
-    Me.BarraEmpresa1.EmpresaVisible = True
-    Me.BarraEmpresa1.Location = New System.Drawing.Point(0, 49)
-    Me.BarraEmpresa1.Name = "BarraEmpresa1"
-    Me.BarraEmpresa1.Sistema = Nothing
-    Me.BarraEmpresa1.Size = New System.Drawing.Size(1076, 25)
-    Me.BarraEmpresa1.Sucursal = Nothing
-    Me.BarraEmpresa1.SucursalVisible = False
-    Me.BarraEmpresa1.TabIndex = 5
-    Me.BarraEmpresa1.Text = "BarraEmpresa1"
-    '
-    'FrmIncautacionIngreso
-    '
-    Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-    Me.ClientSize = New System.Drawing.Size(1076, 564)
-    Me.Controls.Add(Me.BarraEmpresa1)
-    Me.Name = "FrmIncautacionIngreso"
-    Me.PuedeImprimir = True
-    Me.Controls.SetChildIndex(Me.pnlcuerpo, 0)
-    Me.Controls.SetChildIndex(Me.BarraEmpresa1, 0)
-    CType(Me.ListBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-    Me.pnlcuerpo.ResumeLayout(False)
-    Me.ResumeLayout(False)
-    Me.PerformLayout()
+        CType(Me.ListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlcuerpo.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'pnlcuerpo
+        '
+        Me.pnlcuerpo.Size = New System.Drawing.Size(1076, 515)
+        '
+        'Panel1
+        '
+        Me.Panel1.Size = New System.Drawing.Size(1076, 31)
+        Me.Panel1.Visible = False
+        '
+        'FrmIncautacionIngreso
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.ClientSize = New System.Drawing.Size(1076, 564)
+        Me.Name = "FrmIncautacionIngreso"
+        Me.PuedeImprimir = True
+        CType(Me.ListBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlcuerpo.ResumeLayout(False)
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-  End Sub
-  Friend WithEvents BarraEmpresa1 As BarraEmpresa
+    End Sub
 
 End Class

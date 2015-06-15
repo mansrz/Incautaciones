@@ -70,6 +70,7 @@ Public Class Incautacion
         Get
             If Me.mContribuyente Is Nothing AndAlso Entida_Contribuyente > 0 Then
                 Me.mContribuyente = New Contribuyente(OperadorDatos, Entida_Contribuyente)
+                Me.mContribuyente.Recargar()
             End If
             Return Me.mContribuyente
         End Get
@@ -175,6 +176,7 @@ Public Class Incautacion
     End Function
 
     Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
+
         Incaut_Codigo = CType(Fila("Incaut_Codigo"), Integer)
         Incaut_Numero = CType(Fila("Incaut_Numero"), String)
         Entida_Contribuyente = CType(Fila("Entida_Contribuyente"), Integer)
@@ -187,7 +189,8 @@ Public Class Incautacion
         Incaut_FechaIngreso = CType(Fila("Incaut_FechaIngreso"), Date)
         Empres_Codigo = CType(Fila("Empres_Codigo"), Integer)
 
-        mContribuyente = Nothing
+        mContribuyente = New Contribuyente(OperadorDatos, Entida_Contribuyente)
+        mContribuyente.Recargar()
         mIncautacionResoluciones = Nothing
         mIncautacionResolucionesEli = Nothing
 
@@ -331,14 +334,18 @@ Public Class IncautacionList
         Return oResult
     End Function
 
-    Public Shared Function ObtenerLista(ByVal _Empresa As Empresa, ByVal _Contribuyente As Contribuyente, Optional ByVal _filtro As String = "") As IncautacionList
-        
+
+
+    Public Shared Function ObtenerLista(ByVal _Empresa As Empresa, Optional ByVal _Contribuyente As Contribuyente = Nothing, Optional ByVal _filtro As String = "") As IncautacionList
+
         Dim oResult As IncautacionList = New IncautacionList
         Dim bReturn As Boolean
         Dim ds As DataTable = Nothing
         With _Contribuyente.OperadorDatos
             .AgregarParametro("@Accion", "F")
-            .AgregarParametro("@Entida_Contribuyente", _Contribuyente.Entida_Codigo)
+            If _Contribuyente IsNot Nothing Then
+                .AgregarParametro("@Entida_Contribuyente", _Contribuyente.Entida_Codigo)
+            End If
             .AgregarParametro("@Empres_Codigo", _Empresa.Empres_Codigo)
             .AgregarParametro("@filtro", _filtro)
             .Procedimiento = "proc_Incautacion"

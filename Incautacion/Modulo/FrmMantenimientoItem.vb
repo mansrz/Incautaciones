@@ -56,19 +56,38 @@ Public Class FrmMantenimientoItem
         If mItem IsNot Nothing Then
             mItem.Recargar()
         End If
+
+
+        Me.CtlBuscaContribuyente1.OperadorDatos = mSucursal.OperadorDatos
+        Me.CtlBuscaContribuyente1.Llenar_Datos()
+        Me.CtlBuscaContribuyente1.Contribuyente = Item.Incautacion.Contribuyente
+        Me.CtlBuscaContribuyente1.Enabled = False
+
+        Me.CtlBuscaIncautacion1.OperadorDatos = mSucursal.OperadorDatos
+        Me.CtlBuscaIncautacion1.Contribuyente = Item.Incautacion.Contribuyente
+        Me.CtlBuscaIncautacion1.Sucursal = Me.mSucursal
+        Me.CtlBuscaIncautacion1.llenar_datos()
+        Me.CtlBuscaIncautacion1.Incautacion = Item.Incautacion
+        Me.CtlBuscaIncautacion1.Enabled = False
+
+        Me.cboTipo.Enabled = False
+
+        'MessageBox.Show("sucursal cargada en buscaIncaut" + Me.SucmSucursalursal.Empresa.NombreCompleto)
+
+
         ValidarRegistro()
         If mItem IsNot Nothing Then
             mItem.Recargar()
             Me.txtItemSencuencia.Enabled = mItem.EsNuevo
             Me.txtItemSencuencia.Text = mItem.Item_Codigo
             Me.txtdescripcion.Text = mItem.Item_Descripcion
-            Me.cboTipo.ParametroDet = mItem.PardetGrupo
-
+            Me.cboTipo.ParametroDet = mItem.PardetTipo
             Me.ComboBoxMarca1.ParametroDet = mItem.PardetMarca
-            Me.cboEstadoItem.ParametroDet = mItem.PardetTipoInventario
+            Me.cboEstadoItem.ParametroDet = mItem.PardetEstadoItem
             Me.ComboBoxUnidadMedida1.ParametroDet = mItem.PardetUnidadMedida
             Me.txtubicacion.Text = mItem.Item_Ubicacion
-            Me.txtModelo.Text = mItem.Item_CodigoAuxiliar
+            Me.txtModelo.Text = mItem.Item_Modelo
+            Me.txtSerie.Text = mItem.Item_Serie
 
             Me.grpexistencias.Enabled = Not mItem.EsNuevo
 
@@ -256,6 +275,7 @@ Public Class FrmMantenimientoItem
 
         ' Add any initialization after the InitializeComponent() call.
         mSucursal = _Sucursal
+        'MessageBox.Show("sucursal " + mSucursal.NombreCompleto)
         FrmMantenimientoItem_Inicializar(Me, Nothing)
     End Sub
 
@@ -269,6 +289,10 @@ Public Class FrmMantenimientoItem
 
         MyBase.Tabla = "Item"
 
+        Me.ComboBoxMarca1.OperadorDatos = Sistema.OperadorDatos
+        Me.ComboBoxMarca1.Parametro = Enumerados.EnumParametros.Marca
+        Me.ComboBoxMarca1.Llenar_Datos()
+
         Me.cboEstadoItem.OperadorDatos = Sistema.OperadorDatos
         Me.cboEstadoItem.Parametro = Enumerados.EnumParametros.EstadoItem
         Me.cboEstadoItem.Llenar_Datos()
@@ -281,8 +305,8 @@ Public Class FrmMantenimientoItem
         Me.ComboBoxUnidadMedida1.Parametro = Enumerados.EnumParametros.UnidadMedida
         Me.ComboBoxUnidadMedida1.Llenar_Datos()
 
-        Me.CtlBuscaIncautacion1.OperadorDatos = Sistema.OperadorDatos
-        Me.CtlBuscaIncautacion1.llenar_datos()
+        'Me.CtlBuscaIncautacion1.OperadorDatos = Sistema.OperadorDatos
+        'Me.CtlBuscaIncautacion1.llenar_datos()
 
         Me.grpexistencias.Height = 195
     End Sub

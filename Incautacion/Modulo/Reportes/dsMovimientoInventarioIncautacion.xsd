@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="dsIncautacion" targetNamespace="http://tempuri.org/dsIncautacion.xsd" xmlns:mstns="http://tempuri.org/dsIncautacion.xsd" xmlns="http://tempuri.org/dsIncautacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="dsMovimientoInventarioIncautacion" targetNamespace="http://tempuri.org/dsMovimientoInventarioIncautacion.xsd" xmlns:mstns="http://tempuri.org/dsMovimientoInventarioIncautacion.xsd" xmlns="http://tempuri.org/dsMovimientoInventarioIncautacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -9,10 +9,12 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_MovimientoInventarioIncautacionTableAdapter" GeneratorDataComponentClassName="vw_MovimientoInventarioIncautacionTableAdapter" Name="vw_MovimientoInventarioIncautacion" UserDataComponentName="vw_MovimientoInventarioIncautacionTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IncautacionesConnectionString (MySettings)" DbObjectName="Incautaciones.dbo.vw_MovimientoInventarioIncautacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IncautacionesConnectionString (MySettings)" DbObjectName="Incautaciones.dbo.vw_MovimientoInventarioIncautacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Incaut_Numero, PropieatrioNombre, PropietarioIdentificacion, Movinv_Fecha, FedatarioNombre, FedatarioIdentificaicon, AdministrativoNombre, AdministrativoIdentificacion, Incaut_TenedorNombre, Incaut_TenedorCI, Item_Secuencia, Moinde_Cantidad, UnidadMedida, Descripcion, Marca, Modelo, Serie, Estado, ValorUnitario, ValorTotal, Caracteristicas, Observacion FROM dbo.vw_MovimientoInventarioIncautacion</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Incaut_Numero, PropieatrioNombre, PropietarioIdentificacion, Movinv_Fecha, FedatarioNombre, FedatarioIdentificaicon, AdministrativoNombre, AdministrativoIdentificacion, Incaut_TenedorNombre, 
+                         Incaut_TenedorCI, Item_Secuencia, Moinde_Cantidad, UnidadMedida, Descripcion, Marca, Modelo, Serie, Estado, ValorUnitario, ValorTotal, Caracteristicas, Observacion, Incaut_Observaciones
+FROM            vw_MovimientoInventarioIncautacion</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -41,6 +43,7 @@
               <Mapping SourceColumn="ValorTotal" DataSetColumn="ValorTotal" />
               <Mapping SourceColumn="Caracteristicas" DataSetColumn="Caracteristicas" />
               <Mapping SourceColumn="Observacion" DataSetColumn="Observacion" />
+              <Mapping SourceColumn="Incaut_Observaciones" DataSetColumn="Incaut_Observaciones" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -49,10 +52,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="dsIncautacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsIncautacion" msprop:Generator_UserDSName="dsIncautacion">
+  <xs:element name="dsMovimientoInventarioIncautacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMovimientoInventarioIncautacion" msprop:Generator_UserDSName="dsMovimientoInventarioIncautacion">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vw_MovimientoInventarioIncautacion" msprop:Generator_TableClassName="vw_MovimientoInventarioIncautacionDataTable" msprop:Generator_TableVarName="tablevw_MovimientoInventarioIncautacion" msprop:Generator_TablePropName="vw_MovimientoInventarioIncautacion" msprop:Generator_RowDeletingName="vw_MovimientoInventarioIncautacionRowDeleting" msprop:Generator_RowChangingName="vw_MovimientoInventarioIncautacionRowChanging" msprop:Generator_RowEvHandlerName="vw_MovimientoInventarioIncautacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_MovimientoInventarioIncautacionRowDeleted" msprop:Generator_UserTableName="vw_MovimientoInventarioIncautacion" msprop:Generator_RowChangedName="vw_MovimientoInventarioIncautacionRowChanged" msprop:Generator_RowEvArgName="vw_MovimientoInventarioIncautacionRowChangeEvent" msprop:Generator_RowClassName="vw_MovimientoInventarioIncautacionRow">
+        <xs:element name="vw_MovimientoInventarioIncautacion" msprop:Generator_TableClassName="vw_MovimientoInventarioIncautacionDataTable" msprop:Generator_TableVarName="tablevw_MovimientoInventarioIncautacion" msprop:Generator_RowChangedName="vw_MovimientoInventarioIncautacionRowChanged" msprop:Generator_TablePropName="vw_MovimientoInventarioIncautacion" msprop:Generator_RowDeletingName="vw_MovimientoInventarioIncautacionRowDeleting" msprop:Generator_RowChangingName="vw_MovimientoInventarioIncautacionRowChanging" msprop:Generator_RowEvHandlerName="vw_MovimientoInventarioIncautacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_MovimientoInventarioIncautacionRowDeleted" msprop:Generator_RowClassName="vw_MovimientoInventarioIncautacionRow" msprop:Generator_UserTableName="vw_MovimientoInventarioIncautacion" msprop:Generator_RowEvArgName="vw_MovimientoInventarioIncautacionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Incaut_Numero" msprop:Generator_ColumnVarNameInTable="columnIncaut_Numero" msprop:Generator_ColumnPropNameInRow="Incaut_Numero" msprop:Generator_ColumnPropNameInTable="Incaut_NumeroColumn" msprop:Generator_UserColumnName="Incaut_Numero">
@@ -176,6 +179,13 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Incaut_Observaciones" msprop:Generator_ColumnVarNameInTable="columnIncaut_Observaciones" msprop:Generator_ColumnPropNameInRow="Incaut_Observaciones" msprop:Generator_ColumnPropNameInTable="Incaut_ObservacionesColumn" msprop:Generator_UserColumnName="Incaut_Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

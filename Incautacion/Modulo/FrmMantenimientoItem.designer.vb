@@ -30,15 +30,15 @@ Partial Class FrmMantenimientoItem
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.BindingSourceListaPrecios = New System.Windows.Forms.BindingSource(Me.components)
         Me.grpexistencias = New System.Windows.Forms.GroupBox()
         Me.DGExistencias = New System.Windows.Forms.DataGridView()
         Me.BindingSourceExistencias = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BSDetallesCombo = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BSPreciosxcantidad = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtSerie = New Infoware.Controles.Base.TextBoxStd()
+        Me.CtlBuscaIncautacion1 = New Incautacion.Modulo.CtlBuscaIncautacion()
+        Me.cboTipo = New Incautacion.Modulo.ComboBoxParametroDet()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.lblcodigoauxiliar = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -54,6 +54,19 @@ Partial Class FrmMantenimientoItem
         Me.txtModelo = New Infoware.Controles.Base.TextBoxStd()
         Me.txtubicacion = New Infoware.Controles.Base.TextBoxStd()
         Me.txtdescripcion = New Infoware.Controles.Base.TextBoxStd()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.dgResoluciones = New Infoware.Consola.Base.DataGridViewAutoDiscover()
+        Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ToolStrip3 = New System.Windows.Forms.ToolStrip()
+        Me.btnnuevaResol = New System.Windows.Forms.ToolStripButton()
+        Me.btnmodiResol = New System.Windows.Forms.ToolStripButton()
+        Me.btnelimResol = New System.Windows.Forms.ToolStripButton()
+        Me.BindingSourceListaPrecios = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BSDetallesCombo = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BSPreciosxcantidad = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -86,36 +99,24 @@ Partial Class FrmMantenimientoItem
         Me.btnReporte = New System.Windows.Forms.ToolStripDropDownButton()
         Me.KardexIndividualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComponentesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.dgResoluciones = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ToolStrip3 = New System.Windows.Forms.ToolStrip()
-        Me.btnnuevaResol = New System.Windows.Forms.ToolStripButton()
-        Me.btnmodiResol = New System.Windows.Forms.ToolStripButton()
-        Me.btnelimResol = New System.Windows.Forms.ToolStripButton()
-        Me.cboTipo = New Incautacion.Modulo.ComboBoxParametroDet()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.CtlBuscaIncautacion1 = New Incautacion.Modulo.CtlBuscaIncautacion()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtSerie = New Infoware.Controles.Base.TextBoxStd()
+        Me.CtlBuscaContribuyente1 = New Incautacion.Modulo.CtlBuscaContribuyente()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
-        CType(Me.BindingSourceListaPrecios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpexistencias.SuspendLayout()
         CType(Me.DGExistencias, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceExistencias, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BSDetallesCombo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BSPreciosxcantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.ToolStrip2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgResoluciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip3.SuspendLayout()
+        CType(Me.BindingSourceListaPrecios, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BSDetallesCombo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BSPreciosxcantidad, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -155,11 +156,10 @@ Partial Class FrmMantenimientoItem
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.grpexistencias)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 287)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 314)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(478, 309)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(478, 282)
         Me.FlowLayoutPanel1.TabIndex = 2
-        Me.FlowLayoutPanel1.Visible = False
         '
         'grpexistencias
         '
@@ -207,18 +207,9 @@ Partial Class FrmMantenimientoItem
         Me.DGExistencias.StandardTab = True
         Me.DGExistencias.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn29
-        '
-        Me.DataGridViewTextBoxColumn29.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn29.Name = "DataGridViewTextBoxColumn29"
-        '
-        'DataGridViewTextBoxColumn30
-        '
-        Me.DataGridViewTextBoxColumn30.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn30.Name = "DataGridViewTextBoxColumn30"
-        '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.CtlBuscaContribuyente1)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.txtSerie)
         Me.Panel2.Controls.Add(Me.CtlBuscaIncautacion1)
@@ -242,8 +233,65 @@ Partial Class FrmMantenimientoItem
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(3, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(478, 284)
+        Me.Panel2.Size = New System.Drawing.Size(478, 311)
         Me.Panel2.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 200)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(34, 13)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Text = "Serie:"
+        '
+        'txtSerie
+        '
+        Me.txtSerie.Location = New System.Drawing.Point(139, 197)
+        Me.txtSerie.Mensaje = ""
+        Me.txtSerie.Name = "txtSerie"
+        Me.txtSerie.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSerie.PromptForeColor = System.Drawing.SystemColors.GrayText
+        Me.txtSerie.PromptText = ""
+        Me.txtSerie.Size = New System.Drawing.Size(159, 20)
+        Me.txtSerie.TabIndex = 30
+        '
+        'CtlBuscaIncautacion1
+        '
+        Me.CtlBuscaIncautacion1.Contribuyente = Nothing
+        Me.CtlBuscaIncautacion1.Incautacion = Nothing
+        Me.CtlBuscaIncautacion1.IncautacionText = "Incautacion"
+        Me.CtlBuscaIncautacion1.Location = New System.Drawing.Point(15, 35)
+        Me.CtlBuscaIncautacion1.Name = "CtlBuscaIncautacion1"
+        Me.CtlBuscaIncautacion1.Size = New System.Drawing.Size(314, 22)
+        Me.CtlBuscaIncautacion1.Sucursal = Nothing
+        Me.CtlBuscaIncautacion1.TabIndex = 28
+        Me.CtlBuscaIncautacion1.Ubicacion = Modulo.CtlBuscaIncautacion.EnumUbicacion.Normal
+        '
+        'cboTipo
+        '
+        Me.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTipo.FormattingEnabled = True
+        Me.cboTipo.Location = New System.Drawing.Point(139, 89)
+        Me.cboTipo.Name = "cboTipo"
+        Me.cboTipo.OperadorDatos = Nothing
+        Me.cboTipo.Parametro = Reglas.Enumerados.EnumParametros.TipoEntidad
+        Me.cboTipo.ParametroDet = Nothing
+        Me.cboTipo.PuedeActualizar = True
+        Me.cboTipo.PuedeEliminar = True
+        Me.cboTipo.PuedeModificar = True
+        Me.cboTipo.PuedeNuevo = True
+        Me.cboTipo.Size = New System.Drawing.Size(159, 21)
+        Me.cboTipo.TabIndex = 27
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(12, 92)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(66, 13)
+        Me.Label10.TabIndex = 26
+        Me.Label10.Text = "Descripción:"
         '
         'lblcodigoauxiliar
         '
@@ -258,7 +306,7 @@ Partial Class FrmMantenimientoItem
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 44)
+        Me.Label1.Location = New System.Drawing.Point(12, 67)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(70, 13)
         Me.Label1.TabIndex = 0
@@ -267,7 +315,7 @@ Partial Class FrmMantenimientoItem
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 96)
+        Me.Label2.Location = New System.Drawing.Point(12, 119)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 13)
         Me.Label2.TabIndex = 2
@@ -276,26 +324,24 @@ Partial Class FrmMantenimientoItem
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(12, 151)
+        Me.Label8.Location = New System.Drawing.Point(12, 174)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(45, 13)
         Me.Label8.TabIndex = 19
         Me.Label8.Text = "Modelo:"
-        Me.Label8.Visible = False
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 230)
+        Me.Label6.Location = New System.Drawing.Point(12, 253)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(70, 13)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "Observación:"
-        Me.Label6.Visible = False
         '
         'txtItemSencuencia
         '
-        Me.txtItemSencuencia.Location = New System.Drawing.Point(139, 40)
+        Me.txtItemSencuencia.Location = New System.Drawing.Point(139, 63)
         Me.txtItemSencuencia.Mensaje = ""
         Me.txtItemSencuencia.Name = "txtItemSencuencia"
         Me.txtItemSencuencia.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -312,7 +358,7 @@ Partial Class FrmMantenimientoItem
         '
         Me.cboEstadoItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboEstadoItem.FormattingEnabled = True
-        Me.cboEstadoItem.Location = New System.Drawing.Point(139, 199)
+        Me.cboEstadoItem.Location = New System.Drawing.Point(139, 222)
         Me.cboEstadoItem.Name = "cboEstadoItem"
         Me.cboEstadoItem.OperadorDatos = Nothing
         Me.cboEstadoItem.Parametro = Reglas.Enumerados.EnumParametros.TipoEntidad
@@ -323,23 +369,21 @@ Partial Class FrmMantenimientoItem
         Me.cboEstadoItem.PuedeNuevo = True
         Me.cboEstadoItem.Size = New System.Drawing.Size(159, 21)
         Me.cboEstadoItem.TabIndex = 9
-        Me.cboEstadoItem.Visible = False
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(12, 256)
+        Me.Label7.Location = New System.Drawing.Point(12, 279)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(96, 13)
         Me.Label7.TabIndex = 17
         Me.Label7.Text = "Unidad de medida:"
-        Me.Label7.Visible = False
         '
         'ComboBoxMarca1
         '
         Me.ComboBoxMarca1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxMarca1.FormattingEnabled = True
-        Me.ComboBoxMarca1.Location = New System.Drawing.Point(139, 121)
+        Me.ComboBoxMarca1.Location = New System.Drawing.Point(139, 144)
         Me.ComboBoxMarca1.Name = "ComboBoxMarca1"
         Me.ComboBoxMarca1.OperadorDatos = Nothing
         Me.ComboBoxMarca1.Parametro = Reglas.Enumerados.EnumParametros.TipoEntidad
@@ -350,23 +394,21 @@ Partial Class FrmMantenimientoItem
         Me.ComboBoxMarca1.PuedeNuevo = True
         Me.ComboBoxMarca1.Size = New System.Drawing.Size(159, 21)
         Me.ComboBoxMarca1.TabIndex = 7
-        Me.ComboBoxMarca1.Visible = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 124)
+        Me.Label4.Location = New System.Drawing.Point(12, 147)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Marca:"
-        Me.Label4.Visible = False
         '
         'ComboBoxUnidadMedida1
         '
         Me.ComboBoxUnidadMedida1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxUnidadMedida1.FormattingEnabled = True
-        Me.ComboBoxUnidadMedida1.Location = New System.Drawing.Point(139, 252)
+        Me.ComboBoxUnidadMedida1.Location = New System.Drawing.Point(139, 275)
         Me.ComboBoxUnidadMedida1.Name = "ComboBoxUnidadMedida1"
         Me.ComboBoxUnidadMedida1.OperadorDatos = Nothing
         Me.ComboBoxUnidadMedida1.Parametro = Reglas.Enumerados.EnumParametros.TipoEntidad
@@ -377,21 +419,19 @@ Partial Class FrmMantenimientoItem
         Me.ComboBoxUnidadMedida1.PuedeNuevo = True
         Me.ComboBoxUnidadMedida1.Size = New System.Drawing.Size(159, 21)
         Me.ComboBoxUnidadMedida1.TabIndex = 18
-        Me.ComboBoxUnidadMedida1.Visible = False
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 202)
+        Me.Label5.Location = New System.Drawing.Point(12, 225)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(43, 13)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Estado:"
-        Me.Label5.Visible = False
         '
         'txtModelo
         '
-        Me.txtModelo.Location = New System.Drawing.Point(139, 148)
+        Me.txtModelo.Location = New System.Drawing.Point(139, 171)
         Me.txtModelo.Mensaje = ""
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -399,13 +439,12 @@ Partial Class FrmMantenimientoItem
         Me.txtModelo.PromptText = ""
         Me.txtModelo.Size = New System.Drawing.Size(159, 20)
         Me.txtModelo.TabIndex = 20
-        Me.txtModelo.Visible = False
         '
         'txtubicacion
         '
         Me.txtubicacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtubicacion.Location = New System.Drawing.Point(139, 226)
+        Me.txtubicacion.Location = New System.Drawing.Point(139, 249)
         Me.txtubicacion.Mensaje = ""
         Me.txtubicacion.Name = "txtubicacion"
         Me.txtubicacion.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -413,13 +452,12 @@ Partial Class FrmMantenimientoItem
         Me.txtubicacion.PromptText = ""
         Me.txtubicacion.Size = New System.Drawing.Size(322, 20)
         Me.txtubicacion.TabIndex = 16
-        Me.txtubicacion.Visible = False
         '
         'txtdescripcion
         '
         Me.txtdescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtdescripcion.Location = New System.Drawing.Point(139, 93)
+        Me.txtdescripcion.Location = New System.Drawing.Point(139, 116)
         Me.txtdescripcion.Mensaje = ""
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
@@ -428,6 +466,119 @@ Partial Class FrmMantenimientoItem
         Me.txtdescripcion.PromptText = ""
         Me.txtdescripcion.Size = New System.Drawing.Size(322, 22)
         Me.txtdescripcion.TabIndex = 3
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.GroupBox5)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(484, 599)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Precios"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.dgResoluciones)
+        Me.GroupBox5.Controls.Add(Me.ToolStrip3)
+        Me.GroupBox5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox5.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(478, 593)
+        Me.GroupBox5.TabIndex = 5
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Precios"
+        '
+        'dgResoluciones
+        '
+        Me.dgResoluciones.AgruparRepetidos = False
+        Me.dgResoluciones.AllowUserToAddRows = False
+        Me.dgResoluciones.AllowUserToDeleteRows = False
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgResoluciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgResoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgResoluciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn31})
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgResoluciones.DefaultCellStyle = DataGridViewCellStyle4
+        Me.dgResoluciones.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgResoluciones.Location = New System.Drawing.Point(3, 41)
+        Me.dgResoluciones.Name = "dgResoluciones"
+        Me.dgResoluciones.ReadOnly = True
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgResoluciones.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgResoluciones.Size = New System.Drawing.Size(472, 549)
+        Me.dgResoluciones.TabIndex = 0
+        '
+        'DataGridViewTextBoxColumn31
+        '
+        Me.DataGridViewTextBoxColumn31.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
+        Me.DataGridViewTextBoxColumn31.ReadOnly = True
+        '
+        'ToolStrip3
+        '
+        Me.ToolStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnnuevaResol, Me.btnmodiResol, Me.btnelimResol})
+        Me.ToolStrip3.Location = New System.Drawing.Point(3, 16)
+        Me.ToolStrip3.Name = "ToolStrip3"
+        Me.ToolStrip3.Size = New System.Drawing.Size(472, 25)
+        Me.ToolStrip3.TabIndex = 1
+        Me.ToolStrip3.Text = "ToolStrip3"
+        '
+        'btnnuevaResol
+        '
+        Me.btnnuevaResol.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnnuevaResol.Image = CType(resources.GetObject("btnnuevaResol.Image"), System.Drawing.Image)
+        Me.btnnuevaResol.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnnuevaResol.Name = "btnnuevaResol"
+        Me.btnnuevaResol.Size = New System.Drawing.Size(23, 22)
+        Me.btnnuevaResol.Text = "Nueva resolución"
+        '
+        'btnmodiResol
+        '
+        Me.btnmodiResol.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnmodiResol.Image = CType(resources.GetObject("btnmodiResol.Image"), System.Drawing.Image)
+        Me.btnmodiResol.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnmodiResol.Name = "btnmodiResol"
+        Me.btnmodiResol.Size = New System.Drawing.Size(23, 22)
+        Me.btnmodiResol.Text = "Modificar resolución"
+        '
+        'btnelimResol
+        '
+        Me.btnelimResol.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnelimResol.Image = CType(resources.GetObject("btnelimResol.Image"), System.Drawing.Image)
+        Me.btnelimResol.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnelimResol.Name = "btnelimResol"
+        Me.btnelimResol.Size = New System.Drawing.Size(23, 22)
+        Me.btnelimResol.Text = "Eliminar resolución"
+        '
+        'DataGridViewTextBoxColumn29
+        '
+        Me.DataGridViewTextBoxColumn29.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn29.Name = "DataGridViewTextBoxColumn29"
+        '
+        'DataGridViewTextBoxColumn30
+        '
+        Me.DataGridViewTextBoxColumn30.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn30.Name = "DataGridViewTextBoxColumn30"
         '
         'DataGridViewTextBoxColumn27
         '
@@ -601,168 +752,16 @@ Partial Class FrmMantenimientoItem
         Me.ComponentesToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
         Me.ComponentesToolStripMenuItem.Text = "Componentes ensamblados"
         '
-        'TabPage2
+        'CtlBuscaContribuyente1
         '
-        Me.TabPage2.Controls.Add(Me.GroupBox5)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(484, 599)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Precios"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.dgResoluciones)
-        Me.GroupBox5.Controls.Add(Me.ToolStrip3)
-        Me.GroupBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox5.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(478, 593)
-        Me.GroupBox5.TabIndex = 5
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Precios"
-        '
-        'dgResoluciones
-        '
-        Me.dgResoluciones.AgruparRepetidos = False
-        Me.dgResoluciones.AllowUserToAddRows = False
-        Me.dgResoluciones.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgResoluciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgResoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgResoluciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn31})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgResoluciones.DefaultCellStyle = DataGridViewCellStyle4
-        Me.dgResoluciones.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgResoluciones.Location = New System.Drawing.Point(3, 41)
-        Me.dgResoluciones.Name = "dgResoluciones"
-        Me.dgResoluciones.ReadOnly = True
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgResoluciones.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgResoluciones.Size = New System.Drawing.Size(472, 549)
-        Me.dgResoluciones.TabIndex = 0
-        '
-        'DataGridViewTextBoxColumn31
-        '
-        Me.DataGridViewTextBoxColumn31.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
-        Me.DataGridViewTextBoxColumn31.ReadOnly = True
-        '
-        'ToolStrip3
-        '
-        Me.ToolStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnnuevaResol, Me.btnmodiResol, Me.btnelimResol})
-        Me.ToolStrip3.Location = New System.Drawing.Point(3, 16)
-        Me.ToolStrip3.Name = "ToolStrip3"
-        Me.ToolStrip3.Size = New System.Drawing.Size(472, 25)
-        Me.ToolStrip3.TabIndex = 1
-        Me.ToolStrip3.Text = "ToolStrip3"
-        '
-        'btnnuevaResol
-        '
-        Me.btnnuevaResol.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnnuevaResol.Image = CType(resources.GetObject("btnnuevaResol.Image"), System.Drawing.Image)
-        Me.btnnuevaResol.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnnuevaResol.Name = "btnnuevaResol"
-        Me.btnnuevaResol.Size = New System.Drawing.Size(23, 22)
-        Me.btnnuevaResol.Text = "Nueva resolución"
-        '
-        'btnmodiResol
-        '
-        Me.btnmodiResol.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnmodiResol.Image = CType(resources.GetObject("btnmodiResol.Image"), System.Drawing.Image)
-        Me.btnmodiResol.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnmodiResol.Name = "btnmodiResol"
-        Me.btnmodiResol.Size = New System.Drawing.Size(23, 22)
-        Me.btnmodiResol.Text = "Modificar resolución"
-        '
-        'btnelimResol
-        '
-        Me.btnelimResol.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnelimResol.Image = CType(resources.GetObject("btnelimResol.Image"), System.Drawing.Image)
-        Me.btnelimResol.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnelimResol.Name = "btnelimResol"
-        Me.btnelimResol.Size = New System.Drawing.Size(23, 22)
-        Me.btnelimResol.Text = "Eliminar resolución"
-        '
-        'cboTipo
-        '
-        Me.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboTipo.FormattingEnabled = True
-        Me.cboTipo.Location = New System.Drawing.Point(139, 66)
-        Me.cboTipo.Name = "cboTipo"
-        Me.cboTipo.OperadorDatos = Nothing
-        Me.cboTipo.Parametro = Reglas.Enumerados.EnumParametros.TipoEntidad
-        Me.cboTipo.ParametroDet = Nothing
-        Me.cboTipo.PuedeActualizar = True
-        Me.cboTipo.PuedeEliminar = True
-        Me.cboTipo.PuedeModificar = True
-        Me.cboTipo.PuedeNuevo = True
-        Me.cboTipo.Size = New System.Drawing.Size(159, 21)
-        Me.cboTipo.TabIndex = 27
-        Me.cboTipo.Visible = False
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(12, 69)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(66, 13)
-        Me.Label10.TabIndex = 26
-        Me.Label10.Text = "Descripción:"
-        Me.Label10.Visible = False
-        '
-        'CtlBuscaIncautacion1
-        '
-        Me.CtlBuscaIncautacion1.Contribuyente = Nothing
-        Me.CtlBuscaIncautacion1.Incautacion = Nothing
-        Me.CtlBuscaIncautacion1.IncautacionText = "Incautacion"
-        Me.CtlBuscaIncautacion1.Location = New System.Drawing.Point(15, 12)
-        Me.CtlBuscaIncautacion1.Name = "CtlBuscaIncautacion1"
-        Me.CtlBuscaIncautacion1.Size = New System.Drawing.Size(314, 22)
-        Me.CtlBuscaIncautacion1.TabIndex = 28
-        Me.CtlBuscaIncautacion1.Ubicacion = Modulo.CtlBuscaIncautacion.EnumUbicacion.Normal
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 177)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(34, 13)
-        Me.Label3.TabIndex = 29
-        Me.Label3.Text = "Serie:"
-        Me.Label3.Visible = False
-        '
-        'txtSerie
-        '
-        Me.txtSerie.Location = New System.Drawing.Point(139, 174)
-        Me.txtSerie.Mensaje = ""
-        Me.txtSerie.Name = "txtSerie"
-        Me.txtSerie.PromptFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSerie.PromptForeColor = System.Drawing.SystemColors.GrayText
-        Me.txtSerie.PromptText = ""
-        Me.txtSerie.Size = New System.Drawing.Size(159, 20)
-        Me.txtSerie.TabIndex = 30
-        Me.txtSerie.Visible = False
+        Me.CtlBuscaContribuyente1.Contribuyente = Nothing
+        Me.CtlBuscaContribuyente1.ContribuyenteText = "Contribuyente"
+        Me.CtlBuscaContribuyente1.ItemText = "Contribuyente"
+        Me.CtlBuscaContribuyente1.Location = New System.Drawing.Point(15, 7)
+        Me.CtlBuscaContribuyente1.Name = "CtlBuscaContribuyente1"
+        Me.CtlBuscaContribuyente1.Size = New System.Drawing.Size(314, 22)
+        Me.CtlBuscaContribuyente1.TabIndex = 31
+        Me.CtlBuscaContribuyente1.Ubicacion = Modulo.CtlBuscaContribuyente.EnumUbicacion.Normal
         '
         'FrmMantenimientoItem
         '
@@ -783,22 +782,22 @@ Partial Class FrmMantenimientoItem
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.FlowLayoutPanel1.ResumeLayout(False)
-        CType(Me.BindingSourceListaPrecios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpexistencias.ResumeLayout(False)
         CType(Me.DGExistencias, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSourceExistencias, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BSDetallesCombo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BSPreciosxcantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.ToolStrip2.ResumeLayout(False)
-        Me.ToolStrip2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         CType(Me.dgResoluciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip3.ResumeLayout(False)
         Me.ToolStrip3.PerformLayout()
+        CType(Me.BindingSourceListaPrecios, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BSDetallesCombo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BSPreciosxcantidad, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip2.ResumeLayout(False)
+        Me.ToolStrip2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -876,5 +875,6 @@ Partial Class FrmMantenimientoItem
     Friend WithEvents CtlBuscaIncautacion1 As Incautacion.Modulo.CtlBuscaIncautacion
     Friend WithEvents cboTipo As Incautacion.Modulo.ComboBoxParametroDet
     Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents CtlBuscaContribuyente1 As Incautacion.Modulo.CtlBuscaContribuyente
 
 End Class

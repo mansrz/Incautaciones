@@ -12,7 +12,7 @@ Public Class FrmListaItems
     End Get
     Set(ByVal value As Sucursal)
       mSucursal = value
-      'Llenar_datos()
+            Llenar_datos()
     End Set
   End Property
 
@@ -259,7 +259,7 @@ Public Class FrmListaItems
     'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
 
     Me.ListBindingSource.DataSource = GetType(Item)
-    mItems = ItemList.ObtenerLista(Sistema.OperadorDatos, Nothing, Nothing, _filtro)
+        mItems = ItemList.ObtenerLista(Sistema.OperadorDatos, Nothing, Nothing, _filtro, BarraEmpresa1.Empresa)
     Dim mitemssort As New Infoware.Reglas.SortedView(mItems)
     ListBindingSource.DataSource = mitemssort
     Me.DataGridView1.AutoDiscover()
@@ -305,7 +305,8 @@ Public Class FrmListaItems
     ' Add any initialization after the InitializeComponent() call.
     EsBusqueda = _busqueda
     'AddHandler Me.DataGridView1.CellMouseMove, AddressOf Me.DataGridView1_CellMouseMove
-    Forma_Inicializar(Me, Nothing)
+        Forma_Inicializar(Me, Nothing)
+        Me.PuedeNuevo = False
   End Sub
 
   Public Sub New(ByVal _Sistema As Sistema, ByVal _OpcionActual As Enumerados.EnumOpciones, ByVal _busqueda As Boolean, Optional ByVal _OpcionNuevo As Enumerados.EnumOpciones = Enumerados.EnumOpciones.Usuarios)

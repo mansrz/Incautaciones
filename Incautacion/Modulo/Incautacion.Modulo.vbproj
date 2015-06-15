@@ -474,6 +474,21 @@
     <Compile Include="Reporteador\FrmLista.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\clsReporteMovimientoInventarioIncautacion.vb" />
+    <Compile Include="Reportes\crpMovimientoInventarioIncautacion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpMovimientoInventarioIncautacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\dsMovimientoInventarioIncautacion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMovimientoInventarioIncautacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dsMovimientoInventarioIncautacion.vb">
+      <DependentUpon>dsMovimientoInventarioIncautacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmIncautacionIngreso.designer.vb">
       <DependentUpon>FrmIncautacionIngreso.vb</DependentUpon>
     </Compile>
@@ -491,17 +506,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>crpEstadoCuenta.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\crpIncautacion.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crpIncautacion.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\dsIncautacion.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsIncautacion.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FrmAnalisisCartera.designer.vb">
       <DependentUpon>FrmAnalisisCartera.vb</DependentUpon>
@@ -912,6 +916,10 @@
     <EmbeddedResource Include="Reporteador\FrmLista.resx">
       <DependentUpon>FrmLista.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\crpMovimientoInventarioIncautacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpMovimientoInventarioIncautacion.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmIncautacionIngreso.resx">
       <DependentUpon>FrmIncautacionIngreso.vb</DependentUpon>
     </EmbeddedResource>
@@ -922,10 +930,6 @@
     <EmbeddedResource Include="Reportes\crpEstadoCuenta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpEstadoCuenta.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\crpIncautacion.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpIncautacion.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmAnalisisCartera.resx">
       <DependentUpon>FrmAnalisisCartera.vb</DependentUpon>
@@ -1113,16 +1117,16 @@
     <None Include="Reportes\dsEstadoCuenta.xss">
       <DependentUpon>dsEstadoCuenta.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\dsIncautacion.xsc">
-      <DependentUpon>dsIncautacion.xsd</DependentUpon>
+    <None Include="Reportes\dsMovimientoInventarioIncautacion.xsc">
+      <DependentUpon>dsMovimientoInventarioIncautacion.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\dsIncautacion.xsd">
+    <None Include="Reportes\dsMovimientoInventarioIncautacion.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsIncautacion.Designer.vb</LastGenOutput>
+      <LastGenOutput>dsMovimientoInventarioIncautacion.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Reportes\dsIncautacion.xss">
-      <DependentUpon>dsIncautacion.xsd</DependentUpon>
+    <None Include="Reportes\dsMovimientoInventarioIncautacion.xss">
+      <DependentUpon>dsMovimientoInventarioIncautacion.xsd</DependentUpon>
     </None>
     <None Include="Resources\abrir.ico" />
   </ItemGroup>

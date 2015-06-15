@@ -91,16 +91,17 @@ Partial Public Class Item
     MyBase.New()
   End Sub
 
+    '<Infoware.Reportes.CampoReporteAtributo("Código", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 50, True)> _
+
   <XmlAttribute()> _
-  <Infoware.Reportes.CampoReporteAtributo("Código", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 50, True)> _
-  Public Overridable Property Item_Codigo() As Integer
-    Get
-      Return Me.mItem_Codigo
-    End Get
-    Set(ByVal value As Integer)
-      Me.mItem_Codigo = value
-      EsModificado = True
-    End Set
+   Public Overridable Property Item_Codigo() As Integer
+        Get
+            Return Me.mItem_Codigo
+        End Get
+        Set(ByVal value As Integer)
+            Me.mItem_Codigo = value
+            EsModificado = True
+        End Set
     End Property
 
     <XmlAttribute()> _
@@ -115,7 +116,7 @@ Partial Public Class Item
     End Property
 
     <XmlAttribute()> _
-  <Infoware.Reportes.CampoReporteAtributo("Código", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Numero, 50, True)> _
+  <Infoware.Reportes.CampoReporteAtributo("Item", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Numero, 50, True)> _
     Public Overridable Property Item_Secuencia() As Integer
         Get
             Return Me.mItem_Secuencia
@@ -148,8 +149,10 @@ Partial Public Class Item
         End Set
     End Property
 
+    
+
+
     <XmlAttribute()> _
-  <Infoware.Reportes.CampoReporteAtributo("Descripción", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, True)> _
     Public Overridable Property Item_Descripcion() As String
         Get
             Return Me.mItem_Descripcion
