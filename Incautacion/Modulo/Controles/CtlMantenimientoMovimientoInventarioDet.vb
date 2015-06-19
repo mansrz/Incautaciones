@@ -13,7 +13,18 @@ Public Class CtlMantenimientoMovimientoInventarioDet
       mMovimientoInventarioDet = value
       llenar_datos()
     End Set
-  End Property
+    End Property
+
+    Private mIncautacion As Reglas.Incautacion = Nothing
+    Public Property Incautacion As Reglas.Incautacion
+        Get
+            Return mIncautacion
+        End Get
+        Set(value As Reglas.Incautacion)
+            mIncautacion = value
+            'llenar_datos()
+        End Set
+    End Property
 
   Private mVerConfidencial As Boolean = False
   Public Property VerConfidencial As Boolean
@@ -64,33 +75,15 @@ Public Class CtlMantenimientoMovimientoInventarioDet
   End Sub
 
     Sub llenar_datos()
-        btnLimpiar.Visible = False
-        If EsNuevo Then
-            pnlaccion.Enabled = True
-            pnlcantidad.Enabled = True
-            btnLimpiar.Visible = True
-            txtSerie.Text = ""
-
-            If chkEsRegistroSerie.Checked Then
-                txtcantidad.Enabled = False
-                txtSerie.Enabled = True
-            Else
-                txtcantidad.Enabled = True
-                txtSerie.Enabled = False
-            End If
-
-        End If
+        'btnLimpiar.Visible = False
 
         If mMovimientoInventarioDet Is Nothing Then
             Me.Enabled = False
             Exit Sub
         End If
 
-        CargarCombos()
-
         Me.Enabled = mMovimientoInventarioDet.EsNuevo
         mEstaCambiando = True
-
 
         enumTipoMovInv = mMovimientoInventarioDet.MovimientoInventario.Pardet_TipomovinvEnum
         If mMovimientoInventarioDet.MovimientoInventario.Venta IsNot Nothing Then
@@ -100,11 +93,17 @@ Public Class CtlMantenimientoMovimientoInventarioDet
         If Not EsNuevo Then
             Me.CtlBuscaItem1.PardetTipoInventario = mPardetTipoInventario
             Me.CtlBuscaItem1.Sucursal = mMovimientoInventarioDet.MovimientoInventario.Sucursal
-            Me.CtlBuscaItem1.Item = mMovimientoInventarioDet.Item
 
-            If Me.CtlBuscaItem1.Item IsNot Nothing Then
-                Me.CtlBuscaItem1.Enabled = Not Me.CtlBuscaItem1.Item.Item_Combo
+            If mIncautacion IsNot Nothing Then
+                Me.CtlBuscaItem1.Incautacion = mIncautacion
+                Me.CtlBuscaItem1.llenar_datos()
+                'Me.CtlBuscaItem1.Item = mMovimientoInventarioDet.Item
+
+                If Me.CtlBuscaItem1.Item IsNot Nothing Then
+                    Me.CtlBuscaItem1.Enabled = Not Me.CtlBuscaItem1.Item.Item_Combo
+                End If
             End If
+
         Else
             If Not mMovimientoInventarioDet.EsNuevo Then
                 Me.cboTipoItem.ParametroDet = mMovimientoInventarioDet.Item.PardetTipo
@@ -125,8 +124,8 @@ Public Class CtlMantenimientoMovimientoInventarioDet
         If mMovimientoInventarioDet.Item IsNot Nothing Then
 
             Me.ComboBoxUnidadMedida.Parametro = Enumerados.EnumParametros.UnidadMedida
-            Me.ComboBoxUnidadMedida.Llenar_Datos(ParametroDetList.enumTipoObjeto.UnidadMedida, Me.CtlBuscaItem1.Item.PardetUnidadMedida)
-            '    Me.ComboBoxUnidadMedida.ParametroDet = mMovimientoInventarioDet.PardetUnidadMedida
+            'Me.ComboBoxUnidadMedida.Llenar_Datos(ParametroDetList.enumTipoObjeto.UnidadMedida, Me.CtlBuscaItem1.Item.PardetUnidadMedida)
+            'Me.ComboBoxUnidadMedida.ParametroDet = mMovimientoInventarioDet.PardetUnidadMedida
 
             If mMovimientoInventarioDet.Item IsNot Nothing Then
                 'Me.txtobservacion.Text = mMovimientoInventarioDet.Moinde_Descripcion
@@ -169,13 +168,20 @@ Public Class CtlMantenimientoMovimientoInventarioDet
             Item.PardetUnidadMedida = Me.ComboBoxUnidadMedida.ParametroDet
             Item.Item_Precio = Me.txtvalor.Value
             'falta el valor
+            mMovimientoInventarioDet.Moinde_Costo = Item.Item_Precio
+            mMovimientoInventarioDet.Item.Item_Precio = Item.Item_Precio
+            mMovimientoInventarioDet.Moinde_Valor = Me.txtvalor.Value
         Else
+            'MessageBox.Show("No es incautacion" + Me.CtlBuscaItem1.Item.Item_Codigo.ToString)
             Item = Me.CtlBuscaItem1.Item
+            mMovimientoInventarioDet.Item.Item_Codigo = Item.Item_Codigo
+            mMovimientoInventarioDet.Item_Codigo = Item.Item_Codigo
+            mMovimientoInventarioDet.Moinde_Costo = Item.Precio
+
         End If
 
         Try
-
-            mMovimientoInventarioDet.Item.PardetTipo = Me.cboTipoItem.ParametroDet
+            mMovimientoInventarioDet.Item.PardetTipo = Item.PardetTipo
             mMovimientoInventarioDet.Item.Item_Descripcion = Item.Item_Descripcion
             mMovimientoInventarioDet.Item.PardetMarca = Item.PardetMarca
             mMovimientoInventarioDet.Item.Item_Modelo = Item.Item_Modelo
@@ -183,7 +189,6 @@ Public Class CtlMantenimientoMovimientoInventarioDet
             mMovimientoInventarioDet.Item.Item_Ubicacion = Item.Item_Ubicacion
             mMovimientoInventarioDet.Item.PardetEstadoItem = Item.PardetEstadoItem
             mMovimientoInventarioDet.Item.PardetUnidadMedida = Item.PardetUnidadMedida
-            mMovimientoInventarioDet.Item.Item_Precio = Item.Item_Precio
 
             mMovimientoInventarioDet.Parame_UnidMedStd = Item.PardetUnidadMedida.Parame_Codigo
             mMovimientoInventarioDet.Pardet_UnidMedStd = Item.PardetUnidadMedida.Pardet_Secuencia
@@ -195,12 +200,15 @@ Public Class CtlMantenimientoMovimientoInventarioDet
             'mMovimientoInventarioDet.Pardet_UnidMedStd = Me.ComboBoxUnidadMedida.ParametroDet.Pardet_Secuencia
             'mMovimientoInventarioDet.Moinde_CantidadStd = 1
 
-            mMovimientoInventarioDet.Moinde_Valor = Me.txtvalor.Value
+            'mMovimientoInventarioDet.Moinde_Valor = Me.txtvalor.Value
             'mMovimientoInventarioDet.Moinde_Descto = Me.txtdescto.Value
             'mMovimientoInventarioDet.Moinde_Aplicaiva = Me.chkaplicaiva.Checked
             'mMovimientoInventarioDet.Moinde_DescripcionLugar = Me.txt_descripcionlugar.Text
             'mMovimientoInventarioDet.Moinde_Modelo = Me.txt_modelo.Text
             'mMovimientoInventarioDet.Moinde_Marca = Me.txt_marca.Text
+            If Me Is Nothing Then
+                MessageBox.Show("yo soy naa")
+            End If
             RaiseEvent Actualizodatos(Me, Nothing)
         Catch ex As Exception
             MessageBox.Show(ex.InnerException.ToString + "mesaje" + ex.Message)
@@ -242,11 +250,23 @@ Public Class CtlMantenimientoMovimientoInventarioDet
                     Me.pnlNuevo.Visible = True
                 Case Enumerados.enumTipoMovInv.Incautacion
                     EsNuevo = True
+                    CargarCombos()
+                    ChequearEsRegistroSerie()
+                    txtSerie.Text = ""
+                    Me.pnlaccion.Visible = True
+                    Me.pnlaccion.Enabled = True
                     Me.pnlNuevo.Visible = True
                     Me.pnlNuevo2.Visible = True
+                    Me.pnlcantidad.Enabled = True
+                    Me.btnLimpiar.Visible = True
                 Case Enumerados.enumTipoMovInv.IncautSalida, Enumerados.enumTipoMovInv.Transferencia
                     EsNuevo = False
                     Me.pnlExistente.Visible = True
+                    Me.pnlNuevo.Visible = False
+                    Me.pnlNuevo2.Visible = False
+                    Me.pnlcantidad.Visible = True
+                    Me.btnLimpiar.Visible = False
+
                 Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevVenta, Enumerados.enumTipoMovInv.Venta, Enumerados.enumTipoMovInv.DevCompra
                     Me.pnlNuevo.Visible = True
                     'Me.pnldescto.Visible = True
@@ -267,7 +287,7 @@ Public Class CtlMantenimientoMovimientoInventarioDet
         CambioItem()
         CambioUnidadMedida()
         mEstaCambiando = False
-        Mapear_datos()
+        'Mapear_datos()
     End Sub
 
     Private Sub ComboBoxUnidadMedida_CambioItem(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComboBoxUnidadMedida.CambioItem, txtcantidad.Validated
@@ -276,6 +296,8 @@ Public Class CtlMantenimientoMovimientoInventarioDet
         End If
         CambioUnidadMedida()
     End Sub
+
+
     Private Sub CambioItem()
         If Not EsNuevo Then
             Me.pnlcantidad.Enabled = Me.CtlBuscaItem1.Item IsNot Nothing
@@ -292,6 +314,9 @@ Public Class CtlMantenimientoMovimientoInventarioDet
 
         'Me.PictureBox1.Image = Me.CtlBuscaItem1.Item.Item_Imagen
         'Me.chkaplicaiva.Checked = Me.CtlBuscaItem1.Item.Item_Aplicaiva
+
+        Me.txtvalor.Value = CtlBuscaItem1.Item.Precio
+        Me.txtvalor.Enabled = False
 
         Me.txtcantidad.Enabled = Not Me.CtlBuscaItem1.Item.Item_esRegistroSerie And Not Me.CtlBuscaItem1.Item.Item_Combo
         'Me.txtvalor.Enabled = Not Me.CtlBuscaItem1.Item.Item_Combo And VerConfidencial
@@ -331,23 +356,6 @@ Public Class CtlMantenimientoMovimientoInventarioDet
         Me.txtcantidad.TipoNumero = IIf(Me.ComboBoxUnidadMedida.ParametroDet.Pardet_DatoBit1, Infoware.Controles.Base.EnumTipoNumero.Decimales, Infoware.Controles.Base.EnumTipoNumero.Entero)
     End Sub
 
-    'Private Sub btnnuevoserie_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-    '    If Me.BSSeries.DataSource Is Nothing Then
-    '        Exit Sub
-    '    End If
-    '    Me.BSSeries.AddNew()
-    '    Me.txtcantidad.Value = Me.BSSeries.Count
-    '    Mapear_datos()
-    'End Sub
-
-    'Private Sub btneliserie_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-    '    If Me.BSSeries.Current Is Nothing Then
-    '        Exit Sub
-    '    End If
-    '    Me.BSSeries.RemoveCurrent()
-    '    Me.txtcantidad.Value = Me.BSSeries.Count
-    '    Mapear_datos()
-    'End Sub
 
     Sub Llenar_detallesExistencia()
         Me.grpexistencias.Visible = Me.CtlBuscaItem1.Item.Item_Estangible
@@ -468,7 +476,7 @@ Public Class CtlMantenimientoMovimientoInventarioDet
 
     Private Sub txtcantidad_Validated(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtcantidad.TextChanged, txtvalor.TextChanged
         If Not mEstaCambiando Then
-            Mapear_datos()
+            'Mapear_datos()
         End If
     End Sub
 
@@ -488,7 +496,6 @@ Public Class CtlMantenimientoMovimientoInventarioDet
 
         If CType(Me.BindingSource1.Item(Me.BindingSource1.Count - 1), MovimientoInventarioDet).Item IsNot Nothing Then
             Me.BindingSource1.AddNew()
-
         Else
             Me.BindingSource1.MoveLast()
         End If
@@ -576,13 +583,11 @@ Public Class CtlMantenimientoMovimientoInventarioDet
     Private mCombosCargados As Boolean = False
 
     Private Sub CargarCombos()
-
         If mMovimientoInventarioDet Is Nothing AndAlso Not mCombosCargados Then
             Exit Sub
         End If
 
         If Not mCombosCargados Then
-
             Me.cboTipoItem.Parametro = Enumerados.EnumParametros.TipoItem
             Me.cboTipoItem.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
             Me.cboTipoItem.Llenar_Datos()
@@ -598,13 +603,12 @@ Public Class CtlMantenimientoMovimientoInventarioDet
             Me.ComboBoxUnidadMedida.Parametro = Enumerados.EnumParametros.UnidadMedida
             Me.ComboBoxUnidadMedida.OperadorDatos = mMovimientoInventarioDet.OperadorDatos
             Me.ComboBoxUnidadMedida.Llenar_Datos()
-
         End If
 
         mCombosCargados = True
     End Sub
 
-    Private Sub chkEsRegistroSerie_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkEsRegistroSerie.CheckedChanged
+    Private Sub ChequearEsRegistroSerie()
         If chkEsRegistroSerie.Checked Then
             txtSerie.Enabled = True
             txtcantidad.Enabled = False
@@ -613,6 +617,10 @@ Public Class CtlMantenimientoMovimientoInventarioDet
             txtSerie.Enabled = False
             txtcantidad.Enabled = True
         End If
+    End Sub
+
+    Private Sub chkEsRegistroSerie_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkEsRegistroSerie.CheckedChanged
+        ChequearEsRegistroSerie()
     End Sub
 
     Private Sub btnLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar.Click

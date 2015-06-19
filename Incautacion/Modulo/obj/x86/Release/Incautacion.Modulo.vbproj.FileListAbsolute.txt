@@ -441,6 +441,7 @@ C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Modulo\obj\x86\Release\In
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.BarraEmpresa.resources
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.ComboBoxSucursal.resources
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.ComboBoxUsuario.resources
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmMantenimientoItemPrecio.resources
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.FrmListaIncautacion.resources
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaIncautacion.resources
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Modulo\obj\x86\Release\Incautacion.Modulo.CtlBuscaContribuyente.resources

@@ -150,6 +150,12 @@
     <Compile Include="Controles\ComboBoxUsuario.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Incautacion\Forms\FrmMantenimientoItemPrecio.designer.vb">
+      <DependentUpon>FrmMantenimientoItemPrecio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmMantenimientoItemPrecio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Incautacion\Forms\FrmListaIncautacion.designer.vb">
       <DependentUpon>FrmListaIncautacion.vb</DependentUpon>
     </Compile>
@@ -774,6 +780,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ComboBoxUsuario.resx">
       <DependentUpon>ComboBoxUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incautacion\Forms\FrmMantenimientoItemPrecio.resx">
+      <DependentUpon>FrmMantenimientoItemPrecio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Incautacion\Forms\FrmListaIncautacion.resx">
       <DependentUpon>FrmListaIncautacion.vb</DependentUpon>

@@ -91,6 +91,11 @@ Public Class FrmMantenimientoItem
 
             Me.grpexistencias.Enabled = Not mItem.EsNuevo
 
+
+            bsPrecios.DataSource = mItem.Precios
+            MessageBox.Show("precios" + mItem.Precios.Count.ToString)
+            dgPrecios.AutoDiscover()
+
             Llenar_detallesExistencia()
         End If
         'Me.CtlKardexIndividual1.Sistema = Me.Sistema
@@ -159,9 +164,9 @@ Public Class FrmMantenimientoItem
                 Next
             End If
 
-            For Each _ItemxTipoPrecio As ItemxTipoPrecio In Me.BindingSourceListaPrecios.DataSource
-                _ItemxTipoPrecio.Guardar()
-            Next
+            'For Each _ItemxTipoPrecio As ItemxTipoPrecio In Me.BindingSourceListaPrecios.DataSource
+            '    _ItemxTipoPrecio.Guardar()
+            'Next
             llenar_datos()
             Return True
         Catch ex As Exception
@@ -450,4 +455,29 @@ Public Class FrmMantenimientoItem
     '    mItem.DetallesPrecioxCantidadEliminados.Add(Me.BSPreciosxcantidad.Current)
     '    Me.BSPreciosxcantidad.RemoveCurrent()
     'End Sub
+
+    Private Sub btnnuevoPrecio_Click(sender As System.Object, e As System.EventArgs) Handles btnnuevoPrecio.Click
+        bsPrecios.AddNew()
+
+        If Sistema Is Nothing Then
+            MessageBox.Show("sistema es naa")
+        End If
+
+        If Sistema.OperadorDatos Is Nothing Then
+            MessageBox.Show("operador de sistem es naa")
+        End If
+
+        Dim f As New FrmMantenimientoItemPrecio(Sistema, Enumerados.EnumOpciones.ListadoItems)
+        'f.RegistroAceptado = False
+        f.Item = Item
+        'f.IncautacionResolucion = _IncautacionResolucion
+        f.ItemPrecios = Me.bsPrecios
+        f.ShowDialog()
+        If bsPrecios.Count <= 1 Then
+            Me.dgPrecios.AutoDiscover()
+        End If
+        Me.dgPrecios.Invalidate()
+        f.Dispose()
+
+    End Sub
 End Class

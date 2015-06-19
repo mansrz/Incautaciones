@@ -97,7 +97,7 @@ Public Class FrmMantenimientoIncautacion
 
         'bsResoluciones.DataSource = GetType(IncautacionResolucionList)
         Me.bsResoluciones.DataSource = mIncautacion.IncautacionResoluciones
-        MessageBox.Show("resoluciones" + mIncautacion.IncautacionResoluciones.Count.ToString)
+        'MessageBox.Show("resoluciones" + mIncautacion.IncautacionResoluciones.Count.ToString)
         Me.dgResoluciones.AutoDiscover()
 
     End Sub

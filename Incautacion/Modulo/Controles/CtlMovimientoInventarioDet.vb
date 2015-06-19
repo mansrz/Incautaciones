@@ -162,10 +162,10 @@ Public Class CtlMovimientoInventarioDet
 
         Dim _total As Boolean = False
         Select Case mMovimientoInventario.Pardet_Tipomovinv
-            Case Enumerados.enumTipoMovInv.AjustePos, Enumerados.enumTipoMovInv.AjusteNeg, Enumerados.enumTipoMovInv.Transferencia, Enumerados.enumTipoMovInv.Consumo, Enumerados.enumTipoMovInv.DesperdicioOP, Enumerados.enumTipoMovInv.OrdenProduccion
+            Case Enumerados.enumTipoMovInv.AjustePos, Enumerados.enumTipoMovInv.AjusteNeg, Enumerados.enumTipoMovInv.Consumo, Enumerados.enumTipoMovInv.DesperdicioOP, Enumerados.enumTipoMovInv.OrdenProduccion
             Case Else
                 DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-                DataGridViewTextBoxColumn1.DataPropertyName = "Moinde_Valor"
+                DataGridViewTextBoxColumn1.DataPropertyName = "Moinde_Costo"
                 DataGridViewTextBoxColumn1.HeaderText = "VALOR UNITARIO"
                 DataGridViewTextBoxColumn1.Width = 65 * mFactorTamanio
                 DataGridViewTextBoxColumn1.ReadOnly = False

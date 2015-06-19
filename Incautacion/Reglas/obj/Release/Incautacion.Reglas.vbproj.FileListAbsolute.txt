@@ -39,6 +39,7 @@ C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\In
 C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.pdb
 C:\Users\Interprof 8\tempo\Dropbox\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbprojResolveAssemblyReference.cache
 D:\Dropbox\GitHub\Incautacion\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Incautacion.Reglas.dll.config
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Incautacion.Reglas.dll
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Incautacion.Reglas.pdb
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Incautacion.Reglas.xml
@@ -52,5 +53,3 @@ C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\obj\Release\Incaut
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\obj\Release\Incautacion.Reglas.dll
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\obj\Release\Incautacion.Reglas.xml
 C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\obj\Release\Incautacion.Reglas.pdb
-C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\bin\Release\Incautacion.Reglas.dll.config
-C:\Users\PC\Documents\GitHub\Incautaciones\Incautacion\Reglas\obj\Release\Incautacion.Reglas.vbprojResolveAssemblyReference.cache

@@ -521,7 +521,8 @@ Public Class MovimientoInventario
   <Infoware.Reportes.CampoReporteAtributo("Total General", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales, 80, True)> _
   Public Overridable ReadOnly Property TotalGeneral() As Decimal
     Get
-      Return Decimal.Round(BaseImponibleRetFte + TotalIva, 2)
+            'Return Decimal.Round(BaseImponibleRetFte + TotalIva, 2)
+            Return Decimal.Round(BaseImponibleRetFte, 2)
     End Get
   End Property
 
@@ -1008,24 +1009,28 @@ Public Class MovimientoInventario
             End If
 
             'guardar detalles
-
+            MsgBox("voy a guardar items " + Detalles.Count.ToString)
             For Each _detalle As MovimientoInventarioDet In Detalles
                 _detalle.MovimientoInventario = Me
                 _detalle.EsNuevo = True
+                MsgBox("detalle " + _detalle.Item_Codigo.ToString + " costo  " + _detalle.Moinde_Costo.ToString + " cantidad " + _detalle.Moinde_Cantidad.ToString)
                 If Not _detalle.Item_Codigo = 0 And Not _detalle.Moinde_Cantidad = 0 Then
+                    MsgBox("no es item cod 0 ni cant 0")
                     If Not _detalle.Guardar() Then
+                        MsgBox("no guardo")
                         bReturn = False
                         Exit For
                     End If
                 End If
+
                 If Pardet_TipomovinvEnum = Enumerados.enumTipoMovInv.Incautacion Then
                     If _detalle.Item_Codigo = 0 And Not _detalle.Moinde_Cantidad = 0 And _detalle.Item IsNot Nothing Then
-                        'MsgBox("es nuevoooo" + _detalle.Item.Item_Descripcion)
+                        MsgBox("es nuevoooo" + _detalle.Item.Item_Descripcion)
                         _detalle.Item.Incautacion = Incautacion
                         _detalle.Item.Empresa = Sucursal.Empresa
                         If _detalle.Item.Guardar() Then
-                            'MsgBox("item guardado")
-                            'MsgBox(_detalle.Item.Item_Codigo.ToString)
+                            MsgBox("item guardado")
+                            MsgBox(_detalle.Item.Item_Codigo.ToString)
                             If Not _detalle.Guardar() Then
                                 bReturn = False
                                 Exit For

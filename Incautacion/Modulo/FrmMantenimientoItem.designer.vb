@@ -34,6 +34,7 @@ Partial Class FrmMantenimientoItem
         Me.DGExistencias = New System.Windows.Forms.DataGridView()
         Me.BindingSourceExistencias = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.CtlBuscaContribuyente1 = New Incautacion.Modulo.CtlBuscaContribuyente()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtSerie = New Infoware.Controles.Base.TextBoxStd()
         Me.CtlBuscaIncautacion1 = New Incautacion.Modulo.CtlBuscaIncautacion()
@@ -56,15 +57,13 @@ Partial Class FrmMantenimientoItem
         Me.txtdescripcion = New Infoware.Controles.Base.TextBoxStd()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.dgResoluciones = New Infoware.Consola.Base.DataGridViewAutoDiscover()
+        Me.dgPrecios = New Infoware.Consola.Base.DataGridViewAutoDiscover()
         Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip3 = New System.Windows.Forms.ToolStrip()
-        Me.btnnuevaResol = New System.Windows.Forms.ToolStripButton()
-        Me.btnmodiResol = New System.Windows.Forms.ToolStripButton()
-        Me.btnelimResol = New System.Windows.Forms.ToolStripButton()
-        Me.BindingSourceListaPrecios = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnnuevoPrecio = New System.Windows.Forms.ToolStripButton()
+        Me.btnmodiPrecio = New System.Windows.Forms.ToolStripButton()
+        Me.btnelimPrecio = New System.Windows.Forms.ToolStripButton()
         Me.DataGridViewTextBoxColumn29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BSDetallesCombo = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BSPreciosxcantidad = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -99,7 +98,7 @@ Partial Class FrmMantenimientoItem
         Me.btnReporte = New System.Windows.Forms.ToolStripDropDownButton()
         Me.KardexIndividualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComponentesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CtlBuscaContribuyente1 = New Incautacion.Modulo.CtlBuscaContribuyente()
+        Me.bsPrecios = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -111,12 +110,11 @@ Partial Class FrmMantenimientoItem
         Me.Panel2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.dgResoluciones, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgPrecios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip3.SuspendLayout()
-        CType(Me.BindingSourceListaPrecios, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BSDetallesCombo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BSPreciosxcantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip2.SuspendLayout()
+        CType(Me.bsPrecios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -235,6 +233,17 @@ Partial Class FrmMantenimientoItem
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(478, 311)
         Me.Panel2.TabIndex = 0
+        '
+        'CtlBuscaContribuyente1
+        '
+        Me.CtlBuscaContribuyente1.Contribuyente = Nothing
+        Me.CtlBuscaContribuyente1.ContribuyenteText = "Contribuyente"
+        Me.CtlBuscaContribuyente1.ItemText = "Contribuyente"
+        Me.CtlBuscaContribuyente1.Location = New System.Drawing.Point(15, 7)
+        Me.CtlBuscaContribuyente1.Name = "CtlBuscaContribuyente1"
+        Me.CtlBuscaContribuyente1.Size = New System.Drawing.Size(314, 22)
+        Me.CtlBuscaContribuyente1.TabIndex = 31
+        Me.CtlBuscaContribuyente1.Ubicacion = Modulo.CtlBuscaContribuyente.EnumUbicacion.Normal
         '
         'Label3
         '
@@ -480,7 +489,7 @@ Partial Class FrmMantenimientoItem
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.dgResoluciones)
+        Me.GroupBox5.Controls.Add(Me.dgPrecios)
         Me.GroupBox5.Controls.Add(Me.ToolStrip3)
         Me.GroupBox5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox5.Location = New System.Drawing.Point(3, 3)
@@ -490,11 +499,11 @@ Partial Class FrmMantenimientoItem
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Precios"
         '
-        'dgResoluciones
+        'dgPrecios
         '
-        Me.dgResoluciones.AgruparRepetidos = False
-        Me.dgResoluciones.AllowUserToAddRows = False
-        Me.dgResoluciones.AllowUserToDeleteRows = False
+        Me.dgPrecios.AgruparRepetidos = False
+        Me.dgPrecios.AllowUserToAddRows = False
+        Me.dgPrecios.AllowUserToDeleteRows = False
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -502,9 +511,9 @@ Partial Class FrmMantenimientoItem
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgResoluciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgResoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgResoluciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn31})
+        Me.dgPrecios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgPrecios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgPrecios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn31})
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -512,11 +521,11 @@ Partial Class FrmMantenimientoItem
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgResoluciones.DefaultCellStyle = DataGridViewCellStyle4
-        Me.dgResoluciones.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgResoluciones.Location = New System.Drawing.Point(3, 41)
-        Me.dgResoluciones.Name = "dgResoluciones"
-        Me.dgResoluciones.ReadOnly = True
+        Me.dgPrecios.DefaultCellStyle = DataGridViewCellStyle4
+        Me.dgPrecios.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgPrecios.Location = New System.Drawing.Point(3, 41)
+        Me.dgPrecios.Name = "dgPrecios"
+        Me.dgPrecios.ReadOnly = True
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -524,9 +533,9 @@ Partial Class FrmMantenimientoItem
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgResoluciones.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgResoluciones.Size = New System.Drawing.Size(472, 549)
-        Me.dgResoluciones.TabIndex = 0
+        Me.dgPrecios.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgPrecios.Size = New System.Drawing.Size(472, 549)
+        Me.dgPrecios.TabIndex = 2
         '
         'DataGridViewTextBoxColumn31
         '
@@ -536,39 +545,41 @@ Partial Class FrmMantenimientoItem
         '
         'ToolStrip3
         '
-        Me.ToolStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnnuevaResol, Me.btnmodiResol, Me.btnelimResol})
+        Me.ToolStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnnuevoPrecio, Me.btnmodiPrecio, Me.btnelimPrecio})
         Me.ToolStrip3.Location = New System.Drawing.Point(3, 16)
         Me.ToolStrip3.Name = "ToolStrip3"
         Me.ToolStrip3.Size = New System.Drawing.Size(472, 25)
         Me.ToolStrip3.TabIndex = 1
         Me.ToolStrip3.Text = "ToolStrip3"
         '
-        'btnnuevaResol
+        'btnnuevoPrecio
         '
-        Me.btnnuevaResol.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnnuevaResol.Image = CType(resources.GetObject("btnnuevaResol.Image"), System.Drawing.Image)
-        Me.btnnuevaResol.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnnuevaResol.Name = "btnnuevaResol"
-        Me.btnnuevaResol.Size = New System.Drawing.Size(23, 22)
-        Me.btnnuevaResol.Text = "Nueva resolución"
+        Me.btnnuevoPrecio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnnuevoPrecio.Image = CType(resources.GetObject("btnnuevoPrecio.Image"), System.Drawing.Image)
+        Me.btnnuevoPrecio.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnnuevoPrecio.Name = "btnnuevoPrecio"
+        Me.btnnuevoPrecio.Size = New System.Drawing.Size(23, 22)
+        Me.btnnuevoPrecio.Text = "Nuevo precio"
         '
-        'btnmodiResol
+        'btnmodiPrecio
         '
-        Me.btnmodiResol.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnmodiResol.Image = CType(resources.GetObject("btnmodiResol.Image"), System.Drawing.Image)
-        Me.btnmodiResol.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnmodiResol.Name = "btnmodiResol"
-        Me.btnmodiResol.Size = New System.Drawing.Size(23, 22)
-        Me.btnmodiResol.Text = "Modificar resolución"
+        Me.btnmodiPrecio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnmodiPrecio.Enabled = False
+        Me.btnmodiPrecio.Image = CType(resources.GetObject("btnmodiPrecio.Image"), System.Drawing.Image)
+        Me.btnmodiPrecio.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnmodiPrecio.Name = "btnmodiPrecio"
+        Me.btnmodiPrecio.Size = New System.Drawing.Size(23, 22)
+        Me.btnmodiPrecio.Text = "Modificar resolución"
         '
-        'btnelimResol
+        'btnelimPrecio
         '
-        Me.btnelimResol.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnelimResol.Image = CType(resources.GetObject("btnelimResol.Image"), System.Drawing.Image)
-        Me.btnelimResol.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnelimResol.Name = "btnelimResol"
-        Me.btnelimResol.Size = New System.Drawing.Size(23, 22)
-        Me.btnelimResol.Text = "Eliminar resolución"
+        Me.btnelimPrecio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnelimPrecio.Enabled = False
+        Me.btnelimPrecio.Image = CType(resources.GetObject("btnelimPrecio.Image"), System.Drawing.Image)
+        Me.btnelimPrecio.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnelimPrecio.Name = "btnelimPrecio"
+        Me.btnelimPrecio.Size = New System.Drawing.Size(23, 22)
+        Me.btnelimPrecio.Text = "Eliminar resolución"
         '
         'DataGridViewTextBoxColumn29
         '
@@ -752,17 +763,6 @@ Partial Class FrmMantenimientoItem
         Me.ComponentesToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
         Me.ComponentesToolStripMenuItem.Text = "Componentes ensamblados"
         '
-        'CtlBuscaContribuyente1
-        '
-        Me.CtlBuscaContribuyente1.Contribuyente = Nothing
-        Me.CtlBuscaContribuyente1.ContribuyenteText = "Contribuyente"
-        Me.CtlBuscaContribuyente1.ItemText = "Contribuyente"
-        Me.CtlBuscaContribuyente1.Location = New System.Drawing.Point(15, 7)
-        Me.CtlBuscaContribuyente1.Name = "CtlBuscaContribuyente1"
-        Me.CtlBuscaContribuyente1.Size = New System.Drawing.Size(314, 22)
-        Me.CtlBuscaContribuyente1.TabIndex = 31
-        Me.CtlBuscaContribuyente1.Ubicacion = Modulo.CtlBuscaContribuyente.EnumUbicacion.Normal
-        '
         'FrmMantenimientoItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -790,14 +790,13 @@ Partial Class FrmMantenimientoItem
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        CType(Me.dgResoluciones, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgPrecios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip3.ResumeLayout(False)
         Me.ToolStrip3.PerformLayout()
-        CType(Me.BindingSourceListaPrecios, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BSDetallesCombo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BSPreciosxcantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip2.ResumeLayout(False)
         Me.ToolStrip2.PerformLayout()
+        CType(Me.bsPrecios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -818,7 +817,6 @@ Partial Class FrmMantenimientoItem
     Friend WithEvents txtdescripcion As Infoware.Controles.Base.TextBoxStd
     Friend WithEvents grpexistencias As System.Windows.Forms.GroupBox
     Friend WithEvents BindingSourceExistencias As System.Windows.Forms.BindingSource
-    Friend WithEvents BindingSourceListaPrecios As System.Windows.Forms.BindingSource
     Private WithEvents DGExistencias As System.Windows.Forms.DataGridView
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txtModelo As Infoware.Controles.Base.TextBoxStd
@@ -830,7 +828,6 @@ Partial Class FrmMantenimientoItem
     Friend WithEvents KardexIndividualToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ComponentesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
-    Friend WithEvents BSDetallesCombo As System.Windows.Forms.BindingSource
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -864,17 +861,18 @@ Partial Class FrmMantenimientoItem
     Friend WithEvents DataGridViewTextBoxColumn30 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-    Friend WithEvents dgResoluciones As Infoware.Consola.Base.DataGridViewAutoDiscover
-    Friend WithEvents DataGridViewTextBoxColumn31 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ToolStrip3 As System.Windows.Forms.ToolStrip
-    Friend WithEvents btnnuevaResol As System.Windows.Forms.ToolStripButton
-    Friend WithEvents btnmodiResol As System.Windows.Forms.ToolStripButton
-    Friend WithEvents btnelimResol As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btnnuevoPrecio As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btnmodiPrecio As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btnelimPrecio As System.Windows.Forms.ToolStripButton
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtSerie As Infoware.Controles.Base.TextBoxStd
     Friend WithEvents CtlBuscaIncautacion1 As Incautacion.Modulo.CtlBuscaIncautacion
     Friend WithEvents cboTipo As Incautacion.Modulo.ComboBoxParametroDet
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents CtlBuscaContribuyente1 As Incautacion.Modulo.CtlBuscaContribuyente
+    Friend WithEvents dgPrecios As Infoware.Consola.Base.DataGridViewAutoDiscover
+    Friend WithEvents DataGridViewTextBoxColumn31 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents bsPrecios As System.Windows.Forms.BindingSource
 
 End Class

@@ -263,7 +263,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.CtlBuscaItem1.PardetTipoInventario = Nothing
         Me.CtlBuscaItem1.Size = New System.Drawing.Size(341, 21)
         Me.CtlBuscaItem1.TabIndex = 0
-        Me.CtlBuscaItem1.Ubicacion = Incautacion.Modulo.CtlBuscaItem.EnumUbicacion.Normal
+        Me.CtlBuscaItem1.Ubicacion = Modulo.CtlBuscaItem.EnumUbicacion.Normal
         '
         'grpexistencias
         '
@@ -454,7 +454,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.ComboBoxMarca1.Location = New System.Drawing.Point(83, 24)
         Me.ComboBoxMarca1.Name = "ComboBoxMarca1"
         Me.ComboBoxMarca1.OperadorDatos = Nothing
-        Me.ComboBoxMarca1.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
+        Me.ComboBoxMarca1.Parametro = Reglas.Enumerados.EnumParametros.TipoEntidad
         Me.ComboBoxMarca1.ParametroDet = Nothing
         Me.ComboBoxMarca1.PuedeActualizar = True
         Me.ComboBoxMarca1.PuedeEliminar = True
@@ -479,7 +479,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.cboTipoItem.Location = New System.Drawing.Point(83, 0)
         Me.cboTipoItem.Name = "cboTipoItem"
         Me.cboTipoItem.OperadorDatos = Nothing
-        Me.cboTipoItem.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.Grupo
+        Me.cboTipoItem.Parametro = Reglas.Enumerados.EnumParametros.Grupo
         Me.cboTipoItem.ParametroDet = Nothing
         Me.cboTipoItem.PuedeActualizar = True
         Me.cboTipoItem.PuedeEliminar = True
@@ -554,7 +554,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.pnlcantidad.Controls.Add(Me.Label4)
         Me.pnlcantidad.Location = New System.Drawing.Point(3, 106)
         Me.pnlcantidad.Name = "pnlcantidad"
-        Me.pnlcantidad.Size = New System.Drawing.Size(347, 68)
+        Me.pnlcantidad.Size = New System.Drawing.Size(245, 68)
         Me.pnlcantidad.TabIndex = 1
         '
         'ComboBoxUnidadMedida
@@ -564,7 +564,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.ComboBoxUnidadMedida.Location = New System.Drawing.Point(103, 0)
         Me.ComboBoxUnidadMedida.Name = "ComboBoxUnidadMedida"
         Me.ComboBoxUnidadMedida.OperadorDatos = Nothing
-        Me.ComboBoxUnidadMedida.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.TipoEntidad
+        Me.ComboBoxUnidadMedida.Parametro = Reglas.Enumerados.EnumParametros.TipoEntidad
         Me.ComboBoxUnidadMedida.ParametroDet = Nothing
         Me.ComboBoxUnidadMedida.PuedeActualizar = True
         Me.ComboBoxUnidadMedida.PuedeEliminar = True
@@ -626,7 +626,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.cboEstado.Location = New System.Drawing.Point(83, 0)
         Me.cboEstado.Name = "cboEstado"
         Me.cboEstado.OperadorDatos = Nothing
-        Me.cboEstado.Parametro = Incautacion.Reglas.Enumerados.EnumParametros.Grupo
+        Me.cboEstado.Parametro = Reglas.Enumerados.EnumParametros.Grupo
         Me.cboEstado.ParametroDet = Nothing
         Me.cboEstado.PuedeActualizar = True
         Me.cboEstado.PuedeEliminar = True

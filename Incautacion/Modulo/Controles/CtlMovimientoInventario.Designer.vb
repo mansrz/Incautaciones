@@ -43,6 +43,7 @@ Partial Class CtlMovimientoInventario
         Me.txtobservacion = New Infoware.Controles.Base.TextBoxStd()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.pnlIncautacion = New System.Windows.Forms.Panel()
+        Me.CtlBuscaIncautacion1 = New Incautacion.Modulo.CtlBuscaIncautacion()
         Me.CtlBuscaContribuyente1 = New Incautacion.Modulo.CtlBuscaContribuyente()
         Me.pnlclienteproveedor = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
@@ -94,7 +95,6 @@ Partial Class CtlMovimientoInventario
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.CtlBuscaIncautacion1 = New Incautacion.Modulo.CtlBuscaIncautacion()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.pnlcodigo.SuspendLayout()
         Me.barracancelar.SuspendLayout()
@@ -331,6 +331,18 @@ Partial Class CtlMovimientoInventario
         Me.pnlIncautacion.Name = "pnlIncautacion"
         Me.pnlIncautacion.Size = New System.Drawing.Size(1005, 54)
         Me.pnlIncautacion.TabIndex = 2
+        '
+        'CtlBuscaIncautacion1
+        '
+        Me.CtlBuscaIncautacion1.Contribuyente = Nothing
+        Me.CtlBuscaIncautacion1.Incautacion = Nothing
+        Me.CtlBuscaIncautacion1.IncautacionText = "Incautacion"
+        Me.CtlBuscaIncautacion1.Location = New System.Drawing.Point(3, 29)
+        Me.CtlBuscaIncautacion1.Name = "CtlBuscaIncautacion1"
+        Me.CtlBuscaIncautacion1.Size = New System.Drawing.Size(364, 22)
+        Me.CtlBuscaIncautacion1.Sucursal = Nothing
+        Me.CtlBuscaIncautacion1.TabIndex = 12
+        Me.CtlBuscaIncautacion1.Ubicacion = Incautacion.Modulo.CtlBuscaIncautacion.EnumUbicacion.Normal
         '
         'CtlBuscaContribuyente1
         '
@@ -924,17 +936,6 @@ Partial Class CtlMovimientoInventario
         Me.Label6.Size = New System.Drawing.Size(98, 13)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Base imponible 0%:"
-        '
-        'CtlBuscaIncautacion1
-        '
-        Me.CtlBuscaIncautacion1.Contribuyente = Nothing
-        Me.CtlBuscaIncautacion1.Incautacion = Nothing
-        Me.CtlBuscaIncautacion1.IncautacionText = "Incautacion"
-        Me.CtlBuscaIncautacion1.Location = New System.Drawing.Point(3, 29)
-        Me.CtlBuscaIncautacion1.Name = "CtlBuscaIncautacion1"
-        Me.CtlBuscaIncautacion1.Size = New System.Drawing.Size(364, 22)
-        Me.CtlBuscaIncautacion1.TabIndex = 12
-        Me.CtlBuscaIncautacion1.Ubicacion = Incautacion.Modulo.CtlBuscaIncautacion.EnumUbicacion.Normal
         '
         'CtlMovimientoInventario
         '

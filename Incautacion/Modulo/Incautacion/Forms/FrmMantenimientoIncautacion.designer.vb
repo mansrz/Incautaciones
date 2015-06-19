@@ -24,12 +24,8 @@ Partial Class FrmMantenimientoIncautacion
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMantenimientoIncautacion))
-        Me.BindingSourceListaPrecios = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BindingSourceExistencias = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BSDetallesCombo = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BSPreciosxcantidad = New System.Windows.Forms.BindingSource(Me.components)
         Me.bsResoluciones = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,8 +60,6 @@ Partial Class FrmMantenimientoIncautacion
         Me.txtObservacion = New System.Windows.Forms.RichTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.CtlBuscaFedatario = New Incautacion.Modulo.CtlBuscaEmpleado()
-        Me.CtlBuscaAdministrativo = New Incautacion.Modulo.CtlBuscaEmpleado()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtCedula = New Infoware.Controles.Base.TextBoxStd()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -75,20 +69,19 @@ Partial Class FrmMantenimientoIncautacion
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtNumero = New Infoware.Controles.Base.TextBoxStd()
-        Me.CtlBuscaContribuyente1 = New Incautacion.Modulo.CtlBuscaContribuyente()
         Me.tpResolucion = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgResoluciones = New Infoware.Consola.Base.DataGridViewAutoDiscover()
         Me.DataGridViewTextBoxColumn94 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.btnnuevaResol = New System.Windows.Forms.ToolStripButton()
         Me.btnmodiResol = New System.Windows.Forms.ToolStripButton()
         Me.btnelimResol = New System.Windows.Forms.ToolStripButton()
+        Me.CtlBuscaFedatario = New Incautacion.Modulo.CtlBuscaEmpleado()
+        Me.CtlBuscaAdministrativo = New Incautacion.Modulo.CtlBuscaEmpleado()
+        Me.CtlBuscaContribuyente1 = New Incautacion.Modulo.CtlBuscaContribuyente()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingSourceListaPrecios, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingSourceExistencias, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BSDetallesCombo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BSPreciosxcantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsResoluciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbIncautacion.SuspendLayout()
         Me.tpDatos.SuspendLayout()
@@ -308,30 +301,6 @@ Partial Class FrmMantenimientoIncautacion
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Funcionarios participantes"
         '
-        'CtlBuscaFedatario
-        '
-        Me.CtlBuscaFedatario.Empleado = Nothing
-        Me.CtlBuscaFedatario.EmpleadoText = "Fedatario"
-        Me.CtlBuscaFedatario.ItemText = "Fedatario"
-        Me.CtlBuscaFedatario.Location = New System.Drawing.Point(6, 19)
-        Me.CtlBuscaFedatario.Name = "CtlBuscaFedatario"
-        Me.CtlBuscaFedatario.Size = New System.Drawing.Size(304, 22)
-        Me.CtlBuscaFedatario.TabIndex = 47
-        Me.CtlBuscaFedatario.TipoEmpleado = Nothing
-        Me.CtlBuscaFedatario.Ubicacion = Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
-        '
-        'CtlBuscaAdministrativo
-        '
-        Me.CtlBuscaAdministrativo.Empleado = Nothing
-        Me.CtlBuscaAdministrativo.EmpleadoText = "Administrativo"
-        Me.CtlBuscaAdministrativo.ItemText = "Administrativo"
-        Me.CtlBuscaAdministrativo.Location = New System.Drawing.Point(6, 47)
-        Me.CtlBuscaAdministrativo.Name = "CtlBuscaAdministrativo"
-        Me.CtlBuscaAdministrativo.Size = New System.Drawing.Size(304, 22)
-        Me.CtlBuscaAdministrativo.TabIndex = 48
-        Me.CtlBuscaAdministrativo.TipoEmpleado = Nothing
-        Me.CtlBuscaAdministrativo.Ubicacion = Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.txtCedula)
@@ -432,17 +401,6 @@ Partial Class FrmMantenimientoIncautacion
         Me.txtNumero.Size = New System.Drawing.Size(191, 22)
         Me.txtNumero.TabIndex = 60
         '
-        'CtlBuscaContribuyente1
-        '
-        Me.CtlBuscaContribuyente1.Contribuyente = Nothing
-        Me.CtlBuscaContribuyente1.ContribuyenteText = "Contribuyente"
-        Me.CtlBuscaContribuyente1.ItemText = "Contribuyente"
-        Me.CtlBuscaContribuyente1.Location = New System.Drawing.Point(8, 6)
-        Me.CtlBuscaContribuyente1.Name = "CtlBuscaContribuyente1"
-        Me.CtlBuscaContribuyente1.Size = New System.Drawing.Size(316, 22)
-        Me.CtlBuscaContribuyente1.TabIndex = 58
-        Me.CtlBuscaContribuyente1.Ubicacion = Modulo.CtlBuscaContribuyente.EnumUbicacion.Normal
-        '
         'tpResolucion
         '
         Me.tpResolucion.Controls.Add(Me.GroupBox5)
@@ -471,6 +429,7 @@ Partial Class FrmMantenimientoIncautacion
         Me.dgResoluciones.AgruparRepetidos = False
         Me.dgResoluciones.AllowUserToAddRows = False
         Me.dgResoluciones.AllowUserToDeleteRows = False
+        Me.dgResoluciones.AutoGenerateColumns = False
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -480,7 +439,7 @@ Partial Class FrmMantenimientoIncautacion
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgResoluciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgResoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgResoluciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn94})
+        Me.dgResoluciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn31})
         Me.dgResoluciones.DataSource = Me.bsResoluciones
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
@@ -510,6 +469,12 @@ Partial Class FrmMantenimientoIncautacion
         Me.DataGridViewTextBoxColumn94.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn94.Name = "DataGridViewTextBoxColumn94"
         Me.DataGridViewTextBoxColumn94.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn31
+        '
+        Me.DataGridViewTextBoxColumn31.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
+        Me.DataGridViewTextBoxColumn31.ReadOnly = True
         '
         'ToolStrip2
         '
@@ -547,6 +512,41 @@ Partial Class FrmMantenimientoIncautacion
         Me.btnelimResol.Size = New System.Drawing.Size(23, 22)
         Me.btnelimResol.Text = "Eliminar resolución"
         '
+        'CtlBuscaFedatario
+        '
+        Me.CtlBuscaFedatario.Empleado = Nothing
+        Me.CtlBuscaFedatario.EmpleadoText = "Fedatario"
+        Me.CtlBuscaFedatario.ItemText = "Fedatario"
+        Me.CtlBuscaFedatario.Location = New System.Drawing.Point(6, 19)
+        Me.CtlBuscaFedatario.Name = "CtlBuscaFedatario"
+        Me.CtlBuscaFedatario.Size = New System.Drawing.Size(304, 22)
+        Me.CtlBuscaFedatario.TabIndex = 47
+        Me.CtlBuscaFedatario.TipoEmpleado = Nothing
+        Me.CtlBuscaFedatario.Ubicacion = Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
+        '
+        'CtlBuscaAdministrativo
+        '
+        Me.CtlBuscaAdministrativo.Empleado = Nothing
+        Me.CtlBuscaAdministrativo.EmpleadoText = "Administrativo"
+        Me.CtlBuscaAdministrativo.ItemText = "Administrativo"
+        Me.CtlBuscaAdministrativo.Location = New System.Drawing.Point(6, 47)
+        Me.CtlBuscaAdministrativo.Name = "CtlBuscaAdministrativo"
+        Me.CtlBuscaAdministrativo.Size = New System.Drawing.Size(304, 22)
+        Me.CtlBuscaAdministrativo.TabIndex = 48
+        Me.CtlBuscaAdministrativo.TipoEmpleado = Nothing
+        Me.CtlBuscaAdministrativo.Ubicacion = Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
+        '
+        'CtlBuscaContribuyente1
+        '
+        Me.CtlBuscaContribuyente1.Contribuyente = Nothing
+        Me.CtlBuscaContribuyente1.ContribuyenteText = "Contribuyente"
+        Me.CtlBuscaContribuyente1.ItemText = "Contribuyente"
+        Me.CtlBuscaContribuyente1.Location = New System.Drawing.Point(8, 6)
+        Me.CtlBuscaContribuyente1.Name = "CtlBuscaContribuyente1"
+        Me.CtlBuscaContribuyente1.Size = New System.Drawing.Size(316, 22)
+        Me.CtlBuscaContribuyente1.TabIndex = 58
+        Me.CtlBuscaContribuyente1.Ubicacion = Modulo.CtlBuscaContribuyente.EnumUbicacion.Normal
+        '
         'FrmMantenimientoIncautacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -559,10 +559,6 @@ Partial Class FrmMantenimientoIncautacion
         Me.Text = "Incautación"
         Me.Controls.SetChildIndex(Me.tbIncautacion, 0)
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BindingSourceListaPrecios, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BindingSourceExistencias, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BSDetallesCombo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BSPreciosxcantidad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsResoluciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbIncautacion.ResumeLayout(False)
         Me.tpDatos.ResumeLayout(False)
@@ -580,14 +576,10 @@ Partial Class FrmMantenimientoIncautacion
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents BindingSourceExistencias As System.Windows.Forms.BindingSource
-    Friend WithEvents BindingSourceListaPrecios As System.Windows.Forms.BindingSource
-    Friend WithEvents BSDetallesCombo As System.Windows.Forms.BindingSource
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents BSPreciosxcantidad As System.Windows.Forms.BindingSource
     Friend WithEvents bsResoluciones As System.Windows.Forms.BindingSource
     Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -640,5 +632,6 @@ Partial Class FrmMantenimientoIncautacion
     Friend WithEvents CtlBuscaContribuyente1 As Incautacion.Modulo.CtlBuscaContribuyente
     Friend WithEvents txtCedula As Infoware.Controles.Base.TextBoxStd
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents DataGridViewTextBoxColumn31 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

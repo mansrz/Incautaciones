@@ -20,11 +20,11 @@ Imports System.ComponentModel
 #Region "Item"
 Public Class Item
 
-  Const _Procedimiento As String = "proc_Item"
+    Const _Procedimiento As String = "proc_Item"
 
-  Private mPardetGrupo As WWTSParametroDet = Nothing
+    Private mPardetGrupo As WWTSParametroDet = Nothing
 
-  Private mPardetMarca As WWTSParametroDet = Nothing
+    Private mPardetMarca As WWTSParametroDet = Nothing
 
     Private mPardetMedida As WWTSParametroDet = Nothing
 
@@ -32,9 +32,9 @@ Public Class Item
 
     Private mPardetEstadoItem As WWTSParametroDet = Nothing
 
-  Private mPardetTipoInventario As WWTSParametroDet = Nothing
+    Private mPardetTipoInventario As WWTSParametroDet = Nothing
 
-  Private mPardetUnidadMedida As WWTSParametroDet = Nothing
+    Private mPardetUnidadMedida As WWTSParametroDet = Nothing
 
     Private mItem_Imagen As System.Drawing.Image = Nothing
 
@@ -42,48 +42,48 @@ Public Class Item
 
     Private mEmpresa As Empresa = Nothing
 
-  Private mProveedor As Proveedor = Nothing
+    Private mProveedor As Proveedor = Nothing
 
-  Private mCambio_Imagen As Boolean = False
+    Private mCambio_Imagen As Boolean = False
 
-  Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _EsNuevo As Boolean)
-    MyBase.New()
-    OperadorDatos = _OperadorDatos
-    EsNuevo = _EsNuevo
-  End Sub
+    Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _EsNuevo As Boolean)
+        MyBase.New()
+        OperadorDatos = _OperadorDatos
+        EsNuevo = _EsNuevo
+    End Sub
 
-  Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _Item_Codigo As Integer)
-    Me.New(_OperadorDatos, False)
-    Item_Codigo = _Item_Codigo
-    If Not Me.Recargar Then
-      Throw New Exception(OperadorDatos.MsgError)
-    End If
-  End Sub
+    Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _Item_Codigo As Integer)
+        Me.New(_OperadorDatos, False)
+        Item_Codigo = _Item_Codigo
+        If Not Me.Recargar Then
+            Throw New Exception(OperadorDatos.MsgError)
+        End If
+    End Sub
 
-  Private mCantidad As Decimal = 0
-  Public Property Cantidad As Decimal
-    Get
-      Return mCantidad
-    End Get
-    Set(value As Decimal)
-      mCantidad = value
-    End Set
-  End Property
+    Private mCantidad As Decimal = 0
+    Public Property Cantidad As Decimal
+        Get
+            Return mCantidad
+        End Get
+        Set(value As Decimal)
+            mCantidad = value
+        End Set
+    End Property
 
-  'WWTSParametroDet
-  Public Overridable Property PardetGrupo() As WWTSParametroDet
-    Get
-      If Me.mPardetGrupo Is Nothing AndAlso Pardet_Grupo > 0 Then
-        Me.mPardetGrupo = New WWTSParametroDet(OperadorDatos, Parame_Grupo, Pardet_Grupo)
-      End If
-      Return Me.mPardetGrupo
-    End Get
-    Set(ByVal value As WWTSParametroDet)
-      Me.mPardetGrupo = value
-      Parame_Grupo = value.Parame_Codigo
-      Pardet_Grupo = value.Pardet_Secuencia
-    End Set
-  End Property
+    'WWTSParametroDet
+    Public Overridable Property PardetGrupo() As WWTSParametroDet
+        Get
+            If Me.mPardetGrupo Is Nothing AndAlso Pardet_Grupo > 0 Then
+                Me.mPardetGrupo = New WWTSParametroDet(OperadorDatos, Parame_Grupo, Pardet_Grupo)
+            End If
+            Return Me.mPardetGrupo
+        End Get
+        Set(ByVal value As WWTSParametroDet)
+            Me.mPardetGrupo = value
+            Parame_Grupo = value.Parame_Codigo
+            Pardet_Grupo = value.Pardet_Secuencia
+        End Set
+    End Property
 
     'WWTSParametroDet
     Public Overridable Property PardetTipo() As WWTSParametroDet
@@ -119,41 +119,41 @@ Public Class Item
         End Set
     End Property
 
-  'WWTSParametroDet
-  Public Overridable Property PardetMarca() As WWTSParametroDet
-    Get
-      If Me.mPardetMarca Is Nothing AndAlso Pardet_Marca > 0 Then
-        Me.mPardetMarca = New WWTSParametroDet(OperadorDatos, Parame_Marca, Pardet_Marca)
-      End If
-      Return Me.mPardetMarca
-    End Get
-    Set(ByVal value As WWTSParametroDet)
-      Me.mPardetMarca = value
-      If value Is Nothing Then
-        Throw New Exception("Debe seleccionar una marca")
-      End If
-      Parame_Marca = value.Parame_Codigo
-      Pardet_Marca = value.Pardet_Secuencia
-    End Set
-  End Property
+    'WWTSParametroDet
+    Public Overridable Property PardetMarca() As WWTSParametroDet
+        Get
+            If Me.mPardetMarca Is Nothing AndAlso Pardet_Marca > 0 Then
+                Me.mPardetMarca = New WWTSParametroDet(OperadorDatos, Parame_Marca, Pardet_Marca)
+            End If
+            Return Me.mPardetMarca
+        End Get
+        Set(ByVal value As WWTSParametroDet)
+            Me.mPardetMarca = value
+            If value Is Nothing Then
+                Throw New Exception("Debe seleccionar una marca")
+            End If
+            Parame_Marca = value.Parame_Codigo
+            Pardet_Marca = value.Pardet_Secuencia
+        End Set
+    End Property
 
-  'Proveedor
-  Public Overridable Property Proveedor() As Proveedor
-    Get
-      If Me.mProveedor Is Nothing AndAlso Entida_Proveedor > 0 Then
-        Me.mProveedor = New Proveedor(OperadorDatos, Entida_Proveedor)
-      End If
-      Return Me.mProveedor
-    End Get
-    Set(ByVal value As Proveedor)
-      Me.mProveedor = value
-      If value Is Nothing Then
-        Entida_Proveedor = 0
-      Else
-        Entida_Proveedor = value.Entida_Codigo
-      End If
-    End Set
-  End Property
+    'Proveedor
+    Public Overridable Property Proveedor() As Proveedor
+        Get
+            If Me.mProveedor Is Nothing AndAlso Entida_Proveedor > 0 Then
+                Me.mProveedor = New Proveedor(OperadorDatos, Entida_Proveedor)
+            End If
+            Return Me.mProveedor
+        End Get
+        Set(ByVal value As Proveedor)
+            Me.mProveedor = value
+            If value Is Nothing Then
+                Entida_Proveedor = 0
+            Else
+                Entida_Proveedor = value.Entida_Codigo
+            End If
+        End Set
+    End Property
 
     'Proveedor
     Public Overridable Property Incautacion() As Reglas.Incautacion
@@ -191,7 +191,7 @@ Public Class Item
         End Set
     End Property
 
-  'WWTSParametroDet
+    'WWTSParametroDet
     'Public Overridable Property PardetTipoInventario() As WWTSParametroDet
     '  Get
     '    If Me.mPardetTipoInventario Is Nothing AndAlso Pardet_Tipoinventario > 0 Then
@@ -206,72 +206,72 @@ Public Class Item
     '  End Set
     'End Property
 
-  'WWTSParametroDet
-  Public Overridable Property PardetUnidadMedida() As WWTSParametroDet
-    Get
-      If Me.mPardetUnidadMedida Is Nothing AndAlso Pardet_Unidadmedida > 0 Then
-        Me.mPardetUnidadMedida = New WWTSParametroDet(OperadorDatos, Parame_Unidadmedida, Pardet_Unidadmedida)
-      End If
-      Return Me.mPardetUnidadMedida
-    End Get
-    Set(ByVal value As WWTSParametroDet)
-      Me.mPardetUnidadMedida = value
-      Parame_Unidadmedida = value.Parame_Codigo
-      Pardet_Unidadmedida = value.Pardet_Secuencia
-    End Set
-  End Property
+    'WWTSParametroDet
+    Public Overridable Property PardetUnidadMedida() As WWTSParametroDet
+        Get
+            If Me.mPardetUnidadMedida Is Nothing AndAlso Pardet_Unidadmedida > 0 Then
+                Me.mPardetUnidadMedida = New WWTSParametroDet(OperadorDatos, Parame_Unidadmedida, Pardet_Unidadmedida)
+            End If
+            Return Me.mPardetUnidadMedida
+        End Get
+        Set(ByVal value As WWTSParametroDet)
+            Me.mPardetUnidadMedida = value
+            Parame_Unidadmedida = value.Parame_Codigo
+            Pardet_Unidadmedida = value.Pardet_Secuencia
+        End Set
+    End Property
 
-  'Item_Imagen
-  Public Overridable ReadOnly Property Item_ImagenStream() As Byte()
-    Get
-      Dim imagen() As Byte
-      Dim Result As Object = Nothing
-      Dim bReturn As Boolean = True
-      OperadorDatos.AgregarParametro("@accion", "Pl")
-      OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
-      OperadorDatos.Procedimiento = _Procedimiento
-      bReturn = OperadorDatos.Ejecutar(Result)
-      OperadorDatos.LimpiarParametros()
-      Try
-        imagen = CType(Result, Byte())
-      Catch ex As System.Exception
-        imagen = Nothing
-      End Try
-      Return imagen
-    End Get
-  End Property
+    'Item_Imagen
+    Public Overridable ReadOnly Property Item_ImagenStream() As Byte()
+        Get
+            Dim imagen() As Byte
+            Dim Result As Object = Nothing
+            Dim bReturn As Boolean = True
+            OperadorDatos.AgregarParametro("@accion", "Pl")
+            OperadorDatos.AgregarParametro("@Item_Codigo", Item_Codigo)
+            OperadorDatos.Procedimiento = _Procedimiento
+            bReturn = OperadorDatos.Ejecutar(Result)
+            OperadorDatos.LimpiarParametros()
+            Try
+                imagen = CType(Result, Byte())
+            Catch ex As System.Exception
+                imagen = Nothing
+            End Try
+            Return imagen
+        End Get
+    End Property
 
-  'Item_Imagen
-  Public Overridable ReadOnly Property Item_Imagen(Optional ByVal heightwidth As Integer = 0) As System.Drawing.Image
-    Get
-      If mItem_Imagen Is Nothing Then
-        Try
-          Dim imagen() As Byte
-          imagen = Item_ImagenStream
-          Dim ms As New MemoryStream
-          ms.Write(imagen, 0, imagen.GetUpperBound(0) + 1)
-          mItem_Imagen = System.Drawing.Image.FromStream(ms)
-          ms.Close()
-        Catch ex As System.Exception
-          mItem_Imagen = Nothing
-        End Try
-      End If
-      If heightwidth > 0 AndAlso mItem_Imagen IsNot Nothing Then
-        Dim imagenbm = New System.Drawing.Bitmap(mItem_Imagen)
-        Return imagenbm.GetThumbnailImage(heightwidth, heightwidth, Nothing, New IntPtr())
-      Else
-        Return mItem_Imagen
-      End If
-    End Get
-  End Property
+    'Item_Imagen
+    Public Overridable ReadOnly Property Item_Imagen(Optional ByVal heightwidth As Integer = 0) As System.Drawing.Image
+        Get
+            If mItem_Imagen Is Nothing Then
+                Try
+                    Dim imagen() As Byte
+                    imagen = Item_ImagenStream
+                    Dim ms As New MemoryStream
+                    ms.Write(imagen, 0, imagen.GetUpperBound(0) + 1)
+                    mItem_Imagen = System.Drawing.Image.FromStream(ms)
+                    ms.Close()
+                Catch ex As System.Exception
+                    mItem_Imagen = Nothing
+                End Try
+            End If
+            If heightwidth > 0 AndAlso mItem_Imagen IsNot Nothing Then
+                Dim imagenbm = New System.Drawing.Bitmap(mItem_Imagen)
+                Return imagenbm.GetThumbnailImage(heightwidth, heightwidth, Nothing, New IntPtr())
+            Else
+                Return mItem_Imagen
+            End If
+        End Get
+    End Property
 
-  Private mArchivoImagen As String = String.Empty
-  Public WriteOnly Property ArchivoImagen() As String
-    Set(ByVal value As String)
-      mArchivoImagen = value
-      EsModificado = True
-      mCambio_Imagen = True
-    End Set
+    Private mArchivoImagen As String = String.Empty
+    Public WriteOnly Property ArchivoImagen() As String
+        Set(ByVal value As String)
+            mArchivoImagen = value
+            EsModificado = True
+            mCambio_Imagen = True
+        End Set
     End Property
 
     <Infoware.Reportes.CampoReporteAtributo("Incautación", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 200, True)> _
@@ -286,11 +286,14 @@ Public Class Item
     End Property
 
     <Infoware.Reportes.CampoReporteAtributo("Descripción", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, True)> _
-    Public Overridable ReadOnly Property TipoString() As String
+    Public ReadOnly Property TipoString() As String
         Get
             If PardetTipo Is Nothing Then
+                'MsgBox("pardet tipo es nada")
                 Return String.Empty
             Else
+                'MsgBox(mPardetTipo.Descripcion)
+                'MsgBox(mPardetTipo.Pardet_Descripcion)
                 Return mPardetTipo.Pardet_Descripcion
             End If
         End Get
@@ -317,6 +320,17 @@ Public Class Item
             End If
         End Get
     End Property
+
+    '<Infoware.Reportes.CampoReporteAtributo("Descripcion con secuencia", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)> _
+    'Public ReadOnly Property ItemString() As String
+    '    Get
+    '        If Item_Secuencia = 0 Then
+    '            Return String.Empty
+    '        Else
+    '            Return Item_Secuencia.ToString + " " + mPardetTipo.Descripcion
+    '        End If
+    '    End Get
+    'End Property
 
     '<Infoware.Reportes.CampoReporteAtributo("Tipo Inventario", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)> _
     'Public ReadOnly Property TipoInventarioString() As String
@@ -376,6 +390,28 @@ Public Class Item
                     End Try
             End Select
             Return _valor
+        End Get
+    End Property
+
+    Public ReadOnly Property Precios As ItemPrecioList
+        Get
+            If EsNuevo Then
+                Return Nothing
+            Else
+                Return ItemPrecioList.ObtenerLista(OperadorDatos, Me)
+            End If
+        End Get
+    End Property
+
+    Public ReadOnly Property Precio As Decimal
+        Get
+            If Not Precios Is Nothing Then
+                For Each _precio As ItemPrecio In Precios
+                    If _precio.ItePre_Activo Then
+                        Return _precio.ItePre_Valor
+                    End If
+                Next
+            End If
         End Get
     End Property
 
@@ -866,7 +902,7 @@ End Class
 Public Class ItemList
   Inherits BindingList(Of Item)
 
-    Public Shared Function ObtenerLista(ByVal _OperadorDatos As OperadorDatos, Optional ByVal _grupo As WWTSParametroDet = Nothing, Optional ByVal _tipoinventario As WWTSParametroDet = Nothing, Optional ByVal _filtro As String = "", Optional ByVal _Empresa As Empresa = Nothing) As ItemList
+    Public Shared Function ObtenerLista(ByVal _OperadorDatos As OperadorDatos, Optional ByVal _grupo As WWTSParametroDet = Nothing, Optional ByVal _tipoinventario As WWTSParametroDet = Nothing, Optional ByVal _filtro As String = "", Optional ByVal _Empresa As Empresa = Nothing, Optional ByVal _Incautacion As Reglas.Incautacion = Nothing) As ItemList
         Dim oResult As ItemList = New ItemList
         Dim bReturn As Boolean
         Dim ds As New DataTable
@@ -882,6 +918,10 @@ Public Class ItemList
             End If
             If _Empresa IsNot Nothing Then
                 .AgregarParametro("@Empres_Codigo", _Empresa.Empres_Codigo)
+            End If
+            If _Incautacion IsNot Nothing Then
+                .AgregarParametro("@Incaut_Codigo", _Incautacion.Incaut_Codigo)
+
             End If
             .AgregarParametro("@filtro", _filtro)
             .Procedimiento = "proc_Item"

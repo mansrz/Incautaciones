@@ -147,26 +147,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Incautacion.Modulo.exe" size="1154048">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Incautacion.Modulo.exe" size="1164800">
       <assemblyIdentity name="Incautacion.Modulo" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>p43+Cr9J/uYHjotg99ciWCqfS0E=</dsig:DigestValue>
+        <dsig:DigestValue>2btc4KpYwx+QjSz7gNP3TvX15ps=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Incautacion.Reglas.dll" size="330240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Incautacion.Reglas.dll" size="333824">
       <assemblyIdentity name="Incautacion.Reglas" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>vjvu0Ed8WnOKO/cL3cuuOucAI4M=</dsig:DigestValue>
+        <dsig:DigestValue>l6CnA4r0/3RVZFBXcPIrEtXz1P4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -17,26 +17,28 @@ Public Class FrmListaTipoMovimientoInventarios
   End Property
 
   Private mTipoMovimientoInventario As TipoMovimientoInventario = Nothing
-  Public Property TipoMovimientoInventario() As TipoMovimientoInventario
-    Get
-      If ListBindingSource.Current Is Nothing Then
-        Return Nothing
-      Else
-        Return ListBindingSource.Current
-      End If
-    End Get
-    Set(ByVal value As TipoMovimientoInventario)
-      If Not ListBindingSource.Count = 0 And value IsNot Nothing Then
-        Dim t As Integer = 0
-        For Each _TipoMovimientoInventario As TipoMovimientoInventario In Me.ListBindingSource.DataSource
-          If _TipoMovimientoInventario.Empres_Codigo = value.Empres_Codigo And _TipoMovimientoInventario.Sucurs_Codigo = value.Sucurs_Codigo And _TipoMovimientoInventario.Pardet_Tipomovinv = value.Pardet_Tipomovinv Then
-            ListBindingSource.Position = t
-          End If
-          t += 1
-        Next
-      End If
-    End Set
-  End Property
+    Public Property TipoMovimientoInventario() As TipoMovimientoInventario
+
+        Get
+            If ListBindingSource.Current Is Nothing Then
+                Return Nothing
+            Else
+                Return ListBindingSource.Current
+            End If
+        End Get
+        Set(ByVal value As TipoMovimientoInventario)
+            If Not ListBindingSource.Count = 0 And value IsNot Nothing Then
+                Dim t As Integer = 0
+                For Each _TipoMovimientoInventario As TipoMovimientoInventario In Me.ListBindingSource.DataSource
+                    'MessageBox.Show("tipo movimiento en lista de tipo mov inventario" + _TipoMovimientoInventario.Pardet_Tipomovinv.ToString)
+                    If _TipoMovimientoInventario.Empres_Codigo = value.Empres_Codigo And _TipoMovimientoInventario.Sucurs_Codigo = value.Sucurs_Codigo And _TipoMovimientoInventario.Pardet_Tipomovinv = value.Pardet_Tipomovinv Then
+                        ListBindingSource.Position = t
+                    End If
+                    t += 1
+                Next
+            End If
+        End Set
+    End Property
 
 #Region "Eventos"
   Private Sub FrmListaSecuencias_Abrir(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Abrir

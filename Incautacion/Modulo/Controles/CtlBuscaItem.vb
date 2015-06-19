@@ -60,19 +60,23 @@ Public Class CtlBuscaItem
 
   Private mEstaCargando = False
 
-  Sub llenar_datos()
-    Me.ComboBox1.DisplayMember = "Item_Descripcion"
-    Me.ComboBox1.ValueMember = "Item_Codigo"
-    If mPardetTipoInventario IsNot Nothing Then
-      mItems = ItemList.ObtenerLista(mSucursal.OperadorDatos, Nothing, mPardetTipoInventario)
-    Else
-      mItems = ItemList.ObtenerLista(mSucursal.OperadorDatos)
-    End If
-    mEstaCargando = True
-    Me.ComboBox1.DataSource = mItems
-    Me.ComboBox1.SelectedIndex = -1
-    mEstaCargando = False
-  End Sub
+    Sub llenar_datos()
+        Me.ComboBox1.DisplayMember = "Item_Secuencia"
+        Me.ComboBox1.ValueMember = "Item_Codigo"
+        If mPardetTipoInventario IsNot Nothing Then
+            mItems = ItemList.ObtenerLista(mSucursal.OperadorDatos, Nothing, mPardetTipoInventario)
+        ElseIf mIncautacion IsNot Nothing Then
+            mItems = ItemList.ObtenerLista(mSucursal.OperadorDatos, Nothing, Nothing, "", Nothing, mIncautacion)
+        Else
+
+            mItems = ItemList.ObtenerLista(mSucursal.OperadorDatos)
+        End If
+
+        mEstaCargando = True
+        Me.ComboBox1.DataSource = mItems
+        Me.ComboBox1.SelectedIndex = -1
+        mEstaCargando = False
+    End Sub
 
   Public Property ItemText() As String
     Get

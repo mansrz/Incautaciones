@@ -43,8 +43,6 @@ Public Class CtlMovimientoInventario
         Me.ComboBoxSucursal1.Sucursal = mSucursal
         Me.ComboBoxSucursal1.Llenar_datos()
 
-        Me.ComboBoxBodega2.Sucursal = mSucursal
-        Me.ComboBoxBodega2.Llenar_datos()
 
         Me.CtlBuscaCliente1.OperadorDatos = mSucursal.OperadorDatos
         Me.CtlBuscaProveedor1.OperadorDatos = mSucursal.OperadorDatos
@@ -455,7 +453,7 @@ Public Class CtlMovimientoInventario
                     mapear_venta()
                 Case Enumerados.enumTipoMovInv.Compra, Enumerados.enumTipoMovInv.DevCompra
                     mapear_compra()
-                Case Enumerados.enumTipoMovInv.Incautacion, Enumerados.enumTipoMovInv.IncautSalida
+                Case Enumerados.enumTipoMovInv.Incautacion, Enumerados.enumTipoMovInv.IncautSalida, Enumerados.enumTipoMovInv.Transferencia
                     'For Each _movinvdet As MovimientoInventarioDet In mMovimientoInventario.Detalles
                     '    MessageBox.Show("item codigo " + _movinvdet.Item_Codigo.ToString + " item string " + _movinvdet.ItemString)
                     '    MessageBox.Show("item codigo " + _movinvdet.Item.Item_Codigo.ToString + "item descr " + _movinvdet.Item.Item_Descripcion + "item marca " + _movinvdet.Item.MarcaString)
@@ -465,7 +463,7 @@ Public Class CtlMovimientoInventario
             End Select
         End If
 
-        MessageBox.Show("termine de mapear para CtlMovimiento Inv")
+        'MessageBox.Show("termine de mapear para CtlMovimiento Inv")
 
     End Sub
 
@@ -621,6 +619,25 @@ Public Class CtlMovimientoInventario
 
     End Sub
 
+    Private Sub CtlBuscaIncautacion1_CambioItem(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlBuscaIncautacion1.CambioItem
+        'If Me.CtlBuscaContribuyente1.Contribuyente Is Nothing Then
+        '    Exit Sub
+        'End If
+        'With Me.CtlBuscaContribuyente1.Contribuyente
+        '    If .Entidad.Entidadjuridica IsNot Nothing Then
+        '        'Me.txt_otrosdatos.Text = String.Format("Contacto: {0}", .Entidad.Entidadjuridica.ContactoString)
+        '    End If
+        '    'Me.txt_otrosdatos.Text = String.Format("{0}{1}Teléfono:{2}", Me.txt_otrosdatos.Text, vbCrLf, .TelefonosString)
+
+        '    Me.CtlDireccion1.Entidad = .Entidad
+        'End With
+
+        Me.DataGridViewDetalles.CtlMantenimientoMovimientoInventarioDet1.Incautacion = CtlBuscaIncautacion1.Incautacion
+        Me.DataGridViewDetalles.CtlMantenimientoMovimientoInventarioDet1.llenar_datos()
+
+    End Sub
+
+
 #End Region
 
 #Region "Detalles de factura"
@@ -639,8 +656,9 @@ Public Class CtlMovimientoInventario
             Case Enumerados.enumTipoMovInv.Cxc, Enumerados.enumTipoMovInv.Cxp
                 Me.pnltotalsimple.Visible = True
                 txttotalgeneralsimple.ReadOnly = False
-            Case Enumerados.enumTipoMovInv.IncautSalida, Enumerados.enumTipoMovInv.Incautacion
+            Case Enumerados.enumTipoMovInv.IncautSalida, Enumerados.enumTipoMovInv.Incautacion, Enumerados.enumTipoMovInv.Transferencia
                 Me.pnlformapago.Visible = False
+                Me.pnltotalsimple.Visible = True
         End Select
     End Sub
 
@@ -663,7 +681,7 @@ Public Class CtlMovimientoInventario
         Else
             Me.mMovimientoInventario.Movinv_Descto = Me.txtdsctoglobal.Value
             Me.txtsubtotal.Value = mMovimientoInventario.BaseImponibleRetFte
-            Me.txttotalgeneralsimple.Value = mMovimientoInventario.BaseImponibleRetFte
+            Me.txttotalgeneralsimple.Value = mMovimientoInventario.TotalGeneral
             Me.txtbase0.Value = mMovimientoInventario.Base0
             Me.txtbasegravada.Value = mMovimientoInventario.BaseGravadaIVA
             Me.txtiva.Value = mMovimientoInventario.TotalIva
@@ -709,104 +727,113 @@ Public Class CtlMovimientoInventario
 #End Region
 
 #Region "Busqueda"
-  Private Sub txtnumero_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtnumero.Validating
-    If Me.txtnumero.Value = 0 Then
-      Exit Sub
-    End If
-    Dim _mov As MovimientoInventario
-    Try
-      _mov = New MovimientoInventario(mSucursal, TipoMovimientoEnum, CInt(Me.txtnumero.Value))
-      MovimientoInventario = _mov
-      If _mov.Movinv_esAnulada Then
-        Me.BackgroundImage = My.Resources.ANULADA
-      Else
-        Me.BackgroundImage = Nothing
-      End If
-    Catch ex As Exception
-      MsgBox("No se encontró el movimiento de inventario", MsgBoxStyle.Information, "Información")
-    End Try
-  End Sub
+    Private Sub txtnumero_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtnumero.Validating
+        If Me.txtnumero.Value = 0 Then
+            Exit Sub
+        End If
+        Dim _mov As MovimientoInventario
+        Try
+            _mov = New MovimientoInventario(mSucursal, TipoMovimientoEnum, CInt(Me.txtnumero.Value))
+            MovimientoInventario = _mov
+            If _mov.Movinv_esAnulada Then
+                Me.BackgroundImage = My.Resources.ANULADA
+            Else
+                Me.BackgroundImage = Nothing
+            End If
+        Catch ex As Exception
+            MsgBox("No se encontró el movimiento de inventario", MsgBoxStyle.Information, "Información")
+        End Try
+    End Sub
 #End Region
 
 #Region "Tamaño"
-  Private Sub CtlMovimientoInventario_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
-    tamano()
-  End Sub
+    Private Sub CtlMovimientoInventario_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
+        tamano()
+    End Sub
 
-  Private Sub CtlMovimientoInventario_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Resize
-    tamano()
-  End Sub
+    Private Sub CtlMovimientoInventario_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Resize
+        tamano()
+    End Sub
 
-  Sub tamano()
-    Me.pnldetalles.Height = Me.FlowLayoutPanel1.Height - Me.pnldetalles.Location.Y - IIf(Me.pnltotalcompleto.Visible, Me.pnltotalcompleto.Height, 0) - IIf(Me.pnltotalsimple.Visible, Me.pnltotalcompleto.Height, 0) - 5
-  End Sub
+    Sub tamano()
+        Me.pnldetalles.Height = Me.FlowLayoutPanel1.Height - Me.pnldetalles.Location.Y - IIf(Me.pnltotalcompleto.Visible, Me.pnltotalcompleto.Height, 0) - IIf(Me.pnltotalsimple.Visible, Me.pnltotalcompleto.Height, 0) - 5
+    End Sub
 #End Region
 
 #Region "Cancelar"
-  Public Event Cancelar As EventHandler
-  Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
-    RaiseEvent Cancelar(Me, Nothing)
-  End Sub
+    Public Event Cancelar As EventHandler
+    Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+        RaiseEvent Cancelar(Me, Nothing)
+    End Sub
 
-  Private Sub ComboBoxTipoPrecio_CambioItem(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComboBoxTipoPrecio.CambioItem
-    Me.DataGridViewDetalles.PardetTipoPrecio = Me.ComboBoxTipoPrecio.ParametroDet
-  End Sub
+    Private Sub ComboBoxTipoPrecio_CambioItem(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComboBoxTipoPrecio.CambioItem
+        Me.DataGridViewDetalles.PardetTipoPrecio = Me.ComboBoxTipoPrecio.ParametroDet
+    End Sub
 #End Region
 
 
 #Region "Formato"
-  Public Sub Imprimir()
-    If mMovimientoInventario.EsNuevo Then
-      Exit Sub
-    End If
-    If mMovimientoInventario.Pardet_TipomovinvEnum = Enumerados.enumTipoMovInv.Incautacion Then
-      Dim f As New FrmIncautacionIngreso(Sistema, Enumerados.EnumOpciones.MovimientoInventario)
+    Public Sub Imprimir()
+        If mMovimientoInventario.EsNuevo Then
+            Exit Sub
+        End If
+        If mMovimientoInventario.Pardet_TipomovinvEnum = Enumerados.enumTipoMovInv.Incautacion Then
+            Dim f As New FrmIncautacionIngreso(Sistema, Enumerados.EnumOpciones.MovimientoInventario)
             f.MovimientoInventario = MovimientoInventario
-      f.ShowDialog()
-    Else
-      Dim f As New Infoware.Reportes.FrmReportSimple
-      f.ArchivoReporte = ArchivoFormato()
-      f.Cabecera = mMovimientoInventario
-      f.Detalles = mMovimientoInventario.Detalles
-      f.Imprimir()
-      MsgBox("Impresión enviada, por favor verifique que se haya realizado correctamente", MsgBoxStyle.Information, "Información")
-    End If
-  End Sub
+            f.ShowDialog()
+        Else
+            Dim f As New Infoware.Reportes.FrmReportSimple
+            f.ArchivoReporte = ArchivoFormato()
+            f.Cabecera = mMovimientoInventario
+            f.Detalles = mMovimientoInventario.Detalles
+            f.Imprimir()
+            MsgBox("Impresión enviada, por favor verifique que se haya realizado correctamente", MsgBoxStyle.Information, "Información")
+        End If
+    End Sub
 
-  Public Sub ModificarFormato()
-    If mMovimientoInventario.EsNuevo Then
-      Exit Sub
-    End If
-    Dim f As New Infoware.Reportes.FrmReportSimple
-    f.ArchivoReporte = ArchivoFormato()
-    f.Cabecera = mMovimientoInventario
-    f.Detalles = mMovimientoInventario.Detalles
-    f.ShowDialog()
-  End Sub
+    Public Sub ModificarFormato()
+        If mMovimientoInventario.EsNuevo Then
+            Exit Sub
+        End If
+        Dim f As New Infoware.Reportes.FrmReportSimple
+        f.ArchivoReporte = ArchivoFormato()
+        f.Cabecera = mMovimientoInventario
+        f.Detalles = mMovimientoInventario.Detalles
+        f.ShowDialog()
+    End Sub
 
-  Private Function ArchivoFormato() As String
-    Dim archivo As String
-    If TipoMovimientoEnum = Enumerados.enumTipoMovInv.Compra Then
-      archivo = Me.Sistema.DirectorioRaiz & "\Formatos\" & mCompra.PardetTipoCompra.Pardet_DatoStr1.Trim & ".rps"
+    Private Function ArchivoFormato() As String
+        Dim archivo As String
+        If TipoMovimientoEnum = Enumerados.enumTipoMovInv.Compra Then
+            archivo = Me.Sistema.DirectorioRaiz & "\Formatos\" & mCompra.PardetTipoCompra.Pardet_DatoStr1.Trim & ".rps"
 
-    ElseIf TipoMovimientoEnum = Enumerados.enumTipoMovInv.Venta Then
-      archivo = Me.Sistema.DirectorioRaiz & "\Formatos\" & mVenta.PardetTipoVenta.Pardet_DatoStr1.Trim & ".rps"
-    Else
-      archivo = Me.Sistema.DirectorioRaiz & "\Formatos\" & mMovimientoInventario.PardetTipoMovInv.Pardet_DatoStr1.Trim & ".rps"
-    End If
-    Return archivo
-  End Function
+        ElseIf TipoMovimientoEnum = Enumerados.enumTipoMovInv.Venta Then
+            archivo = Me.Sistema.DirectorioRaiz & "\Formatos\" & mVenta.PardetTipoVenta.Pardet_DatoStr1.Trim & ".rps"
+        Else
+            archivo = Me.Sistema.DirectorioRaiz & "\Formatos\" & mMovimientoInventario.PardetTipoMovInv.Pardet_DatoStr1.Trim & ".rps"
+        End If
+        Return archivo
+    End Function
 #End Region
 
     Private Sub DataGridViewDetalles_Load(sender As System.Object, e As System.EventArgs) Handles DataGridViewDetalles.Load
 
     End Sub
 
-  Private Sub FlowLayoutPanel2_Paint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs) Handles FlowLayoutPanel2.Paint
+    Private Sub FlowLayoutPanel2_Paint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs) Handles FlowLayoutPanel2.Paint
 
-  End Sub
+    End Sub
 
-  Private Sub FlowLayoutPanel1_Paint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs) Handles FlowLayoutPanel1.Paint
+    Private Sub FlowLayoutPanel1_Paint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs) Handles FlowLayoutPanel1.Paint
 
-  End Sub
+    End Sub
+
+    Private Sub ComboBoxBodega2_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ComboBoxBodega2.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ComboBoxSucursal1_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ComboBoxSucursal1.SelectedIndexChanged
+        Me.ComboBoxBodega2.Sucursal = ComboBoxSucursal1.Sucursal
+        Me.ComboBoxBodega2.Llenar_datos()
+    End Sub
 End Class

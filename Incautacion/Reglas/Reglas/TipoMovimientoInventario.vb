@@ -87,37 +87,37 @@ Public Class TipoMovimientoInventario
     End Get
   End Property
 
-  Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
-    Parame_Tipomovinv = CType(Fila("Parame_Tipomovinv"), Integer)
-    Pardet_Tipomovinv = CType(Fila("Pardet_Tipomovinv"), Integer)
-    Empres_Codigo = CType(Fila("Empres_Codigo"), Integer)
-    Sucurs_Codigo = CType(Fila("Sucurs_Codigo"), Integer)
-    Tipmov_Secuencia = CType(Fila("Tipmov_Secuencia"), Integer)
-    Tipmov_Seguirsecuencia = CType(Fila("Tipmov_Seguirsecuencia"), Boolean)
-    mSucursal = Nothing
-    mPardetTipoMovInv = Nothing
-  End Sub
+    Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
+        Parame_Tipomovinv = CType(Fila("Parame_Tipomovinv"), Integer)
+        Pardet_Tipomovinv = CType(Fila("Pardet_Tipomovinv"), Integer)
+        Empres_Codigo = CType(Fila("Empres_Codigo"), Integer)
+        Sucurs_Codigo = CType(Fila("Sucurs_Codigo"), Integer)
+        Tipmov_Secuencia = CType(Fila("Tipmov_Secuencia"), Integer)
+        Tipmov_Seguirsecuencia = CType(Fila("Tipmov_Seguirsecuencia"), Boolean)
+        mSucursal = Nothing
+        mPardetTipoMovInv = Nothing
+    End Sub
 
-  Public Overridable Function Recargar() As Boolean
-    Dim Result As New DataTable
-    Dim bReturn As Boolean = True
-    OperadorDatos.AgregarParametro("@accion", "C")
-    OperadorDatos.AgregarParametro("@Parame_Tipomovinv", Parame_Tipomovinv)
-    OperadorDatos.AgregarParametro("@Pardet_Tipomovinv", Pardet_Tipomovinv)
-    OperadorDatos.AgregarParametro("@Empres_Codigo", Empres_Codigo)
-    OperadorDatos.AgregarParametro("@Sucurs_Codigo", Sucurs_Codigo)
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar(Result)
-    OperadorDatos.LimpiarParametros()
-    Try
-      Me.MapearDataRowaObjeto(Result.Rows(0))
-      EsNuevo = False
-      EsModificado = False
-    Catch ex As System.Exception
-      bReturn = False
-    End Try
-    Return bReturn
-  End Function
+    Public Overridable Function Recargar() As Boolean
+        Dim Result As New DataTable
+        Dim bReturn As Boolean = True
+        OperadorDatos.AgregarParametro("@accion", "C")
+        OperadorDatos.AgregarParametro("@Parame_Tipomovinv", Parame_Tipomovinv)
+        OperadorDatos.AgregarParametro("@Pardet_Tipomovinv", Pardet_Tipomovinv)
+        OperadorDatos.AgregarParametro("@Empres_Codigo", Empres_Codigo)
+        OperadorDatos.AgregarParametro("@Sucurs_Codigo", Sucurs_Codigo)
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar(Result)
+        OperadorDatos.LimpiarParametros()
+        Try
+            Me.MapearDataRowaObjeto(Result.Rows(0))
+            EsNuevo = False
+            EsModificado = False
+        Catch ex As System.Exception
+            bReturn = False
+        End Try
+        Return bReturn
+    End Function
 
   Public Overridable Function Guardar() As Boolean
     If Not EsNuevo And Not EsModificado Then

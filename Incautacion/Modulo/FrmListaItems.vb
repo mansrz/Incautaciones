@@ -17,14 +17,14 @@ Public Class FrmListaItems
   End Property
 
   Private Sub FrmListaAfiliados_DespuesSeleccionarCampos(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.DespuesSeleccionarCampos
-    Dim DataGridViewImageColumn1 As DataGridViewImageColumn
-    DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn
-    DataGridViewImageColumn1.DataPropertyName = "Item_Imagen"
-    DataGridViewImageColumn1.HeaderText = "Imagen"
-    DataGridViewImageColumn1.ValuesAreIcons = False
-    DataGridViewImageColumn1.ImageLayout = DataGridViewImageCellLayout.Zoom
-    DataGridViewImageColumn1.Width = 50
-    Me.DataGridView1.Columns.Insert(0, DataGridViewImageColumn1)
+        'Dim DataGridViewImageColumn1 As DataGridViewImageColumn
+        'DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn
+        'DataGridViewImageColumn1.DataPropertyName = "Item_Imagen"
+        'DataGridViewImageColumn1.HeaderText = "Imagen"
+        'DataGridViewImageColumn1.ValuesAreIcons = False
+        'DataGridViewImageColumn1.ImageLayout = DataGridViewImageCellLayout.Zoom
+        'DataGridViewImageColumn1.Width = 50
+        'Me.DataGridView1.Columns.Insert(0, DataGridViewImageColumn1)
 
     Dim estilonum2 As New DataGridViewCellStyle()
     estilonum2.Format = "N2"
@@ -260,7 +260,7 @@ Public Class FrmListaItems
 
     Me.ListBindingSource.DataSource = GetType(Item)
         mItems = ItemList.ObtenerLista(Sistema.OperadorDatos, Nothing, Nothing, _filtro, BarraEmpresa1.Empresa)
-    Dim mitemssort As New Infoware.Reglas.SortedView(mItems)
+        Dim mitemssort As New Infoware.Reglas.SortedView(mItems)
     ListBindingSource.DataSource = mitemssort
     Me.DataGridView1.AutoDiscover()
   End Sub

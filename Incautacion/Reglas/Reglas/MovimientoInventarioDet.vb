@@ -458,7 +458,7 @@ Public Class MovimientoInventarioDet
   <Infoware.Reportes.CampoReporteAtributo("Total", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales)> _
   Public Overridable ReadOnly Property Total() As Decimal
     Get
-      Return Moinde_CantidadStd * Moinde_ValorStd
+            Return Moinde_CantidadStd * Moinde_Costo
     End Get
   End Property
 
@@ -565,7 +565,8 @@ Public Class MovimientoInventarioDet
     OperadorDatos.AgregarParametro("@Parame_UnidMedStd", Parame_UnidMedStd)
     OperadorDatos.AgregarParametro("@Pardet_UnidMedStd", Pardet_UnidMedStd)
     OperadorDatos.AgregarParametro("@Moinde_CantidadStd", mMoinde_CantidadStd)
-    OperadorDatos.AgregarParametro("@Moinde_ValorStd", mMoinde_ValorStd)
+        OperadorDatos.AgregarParametro("@Moinde_ValorStd", mMoinde_ValorStd)
+        'MsgBox("Costo " + mMoinde_Costo.ToString)
     OperadorDatos.AgregarParametro("@Moinde_Costo", Moinde_Costo)
     OperadorDatos.AgregarParametro("@Moinde_Aplicaiva", Moinde_Aplicaiva)
     OperadorDatos.AgregarParametro("@Moinde_Descripcion", Moinde_Descripcion)
