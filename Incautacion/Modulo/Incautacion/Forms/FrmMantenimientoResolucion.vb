@@ -12,7 +12,7 @@ Public Class FrmMantenimientoIncautacionResolucion
             Return mIncautacion
         End Get
         Set(value As Reglas.Incautacion)
-            MessageBox.Show("estoy seteando incaut en resol " + value.Incaut_Codigo.ToString)
+            'MessageBox.Show("estoy seteando incaut en resol " + value.Incaut_Codigo.ToString)
             mIncautacion = value
 
         End Set

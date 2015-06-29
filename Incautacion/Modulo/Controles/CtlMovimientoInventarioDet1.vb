@@ -195,7 +195,7 @@ Public Class CtlMovimientoInventarioDet1
     End Sub
 
     Private Sub CtlMantenimientoMovimientoInventarioDet1_Actualizodatos(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlMantenimientoMovimientoInventarioDet1.Actualizodatos
-        MessageBox.Show("actualizar datos??")
+        'MessageBox.Show("actualizar datos??")
         Me.CtlMovimientoInventarioDet2.Invalidate()
         actualizar_totales()
     End Sub

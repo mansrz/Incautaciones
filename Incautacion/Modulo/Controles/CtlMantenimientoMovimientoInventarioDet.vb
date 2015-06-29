@@ -155,8 +155,9 @@ Public Class CtlMantenimientoMovimientoInventarioDet
   Public Event Actualizodatos As EventHandler
 
     Private Sub Mapear_datos()
-
+        'MessageBox.Show("Mapear")
         If EsNuevo Then
+            'MessageBox.Show("nuevo")
             Item = New Item(MovimientoInventarioDet.OperadorDatos, True)
             Item.PardetTipo = Me.cboTipoItem.ParametroDet
             Item.Item_Descripcion = Me.txtdescripcion.Text
@@ -171,7 +172,9 @@ Public Class CtlMantenimientoMovimientoInventarioDet
             mMovimientoInventarioDet.Moinde_Costo = Item.Item_Precio
             mMovimientoInventarioDet.Item.Item_Precio = Item.Item_Precio
             mMovimientoInventarioDet.Moinde_Valor = Me.txtvalor.Value
+            'mMovimientoInventarioDet.PardetUnidadMedida = Me.ComboBoxUnidadMedida.ParametroDet
         Else
+            'MessageBox.Show("no es nuevo")
             'MessageBox.Show("No es incautacion" + Me.CtlBuscaItem1.Item.Item_Codigo.ToString)
             Item = Me.CtlBuscaItem1.Item
             mMovimientoInventarioDet.Item.Item_Codigo = Item.Item_Codigo
@@ -181,7 +184,16 @@ Public Class CtlMantenimientoMovimientoInventarioDet
         End If
 
         Try
-            mMovimientoInventarioDet.Item.PardetTipo = Item.PardetTipo
+            If Item.PardetTipo Is Nothing Then
+                Item.Recargar()
+                If Item.PardetTipo IsNot Nothing Then
+                    mMovimientoInventarioDet.Item.PardetTipo = Item.PardetTipo
+                End If
+            Else
+                mMovimientoInventarioDet.Item.PardetTipo = Item.PardetTipo
+            End If
+
+            'mMovimientoInventarioDet.Item.PardetTipo = Item.PardetTipo
             mMovimientoInventarioDet.Item.Item_Descripcion = Item.Item_Descripcion
             mMovimientoInventarioDet.Item.PardetMarca = Item.PardetMarca
             mMovimientoInventarioDet.Item.Item_Modelo = Item.Item_Modelo
@@ -189,13 +201,12 @@ Public Class CtlMantenimientoMovimientoInventarioDet
             mMovimientoInventarioDet.Item.Item_Ubicacion = Item.Item_Ubicacion
             mMovimientoInventarioDet.Item.PardetEstadoItem = Item.PardetEstadoItem
             mMovimientoInventarioDet.Item.PardetUnidadMedida = Item.PardetUnidadMedida
-
+            mMovimientoInventarioDet.PardetUnidadMedida = Item.PardetUnidadMedida
+            'MessageBox.Show("PardetUnidadMedida" + mMovimientoInventarioDet.Item.PardetUnidadMedida.Descripcion)
             mMovimientoInventarioDet.Parame_UnidMedStd = Item.PardetUnidadMedida.Parame_Codigo
             mMovimientoInventarioDet.Pardet_UnidMedStd = Item.PardetUnidadMedida.Pardet_Secuencia
-
             mMovimientoInventarioDet.Moinde_Cantidad = Me.txtcantidad.Value
             'mMovimientoInventarioDet.Moinde_Descripcion = Me.txtobservacion.Text
-            mMovimientoInventarioDet.PardetUnidadMedida = Me.ComboBoxUnidadMedida.ParametroDet
 
             'mMovimientoInventarioDet.Pardet_UnidMedStd = Me.ComboBoxUnidadMedida.ParametroDet.Pardet_Secuencia
             'mMovimientoInventarioDet.Moinde_CantidadStd = 1
@@ -209,6 +220,8 @@ Public Class CtlMantenimientoMovimientoInventarioDet
             If Me Is Nothing Then
                 MessageBox.Show("yo soy naa")
             End If
+            'MessageBox.Show(mMovimientoInventarioDet.Item.PardetUnidadMedida.Descripcion)
+            'MessageBox.Show(mMovimientoInventarioDet.Pard
             RaiseEvent Actualizodatos(Me, Nothing)
         Catch ex As Exception
             MessageBox.Show(ex.InnerException.ToString + "mesaje" + ex.Message)
@@ -276,6 +289,7 @@ Public Class CtlMantenimientoMovimientoInventarioDet
 
 #Region "Item"
     Private Sub CtlBuscaItem1_CambioItem(ByVal sender As Object, ByVal e As System.EventArgs) Handles CtlBuscaItem1.CambioItem
+        'MessageBox.Show("esto cambiando item")
         If mEstaCambiando OrElse Me.CtlBuscaItem1.Item Is Nothing Then
             Exit Sub
         End If

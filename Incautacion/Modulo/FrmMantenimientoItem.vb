@@ -14,7 +14,7 @@ Public Class FrmMantenimientoItem
         End Get
         Set(value As Reglas.Incautacion)
             If value Is Nothing Then
-                MessageBox.Show("incautacion es nada")
+                'MessageBox.Show("incautacion es nada")
             End If
             mIncautacion = value
             llenar_datos()
@@ -93,7 +93,7 @@ Public Class FrmMantenimientoItem
 
 
             bsPrecios.DataSource = mItem.Precios
-            MessageBox.Show("precios" + mItem.Precios.Count.ToString)
+            'MessageBox.Show("precios" + mItem.Precios.Count.ToString)
             dgPrecios.AutoDiscover()
 
             Llenar_detallesExistencia()

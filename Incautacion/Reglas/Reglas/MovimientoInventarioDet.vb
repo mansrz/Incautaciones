@@ -380,11 +380,11 @@ Public Class MovimientoInventarioDet
   <Infoware.Reportes.CampoReporteAtributo("Nombre_UnidadMedida")> _
   Public ReadOnly Property PardetUnidadMedidaString() As String
     Get
-      If PardetUnidadMedida Is Nothing Then
-        Return String.Empty
-      Else
-        Return mPardetUnidadMedida.Pardet_Descripcion
-      End If
+            If PardetUnidadMedida Is Nothing Then
+                Return String.Empty
+            Else
+                Return mPardetUnidadMedida.Pardet_Descripcion
+            End If
     End Get
   End Property
 

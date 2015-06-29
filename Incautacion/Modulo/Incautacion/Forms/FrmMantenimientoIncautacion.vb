@@ -25,7 +25,7 @@ Public Class FrmMantenimientoIncautacion
             Return mSucursal
         End Get
         Set(ByVal value As Sucursal)
-            MessageBox.Show("sucursal en mant incaut" + value.NombreCompleto)
+            'MessageBox.Show("sucursal en mant incaut" + value.NombreCompleto)
             mSucursal = value
         End Set
     End Property

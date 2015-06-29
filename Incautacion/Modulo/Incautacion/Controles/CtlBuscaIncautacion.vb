@@ -76,9 +76,9 @@ Public Class CtlBuscaIncautacion
     Private mEstaCargando = False
 
     Sub llenar_datos()
-        MsgBox("voy a llenar lista incautaciones")
+        'MsgBox("voy a llenar lista incautaciones")
         mIncautaciones = IncautacionList.ObtenerLista(mSucursal.Empresa, mContribuyente)
-        MsgBox("llene lista incautaciones")
+        'MsgBox("llene lista incautaciones")
         Me.ComboBox1.DisplayMember = "Incaut_Numero"
         Me.ComboBox1.ValueMember = "Incaut_Codigo"
 
@@ -143,7 +143,7 @@ Public Class CtlBuscaIncautacion
         f.Incautacion = Incautacion
         f.Sucursal = Sucursal
 
-        MessageBox.Show("sucursal en busca " + Sucursal.NombreCompleto)
+        'MessageBox.Show("sucursal en busca " + Sucursal.NombreCompleto)
 
         f.Filtro = filtro
 
