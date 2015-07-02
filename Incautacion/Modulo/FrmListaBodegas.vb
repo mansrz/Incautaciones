@@ -98,8 +98,8 @@ Public Class FrmListaBodegas
   Private WithEvents mBodegas As BodegaList = Nothing
 
   Sub Llenar_datos(Optional ByVal _filtro As String = "")
-    MyBase.Titulo = "Bodegas"
-    MyBase.AgregarLeyenda = "Agregar un nuevo Bodega"
+        MyBase.Titulo = "Bodegas virtuales"
+        MyBase.AgregarLeyenda = "Agregar una nueva Bodega virtual"
 
     If mSucursal Is Nothing Then
       Exit Sub

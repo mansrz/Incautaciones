@@ -205,7 +205,7 @@ Public Class CtlMovimientoInventarioDet
 
         DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
         DataGridViewTextBoxColumn1.DataPropertyName = "ItemObservacion"
-        DataGridViewTextBoxColumn1.HeaderText = "OBSERVACION"
+        DataGridViewTextBoxColumn1.HeaderText = "UBICACION"
         DataGridViewTextBoxColumn1.Width = 100 * mFactorTamanio
         DataGridViewTextBoxColumn1.ReadOnly = True
         MyBase.Columns.AddRange(New System.Windows.Forms.DataGridViewTextBoxColumn() {DataGridViewTextBoxColumn1})

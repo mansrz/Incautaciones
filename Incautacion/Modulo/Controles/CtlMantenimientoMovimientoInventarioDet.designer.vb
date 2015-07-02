@@ -603,7 +603,7 @@ Partial Class CtlMantenimientoMovimientoInventarioDet
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(70, 13)
         Me.Label8.TabIndex = 46
-        Me.Label8.Text = "Observación:"
+        Me.Label8.Text = "Ubicación:"
         '
         'txtUbicacion
         '

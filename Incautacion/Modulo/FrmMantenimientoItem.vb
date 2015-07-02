@@ -79,7 +79,7 @@ Public Class FrmMantenimientoItem
         If mItem IsNot Nothing Then
             mItem.Recargar()
             Me.txtItemSencuencia.Enabled = mItem.EsNuevo
-            Me.txtItemSencuencia.Text = mItem.Item_Codigo
+            Me.txtItemSencuencia.Text = mItem.Item_Secuencia
             Me.txtdescripcion.Text = mItem.Item_Descripcion
             Me.cboTipo.ParametroDet = mItem.PardetTipo
             Me.ComboBoxMarca1.ParametroDet = mItem.PardetMarca

@@ -246,7 +246,7 @@
     OrdenProduccion = 15
     Cortesia = 16
         Cxp = 18
-        IncautSalida = 21
+        IncautSalida = 20
 
   End Enum
 #End Region

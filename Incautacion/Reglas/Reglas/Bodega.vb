@@ -51,13 +51,15 @@ Public Class Bodega
     Get
       If Me.mEntidadlugar Is Nothing Then
         Me.mEntidadlugar = New EntidadLugar(OperadorDatos, Entida_Codigo)
-      End If
+            End If
+            'MsgBox("getting entidad lugar cod" + Entida_Codigo.ToString())
       Return Me.mEntidadlugar
     End Get
-    Set(ByVal value As EntidadLugar)
-      Me.mEntidadlugar = value
-      Entida_Codigo = value.Entida_Codigo
-    End Set
+        Set(ByVal value As EntidadLugar)
+            'MsgBox("seteando entidad lugar cod" + value.Entida_Codigo.ToString())
+            Me.mEntidadlugar = value
+            Entida_Codigo = value.Entida_Codigo
+        End Set
   End Property
 
   'Sucursal

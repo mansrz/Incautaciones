@@ -692,12 +692,14 @@ Public Class MovimientoInventario
 
   'Bodega
   Public Overridable Overloads Property Bodega() As Bodega
-    Get
-      If Me.mBodega Is Nothing AndAlso Bodega_Codigo > 0 Then
-        Me.mBodega = New Bodega(New Sucursal(New Empresa(OperadorDatos, Me.Empres_Bodega), Me.Sucurs_Bodega), Me.Bodega_Codigo)
-      End If
-      Return Me.mBodega
-    End Get
+        Get
+            'MsgBox("Bodega" + Empres_Bodega.ToString() + " " + Sucurs_Bodega.ToString() + " " + Bodega_Codigo.ToString())
+            If Me.mBodega Is Nothing AndAlso Bodega_Codigo > 0 Then
+                Me.mBodega = New Bodega(New Sucursal(New Empresa(OperadorDatos, Me.Empres_Bodega), Me.Sucurs_Bodega), Me.Bodega_Codigo)
+            End If
+            'MsgBox(mBodega.NombreCompleto)
+            Return Me.mBodega
+        End Get
     Set(ByVal value As Bodega)
       Me.mBodega = value
       Empres_Bodega = value.Empres_Codigo
@@ -1030,7 +1032,7 @@ Public Class MovimientoInventario
                         _detalle.Item.Empresa = Sucursal.Empresa
                         If _detalle.Item.Guardar() Then
                             'MsgBox("item guardado")
-                            MsgBox(_detalle.Item.Item_Codigo.ToString)
+                            'MsgBox(_detalle.Item.Item_Codigo.ToString)
                             If Not _detalle.Guardar() Then
                                 bReturn = False
                                 Exit For

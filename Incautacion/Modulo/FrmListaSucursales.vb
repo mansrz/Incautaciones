@@ -109,8 +109,8 @@ Public Class FrmListaSucursales
   Private WithEvents mSucursales As SucursalList = Nothing
 
   Sub Llenar_datos(Optional ByVal _filtro As String = "")
-    MyBase.Titulo = "Zona"
-    MyBase.AgregarLeyenda = "Agregar una nuevo zona"
+        MyBase.Titulo = "Bodega"
+        MyBase.AgregarLeyenda = "Agregar una nueva bodega"
 
     'Me.DataGridView1.Columns.Clear()
 
