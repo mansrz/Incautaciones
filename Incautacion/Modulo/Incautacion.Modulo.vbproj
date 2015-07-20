@@ -150,16 +150,16 @@
     <Compile Include="Controles\ComboBoxUsuario.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Incautacion\Forms\FrmMantenimientoItemPrecio.designer.vb">
-      <DependentUpon>FrmMantenimientoItemPrecio.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Incautacion\Forms\FrmMantenimientoItemPrecio.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Incautacion\Forms\FrmListaIncautacion.designer.vb">
       <DependentUpon>FrmListaIncautacion.vb</DependentUpon>
     </Compile>
     <Compile Include="Incautacion\Forms\FrmListaIncautacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmMantenimientoItemPrecio.designer.vb">
+      <DependentUpon>FrmMantenimientoItemPrecio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incautacion\Forms\FrmMantenimientoItemPrecio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Incautacion\Controles\CtlBuscaIncautacion.designer.vb">
@@ -781,11 +781,11 @@
     <EmbeddedResource Include="Controles\ComboBoxUsuario.resx">
       <DependentUpon>ComboBoxUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Incautacion\Forms\FrmMantenimientoItemPrecio.resx">
-      <DependentUpon>FrmMantenimientoItemPrecio.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Incautacion\Forms\FrmListaIncautacion.resx">
       <DependentUpon>FrmListaIncautacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incautacion\Forms\FrmMantenimientoItemPrecio.resx">
+      <DependentUpon>FrmMantenimientoItemPrecio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Incautacion\Controles\CtlBuscaIncautacion.resx">
       <DependentUpon>CtlBuscaIncautacion.vb</DependentUpon>
@@ -1056,6 +1056,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Colorama.Modulo_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

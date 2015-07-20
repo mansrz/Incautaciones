@@ -60,6 +60,8 @@ Partial Class FrmMantenimientoIncautacion
         Me.txtObservacion = New System.Windows.Forms.RichTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.CtlBuscaFedatario = New Incautacion.Modulo.CtlBuscaEmpleado()
+        Me.CtlBuscaAdministrativo = New Incautacion.Modulo.CtlBuscaEmpleado()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtCedula = New Infoware.Controles.Base.TextBoxStd()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -69,18 +71,18 @@ Partial Class FrmMantenimientoIncautacion
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtNumero = New Infoware.Controles.Base.TextBoxStd()
+        Me.CtlBuscaContribuyente1 = New Incautacion.Modulo.CtlBuscaContribuyente()
         Me.tpResolucion = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgResoluciones = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn94 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn32 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.btnnuevaResol = New System.Windows.Forms.ToolStripButton()
         Me.btnmodiResol = New System.Windows.Forms.ToolStripButton()
         Me.btnelimResol = New System.Windows.Forms.ToolStripButton()
-        Me.CtlBuscaFedatario = New Incautacion.Modulo.CtlBuscaEmpleado()
-        Me.CtlBuscaAdministrativo = New Incautacion.Modulo.CtlBuscaEmpleado()
-        Me.CtlBuscaContribuyente1 = New Incautacion.Modulo.CtlBuscaContribuyente()
+        Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn94 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsResoluciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbIncautacion.SuspendLayout()
@@ -276,6 +278,7 @@ Partial Class FrmMantenimientoIncautacion
         'txtObservacion
         '
         Me.txtObservacion.Location = New System.Drawing.Point(9, 274)
+        Me.txtObservacion.MaxLength = 1000
         Me.txtObservacion.Name = "txtObservacion"
         Me.txtObservacion.Size = New System.Drawing.Size(313, 62)
         Me.txtObservacion.TabIndex = 67
@@ -300,6 +303,30 @@ Partial Class FrmMantenimientoIncautacion
         Me.GroupBox2.TabIndex = 65
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Funcionarios participantes"
+        '
+        'CtlBuscaFedatario
+        '
+        Me.CtlBuscaFedatario.Empleado = Nothing
+        Me.CtlBuscaFedatario.EmpleadoText = "Fedatario"
+        Me.CtlBuscaFedatario.ItemText = "Fedatario"
+        Me.CtlBuscaFedatario.Location = New System.Drawing.Point(6, 19)
+        Me.CtlBuscaFedatario.Name = "CtlBuscaFedatario"
+        Me.CtlBuscaFedatario.Size = New System.Drawing.Size(304, 22)
+        Me.CtlBuscaFedatario.TabIndex = 47
+        Me.CtlBuscaFedatario.TipoEmpleado = Nothing
+        Me.CtlBuscaFedatario.Ubicacion = Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
+        '
+        'CtlBuscaAdministrativo
+        '
+        Me.CtlBuscaAdministrativo.Empleado = Nothing
+        Me.CtlBuscaAdministrativo.EmpleadoText = "Administrativo"
+        Me.CtlBuscaAdministrativo.ItemText = "Administrativo"
+        Me.CtlBuscaAdministrativo.Location = New System.Drawing.Point(6, 47)
+        Me.CtlBuscaAdministrativo.Name = "CtlBuscaAdministrativo"
+        Me.CtlBuscaAdministrativo.Size = New System.Drawing.Size(304, 22)
+        Me.CtlBuscaAdministrativo.TabIndex = 48
+        Me.CtlBuscaAdministrativo.TipoEmpleado = Nothing
+        Me.CtlBuscaAdministrativo.Ubicacion = Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
         '
         'GroupBox1
         '
@@ -401,6 +428,17 @@ Partial Class FrmMantenimientoIncautacion
         Me.txtNumero.Size = New System.Drawing.Size(191, 22)
         Me.txtNumero.TabIndex = 60
         '
+        'CtlBuscaContribuyente1
+        '
+        Me.CtlBuscaContribuyente1.Contribuyente = Nothing
+        Me.CtlBuscaContribuyente1.ContribuyenteText = "Contribuyente"
+        Me.CtlBuscaContribuyente1.ItemText = "Contribuyente"
+        Me.CtlBuscaContribuyente1.Location = New System.Drawing.Point(8, 6)
+        Me.CtlBuscaContribuyente1.Name = "CtlBuscaContribuyente1"
+        Me.CtlBuscaContribuyente1.Size = New System.Drawing.Size(316, 22)
+        Me.CtlBuscaContribuyente1.TabIndex = 58
+        Me.CtlBuscaContribuyente1.Ubicacion = Modulo.CtlBuscaContribuyente.EnumUbicacion.Normal
+        '
         'tpResolucion
         '
         Me.tpResolucion.Controls.Add(Me.GroupBox5)
@@ -439,7 +477,7 @@ Partial Class FrmMantenimientoIncautacion
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgResoluciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgResoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgResoluciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn31})
+        Me.dgResoluciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn33})
         Me.dgResoluciones.DataSource = Me.bsResoluciones
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
@@ -464,17 +502,17 @@ Partial Class FrmMantenimientoIncautacion
         Me.dgResoluciones.Size = New System.Drawing.Size(326, 299)
         Me.dgResoluciones.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn94
+        'DataGridViewTextBoxColumn32
         '
-        Me.DataGridViewTextBoxColumn94.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn94.Name = "DataGridViewTextBoxColumn94"
-        Me.DataGridViewTextBoxColumn94.ReadOnly = True
+        Me.DataGridViewTextBoxColumn32.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn32.Name = "DataGridViewTextBoxColumn32"
+        Me.DataGridViewTextBoxColumn32.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn31
+        'DataGridViewTextBoxColumn33
         '
-        Me.DataGridViewTextBoxColumn31.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
-        Me.DataGridViewTextBoxColumn31.ReadOnly = True
+        Me.DataGridViewTextBoxColumn33.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn33.Name = "DataGridViewTextBoxColumn33"
+        Me.DataGridViewTextBoxColumn33.ReadOnly = True
         '
         'ToolStrip2
         '
@@ -512,40 +550,17 @@ Partial Class FrmMantenimientoIncautacion
         Me.btnelimResol.Size = New System.Drawing.Size(23, 22)
         Me.btnelimResol.Text = "Eliminar resolución"
         '
-        'CtlBuscaFedatario
+        'DataGridViewTextBoxColumn31
         '
-        Me.CtlBuscaFedatario.Empleado = Nothing
-        Me.CtlBuscaFedatario.EmpleadoText = "Fedatario"
-        Me.CtlBuscaFedatario.ItemText = "Fedatario"
-        Me.CtlBuscaFedatario.Location = New System.Drawing.Point(6, 19)
-        Me.CtlBuscaFedatario.Name = "CtlBuscaFedatario"
-        Me.CtlBuscaFedatario.Size = New System.Drawing.Size(304, 22)
-        Me.CtlBuscaFedatario.TabIndex = 47
-        Me.CtlBuscaFedatario.TipoEmpleado = Nothing
-        Me.CtlBuscaFedatario.Ubicacion = Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
+        Me.DataGridViewTextBoxColumn31.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
+        Me.DataGridViewTextBoxColumn31.ReadOnly = True
         '
-        'CtlBuscaAdministrativo
+        'DataGridViewTextBoxColumn94
         '
-        Me.CtlBuscaAdministrativo.Empleado = Nothing
-        Me.CtlBuscaAdministrativo.EmpleadoText = "Administrativo"
-        Me.CtlBuscaAdministrativo.ItemText = "Administrativo"
-        Me.CtlBuscaAdministrativo.Location = New System.Drawing.Point(6, 47)
-        Me.CtlBuscaAdministrativo.Name = "CtlBuscaAdministrativo"
-        Me.CtlBuscaAdministrativo.Size = New System.Drawing.Size(304, 22)
-        Me.CtlBuscaAdministrativo.TabIndex = 48
-        Me.CtlBuscaAdministrativo.TipoEmpleado = Nothing
-        Me.CtlBuscaAdministrativo.Ubicacion = Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
-        '
-        'CtlBuscaContribuyente1
-        '
-        Me.CtlBuscaContribuyente1.Contribuyente = Nothing
-        Me.CtlBuscaContribuyente1.ContribuyenteText = "Contribuyente"
-        Me.CtlBuscaContribuyente1.ItemText = "Contribuyente"
-        Me.CtlBuscaContribuyente1.Location = New System.Drawing.Point(8, 6)
-        Me.CtlBuscaContribuyente1.Name = "CtlBuscaContribuyente1"
-        Me.CtlBuscaContribuyente1.Size = New System.Drawing.Size(316, 22)
-        Me.CtlBuscaContribuyente1.TabIndex = 58
-        Me.CtlBuscaContribuyente1.Ubicacion = Modulo.CtlBuscaContribuyente.EnumUbicacion.Normal
+        Me.DataGridViewTextBoxColumn94.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn94.Name = "DataGridViewTextBoxColumn94"
+        Me.DataGridViewTextBoxColumn94.ReadOnly = True
         '
         'FrmMantenimientoIncautacion
         '
@@ -633,5 +648,7 @@ Partial Class FrmMantenimientoIncautacion
     Friend WithEvents txtCedula As Infoware.Controles.Base.TextBoxStd
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents DataGridViewTextBoxColumn31 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn32 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn33 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

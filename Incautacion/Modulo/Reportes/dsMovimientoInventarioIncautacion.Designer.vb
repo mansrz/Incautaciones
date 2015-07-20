@@ -616,22 +616,22 @@ Partial Public Class dsMovimientoInventarioIncautacion
             Return rowvw_MovimientoInventarioIncautacionRow
         End Function
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As vw_MovimientoInventarioIncautacionDataTable = CType(MyBase.Clone, vw_MovimientoInventarioIncautacionDataTable)
-            cln.InitVars()
+            Dim cln As vw_MovimientoInventarioIncautacionDataTable = CType(MyBase.Clone,vw_MovimientoInventarioIncautacionDataTable)
+            cln.InitVars
             Return cln
         End Function
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
             Return New vw_MovimientoInventarioIncautacionDataTable()
         End Function
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnIncaut_Numero = MyBase.Columns("Incaut_Numero")
             Me.columnPropieatrioNombre = MyBase.Columns("PropieatrioNombre")
@@ -658,8 +658,8 @@ Partial Public Class dsMovimientoInventarioIncautacion
             Me.columnIncaut_Observaciones = MyBase.Columns("Incaut_Observaciones")
         End Sub
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
             Me.columnIncaut_Numero = New Global.System.Data.DataColumn("Incaut_Numero", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIncaut_Numero)
@@ -707,103 +707,103 @@ Partial Public Class dsMovimientoInventarioIncautacion
             MyBase.Columns.Add(Me.columnObservacion)
             Me.columnIncaut_Observaciones = New Global.System.Data.DataColumn("Incaut_Observaciones", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIncaut_Observaciones)
-            Me.columnIncaut_Numero.AllowDBNull = False
+            Me.columnIncaut_Numero.AllowDBNull = false
             Me.columnIncaut_Numero.MaxLength = 100
             Me.columnPropieatrioNombre.MaxLength = 201
             Me.columnPropietarioIdentificacion.MaxLength = 50
-            Me.columnMovinv_Fecha.AllowDBNull = False
+            Me.columnMovinv_Fecha.AllowDBNull = false
             Me.columnFedatarioNombre.MaxLength = 201
             Me.columnFedatarioIdentificaicon.MaxLength = 50
             Me.columnAdministrativoNombre.MaxLength = 201
             Me.columnAdministrativoIdentificacion.MaxLength = 50
-            Me.columnIncaut_TenedorNombre.AllowDBNull = False
+            Me.columnIncaut_TenedorNombre.AllowDBNull = false
             Me.columnIncaut_TenedorNombre.MaxLength = 250
-            Me.columnIncaut_TenedorCI.AllowDBNull = False
+            Me.columnIncaut_TenedorCI.AllowDBNull = false
             Me.columnIncaut_TenedorCI.MaxLength = 10
-            Me.columnItem_Secuencia.AllowDBNull = False
-            Me.columnMoinde_Cantidad.AllowDBNull = False
-            Me.columnUnidadMedida.AllowDBNull = False
+            Me.columnItem_Secuencia.AllowDBNull = false
+            Me.columnMoinde_Cantidad.AllowDBNull = false
+            Me.columnUnidadMedida.AllowDBNull = false
             Me.columnUnidadMedida.MaxLength = 150
-            Me.columnDescripcion.AllowDBNull = False
+            Me.columnDescripcion.AllowDBNull = false
             Me.columnDescripcion.MaxLength = 150
-            Me.columnMarca.AllowDBNull = False
+            Me.columnMarca.AllowDBNull = false
             Me.columnMarca.MaxLength = 150
-            Me.columnModelo.AllowDBNull = False
+            Me.columnModelo.AllowDBNull = false
             Me.columnModelo.MaxLength = 50
             Me.columnSerie.MaxLength = 50
-            Me.columnEstado.AllowDBNull = False
+            Me.columnEstado.AllowDBNull = false
             Me.columnEstado.MaxLength = 150
-            Me.columnValorTotal.ReadOnly = True
-            Me.columnCaracteristicas.AllowDBNull = False
+            Me.columnValorTotal.ReadOnly = true
+            Me.columnCaracteristicas.AllowDBNull = false
             Me.columnCaracteristicas.MaxLength = 150
-            Me.columnObservacion.AllowDBNull = False
+            Me.columnObservacion.AllowDBNull = false
             Me.columnObservacion.MaxLength = 50
-            Me.columnIncaut_Observaciones.AllowDBNull = False
-            Me.columnIncaut_Observaciones.MaxLength = 500
+            Me.columnIncaut_Observaciones.AllowDBNull = false
+            Me.columnIncaut_Observaciones.MaxLength = 1000
         End Sub
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Newvw_MovimientoInventarioIncautacionRow() As vw_MovimientoInventarioIncautacionRow
-            Return CType(Me.NewRow, vw_MovimientoInventarioIncautacionRow)
+            Return CType(Me.NewRow,vw_MovimientoInventarioIncautacionRow)
         End Function
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
             Return New vw_MovimientoInventarioIncautacionRow(builder)
         End Function
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
             Return GetType(vw_MovimientoInventarioIncautacionRow)
         End Function
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
             If (Not (Me.vw_MovimientoInventarioIncautacionRowChangedEvent) Is Nothing) Then
-                RaiseEvent vw_MovimientoInventarioIncautacionRowChanged(Me, New vw_MovimientoInventarioIncautacionRowChangeEvent(CType(e.Row, vw_MovimientoInventarioIncautacionRow), e.Action))
+                RaiseEvent vw_MovimientoInventarioIncautacionRowChanged(Me, New vw_MovimientoInventarioIncautacionRowChangeEvent(CType(e.Row,vw_MovimientoInventarioIncautacionRow), e.Action))
             End If
         End Sub
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
             If (Not (Me.vw_MovimientoInventarioIncautacionRowChangingEvent) Is Nothing) Then
-                RaiseEvent vw_MovimientoInventarioIncautacionRowChanging(Me, New vw_MovimientoInventarioIncautacionRowChangeEvent(CType(e.Row, vw_MovimientoInventarioIncautacionRow), e.Action))
+                RaiseEvent vw_MovimientoInventarioIncautacionRowChanging(Me, New vw_MovimientoInventarioIncautacionRowChangeEvent(CType(e.Row,vw_MovimientoInventarioIncautacionRow), e.Action))
             End If
         End Sub
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
             If (Not (Me.vw_MovimientoInventarioIncautacionRowDeletedEvent) Is Nothing) Then
-                RaiseEvent vw_MovimientoInventarioIncautacionRowDeleted(Me, New vw_MovimientoInventarioIncautacionRowChangeEvent(CType(e.Row, vw_MovimientoInventarioIncautacionRow), e.Action))
+                RaiseEvent vw_MovimientoInventarioIncautacionRowDeleted(Me, New vw_MovimientoInventarioIncautacionRowChangeEvent(CType(e.Row,vw_MovimientoInventarioIncautacionRow), e.Action))
             End If
         End Sub
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
             If (Not (Me.vw_MovimientoInventarioIncautacionRowDeletingEvent) Is Nothing) Then
-                RaiseEvent vw_MovimientoInventarioIncautacionRowDeleting(Me, New vw_MovimientoInventarioIncautacionRowChangeEvent(CType(e.Row, vw_MovimientoInventarioIncautacionRow), e.Action))
+                RaiseEvent vw_MovimientoInventarioIncautacionRowDeleting(Me, New vw_MovimientoInventarioIncautacionRowChangeEvent(CType(e.Row,vw_MovimientoInventarioIncautacionRow), e.Action))
             End If
         End Sub
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Removevw_MovimientoInventarioIncautacionRow(ByVal row As vw_MovimientoInventarioIncautacionRow)
             Me.Rows.Remove(row)
         End Sub
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
@@ -832,35 +832,35 @@ Partial Public Class dsMovimientoInventarioIncautacion
             If xs.Contains(dsSchema.TargetNamespace) Then
                 Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
                 Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try
+                Try 
                     Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
                     dsSchema.Write(s1)
                     Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
                     Do While schemas.MoveNext
-                        schema = CType(schemas.Current, Global.System.Xml.Schema.XmlSchema)
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
                         s2.SetLength(0)
                         schema.Write(s2)
                         If (s1.Length = s2.Length) Then
                             s1.Position = 0
                             s2.Position = 0
-
-                            Do While ((s1.Position <> s1.Length) _
+                            
+                            Do While ((s1.Position <> s1.Length)  _
                                         AndAlso (s1.ReadByte = s2.ReadByte))
-
-
+                                
+                                
                             Loop
                             If (s1.Position = s1.Length) Then
                                 Return type
                             End If
                         End If
-
+                        
                     Loop
                 Finally
                     If (Not (s1) Is Nothing) Then
-                        s1.Close()
+                        s1.Close
                     End If
                     If (Not (s2) Is Nothing) Then
-                        s2.Close()
+                        s2.Close
                     End If
                 End Try
             End If
@@ -877,331 +877,331 @@ Partial Public Class dsMovimientoInventarioIncautacion
         
         Private tablevw_MovimientoInventarioIncautacion As vw_MovimientoInventarioIncautacionDataTable
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tablevw_MovimientoInventarioIncautacion = CType(Me.Table, vw_MovimientoInventarioIncautacionDataTable)
+            Me.tablevw_MovimientoInventarioIncautacion = CType(Me.Table,vw_MovimientoInventarioIncautacionDataTable)
         End Sub
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Incaut_Numero() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_NumeroColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_NumeroColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_NumeroColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_NumeroColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property PropieatrioNombre() As String
             Get
-                Try
-                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.PropieatrioNombreColumn), String)
+                Try 
+                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.PropieatrioNombreColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'PropieatrioNombre' in table 'vw_MovimientoInventarioIncauta" & _
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'PropieatrioNombre' in table 'vw_MovimientoInventarioIncauta"& _ 
                             "cion' is DBNull.", e)
                 End Try
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.PropieatrioNombreColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.PropieatrioNombreColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property PropietarioIdentificacion() As String
             Get
-                Try
-                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.PropietarioIdentificacionColumn), String)
+                Try 
+                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.PropietarioIdentificacionColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'PropietarioIdentificacion' in table 'vw_MovimientoInventari" & _
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'PropietarioIdentificacion' in table 'vw_MovimientoInventari"& _ 
                             "oIncautacion' is DBNull.", e)
                 End Try
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.PropietarioIdentificacionColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.PropietarioIdentificacionColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Movinv_Fecha() As Date
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Movinv_FechaColumn), Date)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Movinv_FechaColumn),Date)
             End Get
-            Set(value As Date)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.Movinv_FechaColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.Movinv_FechaColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property FedatarioNombre() As String
             Get
-                Try
-                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.FedatarioNombreColumn), String)
+                Try 
+                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.FedatarioNombreColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'FedatarioNombre' in table 'vw_MovimientoInventarioIncautaci" & _
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FedatarioNombre' in table 'vw_MovimientoInventarioIncautaci"& _ 
                             "on' is DBNull.", e)
                 End Try
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.FedatarioNombreColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.FedatarioNombreColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property FedatarioIdentificaicon() As String
             Get
-                Try
-                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.FedatarioIdentificaiconColumn), String)
+                Try 
+                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.FedatarioIdentificaiconColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'FedatarioIdentificaicon' in table 'vw_MovimientoInventarioI" & _
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FedatarioIdentificaicon' in table 'vw_MovimientoInventarioI"& _ 
                             "ncautacion' is DBNull.", e)
                 End Try
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.FedatarioIdentificaiconColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.FedatarioIdentificaiconColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property AdministrativoNombre() As String
             Get
-                Try
-                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.AdministrativoNombreColumn), String)
+                Try 
+                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.AdministrativoNombreColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'AdministrativoNombre' in table 'vw_MovimientoInventarioInca" & _
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AdministrativoNombre' in table 'vw_MovimientoInventarioInca"& _ 
                             "utacion' is DBNull.", e)
                 End Try
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.AdministrativoNombreColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.AdministrativoNombreColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property AdministrativoIdentificacion() As String
             Get
-                Try
-                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.AdministrativoIdentificacionColumn), String)
+                Try 
+                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.AdministrativoIdentificacionColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'AdministrativoIdentificacion' in table 'vw_MovimientoInvent" & _
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AdministrativoIdentificacion' in table 'vw_MovimientoInvent"& _ 
                             "arioIncautacion' is DBNull.", e)
                 End Try
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.AdministrativoIdentificacionColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.AdministrativoIdentificacionColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Incaut_TenedorNombre() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_TenedorNombreColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_TenedorNombreColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_TenedorNombreColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_TenedorNombreColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Incaut_TenedorCI() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_TenedorCIColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_TenedorCIColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_TenedorCIColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_TenedorCIColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Item_Secuencia() As Integer
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Item_SecuenciaColumn), Integer)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Item_SecuenciaColumn),Integer)
             End Get
-            Set(value As Integer)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.Item_SecuenciaColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.Item_SecuenciaColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Moinde_Cantidad() As Integer
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Moinde_CantidadColumn), Integer)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Moinde_CantidadColumn),Integer)
             End Get
-            Set(value As Integer)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.Moinde_CantidadColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.Moinde_CantidadColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property UnidadMedida() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.UnidadMedidaColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.UnidadMedidaColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.UnidadMedidaColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.UnidadMedidaColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Descripcion() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.DescripcionColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.DescripcionColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.DescripcionColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.DescripcionColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Marca() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.MarcaColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.MarcaColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.MarcaColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.MarcaColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Modelo() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.ModeloColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.ModeloColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.ModeloColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.ModeloColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Serie() As String
             Get
-                Try
-                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.SerieColumn), String)
+                Try 
+                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.SerieColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Serie' in table 'vw_MovimientoInventarioIncautacion' is DBN" & _
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Serie' in table 'vw_MovimientoInventarioIncautacion' is DBN"& _ 
                             "ull.", e)
                 End Try
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.SerieColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.SerieColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Estado() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.EstadoColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.EstadoColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.EstadoColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.EstadoColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ValorUnitario() As Decimal
             Get
-                Try
-                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.ValorUnitarioColumn), Decimal)
+                Try 
+                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.ValorUnitarioColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ValorUnitario' in table 'vw_MovimientoInventarioIncautacion" & _
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ValorUnitario' in table 'vw_MovimientoInventarioIncautacion"& _ 
                             "' is DBNull.", e)
                 End Try
             End Get
-            Set(value As Decimal)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.ValorUnitarioColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.ValorUnitarioColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ValorTotal() As Decimal
             Get
-                Try
-                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.ValorTotalColumn), Decimal)
+                Try 
+                    Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.ValorTotalColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ValorTotal' in table 'vw_MovimientoInventarioIncautacion' i" & _
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ValorTotal' in table 'vw_MovimientoInventarioIncautacion' i"& _ 
                             "s DBNull.", e)
                 End Try
             End Get
-            Set(value As Decimal)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.ValorTotalColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.ValorTotalColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Caracteristicas() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.CaracteristicasColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.CaracteristicasColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.CaracteristicasColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.CaracteristicasColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Observacion() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.ObservacionColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.ObservacionColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.ObservacionColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.ObservacionColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Incaut_Observaciones() As String
             Get
-                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_ObservacionesColumn), String)
+                Return CType(Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_ObservacionesColumn),String)
             End Get
-            Set(value As String)
-                Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_ObservacionesColumn) = Value
+            Set
+                Me(Me.tablevw_MovimientoInventarioIncautacion.Incaut_ObservacionesColumn) = value
             End Set
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsPropieatrioNombreNull() As Boolean
             Return Me.IsNull(Me.tablevw_MovimientoInventarioIncautacion.PropieatrioNombreColumn)
         End Function
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetPropieatrioNombreNull()
             Me(Me.tablevw_MovimientoInventarioIncautacion.PropieatrioNombreColumn) = Global.System.Convert.DBNull
         End Sub
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsPropietarioIdentificacionNull() As Boolean
             Return Me.IsNull(Me.tablevw_MovimientoInventarioIncautacion.PropietarioIdentificacionColumn)
         End Function
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetPropietarioIdentificacionNull()
             Me(Me.tablevw_MovimientoInventarioIncautacion.PropietarioIdentificacionColumn) = Global.System.Convert.DBNull
         End Sub

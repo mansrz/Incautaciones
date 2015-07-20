@@ -65,7 +65,7 @@ Public Class FrmMantenimientoItem
 
         Me.CtlBuscaIncautacion1.OperadorDatos = mSucursal.OperadorDatos
         Me.CtlBuscaIncautacion1.Contribuyente = Item.Incautacion.Contribuyente
-        Me.CtlBuscaIncautacion1.Sucursal = Me.mSucursal
+        Me.CtlBuscaIncautacion1.Sucursal = mSucursal
         Me.CtlBuscaIncautacion1.llenar_datos()
         Me.CtlBuscaIncautacion1.Incautacion = Item.Incautacion
         Me.CtlBuscaIncautacion1.Enabled = False
@@ -473,7 +473,7 @@ Public Class FrmMantenimientoItem
         'f.IncautacionResolucion = _IncautacionResolucion
         f.ItemPrecios = Me.bsPrecios
         f.ShowDialog()
-        If bsPrecios.Count <= 1 Then
+        If bsPrecios.Count >= 1 Then
             Me.dgPrecios.AutoDiscover()
         End If
         Me.dgPrecios.Invalidate()

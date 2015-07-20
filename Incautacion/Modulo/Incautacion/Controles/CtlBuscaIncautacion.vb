@@ -44,7 +44,7 @@ Public Class CtlBuscaIncautacion
             mOperadorDatos = value
 
             If value IsNot Nothing Then
-                'llenar_datos()
+                llenar_datos()
             End If
         End Set
     End Property
@@ -76,12 +76,16 @@ Public Class CtlBuscaIncautacion
     Private mEstaCargando = False
 
     Sub llenar_datos()
-        'MsgBox("voy a llenar lista incautaciones")
-        mIncautaciones = IncautacionList.ObtenerLista(mSucursal.Empresa, mContribuyente)
-        'MsgBox("llene lista incautaciones")
+        If mSucursal Is Nothing Then
+            Exit Sub
+        End If
+        If mContribuyente Is Nothing Then
+            Exit Sub
+        End If
         Me.ComboBox1.DisplayMember = "Incaut_Numero"
         Me.ComboBox1.ValueMember = "Incaut_Codigo"
 
+        mIncautaciones = IncautacionList.ObtenerLista(mSucursal.Empresa, mContribuyente)
 
         mEstaCargando = True
         Me.ComboBox1.DataSource = mIncautaciones
@@ -138,7 +142,7 @@ Public Class CtlBuscaIncautacion
     End Sub
 
     Private Sub abrir_consulta(Optional ByVal filtro As String = "")
-        Dim f As New FrmListaIncautacion(CType(Me.ParentForm, FrmFormaBase).Sistema, Enumerados.EnumOpciones.ListaIncautaciones, False, mContribuyente, mSucursal, True)
+        Dim f As New FrmListaIncautacion(CType(Me.ParentForm, FrmFormaBase).Sistema, Enumerados.EnumOpciones.ListaIncautaciones, True, mContribuyente, mSucursal, True)
         f.Contribuyente = Contribuyente
         f.Incautacion = Incautacion
         f.Sucursal = Sucursal

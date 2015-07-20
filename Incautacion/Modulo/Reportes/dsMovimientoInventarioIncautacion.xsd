@@ -55,7 +55,7 @@ FROM            vw_MovimientoInventarioIncautacion</CommandText>
   <xs:element name="dsMovimientoInventarioIncautacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMovimientoInventarioIncautacion" msprop:Generator_UserDSName="dsMovimientoInventarioIncautacion">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vw_MovimientoInventarioIncautacion" msprop:Generator_TableClassName="vw_MovimientoInventarioIncautacionDataTable" msprop:Generator_TableVarName="tablevw_MovimientoInventarioIncautacion" msprop:Generator_RowChangedName="vw_MovimientoInventarioIncautacionRowChanged" msprop:Generator_TablePropName="vw_MovimientoInventarioIncautacion" msprop:Generator_RowDeletingName="vw_MovimientoInventarioIncautacionRowDeleting" msprop:Generator_RowChangingName="vw_MovimientoInventarioIncautacionRowChanging" msprop:Generator_RowEvHandlerName="vw_MovimientoInventarioIncautacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_MovimientoInventarioIncautacionRowDeleted" msprop:Generator_RowClassName="vw_MovimientoInventarioIncautacionRow" msprop:Generator_UserTableName="vw_MovimientoInventarioIncautacion" msprop:Generator_RowEvArgName="vw_MovimientoInventarioIncautacionRowChangeEvent">
+        <xs:element name="vw_MovimientoInventarioIncautacion" msprop:Generator_TableClassName="vw_MovimientoInventarioIncautacionDataTable" msprop:Generator_TableVarName="tablevw_MovimientoInventarioIncautacion" msprop:Generator_TablePropName="vw_MovimientoInventarioIncautacion" msprop:Generator_RowDeletingName="vw_MovimientoInventarioIncautacionRowDeleting" msprop:Generator_RowChangingName="vw_MovimientoInventarioIncautacionRowChanging" msprop:Generator_RowEvHandlerName="vw_MovimientoInventarioIncautacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_MovimientoInventarioIncautacionRowDeleted" msprop:Generator_UserTableName="vw_MovimientoInventarioIncautacion" msprop:Generator_RowChangedName="vw_MovimientoInventarioIncautacionRowChanged" msprop:Generator_RowEvArgName="vw_MovimientoInventarioIncautacionRowChangeEvent" msprop:Generator_RowClassName="vw_MovimientoInventarioIncautacionRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Incaut_Numero" msprop:Generator_ColumnVarNameInTable="columnIncaut_Numero" msprop:Generator_ColumnPropNameInRow="Incaut_Numero" msprop:Generator_ColumnPropNameInTable="Incaut_NumeroColumn" msprop:Generator_UserColumnName="Incaut_Numero">
@@ -185,7 +185,7 @@ FROM            vw_MovimientoInventarioIncautacion</CommandText>
               <xs:element name="Incaut_Observaciones" msprop:Generator_ColumnVarNameInTable="columnIncaut_Observaciones" msprop:Generator_ColumnPropNameInRow="Incaut_Observaciones" msprop:Generator_ColumnPropNameInTable="Incaut_ObservacionesColumn" msprop:Generator_UserColumnName="Incaut_Observaciones">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
+                    <xs:maxLength value="1000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

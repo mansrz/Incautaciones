@@ -32,6 +32,12 @@ Partial Public Class IncautacionResolucion
         EsNuevo = _EsNuevo
     End Sub
 
+    Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _Incaut_Codigo As Integer, ByVal _EsNuevo As Boolean)
+        'MyBase.New()
+        OperadorDatos = _OperadorDatos
+        Incaut_Codigo = _Incaut_Codigo
+        EsNuevo = _EsNuevo
+    End Sub
 
     Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _Incaut_Codigo As Integer, ByVal _IncRes_Codigo As Integer)
         'MyBase.New()

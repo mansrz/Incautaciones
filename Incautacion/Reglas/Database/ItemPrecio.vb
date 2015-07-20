@@ -46,7 +46,7 @@ Partial Public Class ItemPrecio
     End Property
 
     <XmlAttribute()> _
-    <Infoware.Reportes.CampoReporteAtributo("Activo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Logico, 10, True)> _
+    <Infoware.Reportes.CampoReporteAtributo("Activo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Logico, 50, True)> _
     Public Overridable Property ItePre_Activo() As Boolean
         Get
             Return Me.mItePre_Activo
@@ -58,7 +58,7 @@ Partial Public Class ItemPrecio
     End Property
 
     <XmlAttribute()> _
-    <Infoware.Reportes.CampoReporteAtributo("Valor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales, 20, True)> _
+    <Infoware.Reportes.CampoReporteAtributo("Valor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales, 60, True)> _
     Public Overridable Property ItePre_Valor() As Decimal
         Get
             Return Me.mItePre_Valor
@@ -71,7 +71,7 @@ Partial Public Class ItemPrecio
 
 
     <XmlAttribute()> _
-    <Infoware.Reportes.CampoReporteAtributo("Observación", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 20, True)> _
+    <Infoware.Reportes.CampoReporteAtributo("Observación", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 300, True)> _
     Public Overridable Property ItePre_Observacion() As String
         Get
             Return Me.mItePre_Observacion

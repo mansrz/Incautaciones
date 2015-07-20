@@ -66,8 +66,9 @@ Public Class FrmMantenimientoIncautacion
             Exit Sub
         End If
 
-
-        Me.CtlBuscaContribuyente1.Contribuyente = Me.Contribuyente
+        If Contribuyente IsNot Nothing Then
+            Me.CtlBuscaContribuyente1.Contribuyente = Me.Contribuyente
+        End If
 
         If mIncautacion Is Nothing Then
             mIncautacion = Incautaciones.Current
@@ -334,7 +335,7 @@ Public Class FrmMantenimientoIncautacion
         'f.IncautacionResolucion = _IncautacionResolucion
         f.IncautacionResoluciones = Me.bsResoluciones
         f.ShowDialog()
-        If bsResoluciones.Count <= 1 Then
+        If bsResoluciones.Count >= 1 Then
             Me.dgResoluciones.AutoDiscover()
         End If
         Me.dgResoluciones.Invalidate()

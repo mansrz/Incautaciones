@@ -504,6 +504,7 @@ Partial Class FrmMantenimientoItem
         Me.dgPrecios.AgruparRepetidos = False
         Me.dgPrecios.AllowUserToAddRows = False
         Me.dgPrecios.AllowUserToDeleteRows = False
+        Me.dgPrecios.AutoGenerateColumns = False
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -513,7 +514,7 @@ Partial Class FrmMantenimientoItem
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgPrecios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgPrecios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgPrecios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn31})
+        Me.dgPrecios.DataSource = Me.bsPrecios
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -541,7 +542,6 @@ Partial Class FrmMantenimientoItem
         '
         Me.DataGridViewTextBoxColumn31.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
-        Me.DataGridViewTextBoxColumn31.ReadOnly = True
         '
         'ToolStrip3
         '

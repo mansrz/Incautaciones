@@ -153,80 +153,90 @@ Public Class MovimientoInventario
     End Get
   End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Sobre", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Numero, 60, True)> _
-  Public ReadOnly Property Sobre() As Integer
-    Get
-      If Trabajo Is Nothing Then
-        Return 0
-      End If
-      Return Trabajo.Trabaj_Secuencia
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Sobre", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Numero, 60, True)> _
+    Public ReadOnly Property Sobre() As Integer
+        Get
+            If Trabajo Is Nothing Then
+                Return 0
+            End If
+            Return Trabajo.Trabaj_Secuencia
+        End Get
+    End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Fotos bajadas", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Numero, 60, False)> _
-  Public ReadOnly Property FotosBajadas() As Integer
-    Get
-      If Trabajo Is Nothing Then
-        Return 0
-      End If
-      Return Trabajo.Fotosbajadas
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Fotos bajadas", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Numero, 60, False)> _
+    Public ReadOnly Property FotosBajadas() As Integer
+        Get
+            If Trabajo Is Nothing Then
+                Return 0
+            End If
+            Return Trabajo.Fotosbajadas
+        End Get
+    End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Hora apertura", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, False)> _
-  Public ReadOnly Property HoraApertura() As String
-    Get
-      If Trabajo Is Nothing Then
-        Return String.Empty
-      End If
-      Return Trabajo.HoraApertura
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Hora apertura", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, False)> _
+    Public ReadOnly Property HoraApertura() As String
+        Get
+            If Trabajo Is Nothing Then
+                Return String.Empty
+            End If
+            Return Trabajo.HoraApertura
+        End Get
+    End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Hora diseñador", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, False)> _
-  Public ReadOnly Property HoraEditor() As String
-    Get
-      If Trabajo Is Nothing Then
-        Return String.Empty
-      End If
-      Return Trabajo.HoraEditor
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Hora diseñador", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, False)> _
+    Public ReadOnly Property HoraEditor() As String
+        Get
+            If Trabajo Is Nothing Then
+                Return String.Empty
+            End If
+            Return Trabajo.HoraEditor
+        End Get
+    End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Hora laboratorio", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, False)> _
-  Public ReadOnly Property HoraImprenta() As String
-    Get
-      If Trabajo Is Nothing Then
-        Return String.Empty
-      End If
-      Return Trabajo.HoraImprenta
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Hora laboratorio", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, False)> _
+    Public ReadOnly Property HoraImprenta() As String
+        Get
+            If Trabajo Is Nothing Then
+                Return String.Empty
+            End If
+            Return Trabajo.HoraImprenta
+        End Get
+    End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Tiempo Diseñador minutos", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Numero, 100, False)> _
-  Public ReadOnly Property TiempoEditorMinutos() As Integer
-    Get
-      If Trabajo Is Nothing Then
-        Return 0
-      End If
-      Return Trabajo.TiempoEditorMinutos
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Tiempo Diseñador minutos", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Numero, 100, False)> _
+    Public ReadOnly Property TiempoEditorMinutos() As Integer
+        Get
+            If Trabajo Is Nothing Then
+                Return 0
+            End If
+            Return Trabajo.TiempoEditorMinutos
+        End Get
+    End Property
 
 #End Region
 
-  <Infoware.Reportes.CampoReporteAtributo("No Compra/Venta", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 105, True)> _
-  Public ReadOnly Property CompraVentaNumero() As String
-    Get
-      If Compra IsNot Nothing Then
-        Return Compra.Compra_Numero
-      End If
-      If Venta IsNot Nothing Then
-        Return Venta.Venta_Numero
-      End If
-      Return 0
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("No Compra/Venta", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 105, True)> _
+    Public ReadOnly Property CompraVentaNumero() As String
+        Get
+            If Compra IsNot Nothing Then
+                Return Compra.Compra_Numero
+            End If
+            If Venta IsNot Nothing Then
+                Return Venta.Venta_Numero
+            End If
+            Return 0
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("No. Incautación", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 105, True)> _
+    Public ReadOnly Property NoIncautacion() As String
+        Get
+            If Incautacion IsNot Nothing Then
+                Return Incautacion.Incaut_Numero
+            End If
+            Return 0
+        End Get
+    End Property
 
   Public ReadOnly Property TrabajoNumero As String
     Get
@@ -238,27 +248,42 @@ Public Class MovimientoInventario
     End Get
   End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Cliente/Proveedor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, True)> _
-  Public ReadOnly Property ClienteProveedorString() As String
-    Get
-      If ClienteProveedor Is Nothing Then
-        Return String.Empty
-      Else
-        Return ClienteProveedor.NombreAbsoluto
-      End If
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Cliente/Proveedor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, True)> _
+    Public ReadOnly Property ClienteProveedorString() As String
+        Get
+            If ClienteProveedor Is Nothing Then
+                Return String.Empty
+            Else
+                Return ClienteProveedor.NombreAbsoluto
+            End If
+        End Get
+    End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Cliente/Proveedor Completo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, False)> _
-  Public ReadOnly Property ClienteProveedorCompletoString() As String
-    Get
-      If ClienteProveedor Is Nothing Then
-        Return String.Empty
-      Else
-        Return ClienteProveedor.NombreCompleto
-      End If
-    End Get
-  End Property
+    <Infoware.Reportes.CampoReporteAtributo("Contribuyente", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, True)> _
+    Public ReadOnly Property ContribuyenteString() As String
+        Get
+            If Incautacion Is Nothing Then
+                Return String.Empty
+            Else
+                If Incautacion.Contribuyente Is Nothing Then
+                    Return String.Empty
+                Else
+                    Return Incautacion.Contribuyente.NombreCompleto
+                End If
+            End If
+        End Get
+    End Property
+
+    '<Infoware.Reportes.CampoReporteAtributo("Cliente/Proveedor Completo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, False)> _
+    Public ReadOnly Property ClienteProveedorCompletoString() As String
+        Get
+            If ClienteProveedor Is Nothing Then
+                Return String.Empty
+            Else
+                Return ClienteProveedor.NombreCompleto
+            End If
+        End Get
+    End Property
 
   Public ReadOnly Property ClienteProveedor() As Entidad
     Get
@@ -282,16 +307,16 @@ Public Class MovimientoInventario
     End Get
   End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Vendedor Completo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, False)> _
-  Public ReadOnly Property VendedorCompletoString() As String
-    Get
-      If Vendedor Is Nothing Then
-        Return String.Empty
-      Else
-        Return Vendedor.NombreCompleto
-      End If
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Vendedor Completo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, False)> _
+    Public ReadOnly Property VendedorCompletoString() As String
+        Get
+            If Vendedor Is Nothing Then
+                Return String.Empty
+            Else
+                Return Vendedor.NombreCompleto
+            End If
+        End Get
+    End Property
 
   'Sucursal
   Public Overridable Property Sucursal() As Sucursal
@@ -419,18 +444,18 @@ Public Class MovimientoInventario
   End Sub
 #End Region
 
-  <Infoware.Reportes.CampoReporteAtributo("FechaVencimiento", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Fecha)> _
-  Public ReadOnly Property FechaVencimiento() As DateTime
-    Get
-      If Compra IsNot Nothing Then
-        Return Compra.FechaVencimiento
-      End If
-      If Venta IsNot Nothing Then
-        Return Venta.FechaVencimiento
-      End If
-      Return Now.Date
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("FechaVencimiento", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Fecha)> _
+    Public ReadOnly Property FechaVencimiento() As DateTime
+        Get
+            If Compra IsNot Nothing Then
+                Return Compra.FechaVencimiento
+            End If
+            If Venta IsNot Nothing Then
+                Return Venta.FechaVencimiento
+            End If
+            Return Now.Date
+        End Get
+    End Property
 
   <Infoware.Reportes.CampoReporteAtributo("Subtotal", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales)> _
   Public Overridable ReadOnly Property Subtotal() As Decimal
@@ -526,20 +551,20 @@ Public Class MovimientoInventario
     End Get
   End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Valor Pendiente", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales, 80, True)> _
-  Public ReadOnly Property ValorPendiente() As Decimal
-    Get
-      Dim valor As Decimal = 0
-      If Pagos IsNot Nothing Then
-        For Each _pago As PagosDet In Pagos
-          If _pago.Pardet_TipoMovPagoEnum = Enumerados.enumTipoMovPagos.Documento Then
-            valor += _pago.Pendiente
-          End If
-        Next
-      End If
-      Return valor
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Valor Pendiente", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Decimales, 80, True)> _
+    Public ReadOnly Property ValorPendiente() As Decimal
+        Get
+            Dim valor As Decimal = 0
+            If Pagos IsNot Nothing Then
+                For Each _pago As PagosDet In Pagos
+                    If _pago.Pardet_TipoMovPagoEnum = Enumerados.enumTipoMovPagos.Documento Then
+                        valor += _pago.Pendiente
+                    End If
+                Next
+            End If
+            Return valor
+        End Get
+    End Property
 
   Public Property Venta() As Venta
     Get
@@ -584,26 +609,26 @@ Public Class MovimientoInventario
   End Property
 
 
-  Public Property Incautacion() As Incautacion
-    Get
-      If mIncautacion Is Nothing And (Pardet_Tipomovinv = Enumerados.enumTipoMovInv.Incautacion) Then
-        If EsNuevo Then
-          'TODO new Incautacion sub
+    Public Property Incautacion() As Incautacion
+        Get
+            If mIncautacion Is Nothing Then
+                If EsNuevo Then
+                    'TODO new Incautacion sub
                     mIncautacion = New Incautacion(OperadorDatos, True)
-        Else
-          Try
-                        'mIncautacion = New Incautacion(Sucursal, PardetTipoMovInv, Movinv_Secuencia, True)
-          Catch ex As Exception
-            mIncautacion = Nothing
-          End Try
-        End If
-      End If
-      Return mIncautacion
-    End Get
-    Set(ByVal value As Incautacion)
-      mIncautacion = value
-    End Set
-  End Property
+                Else
+                    Try
+                        mIncautacion = New Incautacion(OperadorDatos, Incaut_Codigo)
+                    Catch ex As Exception
+                        mIncautacion = Nothing
+                    End Try
+                End If
+            End If
+            Return mIncautacion
+        End Get
+        Set(ByVal value As Incautacion)
+            mIncautacion = value
+        End Set
+    End Property
 
 
 
@@ -618,31 +643,31 @@ Public Class MovimientoInventario
     End Get
   End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("No_CompraVentaLargo")> _
-  Public ReadOnly Property CompraVentaString() As String
-    Get
-      If Compra IsNot Nothing Then
-        Return String.Format("{0} - {1}", mCompra.PardetTipoCompra.Pardet_Descripcion, mCompra.Compra_Numero)
-      ElseIf Venta IsNot Nothing Then
-        Return String.Format("{0} - {1}", mVenta.PardetTipoVenta.Pardet_Descripcion, mVenta.Venta_Numero)
-      Else
-        Return String.Empty
-      End If
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("No_CompraVentaLargo")> _
+    Public ReadOnly Property CompraVentaString() As String
+        Get
+            If Compra IsNot Nothing Then
+                Return String.Format("{0} - {1}", mCompra.PardetTipoCompra.Pardet_Descripcion, mCompra.Compra_Numero)
+            ElseIf Venta IsNot Nothing Then
+                Return String.Format("{0} - {1}", mVenta.PardetTipoVenta.Pardet_Descripcion, mVenta.Venta_Numero)
+            Else
+                Return String.Empty
+            End If
+        End Get
+    End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Direccion_ClienteProveedor")> _
-  Public ReadOnly Property ClienteProveedorDireccion() As String
-    Get
-      If Compra IsNot Nothing Then
-        Return mCompra.DireccionString
-      End If
-      If Venta IsNot Nothing Then
-        Return mVenta.DireccionString
-      End If
-      Return String.Empty
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Direccion_ClienteProveedor")> _
+    Public ReadOnly Property ClienteProveedorDireccion() As String
+        Get
+            If Compra IsNot Nothing Then
+                Return mCompra.DireccionString
+            End If
+            If Venta IsNot Nothing Then
+                Return mVenta.DireccionString
+            End If
+            Return String.Empty
+        End Get
+    End Property
 
   <Infoware.Reportes.CampoReporteAtributo("Ciudad_ClienteProveedor")> _
   Public ReadOnly Property ClienteProveedorCiudad() As String
@@ -843,16 +868,16 @@ Public Class MovimientoInventario
     End Set
   End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Activo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 90, True)> _
-  Public ReadOnly Property ActivoString() As String
-    Get
-      If Item Is Nothing Then
-        Return String.Empty
-      Else
-        Return mItem.Item_Descripcion
-      End If
-    End Get
-  End Property
+    '<Infoware.Reportes.CampoReporteAtributo("Activo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 90, True)> _
+    Public ReadOnly Property ActivoString() As String
+        Get
+            If Item Is Nothing Then
+                Return String.Empty
+            Else
+                Return mItem.Item_Descripcion
+            End If
+        End Get
+    End Property
 
   Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
     Parame_Tipomovinv = CType(Fila("Parame_Tipomovinv"), Integer)

@@ -95,8 +95,9 @@ Public Class FrmMantenimientoItemPrecio
     End Sub
 
     Private Sub Mapear_datos()
-        mItemPrecio.ItePre_Secuencia = Me.txtPrecio.Value
+        mItemPrecio.ItePre_Valor = Me.txtPrecio.Value
         mItemPrecio.ItePre_Observacion = Me.txtObservacion.Text
+        mItemPrecio.ItePre_Activo = True
         mItemPrecio.Item_Codigo = Item.Item_Codigo
     End Sub
 

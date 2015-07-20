@@ -80,6 +80,18 @@ Public Class Incautacion
         End Set
     End Property
 
+
+    <Infoware.Reportes.CampoReporteAtributo("Contribuyente", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 150, True)> _
+    Public ReadOnly Property ContribuyenteString() As String
+        Get
+            If  Contribuyente Is Nothing Then
+                    Return String.Empty
+                Else
+                Return Contribuyente.NombreCompleto
+            End If
+        End Get
+    End Property
+
     Public Overridable Property Administrativo() As Empleado
         Get
             If Me.mAdministrativo Is Nothing AndAlso Emplea_Administrativo > 0 Then
@@ -150,7 +162,7 @@ Public Class Incautacion
     End Property
 
     Private Sub mIncautaionResoluciones_AddingNew(sender As Object, e As System.ComponentModel.AddingNewEventArgs) Handles mIncautacionResoluciones.AddingNew
-        Dim _caract = New IncautacionResolucion(OperadorDatos, Incaut_Codigo, True)
+        Dim _caract = New IncautacionResolucion(OperadorDatos, mIncaut_Codigo, True)
         _caract.Incautacion = Me
         e.NewObject = _caract
     End Sub
@@ -337,11 +349,10 @@ Public Class IncautacionList
 
 
     Public Shared Function ObtenerLista(ByVal _Empresa As Empresa, Optional ByVal _Contribuyente As Contribuyente = Nothing, Optional ByVal _filtro As String = "") As IncautacionList
-
         Dim oResult As IncautacionList = New IncautacionList
         Dim bReturn As Boolean
         Dim ds As DataTable = Nothing
-        With _Contribuyente.OperadorDatos
+        With _Empresa.OperadorDatos
             .AgregarParametro("@Accion", "F")
             If _Contribuyente IsNot Nothing Then
                 .AgregarParametro("@Entida_Contribuyente", _Contribuyente.Entida_Codigo)
@@ -355,7 +366,7 @@ Public Class IncautacionList
 
         If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
             For Each _dr As DataRow In ds.Rows
-                Dim _fila As New Incautacion(_Contribuyente.OperadorDatos, False)
+                Dim _fila As New Incautacion(_Empresa.OperadorDatos, False)
                 _fila.MapearDataRowaObjeto(_dr)
                 oResult.Add(_fila)
             Next

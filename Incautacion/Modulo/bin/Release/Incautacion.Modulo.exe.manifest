@@ -147,14 +147,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Incautacion.Modulo.exe" size="1164288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Incautacion.Modulo.exe" size="1164800">
       <assemblyIdentity name="Incautacion.Modulo" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>4a3cNBMgigha2oewjb0m0VdkcP4=</dsig:DigestValue>
+        <dsig:DigestValue>iw5AV7VWGyfvLnlbhDChWn4i9ho=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -166,7 +166,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>/8dZx+hgMlgtpLxgkM4Sdh3N0hk=</dsig:DigestValue>
+        <dsig:DigestValue>vloVrO/5Xj7Ci47EqoUbaQdCcmE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

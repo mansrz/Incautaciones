@@ -260,6 +260,13 @@ Public Class FrmMantenimientoMovimientoInventario
         ToolStripManager.Merge(Me.ToolStripMovimiento, Me.ToolStrip1)
         Me.ToolStripMovimiento.Visible = False
 
+        Me.PuedeNuevo = False
+        Me.PuedeGuardarnuevo = False
+        Me.PuedeGuardar = True
+        Me.PuedeAnular = False
+        Me.PuedeFormato = False
+        Me.PuedeMover = False
+
         MyBase.Tabla = "Movimiento inventario"
         Me.comboTipoMovimiento.ComboBox.ValueMember = "Pardet_Secuencia"
         Me.comboTipoMovimiento.ComboBox.DisplayMember = "Pardet_Descripcion"
